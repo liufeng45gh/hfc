@@ -5,7 +5,7 @@
   <meta charset='utf-8'>
   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
   <meta name="renderer" content="webkit">
-  <title>用户登录 - oauth2.0 用户管理系统</title>
+  <title>用户登录 - 海富文化后台管理系统</title>
 
 
   <link rel='stylesheet' href='/cms/css/theme-default.css' type='text/css' media='screen' />
@@ -20,7 +20,7 @@
   <div id='container'>
     <div id='login-panel'>
       <div class='panel-head'>
-        <h4>Oauth2.0用户管理系统</h4>
+        <h4>海富文化后台管理系统</h4>
 
 
 
@@ -82,8 +82,8 @@
 
   <p style='margin-top:25px; color:#fff; text-align:center'>
     开发团队：
-    <a href='#' style="color:yellow">com.liufx</a>
-    <a href='#' style="color:yellow">甘道夫软件制作</a>
+    <a href='#' style="color:yellow">liufx</a>
+    <a href='#' style="color:yellow">海富文化网</a>
   </p>
   <div id="poweredby">
     <iframe id='updater' class='hidden' frameborder='0' width='100%' scrolling='no' allowtransparency='true' src="http://api.zentao.net/updater-isLatest-8.2.4-9e3dbcba3fcfa456fdc14568103d4e83.html?lang=zh_cn"></iframe>
