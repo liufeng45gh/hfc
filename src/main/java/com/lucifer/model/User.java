@@ -33,16 +33,16 @@ public class User implements Serializable{
 	
 	// uuid      uuid生成规则(App侧调用)
 	private String uuid;
-	
+
 	// cloud_id  云平台绑定ID(LeanCloud),允许为空
 	private String cloudId;
-	
+
 	// weixin_id 微信绑定ID,允许为空
 	private String weixinId;
-	
+
 	// weibo_id  微博绑定ID,允许为空
 	private String weiboId;
-	
+
 	// qq_id     QQ绑定ID,允许为空
 	private String qqId;
 	

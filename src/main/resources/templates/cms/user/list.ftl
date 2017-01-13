@@ -73,7 +73,7 @@
                                         <td>${user.account}</td>
 
                                         <td>${user.nickName}</td>
-                                        <td>${user.role_id?default("普通用户")}</td>
+                                        <td>${user.role_id?default("管理员")}</td>
                                         <td>${user.status?default("")}<#if user.status?default("") = "block">  已禁用 <#else> 正常  </#if>  </td>
 
                                         <td>
