@@ -5,7 +5,7 @@
     <div class="panel-body">
         <ul class="tree tree-lines" >
             <li  id="left_menu_news_list"><a href="/cms/news/list?page=1" >资讯列表</a> </li>
-            <li  id="left_menu_news_add"><a href="/cms/user/add" >发布资讯</a> </li>
+            <li  id="left_menu_news_add"><a href="/cms/news/add" >发布资讯</a> </li>
             <li  id="left_menu_news_recommend"><a href="/cms/user/add" >资讯推荐</a> </li>
             <li  id="left_menu_news_category"><a href="/cms/news/category/list" >资讯分类</a> </li>
         </ul>

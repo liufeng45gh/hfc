@@ -42,11 +42,30 @@ public class CmsNewsController {
         return "/cms/news/list";
     }
 
+    @RequestMapping(value="/news/add",method = RequestMethod.GET)
+    public String newsAddInput(HttpServletRequest request){
+        List<NewsCategory> newsCategoryList = newsDao.cmsNewsCategoryList();
+        request.setAttribute("newsCategoryList",newsCategoryList);
+        return "/cms/news/add";
+    }
+
+    @RequestMapping(value="/news/add",method = RequestMethod.POST)
+    public Result newsAddSubmit(News news){
+        return Result.ok();
+    }
+
     @RequestMapping(value="/news/category/list",method = RequestMethod.GET)
     public String categoryList(HttpServletRequest request){
         List<NewsCategory> newsCategoryList = newsDao.cmsNewsCategoryList();
         request.setAttribute("newsCategoryList",newsCategoryList);
         return "/cms/news/category_list";
+    }
+
+    @RequestMapping(value="/news/category/list.json",method = RequestMethod.GET)
+    @ResponseBody
+    public List<NewsCategory>  categoryListForJSON(HttpServletRequest request){
+        List<NewsCategory> newsCategoryList = newsDao.cmsNewsCategoryList();
+        return newsCategoryList;
     }
 
     @RequestMapping(value="/news/category/add",method = RequestMethod.POST)

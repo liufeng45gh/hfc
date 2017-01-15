@@ -3,6 +3,7 @@ package com.lucifer.dao.hfc;
 import com.lucifer.dao.IBatisBaseDao;
 import com.lucifer.model.hfc.News;
 import com.lucifer.model.hfc.NewsCategory;
+import com.lucifer.utils.DateUtils;
 import org.springframework.stereotype.Component;
 
 import java.util.HashMap;
@@ -27,6 +28,12 @@ public class NewsDao extends IBatisBaseDao {
         Map<String,Object> param = new HashMap<String,Object>();
         param.put("title",title);
         return this.hfcSqlSession.selectOne("cmsNewsMatchRecordCount",param);
+    }
+
+    public Integer insertNews(News news) {
+        news.setCreatedAt(DateUtils.now());
+        news.setUpdatedAt(DateUtils.now());
+        return this.hfcSqlSession.insert("insertNews",news);
     }
 
     public List<NewsCategory> cmsNewsCategoryList(){

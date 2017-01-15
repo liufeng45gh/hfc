@@ -22,7 +22,7 @@
 
         </div>
       <h5 id="companyname" style="text-align:left;">
-        oauth2.0 用户管理系统
+        海富文化网后台管理系统
         </h5>
     </div>
 

@@ -29,6 +29,13 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		select count(*) from news where title like '%{title}%' and is_deleted = 0
 	</select>
 
+	<insert id="insertNews" useGeneratedKeys="true" keyProperty="id">
+		insert into news
+		(title,logo,summary,source,category_id,mode,content,publish_at,top,created_at,updated_at)
+		values
+		(#{title},#{logo},#{summary},#{source},#{categoryId},#{mode},#{content},#{publishAt},#{top},#{createdAt},#{updatedAt})
+	</insert>
+
 
 
 	<resultMap type="com.lucifer.model.hfc.NewsCategory" id="newsCategoryMap">
