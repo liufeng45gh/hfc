@@ -7,7 +7,7 @@ import java.util.Date;
 public class Constant {
 
 	public static final int PAFENO = 1;
-	public static final int PAGESIZE = 3;
+	public static final int PAGESIZE = 20;
 	
 	public static Integer minute_10 =  60*10;
 	
@@ -42,6 +42,8 @@ public class Constant {
 			e.printStackTrace();
 		}
 	}
+
+
 			
 			
 	

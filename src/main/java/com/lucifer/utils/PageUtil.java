@@ -9,7 +9,7 @@ import java.util.Set;
 
 public class PageUtil {
 	
-	public static int default_per_page_count = 50;
+	public static int default_per_page_count = 20;
 	
 	public static String perPageCount="perPageCount";
 	

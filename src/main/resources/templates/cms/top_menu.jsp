@@ -10,6 +10,7 @@
 		<!-- <li  id="top_munu_app"><a href="/cms/app/list" >应用</a></li> -->
 		<li  id="top_menu_user"><a href="/cms/user/list?page=1" >会员</a></li>				
 		<li  id="top_menu_self"><a href="/cms/self/welcome">系统</a></li>
+		<li  id="top_menu_self"><a href="/cms/news/list">内容</a></li>
 		</ul>
 	 
 	</div>

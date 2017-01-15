@@ -84,7 +84,7 @@ public class MyBatisHfcConfiguration implements EnvironmentAware{
 
 
 
-    @Bean(name = "hfxSqlSessionTemplate")
+    @Bean(name = "hfcSqlSessionTemplate")
     public SqlSessionTemplate getHfcSqlSessionTemplate(){
         logger.info("getHfcSqlSessionTemplate  : ");
         SqlSessionTemplate sessionTemplate = new SqlSessionTemplate(hfcSqlSessionFactory());
