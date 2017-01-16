@@ -12,7 +12,7 @@
     <tr>
         <th width="20%" style="text-align:right;">分类:</th>
         <td>
-            <select id="category_input"  class="form-control" style="display:inline-block;width:280px;" >
+            <select id="category_input"  class="form-control" style="display:inline-block;width:280px;" name="categoryId" >
                 <option value="">请选择</option>
                 <#list newsCategoryList as category>
                 <option value="${category.id}">${category.name}</option>
@@ -28,7 +28,7 @@
 
     <tr>
     <th width="20%" style="text-align:right;">发布时间:</th>
-    <td><input id="publish_at_input"  class="form-control" name="publishAt" style="display:inline-block;"/></td>
+    <td><input id="publish_at_input"  class="form-control" name="publishAt" style="display:inline-block;" value="${(publishAt?string("yyyy-MM-dd hh:mm:ss"))!}"/></td>
     </tr>
 
     <tr>
@@ -41,7 +41,10 @@
     <tr>
         <th width="20%" style="text-align:right;">详情:</th>
         <td>
-            <textarea id="content_area"></textarea>
+
+
+            <textarea id="editor" style="width:1024px;height:500px;" name="content"></textarea>
+
         </td>
     </tr>
 
@@ -53,3 +56,13 @@
     </tr>
 </tbody>
 </table>
+
+<script>
+$(document).ready(function () {
+    $('#publish_at_input').datetimepicker({
+         showSecond: true,
+         timeFormat: 'hh:mm:ss'
+    });
+});
+
+</script>

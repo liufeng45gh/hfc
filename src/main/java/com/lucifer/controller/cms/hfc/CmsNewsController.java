@@ -4,6 +4,7 @@ import com.lucifer.dao.hfc.NewsDao;
 import com.lucifer.model.hfc.News;
 import com.lucifer.model.hfc.NewsCategory;
 import com.lucifer.utils.Constant;
+import com.lucifer.utils.DateUtils;
 import com.lucifer.utils.PageUtil;
 import com.lucifer.utils.Result;
 import org.springframework.stereotype.Controller;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -46,6 +48,8 @@ public class CmsNewsController {
     public String newsAddInput(HttpServletRequest request){
         List<NewsCategory> newsCategoryList = newsDao.cmsNewsCategoryList();
         request.setAttribute("newsCategoryList",newsCategoryList);
+        Date publishAt = DateUtils.now();
+        request.setAttribute("publishAt",publishAt);
         return "/cms/news/add";
     }
 
