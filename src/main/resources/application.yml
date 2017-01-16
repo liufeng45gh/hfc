@@ -9,7 +9,12 @@ spring:
 # DATASOURCE
 jdbc:
     driverClass: com.mysql.jdbc.Driver
-    url: jdbc:mysql://www.dbdbd.cn/oauth2-user?useUnicode=true&characterEncoding=utf-8&autoReconnect=true&rewriteBatchedStatements=TRUE&zeroDateTimeBehavior=convertToNull
+    url: jdbc:mysql://www.dbdbd.cn/oauth2-user?useUnicode=true&characterEncoding=utf-8&autoReconnect=true&rewriteBatchedStatements=TRUE&zeroDateTimeBehavior
+    username: root
+    password: lucifer
+jdbc-hfc:
+    driverClass: com.mysql.jdbc.Driver
+    url: jdbc:mysql://www.dbdbd.cn/hfc?useUnicode=true&characterEncoding=utf-8&autoReconnect=true&rewriteBatchedStatements=TRUE&zeroDateTimeBehavior
     username: root
     password: lucifer
 # MyBatis

@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+import java.util.Properties;
 
 @Controller
 public class SelfController {
@@ -36,7 +37,16 @@ public class SelfController {
 	
 	
 	@RequestMapping(value="/cms/self/welcome",method = RequestMethod.GET)
-	public String welcome(){
+	public String welcome(HttpServletRequest request){
+		Properties props=System.getProperties(); //获得系统属性集
+		String osName = props.getProperty("os.name"); //操作系统名称
+		String osArch = props.getProperty("os.arch"); //操作系统构架
+		String osVersion = props.getProperty("os.version"); //操作系统版本
+		request.setAttribute("osName",osName);
+		request.setAttribute("osArch",osArch);
+		request.setAttribute("osVersion",osVersion);
+		String localAddr = request.getLocalAddr();
+		request.setAttribute("localAddr",localAddr);
 		return "/cms/self/index";
 	}
 	
