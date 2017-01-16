@@ -11,14 +11,14 @@ import org.springframework.format.annotation.DateTimeFormat;
 import java.io.Serializable;
 import java.util.Date;
 
-public class User implements Serializable{
+public class Member implements Serializable{
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = -1183367815938163456L;
 	
-	static final Logger logger = LoggerFactory.getLogger(User.class);
+	static final Logger logger = LoggerFactory.getLogger(Member.class);
 
 	// id        自增长(长整,以下所有id字段皆为该规则)
 	private Long id;
@@ -90,7 +90,7 @@ public class User implements Serializable{
 //	// points    用户积分
 //	private Integer points;
 	
-	public User() {
+	public Member() {
 	}
 
 	public Long getId() {
