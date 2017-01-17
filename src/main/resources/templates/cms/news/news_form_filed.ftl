@@ -7,7 +7,13 @@
     </tr>
     <tr>
         <th width="20%" style="text-align:right;">logo:</th>
-        <td><input id="logo_input" type="file" class="form-control" name="logo" style="display:inline-block;"/><label id="newpass_input_info" style="display:inline-block;">* logo</label></td>
+        <td>
+            <div class="logo_outer">
+                <input type="file" class="addLogoInput" id="up_file" style="width:158px;"/>
+                <img width="100%" height="100%" src="/cms/images/logo.png" id="logo_cover"/>
+                <input type="hidden" id="logo_hidden" name="logo"/>
+            </div>
+        </td>
     </tr>
     <tr>
         <th width="20%" style="text-align:right;">分类:</th>

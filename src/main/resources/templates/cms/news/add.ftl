@@ -22,6 +22,8 @@
     <!--这里加载的语言文件会覆盖你在配置项目里添加的语言类型，比如你在配置项目里配置的是英文，这里加载的中文，那最后就是中文-->
     <script type="text/javascript" charset="utf-8" src="/ueditor-1.4.3.3/lang/zh-cn/zh-cn.js"></script>
 
+    <script type="text/javascript" charset="UTF-8" src="/cms/script/jquery.form-3.45.js"></script>
+
 
 
 </head>
@@ -38,7 +40,7 @@
                     			<div class="content form_content" >
 
 
-                                    <form action="/cms/news/add" method="post">
+                                    <form action="/cms/news/add" method="post" id="hfc-form">
                                         <#include "news_form_filed.ftl"/>
                                     </form>
                                 </div>

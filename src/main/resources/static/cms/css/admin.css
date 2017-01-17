@@ -348,3 +348,28 @@ ul.select{list-style:none;float:left;height:184px;overflow: scroll ;overflow-x:h
 li.selected{
     background-color:#e5e5e5;
 }
+
+.logo_outer {
+width: 154px;
+height: 154px;
+padding: 0 4px 0 0;
+padding-right: 0\9;
+background: url(/cms/images/logo.png) center center no-repeat;
+background: rgb(172,172,172)\9;
+float: left;
+margin: 0px 9px 0 10px;
+position: relative;
+
+}
+
+.addLogoInput {
+margin-left: 0px;
+height: 154px;
+width: 154px;
+font-size: 50px;
+opacity: 0;
+z-index: 100;
+position: absolute;
+cursor: pointer;
+FILTER: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+}
