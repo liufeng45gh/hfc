@@ -35,6 +35,14 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		values
 		(#{title},#{logo},#{summary},#{source},#{categoryId},#{mode},#{content},#{publishAt},#{top},#{createdAt},#{updatedAt})
 	</insert>
+	
+	<update id="updateNews">
+		update news
+		set
+		title = #{title},  logo= #{logo}, summary=#{summary}, source=#{source},
+		category_id = #{categoryId} ,mode = #{mode} ,content = #{content},publish_at = #{publish_at} ,top = #{top}
+		where id = #{id}
+	</update>
 
 
 
@@ -63,6 +71,35 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 	<update id="newsCategoryUpdate">
 		update news_category set name = #{name},top = #{top} where id = #{id}
+	</update>
+
+	<resultMap type="com.lucifer.model.hfc.NewsRecommend" id="NewsRecommendMap">
+		<id column="id" property="id"/>
+		<result column="news_id" property="newsId"/>
+		<result column="top" property="top"/>
+		<result column="is_deleted" property="isDeleted"/>
+		<result column="created_at" property="createdAt"/>
+		<result column="updated_at" property="updatedAt"/>
+	</resultMap>
+
+	<select id="cmsNewsRecommendList" resultMap="NewsRecommendMap">
+		select * from news_recommend where  is_deleted = 0 order by top desc
+	</select>
+
+	<insert id="addNewsRecommend" useGeneratedKeys="true" keyProperty="id">
+		insert into news_recommend (news_id,top,is_deleted,created_at,updated_at) values (#{newsId},#{top},0,now(),now())
+	</insert>
+
+	<delete id="deleteNewsRecommend">
+		update news_recommend set is_deleted = 1,updated_at = now() where id = #{id}
+	</delete>
+
+	<select id="getNewsRecommend" resultMap="NewsRecommendMap">
+		select * from news_recommend where  id = #{id}
+	</select>
+
+	<update id="updateNewsRecommend">
+		update news_recommend set top = #{top},updated_at = now() where id = #{id}
 	</update>
 
 

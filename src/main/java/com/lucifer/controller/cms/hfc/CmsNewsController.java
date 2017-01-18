@@ -54,8 +54,9 @@ public class CmsNewsController {
     }
 
     @RequestMapping(value="/news/add",method = RequestMethod.POST)
-    public Result newsAddSubmit(News news){
-        return Result.ok();
+    public String newsAddSubmit(News news){
+        newsDao.insertNews(news);
+        return "redirect:/cms/news/add";
     }
 
     @RequestMapping(value="/news/category/list",method = RequestMethod.GET)

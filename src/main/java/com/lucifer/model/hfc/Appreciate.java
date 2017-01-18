@@ -21,6 +21,8 @@ public class Appreciate {
 
     private String content;
 
+    private Integer clickCount;
+
     private Date publishAt;
 
     private Date createdAt;
@@ -125,5 +127,13 @@ public class Appreciate {
 
     public void setIsDeleted(Integer isDeleted) {
         this.isDeleted = isDeleted;
+    }
+
+    public Integer getClickCount() {
+        return clickCount;
+    }
+
+    public void setClickCount(Integer clickCount) {
+        this.clickCount = clickCount;
     }
 }

@@ -4,4 +4,20 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.lucier.model">
+    <resultMap type="com.lucifer.model.hfc.Appreciate" id="AppreciateMap">
+        <id column="id" property="id"/>
+        <result column="title" property="title"/>
+        <result column="summary" property="summary"/>
+        <result column="logo" property="logo"/>
+        <result column="source" property="source"/>
+        <result column="category_id" property="categoryId"/>
+        <result column="mode" property="mode"/>
+        <result column="content" property="content"/>
+        <result column="click_count" property="clickCount"/>
+        <result column="publish_at" property="publishAt"/>
+        <result column="top" property="top"/>
+        <result column="is_deleted" property="isDeleted"/>
+        <result column="created_at" property="createdAt"/>
+        <result column="updated_at" property="updatedAt"/>
+    </resultMap>
 </mapper>
