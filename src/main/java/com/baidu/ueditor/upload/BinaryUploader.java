@@ -14,11 +14,13 @@ import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
+import com.lucifer.service.hfc.QiniuCloudService;
 import org.apache.commons.fileupload.FileItemIterator;
 import org.apache.commons.fileupload.FileItemStream;
 import org.apache.commons.fileupload.FileUploadException;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
+import org.apache.commons.io.IOUtils;
 
 public class BinaryUploader {
 
@@ -72,12 +74,22 @@ public class BinaryUploader {
 			String physicalPath = (String) conf.get("rootPath") + savePath;
 
 			InputStream is = fileStream.openStream();
-			State storageState = StorageManager.saveFileByInputStream(is,
-					physicalPath, maxSize);
+
+			byte[] data = IOUtils.toByteArray(is);
+
+			String uploadUrl = QiniuCloudService.getInstance().simpleUploadWithoutKey(data);
+
+			State storageState = new BaseState(true, uploadUrl);
+
+			storageState.putInfo( "size", data.length );
+			storageState.putInfo( "title", uploadUrl);
+
+//			State storageState = StorageManager.saveFileByInputStream(is,
+//					physicalPath, maxSize);
 			is.close();
 
 			if (storageState.isSuccess()) {
-				storageState.putInfo("url", PathFormat.format(savePath));
+				storageState.putInfo("url", uploadUrl);
 				storageState.putInfo("type", suffix);
 				storageState.putInfo("original", originFileName + suffix);
 			}

@@ -12,6 +12,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.stereotype.Component;
 
+import javax.annotation.PostConstruct;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.Map;
@@ -23,6 +24,17 @@ import java.util.Map;
 @EnableConfigurationProperties
 @ConfigurationProperties(prefix="qiniu")
 public class QiniuCloudService {
+
+    private static  QiniuCloudService instance;
+
+    public static QiniuCloudService getInstance(){
+        return instance;
+    }
+
+    @PostConstruct
+    public void init(){
+        instance  = this;
+    }
 
     private String accessKey;
 

@@ -1,4 +1,4 @@
-package com.lucifer.controller.cms.hfc;
+package com.lucifer.controller;
 
 
 import com.lucifer.service.hfc.QiniuCloudService;
