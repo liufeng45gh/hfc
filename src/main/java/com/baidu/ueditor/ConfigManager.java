@@ -26,7 +26,7 @@ public final class ConfigManager {
 	private final String rootPath;
 	private final String originalPath;
 	private final String contextPath;
-	private static final String configFileName = "config.json";
+	private static final String configFileName = "/static/ueditor-1.4.3.3/jsp/config.json";
 	private String parentPath = null;
 	private JSONObject jsonConfig = null;
 	// 涂鸦上传filename定义
@@ -159,8 +159,8 @@ public final class ConfigManager {
 		}
 		
 		this.parentPath = file.getParent();
-		
-		String configContent = this.readFile( this.getConfigPath() );
+		File configFile = new File(this.getClass().getResource(this.getConfigPath()).getFile());
+		String configContent = this.readFile(configFile );
 		
 		try{
 			JSONObject jsonConfig = new JSONObject( configContent );
@@ -172,7 +172,7 @@ public final class ConfigManager {
 	}
 	
 	private String getConfigPath () {
-		return this.parentPath + File.separator + ConfigManager.configFileName;
+		return  ConfigManager.configFileName;
 	}
 
 	private String[] getArray ( String key ) throws JSONException {
@@ -211,6 +211,31 @@ public final class ConfigManager {
 		
 		return this.filter( builder.toString() );
 		
+	}
+
+	private String readFile ( File file ) throws IOException {
+
+		StringBuilder builder = new StringBuilder();
+
+		try {
+
+			InputStreamReader reader = new InputStreamReader( new FileInputStream( file ), "UTF-8" );
+			BufferedReader bfReader = new BufferedReader( reader );
+
+			String tmpContent = null;
+
+			while ( ( tmpContent = bfReader.readLine() ) != null ) {
+				builder.append( tmpContent );
+			}
+
+			bfReader.close();
+
+		} catch ( UnsupportedEncodingException e ) {
+			// 忽略
+		}
+
+		return this.filter( builder.toString() );
+
 	}
 	
 	// 过滤输入字符串, 剔除多行注释以及替换掉反斜杠

@@ -44,6 +44,7 @@ public class QiniuCloudService {
 
     private String url;
 
+
     public String getAccessKey() {
         return accessKey;
     }

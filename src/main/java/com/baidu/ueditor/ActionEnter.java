@@ -1,5 +1,6 @@
 package com.baidu.ueditor;
 
+import java.io.IOException;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
@@ -12,6 +13,7 @@ import com.baidu.ueditor.hunter.FileManager;
 import com.baidu.ueditor.hunter.ImageHunter;
 import com.baidu.ueditor.upload.Uploader;
 import org.json.JSONException;
+import org.springframework.web.multipart.MultipartFile;
 
 public class ActionEnter {
 	
@@ -34,7 +36,7 @@ public class ActionEnter {
 		
 	}
 	
-	public String exec () throws JSONException {
+	public String exec ( MultipartFile file) throws JSONException, IOException {
 		
 		String callbackName = this.request.getParameter("callback");
 		
@@ -44,15 +46,15 @@ public class ActionEnter {
 				return new BaseState( false, AppInfo.ILLEGAL ).toJSONString();
 			}
 			
-			return callbackName+"("+this.invoke()+");";
+			return callbackName+"("+this.invoke(file)+");";
 			
 		} else {
-			return this.invoke();
+			return this.invoke(file);
 		}
 
 	}
 	
-	public String invoke() throws JSONException {
+	public String invoke(MultipartFile file) throws JSONException, IOException {
 		
 		if ( actionType == null || !ActionMap.mapping.containsKey( actionType ) ) {
 			return new BaseState( false, AppInfo.INVALID_ACTION ).toJSONString();
@@ -78,7 +80,7 @@ public class ActionEnter {
 			case ActionMap.UPLOAD_VIDEO:
 			case ActionMap.UPLOAD_FILE:
 				conf = this.configManager.getConfig( actionCode );
-				state = new Uploader( request, conf ).doExec();
+				state = new Uploader( request, conf ).doExec(file);
 				break;
 				
 			case ActionMap.CATCH_IMAGE:

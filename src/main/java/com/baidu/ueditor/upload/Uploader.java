@@ -1,6 +1,9 @@
 package com.baidu.ueditor.upload;
 
 import com.baidu.ueditor.define.State;
+import org.springframework.web.multipart.MultipartFile;
+
+import java.io.IOException;
 import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
 
@@ -13,7 +16,7 @@ public class Uploader {
 		this.conf = conf;
 	}
 
-	public final State doExec() {
+	public final State doExec(MultipartFile file) throws IOException {
 		String filedName = (String) this.conf.get("fieldName");
 		State state = null;
 
@@ -21,7 +24,7 @@ public class Uploader {
 			state = Base64Uploader.save(this.request.getParameter(filedName),
 					this.conf);
 		} else {
-			state = BinaryUploader.save(this.request, this.conf);
+			state = BinaryUploader.save(this.request, this.conf,file);
 		}
 
 		return state;

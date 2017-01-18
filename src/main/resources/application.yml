@@ -6,6 +6,10 @@ spring:
     host: 123.59.84.71
     port: 6379
     password: 9hcom.com
+  http:
+    multipart:
+      max-file-size: 50M
+      max-request-size: 100M
 # DATASOURCE
 jdbc:
     driverClass: com.mysql.jdbc.Driver
