@@ -15,4 +15,9 @@
         <result column="created_at" property="createdAt"/>
         <result column="updated_at" property="updatedAt"/>
     </resultMap>
+
+    <select id="artistList" resultMap="artistMap">
+        select * from  hf_artist where is_deleted = 0 order by name_py limit #{offset},#{count}
+    </select>
+
 </mapper>
