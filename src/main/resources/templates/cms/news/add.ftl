@@ -26,6 +26,8 @@
 
 
 
+
+
 </head>
 <body style="zoom: 1;">
 	<div class="b-container">
@@ -37,7 +39,7 @@
 
                     <div id="admin_right">
                     			<div class="position"><span>系统</span><span>|</span><span>资讯</span><span>|</span><span>新增资讯</span></div>
-                    			<div class="content form_content" >
+                    			<div class="content form_content" style="width:80%">
 
 
                                     <form action="/cms/news/add" method="post" id="hfc-form">
@@ -57,5 +59,6 @@
 		});
 	</script>
     <script type="text/javascript" charset="UTF-8" src="/cms/script/hfc/news_add.js"></script>
+    <script type="text/javascript" charset="UTF-8" src="/cms/script/hfc/news_logo_select.js"></script>
 
 <div style="display: none; position: fixed; left: 0px; top: 0px; width: 100%; height: 100%; cursor: move; opacity: 0; background: rgb(255, 255, 255);"></div></body></html>

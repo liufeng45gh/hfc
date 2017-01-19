@@ -9,6 +9,8 @@ import com.lucifer.utils.Constant;
 import com.lucifer.utils.DateUtils;
 import com.lucifer.utils.PageUtil;
 import com.lucifer.utils.Result;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
@@ -29,6 +31,8 @@ public class CmsNewsController {
 
     @Resource
     private NewsService newsService;
+
+    private  Logger logger = LoggerFactory.getLogger(this.getClass());
 
     @RequestMapping(value="/news/list",method = RequestMethod.GET)
     public String newsList(HttpServletRequest request,@RequestParam(value = "title",required=false,defaultValue="") String title,
@@ -55,13 +59,36 @@ public class CmsNewsController {
         request.setAttribute("newsCategoryList",newsCategoryList);
         Date publishAt = DateUtils.now();
         request.setAttribute("publishAt",publishAt);
+        News news = new News();
+        request.setAttribute("news",news);
+        news.setLogo("/cms/images/logo.png");
         return "/cms/news/add";
     }
 
     @RequestMapping(value="/news/add",method = RequestMethod.POST)
-    public String newsAddSubmit(News news){
+    @ResponseBody
+    public Result newsAddSubmit(News news){
+        logger.info("newsAddSubmit has been called");
         newsDao.insertNews(news);
-        return "redirect:/cms/news/add";
+        return Result.ok();
+    }
+    @RequestMapping(value="/news/{id}/update",method = RequestMethod.GET)
+    public String newsUpdateInput(HttpServletRequest request,@PathVariable Long id){
+        News news = newsDao.getNews(id);
+        request.setAttribute("news",news);
+        request.setAttribute("publishAt",news.getPublishAt());
+
+        List<NewsCategory> newsCategoryList = newsDao.cmsNewsCategoryList();
+        request.setAttribute("newsCategoryList",newsCategoryList);
+        return "/cms/news/update";
+    }
+
+    @RequestMapping(value="/news/update",method = RequestMethod.POST)
+    @ResponseBody
+    public Result newsUpdateSubmit(News news){
+       newsDao.updateNews(news);
+
+        return Result.ok();
     }
 
     @RequestMapping(value="/news/category/list",method = RequestMethod.GET)

@@ -22,7 +22,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</resultMap>
 
 	<select id="cmsNewsList" resultMap="newsMap">
-		select * from news where title like '%{title}%' and is_deleted = 0 order by top desc,publish_at desc limit #{offset},#{count}
+		select * from news where  is_deleted = 0
+		<if test="title!=null and title!=''">
+			and title like '%${title}%'
+		</if>
+		order by top desc,publish_at desc limit #{offset},#{count}
 	</select>
 	
 	<select id="cmsNewsMatchRecordCount" resultType="java.lang.Integer">
@@ -31,16 +35,16 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 	<insert id="insertNews" useGeneratedKeys="true" keyProperty="id">
 		insert into news
-		(title,logo,summary,source,category_id,mode,content,publish_at,top,created_at,updated_at)
+		(title,logo,summary,source,category_id,mode,content,publish_at,top,click_count,created_at,updated_at)
 		values
-		(#{title},#{logo},#{summary},#{source},#{categoryId},#{mode},#{content},#{publishAt},#{top},#{createdAt},#{updatedAt})
+		(#{title},#{logo},#{summary},#{source},#{categoryId},#{mode},#{content},#{publishAt},#{top},#{clickCount},#{createdAt},#{updatedAt})
 	</insert>
 	
 	<update id="updateNews">
 		update news
 		set
 		title = #{title},  logo= #{logo}, summary=#{summary}, source=#{source},
-		category_id = #{categoryId} ,mode = #{mode} ,content = #{content},publish_at = #{publish_at} ,top = #{top}
+		category_id = #{categoryId} ,mode = #{mode} ,content = #{content},publish_at = #{publishAt} ,top = #{top}
 		where id = #{id}
 	</update>
 

@@ -168,7 +168,18 @@ img.operator{width:12px;height:12px;margin:0 6px;cursor:pointer; vertical-align:
 .table_new td{border:1px dotted #ccc;color:#717171;line-height:200%; padding:5px 5px;}
 .table_new input{
 	width:280px;
+	float: left;
 }
+.table_new select{
+ 	float: left;
+ }
+
+ .table_new textarea {
+ 	float: left;
+ }
+  .table_new button {
+  	float: left;
+  }
 
 
 
@@ -194,9 +205,9 @@ img.operator{width:12px;height:12px;margin:0 6px;cursor:pointer; vertical-align:
 .list_table{width:100%;border:1px #dddddd solid;table-layout:fixed;background-color:#fff}
 .field .list_table{margin-top:6px;border-width:0}
 	.list_table th{background:#f6f6f6;font-weight:bold}
-	.list_table thead th{white-space:nowrap;padding-left:5px;border-width:0;text-align:left;overflow:hidden}
+	.list_table thead th{white-space:nowrap;padding-left:5px;border-width:0;text-align:left;overflow:hidden;height:37px;}
 	.list_table tbody th{text-align:right}
-	.list_table tbody td{height:25px;padding-left:5px;border:1px #dddddd solid;border-width:1px 0;overflow:hidden;text-align:left;white-space:nowrap}
+	.list_table tbody td{height:37px;padding-left:5px;border:1px #dddddd solid;border-width:1px 0;overflow:hidden;text-align:left;white-space:nowrap}
 	.list_table tbody tr.even td{background-color:#fffcf3}
 	.list_table tbody tr.sel td{background-color:#ffc}
 	.list_table tbody td.t_c,.list_table thead th.t_c{text-align:center}
@@ -228,8 +239,7 @@ img.operator{width:12px;height:12px;margin:0 6px;cursor:pointer; vertical-align:
 	table.list_table3 thead th{color:#000; text-align:center;border-top:1px solid #cecece;border-bottom:1px solid #cecece;background-image:none; background-color:#f6f6f6;}
 	table.list_table3 tbody td{padding:5px 0;color:#505050;border-bottom:1px solid #e7e7e7}
 
-.td_c td{text-align:center}
-.th_c th{text-align:center}
+.t_c{text-align:center}
 /* border_table style end */
 /* pop_win style start */
 .pop_win{position:relative;background-color:#fffcf3;border:1px solid #fde4c7;overflow:scroll;width:100%;height:450px;}

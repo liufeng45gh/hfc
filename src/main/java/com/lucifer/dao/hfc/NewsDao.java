@@ -34,11 +34,17 @@ public class NewsDao extends IBatisBaseDao {
     public Integer insertNews(News news) {
         news.setCreatedAt(DateUtils.now());
         news.setUpdatedAt(DateUtils.now());
+        news.setTop(0f);
+        news.setClickCount(0);
         return this.hfcSqlSession.insert("insertNews",news);
     }
 
     public News getNews(Long id) {
         return this.hfcSqlSession.selectOne("getNews",id);
+    }
+
+    public Integer updateNews(News news){
+        return this.hfcSqlSession.update("updateNews",news);
     }
 
     public List<NewsCategory> cmsNewsCategoryList(){

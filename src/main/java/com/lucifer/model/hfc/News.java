@@ -1,5 +1,7 @@
 package com.lucifer.model.hfc;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import java.util.Date;
 
 /**
@@ -8,6 +10,7 @@ import java.util.Date;
 public class News {
 
     private Long id;
+
     private String title;
 
     private String summary;
@@ -24,6 +27,7 @@ public class News {
 
     private Integer clickCount;
 
+    @DateTimeFormat(pattern = "yyyy-MM-dd hh:mm:ss")
     private Date publishAt;
 
     private Date createdAt;

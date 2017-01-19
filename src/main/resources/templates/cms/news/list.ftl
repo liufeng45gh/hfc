@@ -6,7 +6,7 @@
 	<link rel="stylesheet" href="/cms/css/admin.css">
     <link rel='stylesheet' href='/cms/css/theme-default.css' type='text/css' media='screen' />
 	<script type="text/javascript" charset="UTF-8" src="/cms/script/jquery-1.9.1.min.js"></script>
-	
+    <script type="text/javascript" charset="UTF-8" src="/layer/layer.js"></script>
 </head>
 <body style="zoom: 1;">
 	<div class="b-container">
@@ -33,28 +33,35 @@
                             <table class="list_table" style="font-size:13px;">
                                 <thead>
                                     <tr style="height:30px;">
-                                        <th width="140px">id</th>
+                                        <th width="140px" class="t_c">id</th>
                                         <th width="340px">标题</th>
                                         <th width="150px">logo</th>
-                                        <th width="180px">分类</th>
-                                        <th width="180px">点击量</th>
+                                        <th width="180px" class="t_c">分类</th>
+                                        <th width="180px" class="t_c">点击量</th>
 
-                                        <th>操作</th>
+                                        <th>
+                                            操作
+
+                                        </th>
+
                                     </tr>
                                 </thead>
                                 <tbody>
                                 <#list newsList as news>
-                                    <tr>
-                                        <td>${news.id?default("")}</td>
+                                    <tr >
+                                        <td class="t_c">${news.id?default("")}</td>
 
                                         <td>${news.title}</td>
 
-                                        <td>${news.logo}</td>
-                                        <td>${news.categoryId?default("1")}</td>
-                                        <td>${news.clickCount?default("")} </td>
-
                                         <td>
-                                            <a href="#" onclick="">修改</a>
+
+                                        <img src="${news.logo}" style="width:37px;height:37px;"/>
+                                        </td>
+                                        <td class="t_c">${news.categoryId?default("1")}</td>
+                                        <td class="t_c">${news.clickCount?default("")} </td>
+
+                                        <td newsId="${news.id?default("")}">
+                                            <a href="#" onclick="return false;" class="to_update">修改</a>
                                             <span>|</span>
                                             <a href="#" onclick="">删除</a>
                                             <span>|</span>
@@ -72,7 +79,7 @@
                             </table>
 
                         </div>
-
+                        <input type="hidden" id="update-url" value="/cms/news/{id}/update"/>
 
                 	${pageDiv}
                 </div>
@@ -94,7 +101,7 @@
 
 		});
 	</script>
-<script type="text/javascript" charset="UTF-8" src="/cms/script/user.js"></script>
+<script type="text/javascript" charset="UTF-8" src="/cms/script/hfc/news_list.js"></script>
 
 
 <div style="display: none; position: fixed; left: 0px; top: 0px; width: 100%; height: 100%; cursor: move; opacity: 0; background: rgb(255, 255, 255);"></div></body></html>

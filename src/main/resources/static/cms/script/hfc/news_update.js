@@ -27,11 +27,11 @@ $(document).ready(function () {
         var allCheck = checkFiled();
         if (allCheck) {
             $("#hfc-form").ajaxSubmit(function(data){
-                layer.alert('添加成功!', {
+                layer.alert('修改成功!', {
                   closeBtn: 0,
                   offset: 'auto'
                 }, function(){
-                  window.location.reload();
+                  window.parent.location.reload();
                   //layer.prompt("dsfssadsd");
                 });
 
@@ -39,4 +39,3 @@ $(document).ready(function () {
         }
     });
 });
-
