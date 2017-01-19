@@ -3,6 +3,7 @@ package com.lucifer.dao.hfc;
 import com.lucifer.dao.IBatisBaseDao;
 import com.lucifer.model.hfc.News;
 import com.lucifer.model.hfc.NewsCategory;
+import com.lucifer.model.hfc.NewsRecommend;
 import com.lucifer.utils.DateUtils;
 import org.springframework.stereotype.Component;
 
@@ -36,6 +37,10 @@ public class NewsDao extends IBatisBaseDao {
         return this.hfcSqlSession.insert("insertNews",news);
     }
 
+    public News getNews(Long id) {
+        return this.hfcSqlSession.selectOne("getNews",id);
+    }
+
     public List<NewsCategory> cmsNewsCategoryList(){
         return this.hfcSqlSession.selectList("cmsNewsCategoryList");
     }
@@ -54,5 +59,21 @@ public class NewsDao extends IBatisBaseDao {
 
     public Integer newsCategoryUpdate(NewsCategory newsCategory) {
         return this.hfcSqlSession.update("newsCategoryUpdate",newsCategory);
+    }
+
+    public List<NewsRecommend> newsRecommendList() {
+        return this.hfcSqlSession.selectList("newsRecommendList");
+    }
+
+    public NewsRecommend getNewsRecommend(Long id) {
+        return this.hfcSqlSession.selectOne("getNewsRecommend",id);
+    }
+
+    public Integer updateNewsRecommend(NewsRecommend newsRecommend){
+        return this.hfcSqlSession.update("updateNewsRecommend",newsRecommend);
+    }
+
+    public Integer deleteNewsRecommend(Long id){
+        return this.hfcSqlSession.delete("deleteNewsRecommend",id);
     }
 }

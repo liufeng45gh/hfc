@@ -44,6 +44,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		where id = #{id}
 	</update>
 
+	<select id="getNews" resultMap="newsMap">
+		select * from news where id = #{id}
+	</select>
+
 
 
 	<resultMap type="com.lucifer.model.hfc.NewsCategory" id="newsCategoryMap">
@@ -82,7 +86,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		<result column="updated_at" property="updatedAt"/>
 	</resultMap>
 
-	<select id="cmsNewsRecommendList" resultMap="NewsRecommendMap">
+	<select id="newsRecommendList" resultMap="NewsRecommendMap">
 		select * from news_recommend where  is_deleted = 0 order by top desc
 	</select>
 

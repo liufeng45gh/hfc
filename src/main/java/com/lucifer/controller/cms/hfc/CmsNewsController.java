@@ -3,6 +3,8 @@ package com.lucifer.controller.cms.hfc;
 import com.lucifer.dao.hfc.NewsDao;
 import com.lucifer.model.hfc.News;
 import com.lucifer.model.hfc.NewsCategory;
+import com.lucifer.model.hfc.NewsRecommend;
+import com.lucifer.service.hfc.NewsService;
 import com.lucifer.utils.Constant;
 import com.lucifer.utils.DateUtils;
 import com.lucifer.utils.PageUtil;
@@ -24,6 +26,9 @@ public class CmsNewsController {
 
     @Resource
     private NewsDao newsDao;
+
+    @Resource
+    private NewsService newsService;
 
     @RequestMapping(value="/news/list",method = RequestMethod.GET)
     public String newsList(HttpServletRequest request,@RequestParam(value = "title",required=false,defaultValue="") String title,
@@ -97,6 +102,34 @@ public class CmsNewsController {
     @ResponseBody
     public Result newsCategoryUpdateSubmit(NewsCategory newsCategory){
         newsDao.newsCategoryUpdate(newsCategory);
+        return Result.ok();
+    }
+
+    @RequestMapping(value="/news/recommend/list",method = RequestMethod.GET)
+    public String recommendList(HttpServletRequest request) {
+        List<NewsRecommend> newsRecommendList = newsService.newsRecommendList();
+        request.setAttribute("newsRecommendList",newsRecommendList);
+        return "/cms/news/recommend_list";
+    }
+
+    @RequestMapping(value="/news/recommend/{id}/update",method = RequestMethod.GET)
+    public String updateNewsRecommend(@PathVariable Long id,HttpServletRequest request){
+        NewsRecommend newsRecommend = newsDao.getNewsRecommend(id);
+        request.setAttribute("newsRecommend",newsRecommend);
+        return "/cms/news/recommend_update";
+    }
+
+    @RequestMapping(value="/news/recommend/update",method = RequestMethod.POST)
+    @ResponseBody
+    public Result updateNewsRecommendSubmit(NewsRecommend newsRecommend){
+        newsDao.updateNewsRecommend(newsRecommend);
+        return Result.ok();
+    }
+
+    @RequestMapping(value="/news/recommend/{id}/delete",method = RequestMethod.POST)
+    @ResponseBody
+    public Result deleteNewsRecommend(@PathVariable Long id){
+        newsDao.deleteNewsRecommend(id);
         return Result.ok();
     }
 

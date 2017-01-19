@@ -17,6 +17,8 @@ public class NewsRecommend {
 
     private Float top;
 
+    private News news;
+
     public Long getId() {
         return id;
     }
@@ -55,5 +57,13 @@ public class NewsRecommend {
 
     public void setTop(Float top) {
         this.top = top;
+    }
+
+    public News getNews() {
+        return news;
+    }
+
+    public void setNews(News news) {
+        this.news = news;
     }
 }
