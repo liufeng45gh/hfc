@@ -63,7 +63,7 @@
                                         <td newsId="${news.id?default("")}">
                                             <a href="#" onclick="return false;" class="to_update">修改</a>
                                             <span>|</span>
-                                            <a href="#" onclick="">删除</a>
+                                            <a href="#" onclick="return false;" class="to_delete">删除</a>
                                             <span>|</span>
                                             <a href="#" onclick="">查看</a>
                                             <span>|</span>
@@ -80,6 +80,7 @@
 
                         </div>
                         <input type="hidden" id="update-url" value="/cms/news/{id}/update"/>
+                        <input type="hidden" id="delete-url" value="/cms/news/{id}/delete"/>
 
                 	${pageDiv}
                 </div>
