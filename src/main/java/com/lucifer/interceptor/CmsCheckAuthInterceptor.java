@@ -24,9 +24,9 @@ public class CmsCheckAuthInterceptor extends HandlerInterceptorAdapter{
 		//log.info(request.getPathTranslated());
 		//log.info(request.getContextPath());
 		//log.info(request.getRequestURI());
-		if(true) {
-			return true;
-		}
+//		if(true) {
+//			return true;
+//		}
 		if("/cms/login".equals(request.getRequestURI())){
 			return true;
 		}
