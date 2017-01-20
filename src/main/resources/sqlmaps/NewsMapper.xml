@@ -47,6 +47,12 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		category_id = #{categoryId} ,mode = #{mode} ,content = #{content},publish_at = #{publishAt} ,top = #{top}
 		where id = #{id}
 	</update>
+	
+	<delete id="deleteNews">
+		update news
+		set is_deleted = 1
+		where id = #{id}
+	</delete>
 
 	<select id="getNews" resultMap="newsMap">
 		select * from news where id = #{id}

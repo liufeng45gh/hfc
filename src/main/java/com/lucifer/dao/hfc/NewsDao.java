@@ -47,6 +47,10 @@ public class NewsDao extends IBatisBaseDao {
         return this.hfcSqlSession.update("updateNews",news);
     }
 
+    public Integer deleteNews(Long id){
+        return this.hfcSqlSession.delete("deleteNews",id);
+    }
+
     public List<NewsCategory> cmsNewsCategoryList(){
         return this.hfcSqlSession.selectList("cmsNewsCategoryList");
     }
@@ -76,7 +80,12 @@ public class NewsDao extends IBatisBaseDao {
     }
 
     public Integer updateNewsRecommend(NewsRecommend newsRecommend){
+        newsRecommend.setTop(0f);
         return this.hfcSqlSession.update("updateNewsRecommend",newsRecommend);
+    }
+
+    public Integer addNewsRecommend(NewsRecommend newsRecommend){
+        return this.hfcSqlSession.insert("addNewsRecommend",newsRecommend);
     }
 
     public Integer deleteNewsRecommend(Long id){

@@ -67,7 +67,7 @@
                                             <span>|</span>
                                             <a href="#" onclick="">查看</a>
                                             <span>|</span>
-                                            <a href="#" onclick="">推荐到右侧</a>
+                                            <a href="#" onclick="return false;" class="to_recommend">推荐到右侧</a>
                                             <span>|</span>
                                             <a href="#" onclick="">推荐到首页</a>
 
@@ -81,6 +81,7 @@
                         </div>
                         <input type="hidden" id="update-url" value="/cms/news/{id}/update"/>
                         <input type="hidden" id="delete-url" value="/cms/news/{id}/delete"/>
+                        <input type="hidden" id="recommend-url" value="cms/news/recommend/add"/>
 
                 	${pageDiv}
                 </div>

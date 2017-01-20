@@ -91,6 +91,12 @@ public class CmsNewsController {
         return Result.ok();
     }
 
+    @RequestMapping(value="/news/{id}/delete",method = RequestMethod.POST)
+    public Result deleteNews(@PathVariable Long id) {
+        newsDao.deleteNews(id);
+        return Result.ok();
+    }
+
     @RequestMapping(value="/news/category/list",method = RequestMethod.GET)
     public String categoryList(HttpServletRequest request){
         List<NewsCategory> newsCategoryList = newsDao.cmsNewsCategoryList();
@@ -157,6 +163,13 @@ public class CmsNewsController {
     @ResponseBody
     public Result deleteNewsRecommend(@PathVariable Long id){
         newsDao.deleteNewsRecommend(id);
+        return Result.ok();
+    }
+
+    @RequestMapping(value="/news/recommend/add",method = RequestMethod.POST)
+    @ResponseBody
+    public Result addNewsRecommendSubmit(NewsRecommend newsRecommend){
+        newsDao.addNewsRecommend(newsRecommend);
         return Result.ok();
     }
 
