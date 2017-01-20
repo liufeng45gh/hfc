@@ -6745,7 +6745,10 @@ body.article-content {
 .tree li {
 	position: relative;
 	padding: 2px 0 2px 20px;
-	list-style: none
+	list-style: none;
+    height: 32px;
+    line-height: 32px;
+    font-size: 14px;
 }
 
 .tree li:before {
@@ -6761,6 +6764,10 @@ body.article-content {
 
 .tree li.has-list:before {
 	display: none
+}
+
+.tree a{
+	color:#333;
 }
 
 .tree li>.list-toggle {

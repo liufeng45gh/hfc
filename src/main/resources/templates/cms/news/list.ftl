@@ -51,11 +51,11 @@
                                     <tr >
                                         <td class="t_c">${news.id?default("")}</td>
 
-                                        <td>${news.title}</td>
+                                        <td>${news.title?default("")}</td>
 
                                         <td>
 
-                                        <img src="${news.logo}" style="width:37px;height:37px;"/>
+                                        <img src="${news.logo?default("")}" style="width:37px;height:37px;"/>
                                         </td>
                                         <td class="t_c">${news.categoryId?default("1")}</td>
                                         <td class="t_c">${news.clickCount?default("")} </td>
