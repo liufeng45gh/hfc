@@ -5,15 +5,15 @@
     <div class="panel-body">
         <div class="menu-title">资讯</div>
         <ul class="tree tree-lines" >
-            <li  id="left_menu_news_list"><a href="/cms/news/list?page=1" >资讯列表</a> </li>
+            <li  id="left_menu_news_list"><a href="/cms/news/list" >资讯列表</a> </li>
             <li  id="left_menu_news_add"><a href="/cms/news/add" >发布资讯</a> </li>
-            <li  id="left_menu_news_recommend"><a href="/cms/user/add" >资讯推荐</a> </li>
+            <li  id="left_menu_news_recommend"><a href="/cms/news/recommend/list" >资讯推荐</a> </li>
             <li  id="left_menu_news_category"><a href="/cms/news/category/list" >资讯分类</a> </li>
         </ul>
 
         <div class="menu-title">海富艺术家</div>
         <ul class="tree tree-lines" >
-            <li  id="left_menu_artist_list"><a href="/cms/news/list?page=1" >艺术家列表</a> </li>
+            <li  id="left_menu_artist_list"><a href="/cms/news/list" >艺术家列表</a> </li>
             <li  id="left_menu_artist_add"><a href="/cms/news/add" >新增艺术家</a> </li>
             <li  id="left_menu_artist_recommend"><a href="/cms/user/add" >推荐艺术家</a> </li>
             <li  id="left_menu_artist_interview_list"><a href="/cms/news/category/list" >艺术家访谈</a> </li>

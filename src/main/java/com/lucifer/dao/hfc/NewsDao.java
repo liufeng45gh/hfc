@@ -80,11 +80,12 @@ public class NewsDao extends IBatisBaseDao {
     }
 
     public Integer updateNewsRecommend(NewsRecommend newsRecommend){
-        newsRecommend.setTop(0f);
+        //newsRecommend.setTop(0f);
         return this.hfcSqlSession.update("updateNewsRecommend",newsRecommend);
     }
 
     public Integer addNewsRecommend(NewsRecommend newsRecommend){
+        newsRecommend.setTop(0f);
         return this.hfcSqlSession.insert("addNewsRecommend",newsRecommend);
     }
 

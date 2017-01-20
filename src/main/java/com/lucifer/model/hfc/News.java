@@ -27,6 +27,8 @@ public class News {
 
     private Integer clickCount;
 
+    private String categoryName;
+
     @DateTimeFormat(pattern = "yyyy-MM-dd hh:mm:ss")
     private Date publishAt;
 
@@ -148,5 +150,13 @@ public class News {
 
     public void setTop(Float top) {
         this.top = top;
+    }
+
+    public String getCategoryName() {
+        return categoryName;
+    }
+
+    public void setCategoryName(String categoryName) {
+        this.categoryName = categoryName;
     }
 }

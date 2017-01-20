@@ -45,5 +45,5 @@
 
 
 </body>
-<script type="text/javascript" charset="UTF-8" src="/cms/script/hfc/news_category.js"></script>
+<script type="text/javascript" charset="UTF-8" src="/cms/script/hfc/news/category.js"></script>
 </html>

@@ -19,14 +19,17 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		<result column="is_deleted" property="isDeleted"/>
 		<result column="created_at" property="createdAt"/>
 		<result column="updated_at" property="updatedAt"/>
+		<result column="category_name" property="categoryName"/>
 	</resultMap>
 
 	<select id="cmsNewsList" resultMap="newsMap">
-		select * from news where  is_deleted = 0
+		select news.*,news_category.name category_name from news
+		left outer join news_category on news.category_id = news_category.id
+		where  news.is_deleted = 0
 		<if test="title!=null and title!=''">
-			and title like '%${title}%'
+			and news.title like '%${title}%'
 		</if>
-		order by top desc,publish_at desc limit #{offset},#{count}
+		order by news.top desc,news.publish_at desc limit #{offset},#{count}
 	</select>
 	
 	<select id="cmsNewsMatchRecordCount" resultType="java.lang.Integer">
@@ -55,7 +58,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</delete>
 
 	<select id="getNews" resultMap="newsMap">
-		select * from news where id = #{id}
+		select news.*,news_category.name category_name from news
+		left outer join news_category on news.category_id = news_category.id
+		where  news.id = #{id}
 	</select>
 
 
@@ -97,15 +102,15 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</resultMap>
 
 	<select id="newsRecommendList" resultMap="NewsRecommendMap">
-		select * from news_recommend where  is_deleted = 0 order by top desc
+		select * from news_recommend order by top desc ,id desc
 	</select>
 
 	<insert id="addNewsRecommend" useGeneratedKeys="true" keyProperty="id">
-		insert into news_recommend (news_id,top,is_deleted,created_at,updated_at) values (#{newsId},#{top},0,now(),now())
+		insert into news_recommend (news_id,top,created_at,updated_at) values (#{newsId},#{top},now(),now())
 	</insert>
 
 	<delete id="deleteNewsRecommend">
-		update news_recommend set is_deleted = 1,updated_at = now() where id = #{id}
+		delete from news_recommend where id = #{id}
 	</delete>
 
 	<select id="getNewsRecommend" resultMap="NewsRecommendMap">

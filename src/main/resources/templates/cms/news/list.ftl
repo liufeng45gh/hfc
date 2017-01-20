@@ -57,7 +57,7 @@
 
                                         <img src="${news.logo?default("")}" style="width:37px;height:37px;"/>
                                         </td>
-                                        <td class="t_c">${news.categoryId?default("1")}</td>
+                                        <td class="t_c">${news.categoryName?default("")}</td>
                                         <td class="t_c">${news.clickCount?default("")} </td>
 
                                         <td newsId="${news.id?default("")}">
@@ -81,7 +81,7 @@
                         </div>
                         <input type="hidden" id="update-url" value="/cms/news/{id}/update"/>
                         <input type="hidden" id="delete-url" value="/cms/news/{id}/delete"/>
-                        <input type="hidden" id="recommend-url" value="cms/news/recommend/add"/>
+                        <input type="hidden" id="recommend-url" value="/cms/news/recommend/add"/>
 
                 	${pageDiv}
                 </div>
@@ -103,7 +103,7 @@
 
 		});
 	</script>
-<script type="text/javascript" charset="UTF-8" src="/cms/script/hfc/news_list.js"></script>
+<script type="text/javascript" charset="UTF-8" src="/cms/script/hfc/news/news_list.js"></script>
 
 
 <div style="display: none; position: fixed; left: 0px; top: 0px; width: 100%; height: 100%; cursor: move; opacity: 0; background: rgb(255, 255, 255);"></div></body></html>

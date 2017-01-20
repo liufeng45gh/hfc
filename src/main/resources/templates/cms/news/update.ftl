@@ -37,8 +37,6 @@
 
 <div class="position"><span>系统</span><span>|</span><span>资讯</span><span>|</span><span>修改资讯</span></div>
 <div class="content form_content" >
-
-
     <form action="/cms/news/update" method="post" id="hfc-form">
         <#include "news_form_filed.ftl"/>
     </form>
@@ -54,7 +52,7 @@
 			 $("#category_input").val("${news.categoryId}");
 		});
 	</script>
-<script type="text/javascript" charset="UTF-8" src="/cms/script/hfc/news_update.js"></script>
-<script type="text/javascript" charset="UTF-8" src="/cms/script/hfc/news_logo_select.js"></script>
+<script type="text/javascript" charset="UTF-8" src="/cms/script/hfc/news/news/update.js"></script>
+<script type="text/javascript" charset="UTF-8" src="/cms/script/hfc/news/logo_select.js"></script>
 
 </body></html>
