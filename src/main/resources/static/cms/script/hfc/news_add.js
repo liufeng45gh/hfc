@@ -29,7 +29,7 @@ $(document).ready(function () {
             $("#hfc-form").ajaxSubmit(function(data){
                 layer.alert('添加成功!', {
                   closeBtn: 0,
-                  offset: 'auto'
+                  offset: [$(window).height()/2-100+'px', $(window).width()/2-100+'px']
                 }, function(){
                   window.location.reload();
                   //layer.prompt("dsfssadsd");

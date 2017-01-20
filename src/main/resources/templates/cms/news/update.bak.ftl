@@ -50,6 +50,9 @@
 <script type="text/javascript">
 		//DOM加载完毕执行
 		$(document).ready(function(){
+		    layer.alert('测试一下位置', {
+
+          });
 			 var ue = UE.getEditor('editor');
 			 $("#category_input").val("${news.categoryId}");
 		});
