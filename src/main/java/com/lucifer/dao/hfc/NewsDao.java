@@ -34,7 +34,7 @@ public class NewsDao extends IBatisBaseDao {
     public Integer insertNews(News news) {
         news.setCreatedAt(DateUtils.now());
         news.setUpdatedAt(DateUtils.now());
-        news.setTop(0f);
+        //news.setTop(0f);
         news.setClickCount(0);
         return this.hfcSqlSession.insert("insertNews",news);
     }

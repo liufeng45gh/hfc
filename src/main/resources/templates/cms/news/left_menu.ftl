@@ -1,4 +1,4 @@
-<div id="admin_left"   class="side side-handle side-body panel panel-sm ">
+<div id="admin_left"   class="side side-handle side-body panel panel-sm " style="height:1500px;">
     <div class="panel-heading nobr">
         <i class="icon-folder-close-alt"></i> <strong>左侧导航</strong>
     </div>
@@ -13,13 +13,13 @@
 
         <div class="menu-title">海富艺术家</div>
         <ul class="tree tree-lines" >
-            <li  id="left_menu_artist_list"><a href="/cms/news/list" >艺术家列表</a> </li>
-            <li  id="left_menu_artist_add"><a href="/cms/news/add" >新增艺术家</a> </li>
-            <li  id="left_menu_artist_recommend"><a href="/cms/user/add" >推荐艺术家</a> </li>
-            <li  id="left_menu_artist_interview_list"><a href="/cms/news/category/list" >艺术家访谈</a> </li>
-            <li  id="left_menu_artist_interview_add"><a href="/cms/news/category/list" >新增访谈</a> </li>
-            <li  id="left_menu_artist_lecture_list"><a href="/cms/news/category/list" >讲座</a> </li>
-            <li  id="left_menu_artist_lecture_add"><a href="/cms/news/category/list" >新增讲座</a> </li>
+            <li  id="left_menu_artist_list"><a href="/cms/artist/list" >艺术家列表</a> </li>
+            <li  id="left_menu_artist_add"><a href="/cms/artist/add" >新增艺术家</a> </li>
+            <li  id="left_menu_artist_recommend"><a href="/cms/artist/recommend/list" >推荐艺术家</a> </li>
+            <li  id="left_menu_artist_interview_list"><a href="/cms/artist/interview/list" >艺术家访谈</a> </li>
+            <li  id="left_menu_artist_interview_add"><a href="/cms/artist/interview/add" >新增访谈</a> </li>
+            <li  id="left_menu_artist_lecture_list"><a href="/cms/artist/lecture/list" >讲座</a> </li>
+            <li  id="left_menu_artist_lecture_add"><a href="/cms/artist/lecture/add" >新增讲座</a> </li>
         </ul>
         <div class="menu-title">鉴赏</div>
         <ul class="tree tree-lines" >

@@ -25,6 +25,8 @@ public class Artist {
 
     private Integer isDeleted;
 
+    private String namePy;
+
     public Long getId() {
         return id;
     }
@@ -95,5 +97,13 @@ public class Artist {
 
     public void setIsDeleted(Integer isDeleted) {
         this.isDeleted = isDeleted;
+    }
+
+    public String getNamePy() {
+        return namePy;
+    }
+
+    public void setNamePy(String namePy) {
+        this.namePy = namePy;
     }
 }

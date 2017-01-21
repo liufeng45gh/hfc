@@ -34,10 +34,11 @@
                                 <thead>
                                     <tr style="height:30px;">
                                         <th width="140px" class="t_c">id</th>
-                                        <th width="340px">标题</th>
-                                        <th width="150px">logo</th>
-                                        <th width="180px" class="t_c">分类</th>
-                                        <th width="180px" class="t_c">点击量</th>
+                                        <th width="80px">logo</th>
+                                        <th width="440px">标题</th>
+
+                                        <th width="80px" class="t_c">分类</th>
+                                        <th width="80px" class="t_c">点击量</th>
 
                                         <th>
                                             操作
@@ -51,12 +52,13 @@
                                     <tr >
                                         <td class="t_c">${news.id?default("")}</td>
 
+                                        <td>
+                                            <img src="${news.logo?default("")}" style="width:37px;height:37px;"/>
+                                        </td>
+
                                         <td>${news.title?default("")}</td>
 
-                                        <td>
 
-                                        <img src="${news.logo?default("")}" style="width:37px;height:37px;"/>
-                                        </td>
                                         <td class="t_c">${news.categoryName?default("")}</td>
                                         <td class="t_c">${news.clickCount?default("")} </td>
 
@@ -99,8 +101,6 @@
 		//DOM加载完毕执行
 		$(document).ready(function(){
 			$("#left_menu_news_list").addClass("selected");
-
-
 		});
 	</script>
 <script type="text/javascript" charset="UTF-8" src="/cms/script/hfc/news/news_list.js"></script>

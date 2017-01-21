@@ -33,7 +33,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</select>
 	
 	<select id="cmsNewsMatchRecordCount" resultType="java.lang.Integer">
-		select count(*) from news where title like '%{title}%' and is_deleted = 0
+		select count(*) from news where is_deleted = 0
+		<if test="title!=null and title!=''">
+			and news.title like '%${title}%'
+		</if>
 	</select>
 
 	<insert id="insertNews" useGeneratedKeys="true" keyProperty="id">

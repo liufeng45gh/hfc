@@ -8,10 +8,7 @@
     <script type="text/javascript" charset="UTF-8" src="/cms/script/jquery/jquery-3.1.1.js"></script>
     <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
     <script src="http://code.jquery.com/jquery-migrate-1.2.1.js"></script>
-    <link rel="stylesheet" type="text/css" href="/timepicker/css/jquery-ui.css" />
-    <script type="text/javascript" src="/timepicker/js/jquery-ui.js"></script>
-    <script type="text/javascript" src="/timepicker/js/jquery-ui-slide.min.js"></script>
-    <script type="text/javascript" src="/timepicker/js/jquery-ui-timepicker-addon.js"></script>
+
 
 
 
@@ -35,10 +32,10 @@
 
 
 
-<div class="position"><span>系统</span><span>|</span><span>资讯</span><span>|</span><span>修改资讯</span></div>
+<div class="position"><span>系统</span><span>|</span><span>艺术家</span><span>|</span><span>修改艺术家</span></div>
 <div class="content form_content" >
-    <form action="/cms/news/update" method="post" id="hfc-form">
-        <#include "news_form_filed.ftl"/>
+    <form action="/cms/artist/update" method="post" id="hfc-form">
+        <#include "artist_form_filed.ftl"/>
     </form>
 </div>
 
@@ -49,10 +46,9 @@
 		//DOM加载完毕执行
 		$(document).ready(function(){
 			 var ue = UE.getEditor('editor');
-			 $("#category_input").val("${news.categoryId}");
 		});
 	</script>
-<script type="text/javascript" charset="UTF-8" src="/cms/script/hfc/news/news_update.js"></script>
+<script type="text/javascript" charset="UTF-8" src="/cms/script/hfc/artist/artist_update.js"></script>
 <script type="text/javascript" charset="UTF-8" src="/cms/script/hfc/news/logo_select.js"></script>
 
 </body></html>

@@ -17,6 +17,8 @@ public class ArtistRecommend {
 
     private Date updatedAt;
 
+    private Artist artist;
+
     public Long getId() {
         return id;
     }
@@ -55,5 +57,13 @@ public class ArtistRecommend {
 
     public void setUpdatedAt(Date updatedAt) {
         this.updatedAt = updatedAt;
+    }
+
+    public Artist getArtist() {
+        return artist;
+    }
+
+    public void setArtist(Artist artist) {
+        this.artist = artist;
     }
 }

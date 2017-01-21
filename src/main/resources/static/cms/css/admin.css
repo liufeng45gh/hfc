@@ -152,8 +152,24 @@ img.operator{width:12px;height:12px;margin:0 6px;cursor:pointer; vertical-align:
 /* content_box style end */
 /* page style start */
 .pages_bar{margin-top:5px;padding:5px 0 5px 15px;border-top:1px #dddddd solid;border-bottom:1px #dddddd solid;color:#525252;text-align:left}
-	.pages_bar a{display:block;float:left;height:18px;margin-right:6px;padding:0 6px;border:1px #d5d5d5 solid;line-height:20px;color:#7e7e7e;text-align:center;background:url(/cms/images/admin_bg.gif) 0 -543px repeat-x; overflow:hidden}
-	.pages_bar a.current_page{color:#6d7170;background-position:0 -525px}
+	.pages_bar a{
+	    display:block;
+	    float:left;
+	    height:32px;
+	    min-width:32px;
+	    margin-right:6px;
+	    padding:0 6px;
+	    border:1px #d5d5d5 solid;
+	    line-height:32px;
+	    color:#7e7e7e;
+	    text-align:center;
+	    background-color:#e5e5e5;
+	    overflow:hidden
+	 }
+	.pages_bar a.current_page{
+	    color: #fff;
+	    background-color: #133b63;
+	}
 	.pages_bar .btn{color:#525252;}
 	.pages_bar .inactive{cursor:auto;color:#aca899}
 	.pages_bar a.ellipsis{border:none;height:18px;background:none;}
@@ -386,7 +402,7 @@ FILTER: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
 
 .menu-title{
    line-height: 36px;
-   border-left: 5px solid #009E94;
+   border-left: 5px solid #036;
    margin: 15px 0 5px;
    padding: 0 10px;
    background-color: #f2f2f2;
