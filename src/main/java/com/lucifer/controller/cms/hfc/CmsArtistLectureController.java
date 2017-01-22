@@ -49,7 +49,7 @@ public class CmsArtistLectureController {
         artistLecture.setLogo("/cms/images/logo.png");
         request.setAttribute("entity",artistLecture);
         artistLecture.setPublishAt(DateUtils.now());
-        return "/cms/artist/artistLecture_add";
+        return "/cms/artist/lecture_add";
     }
 
     @RequestMapping(value="/add",method = RequestMethod.POST)

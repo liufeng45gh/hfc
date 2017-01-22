@@ -50,11 +50,11 @@
 <script type="text/javascript">
 		//DOM加载完毕执行
 		$(document).ready(function(){
-			$("#left_menu_artist_interview_add").addClass("selected");
+			$("#left_menu_artist_lecture_add").addClass("selected");
 			 var ue = UE.getEditor('editor');
 		});
 	</script>
-<script type="text/javascript" charset="UTF-8" src="/cms/script/hfc/artist/lecture_add.js"></script>
+<script type="text/javascript" charset="UTF-8" src="/cms/script/hfc/artist/artist_lecture_add.js"></script>
 <script type="text/javascript" charset="UTF-8" src="/cms/script/hfc/news/logo_select.js"></script>
 
 <div style="display: none; position: fixed; left: 0px; top: 0px; width: 100%; height: 100%; cursor: move; opacity: 0; background: rgb(255, 255, 255);"></div></body></html>

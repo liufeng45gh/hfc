@@ -96,7 +96,7 @@
 <script type="text/javascript">
 		//DOM加载完毕执行
 		$(document).ready(function(){
-			$("#left_menu_artist_interview_list").addClass("selected");
+			$("#left_menu_artist_lecture_list").addClass("selected");
 		});
 	</script>
 <script type="text/javascript" charset="UTF-8" src="/cms/script/hfc/artist/artist_interview_list.js"></script>

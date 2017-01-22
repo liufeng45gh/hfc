@@ -9,15 +9,6 @@ function checkFiled(){
          $("#title_input_info").html("* 标题");
     }
 
-    var categoryId=$("#category_input").val();
-    if(categoryId.trim()==""){
-        $("#category_input_info").css("color","red");
-        $("#category_input_info").html("* 分类必须选择");
-        return false;
-    } else {
-        $("#category_input_info").css("color","auto");
-        $("#category_input_info").html("* 分类");
-    }
 
 
     return true;

@@ -36,9 +36,9 @@
     </select>
 
     <insert id="insertArtistInterview">
-        insert into hf_artist_interview (title,logo,summary,reporter,content,publish_at,top,click_count,created_at,updated_at)
+        insert into hf_artist_interview (title,logo,summary,reporter,content,publish_at,top,created_at,updated_at)
         values
-        (#{title},#{logo},#{summary},#{reporter},#{content},#{publishAt},#{top},#{clickCount},#{createdAt},#{updatedAt})
+        (#{title},#{logo},#{summary},#{reporter},#{content},#{publishAt},#{top},#{createdAt},#{updatedAt})
     </insert>
 
     <select id="getArtistInterview" resultMap="ArtistInterviewMap">
@@ -47,7 +47,7 @@
 
     <update id="updateArtistInterview">
         update hf_artist_interview
-        set title = #{title},top = #{top},logo = #{logo},summary = #{summary},content = #{content},publishAt = #{publishAt},updated_at=#{updatedAt},name_py = #{namePy}
+        set title = #{title},top = #{top},logo = #{logo},summary = #{summary},content = #{content},publish_at = #{publishAt},updated_at=#{updatedAt}
         where id = #{id}
     </update>
 

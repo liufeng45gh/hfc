@@ -35,9 +35,9 @@
     </select>
 
     <insert id="insertArtistLecture">
-        insert into hf_artist_lecture (title,logo,summary,content,publish_at,top,click_count,created_at,updated_at)
+        insert into hf_artist_lecture (title,logo,summary,content,publish_at,top,created_at,updated_at)
         values
-        (#{title},#{logo},#{summary},#{content},#{publishAt},#{top},#{clickCount},#{createdAt},#{updatedAt})
+        (#{title},#{logo},#{summary},#{content},#{publishAt},#{top},#{createdAt},#{updatedAt})
     </insert>
 
     <select id="getArtistLecture" resultMap="ArtistLectureMap">
@@ -46,7 +46,7 @@
 
     <update id="updateArtistLecture">
         update hf_artist_lecture
-        set title = #{title},top = #{top},logo = #{logo},summary = #{summary},content = #{content},publishAt = #{publishAt},updated_at=#{updatedAt}
+        set title = #{title},top = #{top},logo = #{logo},summary = #{summary},content = #{content},publish_at = #{publishAt},updated_at=#{updatedAt}
         where id = #{id}
     </update>
 

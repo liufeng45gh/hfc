@@ -22,10 +22,6 @@
         </td>
     </tr>
 
-    <tr>
-        <th width="20%" style="text-align:right;">记者:</th>
-        <td><input id="reporter_input"  class="form-control" name="reporter" style="display:inline-block;" value="${entity.reporter?default("")}"/></td>
-    </tr>
 
     <tr>
         <th width="20%" style="text-align:right;">发布时间:</th>
