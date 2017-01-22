@@ -46,7 +46,7 @@
     <tr>
         <th width="20%" style="text-align:right;">摘要:</th>
         <td>
-            <textarea id="summary_area" cols="130" rows="8" name="summary" >${news.source?default("")?html}</textarea>
+            <textarea id="summary_area" cols="130" rows="8" name="summary" >${news.summary?default("")?html}</textarea>
         </td>
     </tr>
 

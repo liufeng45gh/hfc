@@ -4,6 +4,7 @@ import com.lucifer.dao.hfc.ArtistDao;
 import com.lucifer.model.hfc.Artist;
 import com.lucifer.model.hfc.ArtistRecommend;
 import net.sourceforge.pinyin4j.PinyinHelper;
+import net.sourceforge.pinyin4j.format.exception.BadHanyuPinyinOutputFormatCombination;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
@@ -21,13 +22,13 @@ public class ArtistService {
     @Resource
     private PinYinService pinYinService;
 
-    public void saveArtist(Artist artist){
+    public void saveArtist(Artist artist) throws BadHanyuPinyinOutputFormatCombination {
         String namePy = pinYinService.toHanYuPinYin(artist.getName());
         artist.setNamePy(namePy);
         artistDao.insertArtist(artist);
     }
 
-    public void updateArtist(Artist artist){
+    public void updateArtist(Artist artist) throws BadHanyuPinyinOutputFormatCombination {
         String namePy = pinYinService.toHanYuPinYin(artist.getName());
         artist.setNamePy(namePy);
         artistDao.updateArtist(artist);

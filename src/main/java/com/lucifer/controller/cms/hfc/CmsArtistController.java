@@ -7,6 +7,7 @@ import com.lucifer.service.hfc.ArtistService;
 import com.lucifer.utils.Constant;
 import com.lucifer.utils.PageUtil;
 import com.lucifer.utils.Result;
+import net.sourceforge.pinyin4j.format.exception.BadHanyuPinyinOutputFormatCombination;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
@@ -59,7 +60,7 @@ public class CmsArtistController {
 
     @RequestMapping(value="/add",method = RequestMethod.POST)
     @ResponseBody
-    public Result artistAddSubmit(Artist artist){
+    public Result artistAddSubmit(Artist artist) throws BadHanyuPinyinOutputFormatCombination {
         artistService.saveArtist(artist);
         return Result.ok();
     }
@@ -72,7 +73,7 @@ public class CmsArtistController {
         return "/cms/artist/update";
     }
     @RequestMapping(value="/update",method = RequestMethod.POST)
-    public Result artistUpdateSubmit(Artist artist){
+    public Result artistUpdateSubmit(Artist artist) throws BadHanyuPinyinOutputFormatCombination {
         artistService.updateArtist(artist);
         return Result.ok();
     }
