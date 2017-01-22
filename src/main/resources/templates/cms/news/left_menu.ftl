@@ -23,35 +23,35 @@
         </ul>
         <div class="menu-title">鉴赏</div>
         <ul class="tree tree-lines" >
-            <li  id="left_menu_appreciate_list"><a href="/cms/news/list?page=1" >鉴赏列表</a> </li>
-            <li  id="left_menu_appreciate_add"><a href="/cms/news/add" >新增鉴赏</a> </li>
-            <li  id="left_menu_appreciate_knowledge_list"><a href="/cms/user/add" >鉴赏知识</a> </li>
-            <li  id="left_menu_appreciate_knowledge_add"><a href="/cms/news/category/list" >新增鉴赏知识</a> </li>
-            <li  id="left_menu_appreciate_category"><a href="/cms/news/category/list" >鉴赏分类</a> </li>
-            <li  id="left_menu_appreciate_top"><a href="/cms/news/category/list" >已置顶鉴赏</a> </li>
+            <li  id="left_menu_appreciate_list"><a href="/cms/appreciate/list" >鉴赏列表</a> </li>
+            <li  id="left_menu_appreciate_add"><a href="/cms/appreciate/add" >新增鉴赏</a> </li>
+            <li  id="left_menu_appreciate_knowledge_list"><a href="/cms/appreciate-knowledge/list" >鉴赏知识</a> </li>
+            <li  id="left_menu_appreciate_knowledge_add"><a href="/cms/appreciate-knowledge/add" >新增鉴赏知识</a> </li>
+            <li  id="left_menu_appreciate_category"><a href="/cms/appreciate/category/list" >鉴赏分类</a> </li>
+            <li  id="left_menu_appreciate_top"><a href="/cms/appreciate/recommend/list" >已置顶鉴赏</a> </li>
         </ul>
         <div class="menu-title">文化金融</div>
         <ul class="tree tree-lines" >
-            <li  id="left_menu_cultural_finance_list"><a href="/cms/news/list?page=1" >文化金融列表</a> </li>
-            <li  id="left_menu_cultural_finance_add"><a href="/cms/news/add" >新增文化金融</a> </li>
-            <li  id="left_menu_cultural_finance_category"><a href="/cms/news/category/list" >分类</a> </li>
+            <li  id="left_menu_cultural_finance_list"><a href="/cms/cultural-finance/list" >文化金融列表</a> </li>
+            <li  id="left_menu_cultural_finance_add"><a href="/cms/cultural-finance/add" >新增文化金融</a> </li>
+            <li  id="left_menu_cultural_finance_category"><a href="/cms/cultural-finance/category/list" >分类</a> </li>
         </ul>
         <div class="menu-title">研究报告</div>
         <ul class="tree tree-lines" >
-            <li  id="left_menu_research_report_list"><a href="/cms/news/list?page=1" >研究报告列表</a> </li>
-            <li  id="left_menu_research_report_add"><a href="/cms/news/add" >新增研究报告</a> </li>
+            <li  id="left_menu_research_report_list"><a href="/cms/research-report/list" >研究报告列表</a> </li>
+            <li  id="left_menu_research_report_add"><a href="/research-report/news/add" >新增研究报告</a> </li>
         </ul>
         <div class="menu-title">峰会</div>
         <ul class="tree tree-lines" >
-            <li  id="left_menu_summit_list"><a href="/cms/news/list?page=1" >峰会列表</a> </li>
-            <li  id="left_menu_summit_add"><a href="/cms/news/add" >新增峰会</a> </li>
-            <li  id="left_menu_summit_category"><a href="/cms/news/category/list" >分类</a> </li>
+            <li  id="left_menu_summit_list"><a href="/cms/summit/list" >峰会列表</a> </li>
+            <li  id="left_menu_summit_add"><a href="/cms/summit/add" >新增峰会</a> </li>
+            <li  id="left_menu_summit_category"><a href="/cms/summit/category/list" >分类</a> </li>
         </ul>
         <div class="menu-title">会员活动</div>
         <ul class="tree tree-lines" >
-            <li  id="left_menu_member_activity_list"><a href="/cms/news/list?page=1" >活动列表</a> </li>
-            <li  id="left_menu_member_activity_add"><a href="/cms/news/add" >新增活动</a> </li>
-            <li  id="left_menu_member_activity_category"><a href="/cms/news/category/list" >分类</a> </li>
+            <li  id="left_menu_member_activity_list"><a href="/cms/member-activity/list" >活动列表</a> </li>
+            <li  id="left_menu_member_activity_add"><a href="/cms/member-activity/add" >新增活动</a> </li>
+            <li  id="left_menu_member_activity_category"><a href="/cms/member-activity/category/list" >分类</a> </li>
         </ul>
     </div>
 
