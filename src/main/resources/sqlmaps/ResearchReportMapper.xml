@@ -4,4 +4,55 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.lucier.model">
+    <resultMap type="com.lucifer.model.hfc.ResearchReport" id="ResearchReportMap">
+        <id column="id" property="id"/>
+        <result column="title" property="title"/>
+        <result column="appendix_url" property="appendixUrl"/>
+        <result column="logo" property="logo"/>
+
+        <result column="content" property="content"/>
+
+        <result column="publish_at" property="publishAt"/>
+        <result column="top" property="top"/>
+        <result column="is_deleted" property="isDeleted"/>
+        <result column="created_at" property="createdAt"/>
+        <result column="updated_at" property="updatedAt"/>
+    </resultMap>
+
+    <select id="researchReportList" resultMap="ResearchReportMap">
+        select * from  research_report where is_deleted = 0
+        <if test="title!=null and title!=''">
+            and title like '%${title}%'
+        </if>
+        order by top desc,id desc limit #{offset},#{count}
+    </select>
+
+    <select id="cmsResearchReportMatchRecordCount" resultType="java.lang.Integer">
+        select count(*) from research_report where is_deleted = 0
+        <if test="title!=null and title!=''">
+            and research_report.title like '%${title}%'
+        </if>
+    </select>
+
+    <insert id="insertResearchReport">
+        insert into research_report (title,logo,appendix_url,content,publish_at,top,created_at,updated_at)
+        values
+        (#{title},#{logo},#{appendixUrl},#{content},#{publishAt},#{top},#{createdAt},#{updatedAt})
+    </insert>
+
+    <select id="getResearchReport" resultMap="ResearchReportMap">
+        select * from  research_report where id = #{id}
+    </select>
+
+    <update id="updateResearchReport">
+        update research_report
+        set title = #{title},top = #{top},logo = #{logo},appendix_url = #{appendixUrl},content = #{content},publishAt = #{publishAt},updated_at=#{updatedAt}
+        where id = #{id}
+    </update>
+
+    <delete id="deleteResearchReport">
+        update hf_artist_lecture
+        set is_deleted = 1
+        where id = #{id}
+    </delete>
 </mapper>

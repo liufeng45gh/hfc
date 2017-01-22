@@ -98,6 +98,7 @@ public class CmsArtistController {
         request.setAttribute("artistRecommendList",artistRecommendList);
         return "/cms/artist/recommend_list";
     }
+
     @RequestMapping(value="/recommend/update",method = RequestMethod.POST)
     @ResponseBody
     public Result recommendUpdate(ArtistRecommend artistRecommend){

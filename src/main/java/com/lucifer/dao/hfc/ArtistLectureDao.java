@@ -34,7 +34,7 @@ public class ArtistLectureDao extends IBatisBaseDao{
     public Integer insertArtistLecture(ArtistLecture artistLecture){
         artistLecture.setCreatedAt(DateUtils.now());
         artistLecture.setUpdatedAt(DateUtils.now());
-        return this.hfcSqlSession.insert("inserArtistLecture",artistLecture);
+        return this.hfcSqlSession.insert("insertArtistLecture",artistLecture);
     }
 
     public ArtistLecture getArtistLecture(Long id){
