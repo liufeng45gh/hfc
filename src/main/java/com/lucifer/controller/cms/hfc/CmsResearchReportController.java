@@ -19,7 +19,7 @@ import java.util.List;
  * Created by liufx on 17/1/16.
  */
 @Controller
-@RequestMapping("/cms/research")
+@RequestMapping("/cms/research-report")
 public class CmsResearchReportController {
     @Resource
     private ResearchReportDao researchReportDao;
