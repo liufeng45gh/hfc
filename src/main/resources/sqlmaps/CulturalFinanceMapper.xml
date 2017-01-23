@@ -4,4 +4,31 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.lucier.model">
+    <resultMap type="com.lucifer.model.hfc.CulturalFinanceCategory" id="CulturalFinanceCategoryMap">
+        <id column="id" property="id"/>
+        <result column="name" property="name"/>
+        <result column="top" property="top"/>
+        <result column="is_deleted" property="isDeleted"/>
+    </resultMap>
+
+    <select id="culturalFinanceCategoryList" resultMap="CulturalFinanceCategoryMap">
+        select * from cultural_finance_category where  is_deleted = 0 order by top desc
+    </select>
+
+    <insert id="addCulturalFinanceCategory" useGeneratedKeys="true" keyProperty="id">
+        insert into cultural_finance_category (name,top,is_deleted) values (#{name},#{top},0)
+    </insert>
+
+    <delete id="deleteCulturalFinanceCategory">
+        update cultural_finance_category set is_deleted = 1 where id = #{id}
+    </delete>
+
+    <select id="getCulturalFinanceCategory" resultMap="CulturalFinanceCategoryMap">
+        select * from cultural_finance_category where  id = #{id}
+    </select>
+
+    <update id="updateCulturalFinanceCategory">
+        update cultural_finance_category set name = #{name},top = #{top} where id = #{id}
+    </update>
+
 </mapper>
