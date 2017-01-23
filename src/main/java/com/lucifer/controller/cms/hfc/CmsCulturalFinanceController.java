@@ -125,7 +125,7 @@ public class CmsCulturalFinanceController {
         return "/cms/cultural-finance/update";
     }
 
-    @RequestMapping(value="/news/update",method = RequestMethod.POST)
+    @RequestMapping(value="/update",method = RequestMethod.POST)
     @ResponseBody
     public Result culturalFinanceUpdateSubmit(CulturalFinance culturalFinance){
         culturalFinanceDao.updateCulturalFinance(culturalFinance);
@@ -133,7 +133,7 @@ public class CmsCulturalFinanceController {
         return Result.ok();
     }
 
-    @RequestMapping(value="/news/{id}/delete",method = RequestMethod.POST)
+    @RequestMapping(value="/{id}/delete",method = RequestMethod.POST)
     public Result deleteCulturalFinance(@PathVariable Long id) {
         culturalFinanceDao.deleteCulturalFinance(id);
         return Result.ok();

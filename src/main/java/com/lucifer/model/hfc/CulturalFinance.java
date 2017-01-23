@@ -1,5 +1,7 @@
 package com.lucifer.model.hfc;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import java.util.Date;
 
 /**
@@ -21,6 +23,7 @@ public class CulturalFinance {
 
     private String content;
 
+    @DateTimeFormat(pattern = "yyyy-MM-dd hh:mm:ss")
     private Date publishAt;
 
     private Date createdAt;
