@@ -39,7 +39,7 @@ function deleteCategory(categoryId) {
      data_send.id = categoryId;
      var delete_request =$.ajax({
            type: 'post',
-           url: '/cms/cultural-finance/category/delete',
+           url: '/cms/member-activity/category/delete',
            data: data_send,
            dataType: 'json'
         });

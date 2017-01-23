@@ -23,7 +23,7 @@ import java.util.List;
  * Created by liufx on 17/1/16.
  */
 @Controller
-@RequestMapping("/cms/cultural-finance/")
+@RequestMapping("/cms/cultural-finance")
 public class CmsCulturalFinanceController {
 
     @Resource
@@ -31,7 +31,7 @@ public class CmsCulturalFinanceController {
 
     private Logger logger = LoggerFactory.getLogger(this.getClass());
 
-    @RequestMapping(value="category/list",method = RequestMethod.GET)
+    @RequestMapping(value="/category/list",method = RequestMethod.GET)
     public String categoryList(HttpServletRequest request){
         List<CulturalFinanceCategory> culturalFinanceCategoryList = culturalFinanceDao.culturalFinanceCategoryList();
         request.setAttribute("culturalFinanceCategoryList",culturalFinanceCategoryList);

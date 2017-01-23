@@ -20,7 +20,7 @@ $(document).ready(function() {
         }, function(){
           layer.closeAll();
         }, function(){
-          deleteObjectSubmit(objectId);
+          deleteNewsSubmit(newsId);
         });
     });
 
@@ -37,9 +37,9 @@ $(document).ready(function() {
     });
 });
 
-function deleteObjectSubmit(objectId){
+function deleteNewsSubmit(newsId){
     var url = $("#delete-url").val();
-    url = url.replace("{id}",objectId);
+    url = url.replace("{id}",newsId);
     var data_send = {};
 
     var delete_request =$.ajax({
