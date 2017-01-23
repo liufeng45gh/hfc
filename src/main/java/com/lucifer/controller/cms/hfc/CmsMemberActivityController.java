@@ -133,6 +133,7 @@ public class CmsMemberActivityController {
     }
 
     @RequestMapping(value="/{id}/delete",method = RequestMethod.POST)
+    @ResponseBody
     public Result deleteMemberActivity(@PathVariable Long id) {
         memberActivityDao.deleteMemberActivity(id);
         return Result.ok();

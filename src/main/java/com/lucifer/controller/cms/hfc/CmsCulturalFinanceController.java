@@ -117,7 +117,7 @@ public class CmsCulturalFinanceController {
     @RequestMapping(value="/{id}/update",method = RequestMethod.GET)
     public String culturalFinanceUpdateInput(HttpServletRequest request,@PathVariable Long id){
         CulturalFinance culturalFinance = culturalFinanceDao.getCulturalFinance(id);
-        request.setAttribute("culturalFinance",culturalFinance);
+        request.setAttribute("entity",culturalFinance);
         request.setAttribute("publishAt",culturalFinance.getPublishAt());
 
         List<CulturalFinanceCategory> culturalFinanceCategoryList = culturalFinanceDao.culturalFinanceCategoryList();
@@ -134,6 +134,7 @@ public class CmsCulturalFinanceController {
     }
 
     @RequestMapping(value="/{id}/delete",method = RequestMethod.POST)
+    @ResponseBody
     public Result deleteCulturalFinance(@PathVariable Long id) {
         culturalFinanceDao.deleteCulturalFinance(id);
         return Result.ok();

@@ -46,12 +46,12 @@
 
     <update id="updateResearchReport">
         update research_report
-        set title = #{title},top = #{top},logo = #{logo},appendix_url = #{appendixUrl},content = #{content},publishAt = #{publishAt},updated_at=#{updatedAt}
+        set title = #{title},top = #{top},logo = #{logo},appendix_url = #{appendixUrl},content = #{content},publish_at = #{publishAt},updated_at=#{updatedAt}
         where id = #{id}
     </update>
 
     <delete id="deleteResearchReport">
-        update hf_artist_lecture
+        update research_report
         set is_deleted = 1
         where id = #{id}
     </delete>

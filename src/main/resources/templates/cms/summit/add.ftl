@@ -35,10 +35,10 @@
         <#include "../quick_menu.ftl"/>
         <div id="wrap">
              <div class="outer with-side with-transition" style="min-height: 600px;">
-                    <#include "../left_menu.ftl"/>
+                    <#include "../news/left_menu.ftl"/>
 
                     <div id="admin_right">
-                    			<div class="position"><span>内容管理</span><span>|</span><span>文化金融</span><span>|</span><span>新增</span></div>
+                    			<div class="position"><span>内容管理</span><span>|</span><span>峰会</span><span>|</span><span>新增</span></div>
                     			<div class="content form_content" style="width:100%">
 
 

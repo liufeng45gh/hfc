@@ -1,5 +1,7 @@
 package com.lucifer.model.hfc;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import java.util.Date;
 
 /**
@@ -21,6 +23,7 @@ public class MemberActivity {
 
     private String content;
 
+    @DateTimeFormat(pattern = "yyyy-MM-dd hh:mm:ss")
     private Date publishAt;
 
     private Date createdAt;
@@ -30,6 +33,8 @@ public class MemberActivity {
     private Float top;
 
     private Integer isDeleted;
+
+    private String categoryName;
 
     public Long getId() {
         return id;
@@ -125,5 +130,13 @@ public class MemberActivity {
 
     public void setIsDeleted(Integer isDeleted) {
         this.isDeleted = isDeleted;
+    }
+
+    public String getCategoryName() {
+        return categoryName;
+    }
+
+    public void setCategoryName(String categoryName) {
+        this.categoryName = categoryName;
     }
 }

@@ -67,16 +67,16 @@
 
     <insert id="insertCulturalFinance" useGeneratedKeys="true" keyProperty="id">
         insert into cultural_finance
-        (title,logo,summary,source,category_id,mode,content,publish_at,top,created_at,updated_at)
+        (title,logo,summary,category_id,content,publish_at,top,created_at,updated_at)
         values
-        (#{title},#{logo},#{summary},#{source},#{categoryId},#{mode},#{content},#{publishAt},#{top},#{createdAt},#{updatedAt})
+        (#{title},#{logo},#{summary},#{categoryId},#{content},#{publishAt},#{top},#{createdAt},#{updatedAt})
     </insert>
 
     <update id="updateCulturalFinance">
         update cultural_finance
         set
-        title = #{title},  logo= #{logo}, summary=#{summary}, source=#{source},
-        category_id = #{categoryId} ,mode = #{mode} ,content = #{content},publish_at = #{publishAt} ,top = #{top}
+        title = #{title},  logo= #{logo}, summary=#{summary},
+        category_id = #{categoryId}  ,content = #{content},publish_at = #{publishAt} ,top = #{top}
         where id = #{id}
     </update>
 
@@ -89,7 +89,7 @@
     <select id="getCulturalFinance" resultMap="CulturalFinanceMap">
         select cultural_finance.*,cultural_finance_category.name category_name from cultural_finance
         left outer join cultural_finance_category on cultural_finance.category_id = cultural_finance_category.id
-        where  news.id = #{id}
+        where  cultural_finance.id = #{id}
     </select>
 
 

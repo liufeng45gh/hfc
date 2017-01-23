@@ -36,7 +36,7 @@
                 <th></th>
                 <td>
                     <button class="btn btn-primary" type="button" id ="update-submit" >保存</button>
-                    <input type="hidden" id="update-submit-url" value="/cms/left_menu_member_activity_category/category/update"/>
+                    <input type="hidden" id="update-submit-url" value="/cms/member-activity/category/update"/>
                 </td>
             </tr>
         </tbody>
@@ -45,5 +45,5 @@
 
 
 </body>
-<script type="text/javascript" charset="UTF-8" src="/cms/script/hfc/left_menu_member_activity_category/category.js"></script>
+<script type="text/javascript" charset="UTF-8" src="/cms/script/hfc/member-activity/category.js"></script>
 </html>

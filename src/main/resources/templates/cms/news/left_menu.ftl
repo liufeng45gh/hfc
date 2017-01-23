@@ -39,7 +39,7 @@
         <div class="menu-title">研究报告</div>
         <ul class="tree tree-lines" >
             <li  id="left_menu_research_report_list"><a href="/cms/research-report/list" >研究报告列表</a> </li>
-            <li  id="left_menu_research_report_add"><a href="/research-report/news/add" >新增研究报告</a> </li>
+            <li  id="left_menu_research_report_add"><a href="/cms/research-report/add" >新增研究报告</a> </li>
         </ul>
         <div class="menu-title">峰会</div>
         <ul class="tree tree-lines" >

@@ -117,7 +117,7 @@ public class CmsSummitController {
     @RequestMapping(value="/{id}/update",method = RequestMethod.GET)
     public String summitUpdateInput(HttpServletRequest request,@PathVariable Long id){
         Summit summit = summitDao.getSummit(id);
-        request.setAttribute("summit",summit);
+        request.setAttribute("entity",summit);
 
         List<SummitCategory> summitCategoryList = summitDao.summitCategoryList();
         request.setAttribute("summitCategoryList",summitCategoryList);
@@ -133,6 +133,7 @@ public class CmsSummitController {
     }
 
     @RequestMapping(value="/{id}/delete",method = RequestMethod.POST)
+    @ResponseBody
     public Result deleteSummit(@PathVariable Long id) {
         summitDao.deleteSummit(id);
         return Result.ok();

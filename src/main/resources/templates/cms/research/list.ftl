@@ -38,7 +38,7 @@
                                 <th width="440px">标题</th>
 
                                 <th width="80px" class="t_c">置顶</th>
-                                <th width="80px" class="t_c">点击量</th>
+
 
                                 <th>
                                     操作
@@ -48,21 +48,21 @@
                             </tr>
                             </thead>
                             <tbody>
-                            <#list lectureList as lecture>
+                            <#list researchReportList as researchReport>
                                 <tr >
-                                    <td class="t_c">${lecture.id?default("")}</td>
+                                    <td class="t_c">${researchReport.id?default("")}</td>
 
                                     <td>
-                                        <img src="${lecture.logo?default("")}" style="width:37px;height:37px;"/>
+                                        <img src="${researchReport.logo?default("")}" style="width:37px;height:37px;"/>
                                     </td>
 
-                                    <td>${lecture.title?default("")}</td>
+                                    <td>${researchReport.title?default("")}</td>
 
 
-                                    <td class="t_c">${lecture.top?default("")}</td>
-                                    <td class="t_c">${lecture.clickCount?default("")} </td>
+                                    <td class="t_c">${researchReport.top?default("")}</td>
 
-                                    <td objectId="${lecture.id?default("")}">
+
+                                    <td objectId="${researchReport.id?default("")}">
                                     <a href="#" onclick="return false;" class="to_update">修改</a>
                                     <span>|</span>
                                     <a href="#" onclick="return false;" class="to_delete">删除</a>
@@ -96,7 +96,7 @@
 <script type="text/javascript">
 		//DOM加载完毕执行
 		$(document).ready(function(){
-			$("#left_menu_artist_lecture_list").addClass("selected");
+			$("#left_menu_research_report_list").addClass("selected");
 		});
 	</script>
 <script type="text/javascript" charset="UTF-8" src="/cms/script/hfc/research/list.js"></script>

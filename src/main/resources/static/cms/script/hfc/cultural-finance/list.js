@@ -1,8 +1,8 @@
 $(document).ready(function() {
     $(".to_update").click(function() {
-        var newsId = $(this).parent().attr("newsId");
+        var objectId = $(this).parent().attr("objectId");
         var url = $("#update-url").val();
-        url = url.replace("{id}",newsId);
+        url = url.replace("{id}",objectId);
         layer.open({
           type: 2,
           area: ['80%', '80%'],
@@ -13,7 +13,7 @@ $(document).ready(function() {
     });
 
     $(".to_delete").click(function() {
-        var newsId = $(this).parent().attr("newsId");
+        var objectId = $(this).parent().attr("objectId");
 
         layer.confirm('确定要删除吗？', {
           btn: ['取消','确定'] //按钮
@@ -25,7 +25,7 @@ $(document).ready(function() {
     });
 
     $(".to_recommend").click(function() {
-        var newsId = $(this).parent().attr("newsId");
+        var objectId = $(this).parent().attr("objectId");
 
         layer.confirm('确定推荐？', {
           btn: ['取消','确定'] //按钮

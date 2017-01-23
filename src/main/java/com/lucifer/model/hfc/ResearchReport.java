@@ -1,5 +1,7 @@
 package com.lucifer.model.hfc;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import java.util.Date;
 
 /**
@@ -25,6 +27,7 @@ public class ResearchReport {
 
     private Integer clickCount;
 
+    @DateTimeFormat(pattern = "yyyy-MM-dd hh:mm:ss")
     private Date publishAt;
 
     private Date createdAt;

@@ -34,6 +34,8 @@ public class CulturalFinance {
 
     private Integer isDeleted;
 
+    private String categoryName;
+
     public Long getId() {
         return id;
     }
@@ -128,5 +130,13 @@ public class CulturalFinance {
 
     public void setIsDeleted(Integer isDeleted) {
         this.isDeleted = isDeleted;
+    }
+
+    public String getCategoryName() {
+        return categoryName;
+    }
+
+    public void setCategoryName(String categoryName) {
+        this.categoryName = categoryName;
     }
 }

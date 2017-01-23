@@ -62,7 +62,7 @@
                                         <td class="t_c">${culturalFinance.categoryName?default("")}</td>
                                         <td class="t_c">${culturalFinance.top?default("")} </td>
 
-                                        <td newsId="${culturalFinance.id?default("")}">
+                                        <td objectId="${culturalFinance.id?default("")}">
                                             <a href="#" onclick="return false;" class="to_update">修改</a>
                                             <span>|</span>
                                             <a href="#" onclick="return false;" class="to_delete">删除</a>

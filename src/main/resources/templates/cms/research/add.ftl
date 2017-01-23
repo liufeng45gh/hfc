@@ -50,7 +50,7 @@
 <script type="text/javascript">
 		//DOM加载完毕执行
 		$(document).ready(function(){
-			$("#left_menu_artist_lecture_add").addClass("selected");
+			$("#left_menu_research_report_add").addClass("selected");
 			 var ue = UE.getEditor('editor');
 		});
 	</script>
