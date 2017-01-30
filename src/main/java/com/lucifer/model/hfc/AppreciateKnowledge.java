@@ -1,5 +1,7 @@
 package com.lucifer.model.hfc;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import java.util.Date;
 
 /**
@@ -21,6 +23,7 @@ public class AppreciateKnowledge {
 
     private String content;
 
+    @DateTimeFormat(pattern = "yyyy-MM-dd hh:mm:ss")
     private Date publishAt;
 
     private Date createdAt;
@@ -30,6 +33,8 @@ public class AppreciateKnowledge {
     private Float top;
 
     private Integer isDeleted;
+
+    private Integer clickCount;
 
     public Long getId() {
         return id;
@@ -125,5 +130,13 @@ public class AppreciateKnowledge {
 
     public void setIsDeleted(Integer isDeleted) {
         this.isDeleted = isDeleted;
+    }
+
+    public Integer getClickCount() {
+        return clickCount;
+    }
+
+    public void setClickCount(Integer clickCount) {
+        this.clickCount = clickCount;
     }
 }

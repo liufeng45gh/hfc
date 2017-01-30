@@ -35,9 +35,9 @@
 
 
 
-<div class="position"><span>系统</span><span>|</span><span>文化金融</span><span>|</span><span>修改</span></div>
+<div class="position"><span>系统</span><span>|</span><span>鉴赏</span><span>|</span><span>修改</span></div>
 <div class="content form_content" >
-    <form action="/cms/cultural-finance/update" method="post" id="hfc-form">
+    <form action="/cms/appreciate/update" method="post" id="hfc-form">
         <#include "form_filed.ftl"/>
     </form>
 </div>
@@ -52,7 +52,7 @@
 			 $("#category_input").val("${entity.categoryId}");
 		});
 	</script>
-<script type="text/javascript" charset="UTF-8" src="/cms/script/hfc/cultural-finance/update.js"></script>
+<script type="text/javascript" charset="UTF-8" src="/cms/script/hfc/appreciate/update.js"></script>
 <script type="text/javascript" charset="UTF-8" src="/cms/script/hfc/news/logo_select.js"></script>
 
 </body></html>

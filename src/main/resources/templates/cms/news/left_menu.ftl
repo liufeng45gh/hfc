@@ -28,7 +28,7 @@
             <li  id="left_menu_appreciate_knowledge_list"><a href="/cms/appreciate-knowledge/list" >鉴赏知识</a> </li>
             <li  id="left_menu_appreciate_knowledge_add"><a href="/cms/appreciate-knowledge/add" >新增鉴赏知识</a> </li>
             <li  id="left_menu_appreciate_category"><a href="/cms/appreciate/category/list" >鉴赏分类</a> </li>
-            <li  id="left_menu_appreciate_top"><a href="/cms/appreciate/recommend/list" >已置顶鉴赏</a> </li>
+            <li  id="left_menu_appreciate_top"><a href="/cms/appreciate/top-list" >已置顶鉴赏</a> </li>
         </ul>
         <div class="menu-title">文化金融</div>
         <ul class="tree tree-lines" >

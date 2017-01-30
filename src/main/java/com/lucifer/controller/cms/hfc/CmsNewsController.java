@@ -92,6 +92,7 @@ public class CmsNewsController {
     }
 
     @RequestMapping(value="/news/{id}/delete",method = RequestMethod.POST)
+    @ResponseBody
     public Result deleteNews(@PathVariable Long id) {
         newsDao.deleteNews(id);
         return Result.ok();
