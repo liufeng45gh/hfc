@@ -67,6 +67,9 @@ img.operator{width:12px;height:12px;margin:0 6px;cursor:pointer; vertical-align:
 .arrows_down{margin:0 0 0 5px;padding:0 6px;cursor:pointer;background:url(/cms/images/icon.gif) 0 -456px no-repeat}
 /* arrows style end */
 .container{width:100%;margin:0 auto}
+.b-container{
+    min-width: 1400px;
+}
 /* header style start */
 /*#header{position:relative;height:67px;border-top:4px solid #ec6b10;border-bottom:1px solid #ff1e02;background:#fff url(/cms/images/header_bg.gif) no-repeat center 0}*/
 	.logo{display:inline;float:left;width:303px;height:43px;margin:12px 0 0 25px}

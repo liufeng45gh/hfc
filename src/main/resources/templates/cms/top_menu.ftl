@@ -27,16 +27,13 @@
     </div>
 
 	<div id="mainmenu">
-	
 		<ul class="nav">
 		<!-- <li  id="top_munu_app"><a href="/cms/app/list" >应用</a></li> -->
 
-		<li  id="top_menu_self"><a href="/cms/self/welcome"><i class="icon-home"></i> <span> 我的地盘</span></a></li>
-		<li  id="top_menu_user"><a href="/cms/user/list?page=1" >管理员</a></li>
-		<li  id="top_menu_cms"><a href="/cms/news/list?page=1" >内容管理</a></li>
+		    <li  id="top_menu_self"><a href="/cms/self/welcome"><i class="icon-home"></i> <span> 我的地盘</span></a></li>
+		    <li  id="top_menu_user"><a href="/cms/user/list" >管理员</a></li>
+		    <li  id="top_menu_cms"><a href="/cms/news/list" >内容管理</a></li>
+            <li  id="top_menu_index"><a href="/cms/index/carousel/list" >首页管理</a></li>
 		</ul>
-	 
 	</div>
-
-
 </div>

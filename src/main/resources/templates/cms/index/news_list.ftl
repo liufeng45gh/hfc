@@ -18,7 +18,7 @@
 
             <div id="admin_right">
                 <div class="content_box" style="border:none">
-                    <div class="position"><span>内容管理</span><span>&gt;</span><span>资讯管理</span><span>&gt;</span><span>资讯推荐列表</span></div>
+                    <div class="position"><span>首页管理</span><span>&gt;</span><span>资讯</span><span>&gt;</span><span>资讯推荐列表</span></div>
 
                     <div class="content" style="min-height: 200px;">
                         <table class="list_table" style="font-size:13px;">
@@ -38,42 +38,42 @@
                             </tr>
                             </thead>
                             <tbody>
-                            <#list newsRecommendList as recommend>
-                            <tr >
-                                <td class="t_c">${recommend.news.id?default("")}</td>
+                            <#list indexRecommendList as recommend>
+                                <tr >
+                                    <td class="t_c">${recommend.news.id?default("")}</td>
 
-                                <td class="t_c">${recommend.top?default("")}</td>
+                                    <td class="t_c">${recommend.top?default("")}</td>
 
-                                <td>${recommend.news.title?default("")}</td>
+                                    <td>${recommend.target.title?default("")}</td>
 
-                                <td>
+                                    <td>
 
-                                    <img src="${recommend.news.logo?default("")}" style="width:37px;height:37px;"/>
-                                </td>
-                                <td class="t_c">${recommend.news.categoryName?default("")}</td>
+                                        <img src="${recommend.target.logo?default("")}" style="width:37px;height:37px;"/>
+                                    </td>
+                                    <td class="t_c">${recommend.target.categoryName?default("")}</td>
 
-                                <td recommendId="${recommend.id?default("")}">
+                                    <td recommendId="${recommend.id?default("")}">
                                     <a href="#" onclick="return false;" class="to_update">修改置顶</a>
                                     <span>|</span>
                                     <a href="#" onclick="return false;" class="to_delete">删除</a>
-                                </td>
-                            </tr>
-                        </#list>
-                    </tbody>
-                </table>
+                                    </td>
+                                </tr>
+                            </#list>
+                            </tbody>
+                        </table>
 
+                    </div>
+                    <input type="hidden" id="update-url" value="/cms/index/recommend/news-update"/>
+                    <input type="hidden" id="delete-url" value="/cms/index/recommend/{id}/news-delete"/>
+
+                </div>
             </div>
-            <input type="hidden" id="update-url" value="/cms/news/recommend/update"/>
-            <input type="hidden" id="delete-url" value="/cms/news/recommend/{id}/delete"/>
-
         </div>
+
+
+
+
     </div>
-</div>
-
-
-
-
-</div>
 
 </div>
 
