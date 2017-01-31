@@ -24,7 +24,7 @@
                         <table class="list_table" style="font-size:13px;">
                             <thead>
                             <tr style="height:30px;">
-                                <th width="140px" class="t_c">id</th>
+                                <th width="140px" class="t_c">资讯id</th>
                                 <th width="80px" class="t_c">置顶</th>
                                 <th width="340px">标题</th>
                                 <th width="80px">logo</th>
@@ -40,7 +40,7 @@
                             <tbody>
                             <#list indexRecommendList as recommend>
                                 <tr >
-                                    <td class="t_c">${recommend.news.id?default("")}</td>
+                                    <td class="t_c">${recommend.target.id?default("")}</td>
 
                                     <td class="t_c">${recommend.top?default("")}</td>
 
@@ -85,7 +85,7 @@
 
 		});
 	</script>
-<script type="text/javascript" charset="UTF-8" src="/cms/script/hfc/news/recommend_list.js"></script>
+<script type="text/javascript" charset="UTF-8" src="/cms/script/hfc/index/news_list.js"></script>
 
 
 <div style="display: none; position: fixed; left: 0px; top: 0px; width: 100%; height: 100%; cursor: move; opacity: 0; background: rgb(255, 255, 255);"></div></body></html>

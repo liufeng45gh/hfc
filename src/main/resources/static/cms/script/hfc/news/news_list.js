@@ -35,6 +35,18 @@ $(document).ready(function() {
           recommendNewsSubmit(newsId);
         });
     });
+
+    $(".to_index").click(function() {
+        var newsId = $(this).parent().attr("newsId");
+
+        layer.confirm('确定推荐？', {
+          btn: ['取消','确定'] //按钮
+        }, function(){
+          layer.closeAll();
+        }, function(){
+          indexNewsSubmit(newsId);
+        });
+    });
 });
 
 function deleteNewsSubmit(newsId){
@@ -67,6 +79,36 @@ function recommendNewsSubmit(newsId) {
     //url = url.replace("{id}",newsId);
     var data_send = {};
     data_send.newsId = newsId;
+    var delete_request =$.ajax({
+       type: 'post',
+       url: url,
+       data: data_send,
+       dataType: 'json'
+    });
+
+    delete_request.fail(function( jqXHR, textStatus ) {
+      if(jqXHR.status==401){
+         //openWeiboLogin();
+
+      }
+    });
+
+    delete_request.done(function(data) {
+           layer.alert('推荐成功!', {
+             closeBtn: 0
+           }, function(){
+             window.location.reload();
+             //layer.prompt("dsfssadsd");
+           });
+    });
+
+}
+
+function indexNewsSubmit(newsId) {
+    var url = $("#index-url").val();
+    //url = url.replace("{id}",newsId);
+    var data_send = {};
+    data_send.targetId = newsId;
     var delete_request =$.ajax({
        type: 'post',
        url: url,

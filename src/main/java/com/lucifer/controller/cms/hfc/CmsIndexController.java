@@ -4,6 +4,7 @@ import com.lucifer.dao.hfc.CarouseDao;
 import com.lucifer.dao.hfc.IndexDao;
 import com.lucifer.model.hfc.Carousel;
 import com.lucifer.model.hfc.IndexRecommend;
+import com.lucifer.model.hfc.NewsRecommend;
 import com.lucifer.service.hfc.IndexService;
 import com.lucifer.utils.Result;
 import org.slf4j.Logger;
@@ -80,4 +81,33 @@ public class CmsIndexController {
         request.setAttribute("indexRecommendList",indexRecommendList);
         return "/cms/index/news_list";
     }
+
+    @RequestMapping(value="/recommend/news-add",method = RequestMethod.POST)
+    @ResponseBody
+    public Result addNewsIndexRecommendSubmit(IndexRecommend indexRecommend){
+        indexDao.addNewsIndexRecommend(indexRecommend);
+        return Result.ok();
+    }
+
+    @RequestMapping(value="/recommend/{id}/news-update",method = RequestMethod.GET)
+    public String updateNewsIndexRecommend(@PathVariable Long id,HttpServletRequest request){
+        IndexRecommend indexRecommend = indexDao.getNewsIndexRecommend(id);
+        request.setAttribute("entity",indexRecommend);
+        return "/cms/index/news_update";
+    }
+
+    @RequestMapping(value="/recommend/news-update",method = RequestMethod.POST)
+    @ResponseBody
+    public Result updateNewsIndexRecommendSubmit(IndexRecommend indexRecommend){
+        this.indexDao.updateNewsIndexRecommend(indexRecommend);
+        return Result.ok();
+    }
+
+    @RequestMapping(value="/recommend/{id}/news-delete",method = RequestMethod.POST)
+    @ResponseBody
+    public Result deleteNewsIndexRecommend(@PathVariable Long id){
+        indexDao.deleteNewsIndexRecommend(id);
+        return Result.ok();
+    }
+
 }
