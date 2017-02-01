@@ -24,7 +24,7 @@ $(document).ready(function() {
         });
     });
 
-    $(".to_recommend").click(function() {
+    $(".to_index").click(function() {
         var objectId = $(this).parent().attr("objectId");
 
         layer.confirm('确定推荐？', {
@@ -32,9 +32,11 @@ $(document).ready(function() {
         }, function(){
           layer.closeAll();
         }, function(){
-          recommendNewsSubmit(newsId);
+          recommendIndexSubmit(objectId);
         });
     });
+
+
 });
 
 function deleteObjectSubmit(objectId){
@@ -62,11 +64,11 @@ function deleteObjectSubmit(objectId){
 
 }
 
-function recommendNewsSubmit(newsId) {
-    var url = $("#recommend-url").val();
+function recommendIndexSubmit(objectId) {
+    var url = $("#index-url").val();
     //url = url.replace("{id}",newsId);
     var data_send = {};
-    data_send.newsId = newsId;
+    data_send.targetId = objectId;
     var delete_request =$.ajax({
        type: 'post',
        url: url,

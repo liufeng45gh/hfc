@@ -34,6 +34,8 @@ public class CmsIndexController {
 
     private Logger logger = LoggerFactory.getLogger(this.getClass());
 
+    //------------------------------------------------------------------------//
+    //下面是轮播图
     @RequestMapping(value = "/carousel/list", method = RequestMethod.GET)
     public String carouselList(HttpServletRequest request){
         List<Carousel> carouselList = carouseDao.carouselList();
@@ -75,6 +77,10 @@ public class CmsIndexController {
     @Resource
     private IndexService indexService;
 
+    //-------------------------------------------------------------------------------------------------//
+    //下面是推荐新闻
+
+
     @RequestMapping(value="/recommend/news-list",method = RequestMethod.GET)
     public String recommendNewsList(HttpServletRequest request){
         List<IndexRecommend> indexRecommendList = indexService.newsIndexRecommendList();
@@ -110,4 +116,155 @@ public class CmsIndexController {
         return Result.ok();
     }
 
+    //------------------------------------------------------------------------------------------------------------------//
+    //下面是艺术家
+
+    @RequestMapping(value="/recommend/artist-list",method = RequestMethod.GET)
+    public String recommendArtistList(HttpServletRequest request){
+        List<IndexRecommend> indexRecommendList = indexService.artistIndexRecommendList();
+        request.setAttribute("indexRecommendList",indexRecommendList);
+        return "/cms/index/artist_list";
+    }
+
+    @RequestMapping(value="/recommend/artist-add",method = RequestMethod.POST)
+    @ResponseBody
+    public Result addArtistIndexRecommendSubmit(IndexRecommend indexRecommend){
+        indexDao.addArtistIndexRecommend(indexRecommend);
+        return Result.ok();
+    }
+
+    @RequestMapping(value="/recommend/{id}/artist-update",method = RequestMethod.GET)
+    public String updateArtistIndexRecommend(@PathVariable Long id,HttpServletRequest request){
+        IndexRecommend indexRecommend = indexDao.getArtistIndexRecommend(id);
+        request.setAttribute("entity",indexRecommend);
+        return "/cms/index/artist_update";
+    }
+
+    @RequestMapping(value="/recommend/artist-update",method = RequestMethod.POST)
+    @ResponseBody
+    public Result updateArtistIndexRecommendSubmit(IndexRecommend indexRecommend){
+        this.indexDao.updateArtistIndexRecommend(indexRecommend);
+        return Result.ok();
+    }
+
+    @RequestMapping(value="/recommend/{id}/artist-delete",method = RequestMethod.POST)
+    @ResponseBody
+    public Result deleteArtistIndexRecommend(@PathVariable Long id){
+        indexDao.deleteArtistIndexRecommend(id);
+        return Result.ok();
+    }
+
+    //---------------------------------------------------------------------------------------------------------------------//
+    //下面是文化金融
+
+    @RequestMapping(value="/recommend/finance-list",method = RequestMethod.GET)
+    public String recommendCulturalFinanceList(HttpServletRequest request){
+        List<IndexRecommend> indexRecommendList = indexService.financeIndexRecommendList();
+        request.setAttribute("indexRecommendList",indexRecommendList);
+        return "/cms/index/finance_list";
+    }
+
+    @RequestMapping(value="/recommend/finance-add",method = RequestMethod.POST)
+    @ResponseBody
+    public Result addCulturalFinanceIndexRecommendSubmit(IndexRecommend indexRecommend){
+        indexDao.addFinanceIndexRecommend(indexRecommend);
+        return Result.ok();
+    }
+
+    @RequestMapping(value="/recommend/{id}/finance-update",method = RequestMethod.GET)
+    public String updateCulturalFinanceIndexRecommend(@PathVariable Long id,HttpServletRequest request){
+        IndexRecommend indexRecommend = indexDao.getFinanceIndexRecommend(id);
+        request.setAttribute("entity",indexRecommend);
+        return "/cms/index/finance_update";
+    }
+
+    @RequestMapping(value="/recommend/finance-update",method = RequestMethod.POST)
+    @ResponseBody
+    public Result updateCulturalFinanceIndexRecommendSubmit(IndexRecommend indexRecommend){
+        this.indexDao.updateFinanceIndexRecommend(indexRecommend);
+        return Result.ok();
+    }
+
+    @RequestMapping(value="/recommend/{id}/finance-delete",method = RequestMethod.POST)
+    @ResponseBody
+    public Result deleteCulturalFinanceIndexRecommend(@PathVariable Long id){
+        indexDao.deleteFinanceIndexRecommend(id);
+        return Result.ok();
+    }
+
+    //-------------------------------------------------------------------------------------------------//
+    //下面是研究报告
+
+    @RequestMapping(value="/recommend/research-list",method = RequestMethod.GET)
+    public String researchCulturalFinanceList(HttpServletRequest request){
+        List<IndexRecommend> indexRecommendList = indexService.researchIndexRecommendList();
+        request.setAttribute("indexRecommendList",indexRecommendList);
+        return "/cms/index/research_list";
+    }
+
+    @RequestMapping(value="/recommend/research-add",method = RequestMethod.POST)
+    @ResponseBody
+    public Result addResearchIndexRecommendSubmit(IndexRecommend indexRecommend){
+        indexDao.addResearchIndexRecommend(indexRecommend);
+        return Result.ok();
+    }
+
+    @RequestMapping(value="/recommend/{id}/research-update",method = RequestMethod.GET)
+    public String updateResearchIndexRecommend(@PathVariable Long id,HttpServletRequest request){
+        IndexRecommend indexRecommend = indexDao.getResearchIndexRecommend(id);
+        request.setAttribute("entity",indexRecommend);
+        return "/cms/index/research_update";
+    }
+
+    @RequestMapping(value="/recommend/research-update",method = RequestMethod.POST)
+    @ResponseBody
+    public Result updateResearchIndexRecommendSubmit(IndexRecommend indexRecommend){
+        this.indexDao.updateResearchIndexRecommend(indexRecommend);
+        return Result.ok();
+    }
+
+    @RequestMapping(value="/recommend/{id}/research-delete",method = RequestMethod.POST)
+    @ResponseBody
+    public Result deleteResearchIndexRecommend(@PathVariable Long id){
+        indexDao.deleteResearchIndexRecommend(id);
+        return Result.ok();
+    }
+
+    //--------------------------------------------------------------------------------------------------------//
+    //下面是峰会
+
+    @RequestMapping(value="/recommend/summit-list",method = RequestMethod.GET)
+    public String recommendSummitList(HttpServletRequest request){
+        List<IndexRecommend> indexRecommendList = indexService.summitIndexRecommendList();
+        request.setAttribute("indexRecommendList",indexRecommendList);
+        return "/cms/index/summit_list";
+    }
+
+    @RequestMapping(value="/recommend/summit-add",method = RequestMethod.POST)
+    @ResponseBody
+    public Result addSummitIndexRecommendSubmit(IndexRecommend indexRecommend){
+        indexDao.addSummitIndexRecommend(indexRecommend);
+        return Result.ok();
+    }
+
+    @RequestMapping(value="/recommend/{id}/summit-update",method = RequestMethod.GET)
+    public String updateSummitIndexRecommend(@PathVariable Long id,HttpServletRequest request){
+        IndexRecommend indexRecommend = indexDao.getSummitIndexRecommend(id);
+        request.setAttribute("entity",indexRecommend);
+        return "/cms/index/summit_update";
+    }
+
+    @RequestMapping(value="/recommend/summit-update",method = RequestMethod.POST)
+    @ResponseBody
+    public Result updateSummitIndexRecommendSubmit(IndexRecommend indexRecommend){
+        this.indexDao.updateSummitIndexRecommend(indexRecommend);
+        return Result.ok();
+    }
+
+    @RequestMapping(value="/recommend/{id}/summit-delete",method = RequestMethod.POST)
+    @ResponseBody
+    public Result deleteSummitIndexRecommend(@PathVariable Long id){
+        indexDao.deleteSummitIndexRecommend(id);
+        return Result.ok();
+    }
 }

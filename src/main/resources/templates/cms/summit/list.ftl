@@ -68,7 +68,8 @@
                                             <a href="#" onclick="return false;" class="to_delete">删除</a>
                                             <span>|</span>
                                             <a href="#" onclick="">查看</a>
-
+                                            <span>|</span>
+                                            <a href="#" onclick="return false;" class="to_index">推荐到首页</a>
 
 
                                         </td>
@@ -80,7 +81,7 @@
                         </div>
                         <input type="hidden" id="update-url" value="/cms/summit/{id}/update"/>
                         <input type="hidden" id="delete-url" value="/cms/summit/{id}/delete"/>
-
+                        <input type="hidden" id="index-url" value="/cms/index/recommend/summit-add"/>
 
                 	${pageDiv}
                 </div>

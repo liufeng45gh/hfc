@@ -69,7 +69,7 @@
                                 <span>|</span>
                                 <a href="#" onclick="return false;" class="to_recommend">推荐到右侧</a>
                                 <span>|</span>
-                                <a href="#" onclick="">推荐到首页</a>
+                                <a href="#" onclick="return false;" class="to_index">推荐到首页</a>
 
 
                             </td>
@@ -82,7 +82,7 @@
             <input type="hidden" id="update-url" value="/cms/artist/{id}/update"/>
             <input type="hidden" id="delete-url" value="/cms/artist/{id}/delete"/>
             <input type="hidden" id="recommend-url" value="/cms/artist/recommend/add"/>
-
+             <input type="hidden" id="index-url" value="/cms/index/recommend/artist-add"/>
             ${pageDiv}
         </div>
     </div>

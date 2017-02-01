@@ -35,6 +35,18 @@ $(document).ready(function() {
           recommendArtistSubmit(objectId);
         });
     });
+
+    $(".to_index").click(function() {
+        var objectId = $(this).parent().attr("objectId");
+
+        layer.confirm('确定推荐？', {
+          btn: ['取消','确定'] //按钮
+        }, function(){
+          layer.closeAll();
+        }, function(){
+          indexObjectSubmit(objectId);
+        });
+    });
 });
 
 function deleteArtistSubmit(objectId){
@@ -90,4 +102,34 @@ function recommendArtistSubmit(objectId) {
            });
     });
 
+}
+
+function indexObjectSubmit(objectId){
+
+ var url = $("#index-url").val();
+    //url = url.replace("{id}",newsId);
+    var data_send = {};
+    data_send.targetId = objectId;
+    var delete_request =$.ajax({
+       type: 'post',
+       url: url,
+       data: data_send,
+       dataType: 'json'
+    });
+
+    delete_request.fail(function( jqXHR, textStatus ) {
+      if(jqXHR.status==401){
+         //openWeiboLogin();
+
+      }
+    });
+
+    delete_request.done(function(data) {
+           layer.alert('推荐成功!', {
+             closeBtn: 0
+           }, function(){
+             window.location.reload();
+             //layer.prompt("dsfssadsd");
+           });
+    });
 }
