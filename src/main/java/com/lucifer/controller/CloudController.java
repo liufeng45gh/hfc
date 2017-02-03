@@ -32,7 +32,7 @@ public class CloudController {
 
         try {
             String uploadUrl;
-            uploadUrl = qiniuCloudService.simpleUploadWithoutKey(file.getBytes());
+            uploadUrl = qiniuCloudService.simpleUploadWithoutKey(file);
             return  Result.ok(uploadUrl);
 //            cloud.test();
         } catch (Exception e) {

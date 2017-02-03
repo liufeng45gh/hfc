@@ -29,6 +29,22 @@
     </tr>
 
     <tr>
+        <th width="20%" style="text-align:right;">附件:</th>
+        <td>
+            <a href="${entity.appendix_url?default("")}" id="appendix_url_href">
+                <#if (entity.appendix_url)!""="">
+                 未上传
+
+                <#else>
+                已上传
+                </#if>
+             </a>
+            <input id="appendix_input" class="form-control"  type="file" style="display:inline-block;" value="选择附件" />
+            <input type="hidden" name="appendix_url" id="appendix_url" value="${entity.appendix_url?default("")}"/>
+        </td>
+    </tr>
+
+    <tr>
         <th width="20%" style="text-align:right;">摘要:</th>
         <td>
             <textarea id="summary_area" cols="130" rows="8" name="summary" >${entity.summary?default("")?html}</textarea>

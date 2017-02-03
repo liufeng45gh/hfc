@@ -79,7 +79,7 @@ public class BinaryUploader {
 
 			byte[] data = file.getBytes();
 
-			String uploadUrl = QiniuCloudService.getInstance().simpleUploadWithoutKey(data);
+			String uploadUrl = QiniuCloudService.getInstance().simpleUploadWithoutKey(file);
 
 			State storageState = new BaseState(true, uploadUrl);
 

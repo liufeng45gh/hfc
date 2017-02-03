@@ -53,5 +53,6 @@
 	</script>
 <script type="text/javascript" charset="UTF-8" src="/cms/script/hfc/research/update.js"></script>
 <script type="text/javascript" charset="UTF-8" src="/cms/script/hfc/news/logo_select.js"></script>
+<script type="text/javascript" charset="UTF-8" src="/cms/script/hfc/research/appendix_select.js"></script>
 
 </body></html>

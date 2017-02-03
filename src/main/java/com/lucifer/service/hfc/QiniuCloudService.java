@@ -1,6 +1,7 @@
 package com.lucifer.service.hfc;
 
 
+import com.baidu.ueditor.define.FileType;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.qiniu.common.QiniuException;
 import com.qiniu.http.Response;
@@ -11,11 +12,13 @@ import com.qiniu.util.StringMap;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.stereotype.Component;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.annotation.PostConstruct;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.Map;
+import java.util.UUID;
 
 /**
  * Created by lijc on 15/8/27.
@@ -104,6 +107,28 @@ public class QiniuCloudService {
         String key = "";
         try {
             Response resp = um.put(file, null,
+                    token);
+            Map<String,Object> map = objectMapper.readValue(resp.bodyString(),Map.class) ;
+            key = (String)map.get("key");
+            System.out.println(resp.bodyString());
+            System.out.println(key);
+        } catch (QiniuException ex) {
+            System.out.println(ex.getMessage());
+        }
+        return url + key + "";
+    }
+
+    public String simpleUploadWithoutKey(MultipartFile file) throws IOException {
+        Auth auth = Auth.create(this.accessKey,
+                this.secretKey);
+        String token = auth.uploadToken(this.publicBucket);
+        UploadManager um = new UploadManager();
+        String key = "";
+        String originFileName = file.getOriginalFilename();
+        String suffix = FileType.getSuffixByFilename(originFileName);
+        key = UUID.randomUUID().toString()+suffix;
+        try {
+            Response resp = um.put(file.getBytes(), key,
                     token);
             Map<String,Object> map = objectMapper.readValue(resp.bodyString(),Map.class) ;
             key = (String)map.get("key");
