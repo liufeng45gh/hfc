@@ -1,12 +1,6 @@
 package com.baidu.ueditor;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.UnsupportedEncodingException;
+import java.io.*;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -159,8 +153,9 @@ public final class ConfigManager {
 		}
 		
 		this.parentPath = file.getParent();
-		File configFile = new File(this.getClass().getResource(this.getConfigPath()).getFile());
-		String configContent = this.readFile(configFile );
+
+		InputStream is = this.getClass().getResourceAsStream(this.getConfigPath());
+		String configContent = this.readFile(is );
 		
 		try{
 			JSONObject jsonConfig = new JSONObject( configContent );
@@ -213,13 +208,13 @@ public final class ConfigManager {
 		
 	}
 
-	private String readFile ( File file ) throws IOException {
+	private String readFile ( InputStream is) throws IOException {
 
 		StringBuilder builder = new StringBuilder();
 
 		try {
 
-			InputStreamReader reader = new InputStreamReader( new FileInputStream( file ), "UTF-8" );
+			InputStreamReader reader = new InputStreamReader(is);
 			BufferedReader bfReader = new BufferedReader( reader );
 
 			String tmpContent = null;
