@@ -40,7 +40,7 @@
 
     <tr>
     <th width="20%" style="text-align:right;">发布时间:</th>
-    <td><input id="publish_at_input"  class="form-control" name="publishAt" style="display:inline-block;" value="${(publishAt?string("yyyy-MM-dd hh:mm:ss"))!}"/></td>
+    <td><input id="publish_at_input"  class="form-control" name="publishAt" style="display:inline-block;" value="${(publishAt?string("yyyy-MM-dd HH:mm:ss"))!}"/></td>
     </tr>
 
     <tr>
