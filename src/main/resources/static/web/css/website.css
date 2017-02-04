@@ -269,7 +269,7 @@ body {
     line-height: 32px;
 }
 
-.btn {
+.login-nav .btn {
     display: inline-block;
     line-height: 1;
     border-radius: 2px;
@@ -306,4 +306,143 @@ body {
 .szzt{
     margin-top:8px;
 }
+.title-line{
+    margin:30 auto;
+}
+
+.title-line .line-left{
+    width:600px;
+
+}
+.title-line .line-middle{
+    width:300px;
+}
+.title-line .line-right{
+    width:600px;
+}
+.line{
+    float:left;
+}
+.line .line-info-hr{
+    width: 600px;
+    color: #EDEDED;
+    height: 1px;
+    margin-top: 30px;
+}
+.title-en{
+    text-align: center;
+    font-size: 36px;
+    color: #DB4646;
+    font-weight: bold;
+}
+.title-zh{
+    text-align:center;
+    font-size: 30px;
+    color: #333333;
+    font-weight: bold;
+}
+
+
+
+/* 轮播图 核心代码 */
+.focus{width:600px;height:340px;overflow:hidden;position:relative;}
+.focus ul{height:380px;position:absolute;padding:0;}
+.focus ul li{float:left;width:600px;height:340px;overflow:hidden;position:relative;background:#000;}
+.focus ul li div{position:absolute;overflow:hidden;}
+.focus .btn{position:absolute;width:580px;height:10px;padding:5px 10px;right:0;bottom:305px;text-align:right;}
+.focus .btn span{display:inline-block;_display:inline;_zoom:1;width:13px;height:13px;_font-size:0;margin-left:5px;cursor:pointer;background:#fff;border-radius:50%;}
+.focus .btn span.on{background:yellow;}
+.focus .preNext{width:50px;height:100px;position:absolute;top:140px;background:url(/web/images/icon_index_focus_arrow.png) no-repeat 0 0;cursor:pointer;display:none;}
+.focus .pre{left:0;}
+.focus .next{right:0;background-position:right top;}
+
+.focus #focusTitle {
+    height: 105px;
+    position: absolute;
+    bottom: 0px;
+    width: 600px;
+    left: 0;
+    z-index: 10;
+    overflow: hidden;
+    background: rgba(102,153,0,0.1);
+}
+.focus #focusTitle .tit {
+    height: 44px;
+    line-height: 44px;
+    border-bottom: 1px solid #333;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+}
+.focus #focusTitle .des {
+    line-height: 22px;
+    height: 44px;
+    overflow: hidden;
+    color:  #ffddb8;
+}
+
+.carousel-border{
+    width: 600px;
+    height: 340px;
+    float: left;
+    position: absolute;
+     margin-top: 90px;
+
+}
+.news-recommend{
+    margin:10 auto;
+}
+.carousel-img{
+    width:600px;
+    height:340px;
+}
+
+.news-border{
+    float: left;
+    position: absolute;
+    left: 850px;
+    margin-top: 90px;
+}
+
+.rnTopic {
+    width: 800px;
+    padding-left: 20px;
+ }
+ .rnTopic .news-item {
+     float: left;
+     width: 190px;
+     margin: 0 0 10px 10px;
+ }
+ .rnTopic .news-item a {
+     font-size: 14px;
+     color: #373737;
+ }
+ .rnTopic .news-item p {
+     width: 180px;
+     height: 120px;
+ }
+ .imgScale .news-item p {
+     overflow: hidden;
+     background-size: cover;
+ }
+
+ .imgScale .news-item img {
+     transition: 0.3s;
+     width: 180px;
+     height: 120px;
+     overflow: hidden;
+     display: block;
+ }
+
+ .rnTopic .news-item em {
+     display: block;
+     width: 180px;
+     height: 28px;
+     line-height: 28px;
+     overflow: hidden;
+     text-align: left;
+ }
+
+
+
 
