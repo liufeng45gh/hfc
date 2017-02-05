@@ -11,6 +11,7 @@
         <result column="logo" property="logo"/>
         <result column="author" property="author"/>
         <result column="category_id" property="categoryId"/>
+        <result column="category_name" property="categoryName"/>
         <result column="content" property="content"/>
         <result column="click_count" property="clickCount"/>
         <result column="publish_at" property="publishAt"/>
@@ -18,6 +19,7 @@
         <result column="is_deleted" property="isDeleted"/>
         <result column="created_at" property="createdAt"/>
         <result column="updated_at" property="updatedAt"/>
+
     </resultMap>
 
     <select id="appreciateList" resultMap="AppreciateMap">

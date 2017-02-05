@@ -4,8 +4,8 @@
 
 .news-menu{
     height: 40px;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 .news-menu .menu-item{
     float: left;
@@ -17,4 +17,22 @@
 
 .news-menu .active{
     color: red;
+}
+
+.news-left{
+    width: 900px;
+     height:400px;
+}
+
+.news-left .hr-border{
+    width: 900px;
+}
+.recommend-news{
+    width: 900px;
+    position: relative;
+}
+
+.recommend-news img{
+    width:900px;
+    height:400px;
 }
