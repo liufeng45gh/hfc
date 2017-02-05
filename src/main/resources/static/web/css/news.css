@@ -13,6 +13,7 @@
     font-weight: bold;
     margin-left: 10px;
     color: #373737;
+    margin-right: 30px;
 }
 
 .news-menu .active{
@@ -30,9 +31,194 @@
 .recommend-news{
     width: 900px;
     position: relative;
+    margin-top: 20px;
+    margin-bottom: 40px;
 }
 
 .recommend-news img{
     width:900px;
     height:400px;
+}
+
+.recommend-news #focusTitle {
+    height: 95px;
+    position: absolute;
+    bottom: 0px;
+    width: 900px;
+    left: 0;
+    z-index: 10;
+    overflow: hidden;
+    background: rgba(102,153,0,0.1);
+}
+
+#focusTitle .tit {
+    height: 44px;
+    line-height: 44px;
+    border-bottom: 1px solid #333;
+    color: #fff;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+#focusTitle .des {
+    line-height: 22px;
+    height: 44px;
+    overflow: hidden;
+    color: #fff;
+    font-size: 18px;
+}
+
+.separate-block{
+    width: 40px;
+}
+
+.news-right{
+    width: 560px;
+}
+
+.news-list{
+    margin-top: 20px;
+}
+
+.news-right .search-box{
+    margin-top:20px;
+    height: 40px;
+    margin-bottom: 20px;
+}
+.search-box .new-searching-unit {
+    display: inline-block;
+    position: relative;
+}
+.new-searching-unit input {
+    margin: 0 ;
+    padding: 0 10px;
+    width: 436px;
+    height: 40px;
+    line-height: 40px;
+    border: 1px solid rgba(255,255,255,.8);
+    border-radius: 2px;
+    color: #000;
+    background: rgba(0,0,0,.15);
+}
+
+.new-searching-unit .go {
+    position: absolute;
+    display: block;
+    top: 0px;
+    right: 0;
+    width: 40px;
+    height: 40px;
+    background: url(/web/images/icon_search.svg) 9px 7px no-repeat;
+    cursor: pointer;
+}
+.title{
+    width:560px;
+    height: 50px;
+    margin-top: 20px;
+}
+
+.title .t-zh{
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0 auto 0 auto;
+    text-align: center;
+    color: #333;
+}
+
+.title .t-en{
+      font-size: 16px;
+      font-weight: bold;
+      margin: 0 auto;
+      text-align: center;
+      color: #D5D5D5;
+}
+
+.recommend-item{
+    background-color: white;
+    height: 90px;
+    border: 1px solid #e5e5e5;
+    margin-bottom: 20px;
+}
+
+.recommend-item .logo {
+    width: 140px;
+    height: 90px;
+    position: relative;
+    float: left;
+    display: inline;
+}
+
+.recommend-item img {
+    width: 140px;
+    height: 90px;
+}
+
+.recommend-item .text {
+    position: relative;
+    float: left;
+    display: inline;
+    width: 398px;
+    margin-left: 20px;
+}
+
+.recommend-item .recommend-title {
+     //color: #939393;
+     font-size: 16px;
+     font-weight: bold;
+     line-height: 30px;
+     height: 60px;
+     padding-right: 15px;
+     overflow: hidden;
+     margin-top: 8px;
+}
+
+.recommend-item .date-info {
+    overflow: hidden;
+    color: #999;
+    text-align: right;
+    margin-top: 0px;
+    font-size: 12px;
+    padding-right: 15px;
+}
+
+.wonderful-recommend-list .wonderful-recommend-item{
+    float: left;
+    width: 278px;
+}
+
+.wonderful-recommend-item img{
+    width: 200px;
+    height:133px;
+    margin: 0 auto;
+}
+
+.wonderful-recommend-item .logo{
+    width: 200px;
+    height:133px;
+    margin: 0 auto;
+}
+
+.wonderful-recommend-item .recommend-title{
+
+    width: 200px;
+    margin: 0 auto;
+    text-align: center;
+    height: 50px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    line-height: 23px;
+}
+
+.load-more{
+   width: 500px;
+   margin: 20 auto;
+   height: 40px;
+   text-align: center;
+   font-size: 20px;
+   background-color: #D5D5D5;
+   line-height: 40px;
+}
+
+.fill-bottom{
+    height: 100px;
 }
