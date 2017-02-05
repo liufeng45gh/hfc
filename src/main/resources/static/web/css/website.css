@@ -1,5 +1,5 @@
 body {
-    font-family: "helvetica neue",arial,sans-serif;
+    font-family: "Microsoft YaHei" ! important "helvetica neue","arial","sans-serif";
     font-size: 14px;
     color: #444;
     margin: 0;
@@ -187,12 +187,11 @@ body {
 #header {
     position: fixed;
     top: 0;
-    left: 0;
     right: 0;
-    height: 48px;
+    height: 65px;
     z-index: 99997;
-    background: #fff;
     box-shadow: 0 0 4px rgba(0,0,0,.2);
+
 }
 
 .hts {
@@ -202,13 +201,13 @@ body {
     transition: background .15s ease-in-out;
 }
 .menu-bar {
-    height: 48px;
+    height: 65px;
     text-align: center;
 }
 
 .menu-bar .left-part {
     float: left;
-    margin-top: 10px;
+    margin-top: 0px;
 }
 
 #huaban {
@@ -307,18 +306,20 @@ body {
     margin-top:8px;
 }
 .title-line{
-    margin:30 auto;
+    margin: 50px auto 50px auto;
+    height: 80px;
 }
 
 .title-line .line-left{
     width:600px;
-
+    overflow: hidden;
 }
 .title-line .line-middle{
     width:300px;
 }
 .title-line .line-right{
     width:600px;
+    overflow: hidden;
 }
 .line{
     float:left;
@@ -346,10 +347,10 @@ body {
 
 /* 轮播图 核心代码 */
 .focus{width:600px;height:340px;overflow:hidden;position:relative;}
-.focus ul{height:380px;position:absolute;padding:0;}
+.focus ul{height:340px;position:absolute;padding:0;margin:0;}
 .focus ul li{float:left;width:600px;height:340px;overflow:hidden;position:relative;background:#000;}
 .focus ul li div{position:absolute;overflow:hidden;}
-.focus .btn{position:absolute;width:580px;height:10px;padding:5px 10px;right:0;bottom:305px;text-align:right;}
+.focus .btn{position:absolute;width:580px;height:10px;padding:5px 10px;right:0;bottom:315px;text-align:right;}
 .focus .btn span{display:inline-block;_display:inline;_zoom:1;width:13px;height:13px;_font-size:0;margin-left:5px;cursor:pointer;background:#fff;border-radius:50%;}
 .focus .btn span.on{background:yellow;}
 .focus .preNext{width:50px;height:100px;position:absolute;top:140px;background:url(/web/images/icon_index_focus_arrow.png) no-repeat 0 0;cursor:pointer;display:none;}
@@ -386,22 +387,29 @@ body {
     height: 340px;
     float: left;
     position: absolute;
-     margin-top: 90px;
+     margin-top: 0px;
 
 }
-.news-recommend{
-    margin:10 auto;
-}
+
 .carousel-img{
     width:600px;
     height:340px;
 }
 
+.news-recommend{
+    margin: auto;
+    height: 460px;
+}
+.bgf7{
+ background-color: #F7F7F7;
+}
+
+
 .news-border{
     float: left;
     position: absolute;
     left: 850px;
-    margin-top: 90px;
+    margin-top: 0;
 }
 
 .rnTopic {
@@ -411,6 +419,7 @@ body {
  .rnTopic .news-item {
      float: left;
      width: 190px;
+     height: 180px;
      margin: 0 0 10px 10px;
  }
  .rnTopic .news-item a {
@@ -420,6 +429,7 @@ body {
  .rnTopic .news-item p {
      width: 180px;
      height: 120px;
+     margin: 0;
  }
  .imgScale .news-item p {
      overflow: hidden;
@@ -441,6 +451,130 @@ body {
      line-height: 28px;
      overflow: hidden;
      text-align: left;
+     margin-top: 10px;
+ }
+
+.artist-recommend{
+    margin:10 auto;
+    height: 450px;
+    width: 1496px;
+}
+
+
+ .artist-recommend .artist-item{
+     float: left;
+     width: 167px;
+     margin: 0 10px 10px 10px;
+ }
+
+ .artist-recommend .artist-item img {
+      transition: 0.3s;
+      width: 150px;
+      height: 180px;
+      overflow: hidden;
+      display: block;
+  }
+
+.artist-recommend .artist-item .artist-name {
+    display: block;
+    width: 180px;
+    height: 28px;
+    line-height: 28px;
+    overflow: hidden;
+    text-align: center;
+}
+
+.artist-item .artist-img-border{
+    width: 150px;
+    margin: 0 auto;
+}
+ .artist-recommend .artist-item a {
+     font-size: 14px;
+     color: #373737;
+ }
+
+ .third-block{
+    height:700px;
+ }
+
+ .finance-block{
+    float: left;
+    width: 735px;
+ }
+.separate-block{
+    float: left;
+    width: 20px;
+}
+
+ .report-block{
+     float: left;
+     width: 735px;
+ }
+ .info-fr{
+     margin:10 auto;
+ }
+
+  .finance-item{
+    background-color: white;
+    height:130px;
+    border: 1px solid #e5e5e5;
+    margin-bottom: 20px;
+  }
+
+ .finance-item .logo {
+     width: 180px;
+     height: 120px;
+     position: relative;
+     float: left;
+     display: inline;
+ }
+
+  .finance-item .text {
+      position: relative;
+      float: left;
+      display: inline;
+      width: 525px;
+      margin-left: 20px;
+  }
+
+.finance-item .title{
+    color: #2a2a2a;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 34px;
+    height: 34px;
+    padding-right: 15px;
+    overflow: hidden;
+    margin-top: 8px;
+}
+
+.finance-item .desc{
+    line-height: 26px;
+    font-size: 14px;
+    color: #999;
+    height: 62px;
+    overflow: hidden;
+    text-align: justify;
+    padding-top: 3px;
+    padding-right: 15px;
+}
+.finance-item .date-info{
+    overflow: hidden;
+    color: #999;
+    text-align: right;
+    margin-top: 0px;
+    font-size: 12px;
+    padding-right:15px;
+}
+ .finance-item img{
+    width: 180px;
+    height: 130px;
+ }
+.member-block{
+    height: 500px;
+}
+ .member-list{
+    margin: 10px auto;
  }
 
 
