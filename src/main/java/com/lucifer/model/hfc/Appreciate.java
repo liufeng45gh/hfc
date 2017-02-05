@@ -25,7 +25,7 @@ public class Appreciate {
 
     private Integer clickCount;
 
-    @DateTimeFormat(pattern = "yyyy-MM-dd hh:mm:ss")
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date publishAt;
 
     private Date createdAt;

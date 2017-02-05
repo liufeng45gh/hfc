@@ -29,7 +29,7 @@ public class News {
 
     private String categoryName;
 
-    @DateTimeFormat(pattern = "yyyy-MM-dd hh:mm:ss")
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date publishAt;
 
     private Date createdAt;
