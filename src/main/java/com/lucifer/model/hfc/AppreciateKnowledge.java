@@ -36,6 +36,8 @@ public class AppreciateKnowledge {
 
     private Integer clickCount;
 
+    private String categoryName;
+
     public Long getId() {
         return id;
     }
@@ -138,5 +140,13 @@ public class AppreciateKnowledge {
 
     public void setClickCount(Integer clickCount) {
         this.clickCount = clickCount;
+    }
+
+    public String getCategoryName() {
+        return categoryName;
+    }
+
+    public void setCategoryName(String categoryName) {
+        this.categoryName = categoryName;
     }
 }
