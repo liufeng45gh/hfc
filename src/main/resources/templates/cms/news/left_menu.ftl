@@ -41,12 +41,14 @@
             <li  id="left_menu_research_report_list"><a href="/cms/research-report/list" >研究报告列表</a> </li>
             <li  id="left_menu_research_report_add"><a href="/cms/research-report/add" >新增研究报告</a> </li>
         </ul>
+        <!--
         <div class="menu-title">峰会</div>
         <ul class="tree tree-lines" >
             <li  id="left_menu_summit_list"><a href="/cms/summit/list" >峰会列表</a> </li>
             <li  id="left_menu_summit_add"><a href="/cms/summit/add" >新增峰会</a> </li>
             <li  id="left_menu_summit_category"><a href="/cms/summit/category/list" >分类</a> </li>
         </ul>
+        -->
         <div class="menu-title">会员活动</div>
         <ul class="tree tree-lines" >
             <li  id="left_menu_member_activity_list"><a href="/cms/member-activity/list" >活动列表</a> </li>
