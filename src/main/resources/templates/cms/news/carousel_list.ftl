@@ -62,7 +62,7 @@
                     <div class="content form_content" >
 
                         <div class="position"><span>添加新轮播图</span></div>
-                        <form action="/cms/index/carousel/add" method="post">
+                        <form action="/cms/news/carousel/add" method="post">
                             <table class="table_new" >
                                 <tbody>
                                 <tr><th width="20%"></th><td><span style="color:${KEY_RESULT_MESSAGE_COLOR?default("")};">${KEY_RESULT_MESSAGE?default("")}</span></td></tr>
@@ -102,8 +102,8 @@
                                     <th></th>
                                     <td>
                                         <button class="btn btn-primary" type="submit" onclick="return checkFiled();">保存</button>
-                                        <input type="hidden" id="update-url" value="/cms/index/carousel/{id}/update"/>
-                                        <input type="hidden" id="delete-url" value="/cms/index/carousel/delete"/>
+                                        <input type="hidden" id="update-url" value="/cms/news/carousel/{id}/update"/>
+                                        <input type="hidden" id="delete-url" value="/cms/news/carousel/delete"/>
                                     </td>
                                 </tr>
                                 </tbody>

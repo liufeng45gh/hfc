@@ -33,4 +33,26 @@ public class CarouseDao extends IBatisBaseDao{
     }
 
 
+    public List<Carousel> newsCarouselList(){
+        return this.hfcSqlSession.selectList("newsCarouselList");
+    }
+
+    public Integer insertNewsCarousel(Carousel carousel){
+        return this.hfcSqlSession.insert("insertNewsCarousel",carousel);
+    }
+
+    public Integer deleteNewsCarousel(Long id){
+        return this.hfcSqlSession.delete("deleteNewsCarousel",id);
+    }
+
+    public Carousel getNewsCarousel(Long id){
+        return this.hfcSqlSession.selectOne("getNewsCarousel",id);
+    }
+
+    public Integer updateNewsCarousel(Carousel carousel){
+        return this.hfcSqlSession.update("updateNewsCarousel",carousel);
+    }
+
+
+
 }

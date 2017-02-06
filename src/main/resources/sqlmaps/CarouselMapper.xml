@@ -34,4 +34,26 @@
         where id = #{id}
     </update>
 
+
+    <select id="newsCarouselList" resultMap="CarouselMap">
+        select * from news_carousel order by top desc,id desc
+    </select>
+
+    <insert id="addNewsCarousel">
+        insert into news_carousel (title,summary,logo,top,link) values (#{title},#{summary},#{logo},#{top},#{link})
+    </insert>
+
+    <delete id="deleteNewsCarousel">
+        delete from news_carousel where id = #{id}
+    </delete>
+
+    <select id="getNewsCarousel" resultMap="CarouselMap">
+        select * from news_carousel where id = #{id}
+    </select>
+
+    <update id="updateNewsCarousel">
+        update news_carousel set title = #{title},summary = #{summary}, logo = #{logo}, top = #{top}, link = #{link}
+        where id = #{id}
+    </update>
+
 </mapper>

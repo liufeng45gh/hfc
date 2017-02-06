@@ -1,6 +1,7 @@
 package com.lucifer.dao.hfc;
 
 import com.lucifer.dao.IBatisBaseDao;
+import com.lucifer.model.hfc.Carousel;
 import com.lucifer.model.hfc.News;
 import com.lucifer.model.hfc.NewsCategory;
 import com.lucifer.model.hfc.NewsRecommend;
@@ -92,4 +93,19 @@ public class NewsDao extends IBatisBaseDao {
     public Integer deleteNewsRecommend(Long id){
         return this.hfcSqlSession.delete("deleteNewsRecommend",id);
     }
+
+    public List<News> webNewsList(Long categoryId,Integer offset,Integer count){
+        Map<String,Object> param = new HashMap<String,Object>();
+        param.put("categoryId",categoryId);
+        param.put("offset",offset);
+        param.put("count",count);
+        return this.hfcSqlSession.selectList("cmsNewsList",param);
+    }
+
+    public List<News> webHotNewsList(){
+        return this.hfcSqlSession.selectList("webHotNewsList");
+    }
+
+
+
 }

@@ -37,9 +37,10 @@ $(document).ready(function () {
 function deleteObject(objectId) {
      var data_send = {};
      data_send.id = objectId;
+     var delete_url = $("#delete-url").val();
      var delete_request =$.ajax({
            type: 'post',
-           url: '/cms/index/carousel/delete',
+           url: delete_url,
            data: data_send,
            dataType: 'json'
         });

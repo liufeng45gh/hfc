@@ -9,6 +9,7 @@
             <li  id="left_menu_news_add"><a href="/cms/news/add" >发布资讯</a> </li>
             <li  id="left_menu_news_recommend"><a href="/cms/news/recommend/list" >资讯推荐</a> </li>
             <li  id="left_menu_news_category"><a href="/cms/news/category/list" >资讯分类</a> </li>
+            <li data-idx="1" data-id="1" id="left_menu_carousel"><a href="/cms/news/carousel/list" >轮播图</a> </li>
         </ul>
 
         <div class="menu-title">海富艺术家</div>

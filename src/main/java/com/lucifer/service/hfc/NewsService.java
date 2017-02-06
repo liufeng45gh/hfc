@@ -27,5 +27,9 @@ public class NewsService {
         return newsRecommendList;
     }
 
+    public List<News> searchList(String title,Integer offset,Integer count){
+         return null;
+    }
+
 
 }
