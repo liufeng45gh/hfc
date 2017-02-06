@@ -80,6 +80,69 @@
     margin-top: 20px;
 }
 
+.news-item {
+    background-color: white;
+    height: 130px;
+    border: 1px solid #e5e5e5;
+    margin-bottom: 20px;
+}
+
+.news-item .logo {
+    width: 180px;
+    height: 120px;
+    position: relative;
+    float: left;
+    display: inline;
+}
+.news-item img {
+    width: 180px;
+    height: 130px;
+}
+
+.news-item .text {
+    position: relative;
+    float: left;
+    display: inline;
+    width: 698px;
+    margin-left: 20px;
+}
+.news-item .w878{
+    width: 878px;
+}
+
+
+.news-item .title {
+    color: #2a2a2a;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 34px;
+    height: 34px;
+    padding-right: 15px;
+    overflow: hidden;
+    margin-top: 8px;
+}
+
+.news-item .desc {
+    line-height: 26px;
+    font-size: 14px;
+    color: #999;
+    height: 62px;
+    overflow: hidden;
+    text-align: justify;
+    padding-top: 3px;
+    padding-right: 15px;
+}
+
+.news-item  .date-info {
+    overflow: hidden;
+    color: #999;
+    text-align: right;
+    margin-top: 0px;
+    font-size: 12px;
+    padding-right: 15px;
+}
+
+
 .news-right .search-box{
     margin-top:20px;
     height: 40px;
@@ -141,7 +204,7 @@
 }
 
 .recommend-item .logo {
-    width: 140px;
+    width: 130px;
     height: 90px;
     position: relative;
     float: left;
@@ -149,7 +212,7 @@
 }
 
 .recommend-item img {
-    width: 140px;
+    width: 130px;
     height: 90px;
 }
 
@@ -157,8 +220,12 @@
     position: relative;
     float: left;
     display: inline;
-    width: 398px;
+    width: 408px;
     margin-left: 20px;
+}
+
+.recommend-item .long-text{
+    width: 538px;
 }
 
 .recommend-item .recommend-title {

@@ -56,4 +56,8 @@
         where id = #{id}
     </update>
 
+    <select id="firstNewsCarousel" resultMap="CarouselMap">
+        select * from news_carousel order by top desc,id desc limit 1
+    </select>
+
 </mapper>

@@ -2,10 +2,7 @@
 <html>
 <head>
 	<title>后台管理</title>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<link rel="stylesheet" href="/cms/css/admin.css">
-	 <link rel='stylesheet' href='/cms/css/theme-default.css' type='text/css' media='screen' />
-	<script type="text/javascript" charset="UTF-8" src="/cms/script/jquery-1.9.1.min.js"></script>
+    <#include "../common_header.ftl"/>
 
 </head>
 <body style="zoom: 1;">

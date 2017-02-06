@@ -2,12 +2,7 @@
 <html>
 <head>
     <title>后台管理</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <link rel="stylesheet" href="/cms/css/admin.css" />
-    <link rel='stylesheet' href='/cms/css/theme-default.css' type='text/css' media='screen' />
-    <script type="text/javascript" charset="UTF-8" src="/cms/script/jquery/jquery-3.1.1.js"></script>
-    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
-    <script src="http://code.jquery.com/jquery-migrate-1.2.1.js"></script>
+    <#include "../common_header.ftl"/>
     <link rel="stylesheet" type="text/css" href="/timepicker/css/jquery-ui.css" />
     <script type="text/javascript" src="/timepicker/js/jquery-ui.js"></script>
     <script type="text/javascript" src="/timepicker/js/jquery-ui-slide.min.js"></script>

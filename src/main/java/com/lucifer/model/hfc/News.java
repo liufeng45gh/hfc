@@ -1,5 +1,6 @@
 package com.lucifer.model.hfc;
 
+import com.lucifer.utils.StringHelper;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
@@ -158,5 +159,15 @@ public class News {
 
     public void setCategoryName(String categoryName) {
         this.categoryName = categoryName;
+    }
+
+    public Boolean isLogoHave(){
+        if (StringHelper.isEmpty(this.logo)) {
+            return false;
+        }
+        if ("/cms/images/logo.png".equals(this.logo)){
+            return false;
+        }
+        return true;
     }
 }

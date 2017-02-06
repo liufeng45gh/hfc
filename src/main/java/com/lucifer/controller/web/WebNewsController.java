@@ -1,7 +1,10 @@
 package com.lucifer.controller.web;
 
+import com.lucifer.dao.hfc.CarouseDao;
 import com.lucifer.dao.hfc.NewsDao;
+import com.lucifer.model.hfc.Carousel;
 import com.lucifer.model.hfc.News;
+import com.lucifer.model.hfc.NewsCategory;
 import com.lucifer.model.hfc.NewsRecommend;
 import com.lucifer.service.hfc.NewsService;
 import com.lucifer.utils.Constant;
@@ -29,6 +32,9 @@ public class WebNewsController {
     @Resource
     private NewsService newsService;
 
+    @Resource
+    private CarouseDao carouseDao;
+
     private Logger logger = LoggerFactory.getLogger(this.getClass());
 
     @RequestMapping(value="/index",method = RequestMethod.GET)
@@ -55,6 +61,11 @@ public class WebNewsController {
         List<NewsRecommend> newsRecommendList = newsService.newsRecommendList();
         request.setAttribute("recommendList",newsRecommendList);
 
+        List<NewsCategory> newsCategoryList = newsDao.cmsNewsCategoryList();
+        request.setAttribute("newsCategoryList",newsCategoryList);
+
+        Carousel carousel = carouseDao.firstNewsCarousel();
+        request.setAttribute("carousel",carousel);
 
         return "/web/news/index";
     }

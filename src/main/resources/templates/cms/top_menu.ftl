@@ -1,5 +1,5 @@
 
-<script  type="text/javascript" src="/layer/layer.js"></script>
+
 <div id="header">
 
   <div id="topbar">

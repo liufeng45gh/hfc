@@ -65,6 +65,22 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		left outer join news_category on news.category_id = news_category.id
 		where  news.id = #{id}
 	</select>
+	
+	<select id="webHotNewsList" resultMap="newsMap">
+		select news.*,news_category.name category_name from news
+		left outer join news_category on news.category_id = news_category.id
+		where news.is_deleted = 0
+		order by news.click_count desc limit 6
+	</select>
+	<select id="webNewsList"  resultMap="newsMap">
+		select news.*,news_category.name category_name from news
+		left outer join news_category on news.category_id = news_category.id
+		where  news.is_deleted = 0
+		<if test="categoryId!=null and categoryId!=''">
+			and news.category_id = #{categoryId}
+		</if>
+		order by news.top desc,news.publish_at desc limit #{offset},#{count}
+	</select>
 
 
 

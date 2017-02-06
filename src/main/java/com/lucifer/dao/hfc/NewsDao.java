@@ -99,7 +99,7 @@ public class NewsDao extends IBatisBaseDao {
         param.put("categoryId",categoryId);
         param.put("offset",offset);
         param.put("count",count);
-        return this.hfcSqlSession.selectList("cmsNewsList",param);
+        return this.hfcSqlSession.selectList("webNewsList",param);
     }
 
     public List<News> webHotNewsList(){

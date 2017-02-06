@@ -38,7 +38,7 @@ public class CarouseDao extends IBatisBaseDao{
     }
 
     public Integer insertNewsCarousel(Carousel carousel){
-        return this.hfcSqlSession.insert("insertNewsCarousel",carousel);
+        return this.hfcSqlSession.insert("addNewsCarousel",carousel);
     }
 
     public Integer deleteNewsCarousel(Long id){
@@ -51,6 +51,10 @@ public class CarouseDao extends IBatisBaseDao{
 
     public Integer updateNewsCarousel(Carousel carousel){
         return this.hfcSqlSession.update("updateNewsCarousel",carousel);
+    }
+
+    public Carousel firstNewsCarousel(){
+        return this.hfcSqlSession.selectOne("firstNewsCarousel");
     }
 
 

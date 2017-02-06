@@ -2,11 +2,7 @@
 <html>
 <head>
     <title>后台管理</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <link rel="stylesheet" href="/cms/css/admin.css">
-    <link rel='stylesheet' href='/cms/css/theme-default.css' type='text/css' media='screen' />
-    <script type="text/javascript" charset="UTF-8" src="/cms/script/jquery-1.9.1.min.js"></script>
-    <script type="text/javascript" charset="UTF-8" src="/layer/layer.js"></script>
+    <#include "../common_header.ftl"/>
 
 </head>
 <body style="zoom: 1;">
@@ -62,7 +58,7 @@
                     <div class="content form_content" >
 
                         <div class="position"><span>添加新轮播图</span></div>
-                        <form action="/cms/index/carousel/add" method="post">
+                        <form action="/cms/index/carousel/add" method="post"  id="hfc-form">
                             <table class="table_new" >
                                 <tbody>
                                 <tr><th width="20%"></th><td><span style="color:${KEY_RESULT_MESSAGE_COLOR?default("")};">${KEY_RESULT_MESSAGE?default("")}</span></td></tr>
