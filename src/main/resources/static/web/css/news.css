@@ -78,6 +78,7 @@
    margin-top: 5px;
    padding-left: 20px;
    padding-right: 20px;
+   margin-top: -5px;
 }
 
 .separate-block{
@@ -94,32 +95,37 @@
 
 .news-item {
     background-color: white;
-    height: 130px;
-    border: 1px solid #e5e5e5;
+    height: 150px;
+    //border: 1px solid #e5e5e5;
     margin-bottom: 20px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.25)
 }
 
 .news-item .logo {
-    width: 180px;
-    height: 120px;
+    width: 260px;
+    height: 150px;
     position: relative;
     float: left;
     display: inline;
 }
 .news-item img {
-    width: 180px;
-    height: 130px;
+    width: 260px;
+    height: 150px;
 }
 
 .news-item .text {
     position: relative;
     float: left;
     display: inline;
-    width: 698px;
+    width: 518px;
     margin-left: 20px;
 }
 .news-item .w878{
     width: 878px;
+}
+
+.news-item .w800{
+    width: 780px;
 }
 
 
@@ -167,7 +173,7 @@
 .new-searching-unit input {
     margin: 0 ;
     padding: 0 10px;
-    width: 436px;
+    width: 360px;
     height: 40px;
     line-height: 40px;
     border: 1px solid rgba(255,255,255,.8);
@@ -187,7 +193,7 @@
     cursor: pointer;
 }
 .title{
-    width:560px;
+    width:360px;
     height: 50px;
     margin-top: 20px;
 }
@@ -201,8 +207,7 @@
 }
 
 .title .t-en{
-      font-size: 16px;
-      font-weight: bold;
+      font-size: 14px;
       margin: 0 auto;
       text-align: center;
       color: #D5D5D5;
@@ -220,28 +225,28 @@
 }
 
 .recommend-item .logo {
-    width: 130px;
-    height: 90px;
+    width: 110px;
+    height: 70px;
     position: relative;
     float: left;
     display: inline;
 }
 
 .recommend-item img {
-    width: 130px;
-    height: 90px;
+    width: 110px;
+    height: 70px;
 }
 
 .recommend-item .text {
     position: relative;
     float: left;
     display: inline;
-    width: 408px;
+    width: 228px;
     margin-left: 20px;
 }
 
 .recommend-item .long-text{
-    width: 538px;
+    width: 338px;
 }
 
 .recommend-item .recommend-title {
@@ -266,30 +271,34 @@
 
 .wonderful-recommend-list .wonderful-recommend-item{
     float: left;
-    width: 278px;
+    width: 162px;
 }
 
 .wonderful-recommend-item img{
-    width: 200px;
-    height:133px;
-    margin: 0 auto;
+   width: 162px;
+   height: 103px;
+   margin: 0 auto;
 }
 
 .wonderful-recommend-item .logo{
-    width: 200px;
-    height:133px;
+    width: 162px;
+    height: 103px;
     margin: 0 auto;
 }
 
 .wonderful-recommend-item .recommend-title{
 
-    width: 200px;
+    width: 162px;
     margin: 0 auto;
     text-align: center;
     height: 50px;
     margin-top: 10px;
     margin-bottom: 10px;
     line-height: 23px;
+}
+
+.wonderful-recommend-list .left-36{
+    margin-left: 36px;
 }
 
 .load-more{

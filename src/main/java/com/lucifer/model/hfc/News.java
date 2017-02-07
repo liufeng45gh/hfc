@@ -176,10 +176,10 @@ public class News {
            return "";
          }
          if (this.isLogoHave()){
-             if (this.summary.length()<98) {
+             if (this.summary.length()<74) {
                  return this.summary;
              }
-             return this.summary.substring(0,93)+"...";
+             return this.summary.substring(0,74)+"...";
          } else {
              if (this.summary.length()<110) {
                  return this.summary;
@@ -187,5 +187,15 @@ public class News {
              return this.summary.substring(0,110)+"...";
          }
 
+    }
+
+    public String rightRecommendTitle(){
+        if (StringHelper.isEmpty(this.title)) {
+            return "";
+        }
+        if (this.title.length() >= 17) {
+            return this.title.substring(0,17) + "...";
+        }
+        return this.title;
     }
 }

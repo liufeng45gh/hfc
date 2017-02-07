@@ -55,7 +55,7 @@
                         <div class="tit" id="focus-tit">
                             ${carousel.title?default("")}
                         </div>
-                        <div>
+                        <div style="margin-top: -6px;">
                             <hr class="t-d-hr"/>
                         </div>
                         <div class="des" id="focus-des">${carousel.summary?default("")}</div>
@@ -73,7 +73,7 @@
                             </a>
                         </div>
                         </#if>
-                        <div class="text <#if !news.isLogoHave()>w878</#if>">
+                        <div class="text <#if !news.isLogoHave()>w800</#if>">
                             <div class="title">${news.title?default("")}</div>
                             <div class="desc">
 
@@ -105,7 +105,7 @@
 
                 </div>
 
-                <div class="hr-border" style="width:560px;">
+                <div class="hr-border" style="width:360px;">
                         <hr  class="line-info-hr"/>
                 </div>
                 <div class="title" >
@@ -135,6 +135,10 @@
 
                 </div>
 
+                <div class="hr-border" style="width:360px;">
+                    <hr  class="line-info-hr"/>
+                </div>
+
                 <div class="title" >
                     <div class="t-zh">精彩推荐</div>
                     <div class="t-en">WONDERFUL RECOMMEND</div>
@@ -142,7 +146,7 @@
 
                 <div class="wonderful-recommend-list">
                     <#list recommendList as recommend>
-                    <div class="wonderful-recommend-item">
+                    <div class="wonderful-recommend-item <#if recommend?is_even_item>left-36</#if>" >
                         <#if recommend.news.isLogoHave()>
                         <div class="logo">
                             <a href="http://lol.replays.net/news/page/20170201/184862.html" target="_blank">
@@ -151,7 +155,7 @@
                         </div>
                         </#if>
                         <div class="text">
-                            <div class="recommend-title">${recommend.news.title?default("")}</div>
+                            <div class="recommend-title">${(recommend.news.rightRecommendTitle())!}</div>
                         </div>
                     </div>
                     </#list>
