@@ -55,6 +55,9 @@
                         <div class="tit" id="focus-tit">
                             ${carousel.title?default("")}
                         </div>
+                        <div>
+                            <hr class="t-d-hr"/>
+                        </div>
                         <div class="des" id="focus-des">${carousel.summary?default("")}</div>
                     </div>
                 </div>

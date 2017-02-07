@@ -32,12 +32,12 @@
     width: 800px;
     position: relative;
     margin-top: 20px;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
 }
 
 .recommend-news img{
     width:800px;
-    height:400px;
+    height:378px;
 }
 
 .recommend-news #focusTitle {
@@ -54,18 +54,30 @@
 #focusTitle .tit {
     height: 44px;
     line-height: 44px;
-    border-bottom: 1px solid #333;
+    //border-bottom: 1px solid #333;
     color: #fff;
     font-size: 25px;
     font-weight: bold;
+    padding-left:20px;
+    padding-right:20px;
+}
+
+#focusTitle .t-d-hr{
+  width: 20px;
+  border: 1px solid rgb(261,47,54);
+
+  margin-left: 20;
 }
 
 #focusTitle .des {
-    line-height: 22px;
-    height: 44px;
-    overflow: hidden;
-    color: #fff;
-    font-size: 18px;
+   line-height: 20px;
+   height: 44px;
+   overflow: hidden;
+   color: #fff;
+   font-size: 14px;
+   margin-top: 5px;
+   padding-left: 20px;
+   padding-right: 20px;
 }
 
 .separate-block{
