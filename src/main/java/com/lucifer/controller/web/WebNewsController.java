@@ -12,6 +12,7 @@ import com.lucifer.utils.PageUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -120,5 +121,20 @@ public class WebNewsController {
         request.setAttribute("newsList",newsList);
 
         return "/web/news/list";
+    }
+
+    @RequestMapping(value="/{id}/detail",method = RequestMethod.GET)
+    public String newsDetail(HttpServletRequest request,@PathVariable Long id){
+        List<News> hotList = newsDao.webHotNewsList();
+        request.setAttribute("hotList",hotList);
+
+
+        List<NewsRecommend> newsRecommendList = newsService.newsRecommendList();
+        request.setAttribute("recommendList",newsRecommendList);
+
+        News news = newsDao.getNews(id);
+        request.setAttribute("entity",news);
+
+        return "/web/news/detail";
     }
 }

@@ -412,3 +412,7 @@ FILTER: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
    font-size: 14px;
    font-weight: 400;
 }
+
+#submit-btn{
+    float: left;
+}
