@@ -23,8 +23,8 @@
             <tr>
                 <th width="20%" style="text-align:right;">logo:</th>
                 <td>
-                    <div class="logo_outer">
-                        <input type="file" class="addLogoInput" id="up_file" style="width:158px;"/>
+                    <div class="logo_outer" style="width:400px;height:189px;">
+                        <input type="file" class="addLogoInput" id="up_file" style="width:400px;"/>
                         <img width="100%" height="100%" src="${entity.logo?default("")}" id="logo_cover"/>
                         <input type="hidden" id="logo_hidden" name="logo" value="${entity.logo?default("")}"/>
                     </div>
