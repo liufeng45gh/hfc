@@ -71,7 +71,11 @@
                         </#if>
                         <div class="text <#if !news.isLogoHave()>w878</#if>">
                             <div class="title">${news.title?default("")}</div>
-                            <div class="desc">${news.summary?default("")}</div>
+                            <div class="desc">
+
+                                ${news.summaryText()}
+
+                            </div>
                             <div class="date-info">[${(news.publishAt?string("yyyy-MM-dd HH:mm:ss"))!}]</div>
                         </div>
 

@@ -170,4 +170,22 @@ public class News {
         }
         return true;
     }
+
+    public String summaryText(){
+         if (null == this.summary) {
+           return "";
+         }
+         if (this.isLogoHave()){
+             if (this.summary.length()<98) {
+                 return this.summary;
+             }
+             return this.summary.substring(0,93)+"...";
+         } else {
+             if (this.summary.length()<110) {
+                 return this.summary;
+             }
+             return this.summary.substring(0,110)+"...";
+         }
+
+    }
 }
