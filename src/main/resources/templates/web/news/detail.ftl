@@ -41,7 +41,7 @@
     <div class="third-block">
         <div class="info-fr wrapper-996">
             <div class="finance-block news-left">
-                <div class="news-menu">
+                <div class="news-nav">
 
                     <a href="/"><div class="nav-item" >首页</div></a>   <div class="nav-item" >&gt;</div>
                     <a href="/news/index"><div class="nav-item" >资讯</div></a>   <div class="nav-item" >&gt;</div>
@@ -69,75 +69,8 @@
                 <div class="fill-bottom">&nbsp;</div>
 
             </div>
-            <div class="separate-block">
-                &nbsp;
-            </div>
-            <div class="report-block news-right">
-                <div class="search-box">
-                    <form method="get" action="/search/" class="new-searching-unit" data-regestered="regestered">
-                        <input id="query" type="text" size="27" name="q" autocomplete="off" placeholder="搜索你喜欢的" />
-                        <a href="#" onclick="return false;" class="go"></a>
-                    </form>
 
-                </div>
-
-                <div class="hr-border" style="width:560px;">
-                        <hr  class="line-info-hr"/>
-                </div>
-                <div class="title" >
-                    <div class="t-zh">最热新闻</div>
-                    <div class="t-en">HOT NEWS</div>
-                </div>
-                <div class="finance-list">
-
-                    <#list hotList as news>
-                    <div class="recommend-item">
-                        <#if news.isLogoHave()>
-                        <div class="logo">
-                            <a href="http://lol.replays.net/news/page/20170201/184862.html" target="_blank">
-                                <img src="${news.logo?default("")}" >
-                            </a>
-                        </div>
-                        </#if>
-                        <div class="text <#if !news.isLogoHave()>long-text</#if>">
-                            <div class="recommend-title">${news.title?default("")}</div>
-
-                            <div class="date-info">[${(news.publishAt?string("yyyy-MM-dd HH:mm:ss"))!}]</div>
-                        </div>
-
-                    </div>
-                    </#list>
-
-
-                </div>
-
-                <div class="title" >
-                    <div class="t-zh">精彩推荐</div>
-                    <div class="t-en">WONDERFUL RECOMMEND</div>
-                </div>
-
-                <div class="wonderful-recommend-list">
-                    <#list recommendList as recommend>
-                    <div class="wonderful-recommend-item">
-                        <#if recommend.news.isLogoHave()>
-                        <div class="logo">
-                            <a href="http://lol.replays.net/news/page/20170201/184862.html" target="_blank">
-                                <img src="${recommend.news.logo?default("")}" >
-                            </a>
-                        </div>
-                        </#if>
-                        <div class="text">
-                            <div class="recommend-title">${recommend.news.title?default("")}</div>
-                        </div>
-                    </div>
-                    </#list>
-
-
-
-
-                </div>
-
-            </div>
+            <#include "right_part.ftl"/>
 
 
         </div>

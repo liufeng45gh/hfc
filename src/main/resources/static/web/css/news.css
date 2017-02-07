@@ -62,6 +62,10 @@
     padding-right:20px;
 }
 
+#focusTitle a {
+    text-decoration: none;
+}
+
 #focusTitle .t-d-hr{
   width: 20px;
   border: 1px solid rgb(261,47,54);
@@ -91,6 +95,10 @@
 
 .news-list{
     margin-top: 20px;
+}
+
+.news-list a{
+    text-decoration: none;
 }
 
 .news-item {
@@ -217,14 +225,18 @@
     margin-top: 20px;
 }
 
-.recommend-item{
+.hot-item{
     background-color: white;
-    height: 90px;
+    height: 70px;
     border: 1px solid #e5e5e5;
     margin-bottom: 20px;
 }
 
-.recommend-item .logo {
+.hot-item a{
+    text-decoration: none;
+}
+
+.hot-item .logo {
     width: 110px;
     height: 70px;
     position: relative;
@@ -232,12 +244,12 @@
     display: inline;
 }
 
-.recommend-item img {
+.hot-item img {
     width: 110px;
     height: 70px;
 }
 
-.recommend-item .text {
+.hot-item .text {
     position: relative;
     float: left;
     display: inline;
@@ -245,28 +257,33 @@
     margin-left: 20px;
 }
 
-.recommend-item .long-text{
+.hot-item .long-text{
     width: 338px;
 }
 
-.recommend-item .recommend-title {
-     //color: #939393;
+.hot-item .hot-title {
+     //color: #9F9F9F;
+     color: #2a2a2a;
      font-size: 16px;
      font-weight: bold;
-     line-height: 30px;
-     height: 60px;
+     line-height: 20px;
+     height: 40px;
      padding-right: 15px;
      overflow: hidden;
-     margin-top: 8px;
+     margin-top: 5px;
 }
 
-.recommend-item .date-info {
+.hot-item .date-info {
     overflow: hidden;
     color: #999;
     text-align: right;
     margin-top: 0px;
     font-size: 12px;
     padding-right: 15px;
+}
+
+.wonderful-recommend-list{
+    margin-top: 20px;
 }
 
 .wonderful-recommend-list .wonderful-recommend-item{
@@ -287,7 +304,7 @@
 }
 
 .wonderful-recommend-item .recommend-title{
-
+    color: #2a2a2a;
     width: 162px;
     margin: 0 auto;
     text-align: center;
@@ -299,6 +316,10 @@
 
 .wonderful-recommend-list .left-36{
     margin-left: 36px;
+}
+
+.wonderful-recommend-item a{
+    text-decoration: none;
 }
 
 .load-more{
@@ -327,7 +348,7 @@
    line-height: 48px;
    color: #222;
    //text-align:center;
-   height: 50px;
+   //height: 50px;
 }
 
 .news-info{
@@ -357,4 +378,10 @@
     max-width: 100%;
     display: block;
     margin: 10px auto;
+}
+
+.news-nav{
+    height: 40px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
