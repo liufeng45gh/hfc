@@ -38,7 +38,7 @@ public class WebNewsController {
     private Logger logger = LoggerFactory.getLogger(this.getClass());
 
     @RequestMapping(value="/index",method = RequestMethod.GET)
-    public String newsIndex(HttpServletRequest request, @RequestParam(value = "category-id",required=false,defaultValue="") Long categoryId,
+    public String newsIndex(HttpServletRequest request, @RequestParam(value = "categoryId",required=false,defaultValue="") Long categoryId,
                            @RequestParam(value = "page",required=false,defaultValue="1")Integer page){
         Integer pageSize = Constant.PAGESIZE;
         Integer offset = (page-1) * pageSize;
@@ -71,7 +71,7 @@ public class WebNewsController {
     }
 
     @RequestMapping(value="/list",method = RequestMethod.GET)
-    public String newsList(HttpServletRequest request, @RequestParam(value = "category-id",required=false,defaultValue="") Long categoryId,
+    public String newsList(HttpServletRequest request, @RequestParam(value = "categoryId",required=false,defaultValue="") Long categoryId,
                            @RequestParam(value = "page",required=false,defaultValue="1")Integer page){
 
         Integer pageSize = Constant.PAGESIZE;

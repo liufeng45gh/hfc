@@ -21,6 +21,7 @@
     <script  src="/web/js/jquery-3.1.1.js"></script>
     <script  src="/web/js/Tony_Tab.js"></script>
     <script  src="/web/js/menu-bar.js"></script>
+    <script  src="/web/js/common.js"></script>
 </head>
 
 <body>
@@ -42,7 +43,7 @@
             <div class="finance-block news-left">
                 <div class="news-menu">
                     <#list newsCategoryList as category>
-                    <a href="/news/index?category-id=${category.id?default("")}"><div class="menu-item" id="menu-item-${category.id?default("")}">${category.name}</div></a>
+                    <a href="/news/index?categoryId=${category.id?default("")}"><div class="menu-item" id="menu-item-${category.id?default("")}">${category.name}</div></a>
                     </#list>
 
                 </div>
@@ -59,7 +60,7 @@
                 </div>
                 </#if>
 
-                <div class="finance-list news-list">
+                <div class="finance-list news-list" id="news-list">
                     <#list newsList as news>
                     <div class="news-item">
                         <#if news.isLogoHave()>
@@ -84,7 +85,8 @@
 
 
                 </div>
-                <div class="load-more">点击加载更多</div>
+                <div class="load-more" id="load-more">点击加载更多</div>
+                <input type="hidden" id="load-more-url" value="/news/list">
                 <div class="fill-bottom">&nbsp;</div>
 
             </div>
@@ -169,9 +171,9 @@
 
 <script type="text/javascript">
 $(function() {
-	$('#menu-item-${RequestParameters["category-id"]?default("")}').addClass("active");
+	$('#menu-item-${RequestParameters["categoryId"]?default("")}').addClass("active");
 });
-var categoryId = "${RequestParameters["category-id"]?default("")}";
+var categoryId = "${RequestParameters["categoryId"]?default("")}";
 </script>
 
 <script  src="/web/js/news/index.js"></script>
