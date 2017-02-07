@@ -63,7 +63,7 @@
                                             <span>|</span>
                                             <a href="#" onclick="return false;" class="to_delete">删除</a>
                                             <span>|</span>
-                                            <a href="#" onclick="">查看</a>
+                                            <a href="/news/${news.id?default("")}/detail" onclick="" target="_blank">查看</a>
                                             <span>|</span>
                                             <a href="#" onclick="return false;" class="to_recommend">推荐到右侧</a>
                                             <span>|</span>

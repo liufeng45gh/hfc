@@ -43,8 +43,8 @@
             <div class="finance-block news-left">
                 <div class="news-menu">
 
-                    <a href="/"><div class="nav-item" >首页</div></a>
-                    <a href="/news/index"><div class="nav-item" >资讯</div></a>
+                    <a href="/"><div class="nav-item" >首页</div></a>   <div class="nav-item" >&gt;</div>
+                    <a href="/news/index"><div class="nav-item" >资讯</div></a>   <div class="nav-item" >&gt;</div>
                     <a href="/news/index?categoryId=${entity.categoryId}"><div class="nav-item" >${entity.categoryName}</div></a>
 
 
@@ -54,7 +54,14 @@
 
                 <div class="finance-list news-list" id="news-list">
                     <div class="news-title">${entity.title?default("")}</div>
-                    <div class="news-date">${(entity.publishAt?string("yyyy-MM-dd HH:mm:ss"))!}</div>
+                    <div class="news-info">
+                        <span>
+                              ${entity.source?default("")}
+                        </span>
+                        <span>
+                            ${(entity.publishAt?string("yyyy-MM-dd HH:mm:ss"))!}
+                        </span>
+                    </div>
                     <div class="news-content">${entity.content?default("")}</div>
 
                 </div>

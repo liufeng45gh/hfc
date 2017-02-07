@@ -109,7 +109,7 @@
                     <div class="t-zh">最热新闻</div>
                     <div class="t-en">HOT NEWS</div>
                 </div>
-                <div class="finance-list">
+                <div class="hot-list">
 
                     <#list hotList as news>
                     <div class="recommend-item">

@@ -1,13 +1,13 @@
 body {
-    font-family: "Microsoft YaHei" ! important "helvetica neue","arial","sans-serif";
-    font-size: 14px;
+    font-family:'Microsoft YaHei','Hiragino Sans GB',Helvetica,Arial,'Lucida Grande',sans-serif;
+    font-size: 15px;
     color: #444;
     margin: 0;
     padding: 0;
 }
 
 .page-min-width {
-    min-width: 1500px;
+    min-width: 1200px;
 }
 
 
@@ -129,7 +129,7 @@ body {
 }
 
 .wrapper-996 {
-    width: 1500px;
+    width: 1200px;
 }
 .new-banner .author span {
     color: #fff;
