@@ -49,6 +49,11 @@ qiniu:
 multipart:
   maxFileSize: 10Mb
   maxRequestSize: 30Mb
+solr:
+  url:
+    news: http://hfc.dbdbd.cn:8983/solr/news
+    artist: http://hfc.dbdbd.cn:8983/solr/artist
+    appreciate: http://hfc.dbdbd.cn:8983/solr/appreciate
 
 
 

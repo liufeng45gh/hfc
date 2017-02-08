@@ -3,6 +3,7 @@ package com.lucifer.utils;
 
 
 import javax.servlet.http.HttpServletResponse;
+import java.util.List;
 
 /**
  * Created by liufx on 15/11/18.
@@ -18,6 +19,8 @@ public class PageInfoWriter {
     private Integer allRecordCount;
 
     private Integer page;
+
+    private List dataList;
 
 
     public Integer getTotalPageCount(){
@@ -87,5 +90,13 @@ public class PageInfoWriter {
         }
         int offset = (page -1)*perPageCount;
         return offset;
+    }
+
+    public List getDataList() {
+        return dataList;
+    }
+
+    public void setDataList(List dataList) {
+        this.dataList = dataList;
     }
 }

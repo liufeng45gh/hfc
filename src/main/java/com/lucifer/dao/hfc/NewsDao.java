@@ -8,10 +8,7 @@ import com.lucifer.model.hfc.NewsRecommend;
 import com.lucifer.utils.DateUtils;
 import org.springframework.stereotype.Component;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Objects;
+import java.util.*;
 
 /**
  * Created by Administrator on 2017/1/15.
@@ -106,6 +103,11 @@ public class NewsDao extends IBatisBaseDao {
         return this.hfcSqlSession.selectList("webHotNewsList");
     }
 
-
+    public List<News> newsListOrderByUpdatedAt(Date updatedAt, int count){
+        Map param = new HashMap();
+        param.put("updatedAt", updatedAt);
+        param.put("count", count);
+        return this.hfcSqlSession.selectList("newsListOrderByUpdatedAt",param);
+    }
 
 }
