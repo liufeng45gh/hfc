@@ -38,6 +38,8 @@ public class ResearchReport {
 
     private Float top;
 
+    private Integer isOpen;
+
     public Long getId() {
         return id;
     }
@@ -148,5 +150,14 @@ public class ResearchReport {
 
     public void setTop(Float top) {
         this.top = top;
+    }
+
+
+    public Integer getIsOpen() {
+        return isOpen;
+    }
+
+    public void setIsOpen(Integer isOpen) {
+        this.isOpen = isOpen;
     }
 }

@@ -41,6 +41,7 @@
 		//DOM加载完毕执行
 		$(document).ready(function(){
 			 var ue = UE.getEditor('editor');
+			 $("#is_open_input").val("${(entity.isOpen)!}");
 		});
 	</script>
 <script type="text/javascript" charset="UTF-8" src="/cms/script/hfc/research/update.js"></script>

@@ -22,6 +22,17 @@
         </td>
     </tr>
 
+    <tr>
+        <th width="20%" style="text-align:right;">是否公开:</th>
+        <td>
+            <select id="is_open_input"  class="form-control" style="display:inline-block;width:280px;" name="isOpen" >
+                <option value="1">是</option>
+                <option value="0">否</option>
+            </select>
+            <label id="is_open_input_info" style="display:inline-block;">* 是否公开</label>
+        </td>
+    </tr>
+
 
     <tr>
         <th width="20%" style="text-align:right;">发布时间:</th>
