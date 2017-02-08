@@ -267,4 +267,11 @@ public class CmsIndexController {
         indexDao.deleteSummitIndexRecommend(id);
         return Result.ok();
     }
+
+    //搜索引擎导入
+    @RequestMapping(value="/search/re-import",method = RequestMethod.GET)
+    public String searchReImport(HttpServletRequest request){
+        return "/cms/index/search_re_import";
+    }
+
 }

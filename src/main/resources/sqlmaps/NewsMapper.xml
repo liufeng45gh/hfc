@@ -50,7 +50,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		update news
 		set
 		title = #{title},  logo= #{logo}, summary=#{summary}, source=#{source},
-		category_id = #{categoryId} ,mode = #{mode} ,content = #{content},publish_at = #{publishAt} ,top = #{top}
+		category_id = #{categoryId} ,mode = #{mode} ,content = #{content},publish_at = #{publishAt} ,top = #{top},
+		updated_at = now()
 		where id = #{id}
 	</update>
 	
@@ -86,9 +87,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="newsListOrderByUpdatedAt" resultMap="newsMap">
 		select news.*
 		from news
+		where is_deleted = 0
 		<if test="updatedAt != null">
 			<![CDATA[
-			where updated_at > #{updatedAt}
+			and updated_at > #{updatedAt}
 			]]>
 		</if>
 		order by updated_at limit #{count}
