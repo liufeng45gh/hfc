@@ -20,7 +20,13 @@ public class PinYinService {
         String pinyin = "";
         for (char ch: chars) {
             if (this.checkChinese(ch)) {
-                pinyin = pinyin + String.valueOf(PinyinHelper.toHanyuPinyinStringArray(ch,defaultFormat));
+                String [] array =  PinyinHelper.toHanyuPinyinStringArray(ch,defaultFormat);
+                String ss = "";
+                for (String s:array) {
+                    ss = ss + s;
+                }
+
+                pinyin = pinyin + ss;
             } else {
                 pinyin = pinyin + String.valueOf(ch);
             }
@@ -32,5 +38,10 @@ public class PinYinService {
     public  boolean checkChinese(char word){
         if ((word >= 0x4e00)&&(word<=0x9fbb)) return true;
         else return false;
+    }
+
+    public static void main(String [] args) throws BadHanyuPinyinOutputFormatCombination {
+        String hanyu = new PinYinService().toHanYuPinYin("你好你好你好") ;
+        System.out.println(hanyu);
     }
 }
