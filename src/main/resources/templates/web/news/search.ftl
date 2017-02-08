@@ -115,12 +115,9 @@
 </div>
 
 <script type="text/javascript">
-$(function() {
-	$('#menu-item-${RequestParameters["categoryId"]?default("")}').addClass("active");
-});
-var categoryId = "${RequestParameters["categoryId"]?default("")}";
+var title = "${title!}";
 </script>
 
-<script  src="/web/js/news/index.js"></script>
+<script  src="/web/js/news/search.js"></script>
 </body>
 </html>

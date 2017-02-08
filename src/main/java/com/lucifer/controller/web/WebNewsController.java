@@ -6,9 +6,12 @@ import com.lucifer.model.hfc.Carousel;
 import com.lucifer.model.hfc.News;
 import com.lucifer.model.hfc.NewsCategory;
 import com.lucifer.model.hfc.NewsRecommend;
+import com.lucifer.service.hfc.NewsSearchService;
 import com.lucifer.service.hfc.NewsService;
 import com.lucifer.utils.Constant;
+import com.lucifer.utils.PageInfoWriter;
 import com.lucifer.utils.PageUtil;
+import org.json.JSONException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
@@ -19,6 +22,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+import java.io.IOException;
 import java.util.List;
 
 /**
@@ -35,6 +39,9 @@ public class WebNewsController {
 
     @Resource
     private CarouseDao carouseDao;
+
+    @Resource
+    private NewsSearchService newsSearchService;
 
     private Logger logger = LoggerFactory.getLogger(this.getClass());
 
@@ -85,11 +92,17 @@ public class WebNewsController {
 
     @RequestMapping(value="/search",method = RequestMethod.GET)
     public String newsSearch(HttpServletRequest request, @RequestParam(value = "title",required=false,defaultValue="") String title,
-                            @RequestParam(value = "page",required=false,defaultValue="1")Integer page){
+                            @RequestParam(value = "page",required=false,defaultValue="1")Integer page) throws IOException, JSONException {
         Integer pageSize = Constant.PAGESIZE;
         Integer offset = (page-1) * pageSize;
-        List<News> newsList = newsService.searchList(title,offset,pageSize);
-        request.setAttribute("newsList",newsList);
+
+        PageInfoWriter pageInfo = newsSearchService.searchList(title,page,pageSize);
+        logger.info("pageInfo.getDataList().size(): {}",pageInfo.getDataList().size());
+        //List<News> newsList = newsDao.cmsNewsList(title,offset,pageSize);
+        request.setAttribute("newsList",pageInfo.getDataList());
+
+        Integer matchRecordCount = pageInfo.getAllRecordCount();
+
 
         //Integer matchRecordCount=newsDao.matchRecordCount(title);
 
@@ -107,19 +120,26 @@ public class WebNewsController {
         List<NewsRecommend> newsRecommendList = newsService.newsRecommendList();
         request.setAttribute("recommendList",newsRecommendList);
 
+        List<NewsCategory> newsCategoryList = newsDao.cmsNewsCategoryList();
+        request.setAttribute("newsCategoryList",newsCategoryList);
+        request.setAttribute("title",title);
 
         return "/web/news/search";
     }
 
     @RequestMapping(value="/search-list",method = RequestMethod.GET)
     public String searchList(HttpServletRequest request, @RequestParam(value = "title",required=false,defaultValue="") String title,
-                           @RequestParam(value = "page",required=false,defaultValue="1")Integer page){
+                           @RequestParam(value = "page",required=false,defaultValue="1")Integer page) throws IOException, JSONException {
 
         Integer pageSize = Constant.PAGESIZE;
-        Integer offset = (page-1) * pageSize;
-        List<News> newsList = newsService.searchList(title,offset,pageSize);
-        request.setAttribute("newsList",newsList);
-
+        //Integer offset = (page-1) * pageSize;
+        PageInfoWriter pageInfo = newsSearchService.searchList(title,page,pageSize);
+        logger.info("pageInfo.getDataList().size(): {}",pageInfo.getDataList().size());
+        //List<News> newsList = newsDao.cmsNewsList(title,offset,pageSize);
+        request.setAttribute("newsList",pageInfo.getDataList());
+//        List<News> newsList = newsService.searchList(title,offset,pageSize);
+//        request.setAttribute("newsList",newsList);
+        Integer matchRecordCount = pageInfo.getAllRecordCount();
         return "/web/news/list";
     }
 

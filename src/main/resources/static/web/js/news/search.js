@@ -9,12 +9,12 @@ $(function() {
         }
         isLoading = true;
         $("#load-more").hide();
-        var url = $("#load-more-url").val();
+        var url = $("#search-more-url").val();
         //url = url.replace("{id}",objectId);
         var data_send = {};
         page++;
         data_send.page = page;
-        data_send.categoryId = categoryId;
+        data_send.title = title;
         var more_request =$.ajax({
            type: 'get',
            url: url,

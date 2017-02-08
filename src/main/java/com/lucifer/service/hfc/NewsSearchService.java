@@ -141,6 +141,8 @@ public class NewsSearchService {
             //query.setQuery("*:*");
 
             //pageInfo.writeToGateway(resultMap);
+            pageInfo.setDataList(new ArrayList<>());
+            pageInfo.setAllRecordCount(0);
             return pageInfo;
         } else {
             query.setQuery(text);
@@ -199,6 +201,7 @@ public class NewsSearchService {
 
 
         pageInfo.setDataList(newsList);
+        pageInfo.setAllRecordCount(numberFound.intValue());
 
         return pageInfo;
     }
