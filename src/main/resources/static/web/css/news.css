@@ -159,6 +159,10 @@
     padding-right: 15px;
 }
 
+.news-item em{
+    color: #c00;
+}
+
 .news-item  .date-info {
     overflow: hidden;
     color: #999;
