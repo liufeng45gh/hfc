@@ -78,11 +78,12 @@
 </div>
 
 <script type="text/javascript">
+var name = "${name!}";
 $(function() {
 	$('#menu-item-yhj').addClass("active");
 });
 </script>
 
-<script  src="/web/js/artist/index.js"></script>
+<script  src="/web/js/artist/search.js"></script>
 </body>
 </html>

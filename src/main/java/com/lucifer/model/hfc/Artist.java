@@ -79,6 +79,16 @@ public class Artist {
         return this.intro;
     }
 
+    public String longIntro(){
+        if (null == this.intro) {
+            return "";
+        }
+        if (this.intro.length()>3000) {
+            return this.intro.substring(0,3000) + "...";
+        }
+        return this.intro;
+    }
+
     public String getDetail() {
         return detail;
     }

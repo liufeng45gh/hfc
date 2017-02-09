@@ -20,6 +20,10 @@
     margin-left: 5px;
 }
 
+.artist-item em{
+    color: #c00;
+}
+
 .artist-item .tag{
    float: right;
    margin-top: 10px;
@@ -33,7 +37,7 @@
 
 .recommend-item {
     height:167px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.25)
+    box-shadow: 0 1px 3px rgba(0,0,0,0.25);
     margin-top: 20px;
 }
 

@@ -4,8 +4,8 @@
 
 <div class="report-block news-right">
     <div class="search-box">
-        <form method="get" action="/news/search" class="new-searching-unit" data-regestered="regestered" id="search-form">
-            <input id="query" type="text" size="27" name="title" autocomplete="off" placeholder="搜索你喜欢的" value="${title!}" />
+        <form method="get" action="/artist/search" class="new-searching-unit" data-regestered="regestered" id="search-form">
+            <input id="query" type="text" size="27" name="name" autocomplete="off" placeholder="搜索你喜欢的" value="${name!}" />
             <a href="#" onclick="return false;" class="go" id="search-btn"></a>
         </form>
     </div>
@@ -22,7 +22,7 @@
         <div class="recommend-item">
             <div class="logo">
                 <a href="http://lol.replays.net/news/page/20170201/184862.html" target="_blank">
-                    <img src="${(recommend.artist.avatar)!}" alt="冷门英雄有春天：辅助卡蜜尔的秘密">
+                    <img src="${(recommend.artist.avatar)!}" >
                 </a>
             </div>
             <div class="text">

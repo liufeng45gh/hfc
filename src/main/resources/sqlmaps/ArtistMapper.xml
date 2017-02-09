@@ -58,7 +58,7 @@
 
     <select id="artistListOrderByUpdatedAt" resultMap="artistMap">
         select *
-        from artist
+        from hf_artist
         <if test="updatedAt != null">
             <![CDATA[
 			where updated_at > #{updatedAt}

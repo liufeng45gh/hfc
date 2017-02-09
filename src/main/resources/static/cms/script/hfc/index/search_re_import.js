@@ -10,6 +10,30 @@ $(document).ready(function () {
         });
 
     });
+
+    $("#btn-artist-re-import").click(function () {
+        layer.confirm('确定要重新导入吗？', {
+          btn: ['取消','确定'] //按钮
+        }, function(){
+          layer.closeAll();
+        }, function(){
+           var url = $("#artist-url").val();
+           searchReImport(url);
+        });
+
+    });
+
+     $("#btn-appreciate-re-import").click(function () {
+        layer.confirm('确定要重新导入吗？', {
+          btn: ['取消','确定'] //按钮
+        }, function(){
+          layer.closeAll();
+        }, function(){
+           var url = $("#appreciate-url").val();
+           searchReImport(url);
+        });
+
+    });
 });
 
 function searchReImport(url){
@@ -30,7 +54,7 @@ function searchReImport(url){
     });
 
     import_request.done(function(data) {
-            layer.alert('添加成功!', {
+            layer.alert('执行成功!', {
               closeBtn: 0,
               offset: [$(window).height()/2-100+'px', $(window).width()/2-100+'px']
             }, function(){

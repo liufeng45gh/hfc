@@ -42,26 +42,26 @@
 
 
                 <div class="artist-list" id="artist-list">
-                    <#list artistList as artist>
-                        <div class="artist-item" <#if artist_index%4==0>style="margin-left: 0px;"</#if>>
-                            <div class="logo">
-                                <a href="/artist/${artist.id}/detail" target="_blank">
-                                    <img src="${(artist.avatar)!}" >
-                                </a>
+                    <div class="recommend-item">
+                        <div class="logo">
+                                <img src="${(entity.avatar)!}" >
+                        </div>
+                        <div class="text" style="width: 644px;">
+                            <div class="line1">
+                                <div class="name">${(entity.name)!}</div>
+                                <div class="tag">${(entity.tag)!}</div>
                             </div>
-                            <div class="text">
-                                <div class="name">${(artist.name)!}</div>
-                                <div class="tag">${(artist.tag)!}</div>
+                            <div class="intro">
+                                ${(entity.longIntro())!}
                             </div>
-
                         </div>
 
-                    </#list>
+
+                    </div>
+                    <div class="news-content">${entity.detail?default("")}</div>
                 </div>
                 <div style="clear:both;"></div>
-                <div class="load-more" id="load-more">点击加载更多</div>
-                <input type="hidden" id="load-more-url" value="/artist/list"/>
-                <input type="hidden" id="search-more-url" value="/artist/search-list"/>
+
                 <div class="fill-bottom">&nbsp;</div>
 
             </div>
@@ -83,6 +83,6 @@ $(function() {
 });
 </script>
 
-<script  src="/web/js/artist/index.js"></script>
+
 </body>
 </html>
