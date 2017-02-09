@@ -188,10 +188,10 @@
     width: 360px;
     height: 40px;
     line-height: 40px;
-    border: 1px solid rgba(255,255,255,.8);
     border-radius: 2px;
-    color: #000;
-    background: rgba(0,0,0,.15);
+    color: #bbb;
+    background: #fafafa;
+    border: 1px solid #ddd;
 }
 
 .new-searching-unit .go {
