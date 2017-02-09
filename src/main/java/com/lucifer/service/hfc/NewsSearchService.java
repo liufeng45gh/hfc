@@ -162,8 +162,8 @@ public class NewsSearchService {
 //        query.setQuery("*:*");
 //        query.addFilterQuery("nickName:*"+text+"*");
         query.setHighlight(true);
-        query.setParam("hl.fl", "title");
-        query.setParam("hl.fl", "summary");
+        query.setParam("hl.fl", "title,summary");
+
 
 
         query.setRows(rows);
@@ -184,9 +184,9 @@ public class NewsSearchService {
         SolrDocumentList docs = rsp.getResults();
         Map<String, Map<String, List<String>>> highMap = rsp.getHighlighting();
 
-        String lowerCaseText = text.toLowerCase();
 
-        //List<String> segments = this.segment(lowerCaseText);
+
+
 
         logger.info("docs.size(): "+ docs.size());
         for (int i = 0; i < docs.size(); i++) {
@@ -232,7 +232,7 @@ public class NewsSearchService {
     }
 
     private void setNewsHighlighting(News news , Map<String, Map<String, List<String>>> highMap ){
-        Map<String,List<String>> highMap2 = highMap.get(news.getId());
+        Map<String,List<String>> highMap2 = highMap.get(news.getId().toString());
         logger.info("highMap2 is "+highMap2);
         if (null != highMap2) {
             List<String> listString = highMap2.get("title");

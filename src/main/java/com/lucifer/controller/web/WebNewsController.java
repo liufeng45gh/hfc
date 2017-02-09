@@ -11,14 +11,12 @@ import com.lucifer.service.hfc.NewsService;
 import com.lucifer.utils.Constant;
 import com.lucifer.utils.PageInfoWriter;
 import com.lucifer.utils.PageUtil;
+import com.lucifer.utils.Result;
 import org.json.JSONException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
@@ -156,5 +154,12 @@ public class WebNewsController {
         request.setAttribute("entity",news);
 
         return "/web/news/detail";
+    }
+
+    @RequestMapping(value="/search-test",method = RequestMethod.GET)
+    @ResponseBody
+    public Object searchTest( @RequestParam(value = "title",required=false,defaultValue="") String title) throws IOException, JSONException {
+        PageInfoWriter pageInfo = newsSearchService.searchList(title,1,20);
+        return pageInfo;
     }
 }
