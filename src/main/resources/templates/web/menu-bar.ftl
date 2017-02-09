@@ -12,12 +12,12 @@
                     <div class="szzt szzt-shouye" ></div>
                     <div class="name">首页</div>
                 </a>
-                <a class="header-item" href="#">
+                <a class="header-item" href="/news/index">
                     <div class="szzt szzt-zixun"></div>
                     <div class="name">资讯</div>
                 </a>
 
-                <a class="header-item" href="#">
+                <a class="header-item" href="/artist/index">
                     <div class="szzt szzt-yishujia"></div>
                     <div class="name">艺术家</div>
                 </a>
@@ -41,11 +41,12 @@
                     <div class="szzt szzt-wenhuajinrong"></div>
                     <div class="name">文化金融</div>
                 </a>
-
+                <!--
                 <a class="header-item" href="#">
                     <div class="szzt szzt-fenghui"></div>
                     <div class="name">峰会</div>
                 </a>
+                -->
 
                 <a class="header-item" href="#">
                     <div class="szzt szzt-paimai"></div>
