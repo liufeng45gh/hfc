@@ -62,6 +62,7 @@
 
                     </#list>
                 </div>
+                <div style="clear:both;"></div>
                 <div class="load-more" id="load-more">点击加载更多</div>
                 <input type="hidden" id="load-more-url" value="/news/list">
                 <input type="hidden" id="search-more-url" value="/news/search-list">
