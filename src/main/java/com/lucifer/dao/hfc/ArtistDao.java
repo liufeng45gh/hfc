@@ -6,6 +6,7 @@ import com.lucifer.model.hfc.ArtistRecommend;
 import com.lucifer.utils.DateUtils;
 import org.springframework.stereotype.Component;
 
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -68,5 +69,12 @@ public class ArtistDao extends IBatisBaseDao {
 
     public Integer deleteArtistRecommend(Long id) {
         return this.hfcSqlSession.delete("deleteArtistRecommend",id);
+    }
+
+    public List<Artist> artistListOrderByUpdatedAt(Date updatedAt, int count){
+        Map param = new HashMap();
+        param.put("updatedAt", updatedAt);
+        param.put("count", count);
+        return this.hfcSqlSession.selectList("artistListOrderByUpdatedAt",param);
     }
 }

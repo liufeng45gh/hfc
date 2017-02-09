@@ -55,6 +55,17 @@
         insert into hf_artist_recommend (artist_id,created_at,updated_at,top) values (#{artistId},#{createdAt},#{updatedAt},#{top})
     </insert>
 
+    <select id="artistListOrderByUpdatedAt" resultMap="artistMap">
+        select *
+        from artist
+        <if test="updatedAt != null">
+            <![CDATA[
+			where updated_at > #{updatedAt}
+			]]>
+        </if>
+        order by updated_at limit #{count}
+    </select>
+
     <resultMap type="com.lucifer.model.hfc.ArtistRecommend" id="ArtistRecommendMap">
         <id column="id" property="id"/>
         <result column="artist_id" property="artistId"/>

@@ -1,7 +1,9 @@
 package com.lucifer.service.hfc;
 
+import com.lucifer.dao.hfc.ArtistDao;
 import com.lucifer.dao.hfc.NewsDao;
 import com.lucifer.exception.ArgumentException;
+import com.lucifer.model.hfc.Artist;
 import com.lucifer.model.hfc.News;
 import com.lucifer.utils.PageInfoWriter;
 import com.lucifer.utils.StringHelper;
@@ -16,7 +18,6 @@ import org.json.JSONException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.Resource;
@@ -24,18 +25,17 @@ import java.io.IOException;
 import java.util.*;
 
 /**
- * Created by liufx on 17/2/8.
+ * Created by liufx on 17/2/9.
  */
-@Component
-public class NewsSearchService {
+public class ArtistSearchService {
 
     final Logger logger = LoggerFactory.getLogger(this.getClass());
 
-    @Value("${solr.url.news}")
+    @Value("${solr.url.artist}")
     private String solrServerUrl;
 
     @Resource
-    private NewsDao newsDao;
+    private ArtistDao artistDao;
 
     private HttpSolrClient httpSolrClient;
 
@@ -52,35 +52,29 @@ public class NewsSearchService {
         Date updatedAt = this.getSolrMaxUpdatedAt();
 
         while (true){
-            List<News> newsList = newsDao.newsListOrderByUpdatedAt(updatedAt,1000);
-            logger.info("newsList size: "+newsList.size());
-            if (newsList.size() == 0) {
+            List<Artist> artistList = artistDao.artistListOrderByUpdatedAt(updatedAt,1000);
+            logger.info("artistList size: "+artistList.size());
+            if (artistList.size() == 0) {
                 break;
             }
 
             Collection<SolrInputDocument> docList = new ArrayList<SolrInputDocument>();
             List<String> deleteIdList =new ArrayList<String>();
-            for (News news : newsList) {
-                if (news.getIsDeleted().equals(0)) {
-                    SolrInputDocument doc1 = this.parse(news);
+            for (Artist artist : artistList) {
+                if (artist.getIsDeleted().equals(0)) {
+                    SolrInputDocument doc1 = this.parse(artist);
                     docList.add(doc1);
-                }else {
-                    deleteIdList.add(news.getId().toString());
+                } else {
+                    deleteIdList.add(artist.getId().toString());
                 }
-
             }
             if (docList.size() > 0) {
                 httpSolrClient.add(docList);
                 httpSolrClient.commit();
-                logger.info("user add httpSolrClient.commit()");
-            }
-            if (deleteIdList.size()>0) {
-                httpSolrClient.deleteById(deleteIdList);
-                httpSolrClient.commit();
-                logger.info("user delete httpSolrClient.commit()");
+                logger.info("user httpSolrClient.commit()");
             }
 
-            updatedAt = newsList.get(newsList.size() - 1).getUpdatedAt();
+            updatedAt = artistList.get(artistList.size() - 1).getUpdatedAt();
             logger.info("change updatedAt to: "+ updatedAt.toString());
         }
 
@@ -116,25 +110,24 @@ public class NewsSearchService {
         return null;
     }
 
-    private SolrInputDocument parse(News news){
+    private SolrInputDocument parse(Artist artist){
         SolrInputDocument doc = new SolrInputDocument();
-        doc.addField("id", news.getId());
-        doc.addField("title", news.getTitle());
-        doc.addField("summary", news.getSummary());
-        doc.addField("updatedAt", news.getUpdatedAt());
-        doc.addField("publishAt", news.getPublishAt());
-        doc.addField("logo", news.getLogo());
+        doc.addField("id", artist.getId());
+        doc.addField("name", artist.getName());
+        doc.addField("tag", artist.getTag());
+        doc.addField("updatedAt", artist.getUpdatedAt());
+        doc.addField("avatar", artist.getAvatar());
         return doc;
     }
 
-    public void updateNews(News news) throws IOException, SolrServerException, ArgumentException {
-        if (null == news.getId()) {
+    public void updateArtist(Artist artist) throws IOException, SolrServerException, ArgumentException {
+        if (null == artist.getId()) {
             throw new ArgumentException("id 不能为空");
         }
-        if (StringHelper.isEmpty(news.getTitle())) {
-            throw new ArgumentException("title 不能为空");
+        if (StringHelper.isEmpty(artist.getName())) {
+            throw new ArgumentException("name 不能为空");
         }
-        SolrInputDocument doc1 = this.parse(news);
+        SolrInputDocument doc1 = this.parse(artist);
         httpSolrClient.add(doc1);
         httpSolrClient.commit();
     }
@@ -169,7 +162,7 @@ public class NewsSearchService {
         query.setRows(rows);
         query.setStart(offset);
         QueryResponse rsp = null;
-        List<News> newsList = new ArrayList<News>();
+        List<Artist> artistList = new ArrayList<Artist>();
         try{
             rsp = httpSolrClient.query(query);
 
@@ -196,11 +189,11 @@ public class NewsSearchService {
 
             logger.info("resumeDoc.getFieldValue(\"title\"): "+doc.getFieldValue("title"));
 
-            News news = this.docToNews(doc);
+            Artist artist = this.docToObject(doc);
             //user = userService.getUserInfoById(user.getId());
 
-            newsList.add(news);
-            this.setNewsHighlighting(news,highMap);
+            artistList.add(artist);
+            this.setHighlighting(artist,highMap);
 //            if (!this.isCorrectHighlighting(lowerCaseText,user.getNickName())) {
 //                String highlightingNickName = this.highlightingNickName(segments,user.getNickName());
 //                user.setNickName(highlightingNickName);
@@ -211,7 +204,7 @@ public class NewsSearchService {
         }
 
 
-        pageInfo.setDataList(newsList);
+        pageInfo.setDataList(artistList);
         pageInfo.setAllRecordCount(numberFound.intValue());
 
         return pageInfo;
@@ -220,35 +213,35 @@ public class NewsSearchService {
 
 
 
-    private News docToNews(SolrDocument doc){
-        News news = new News();
-        news.setId((Long)doc.getFieldValue("id"));
-        news.setTitle((String)doc.getFieldValue("title"));
-        news.setLogo((String)doc.getFieldValue("logo"));
-        news.setUpdatedAt((Date) doc.getFieldValue("updatedAt"));
-        news.setSummary((String)doc.getFieldValue("summary"));
-        news.setPublishAt((Date) doc.getFieldValue("publishAt"));
-        return news;
+    private Artist docToObject(SolrDocument doc){
+        Artist artist = new Artist();
+        artist.setId((Long)doc.getFieldValue("id"));
+        artist.setName((String)doc.getFieldValue("name"));
+        artist.setAvatar((String)doc.getFieldValue("avatar"));
+        artist.setUpdatedAt((Date) doc.getFieldValue("updatedAt"));
+        artist.setTag((String)doc.getFieldValue("tag"));
+        //news.setPublishAt((Date) doc.getFieldValue("publishAt"));
+        return artist;
     }
 
-    private void setNewsHighlighting(News news , Map<String, Map<String, List<String>>> highMap ){
-        Map<String,List<String>> highMap2 = highMap.get(news.getId());
+    private void setHighlighting(Artist artist , Map<String, Map<String, List<String>>> highMap ){
+        Map<String,List<String>> highMap2 = highMap.get(artist.getId());
         logger.info("highMap2 is "+highMap2);
         if (null != highMap2) {
-            List<String> listString = highMap2.get("title");
+            List<String> listString = highMap2.get("name");
             logger.info("listString is "+listString);
             if(null != listString&& listString.size()>0) {
                 String highString =  listString.get(0);
-                logger.info("title is "+highString);
-                news.setTitle(highString);
+                logger.info("name is "+highString);
+                artist.setName(highString);
             }
 
-            List<String> listSummart = highMap2.get("summary");
-            logger.info("listSummart is "+listSummart);
-            if(null != listSummart&& listSummart.size()>0) {
-                String highString =  listSummart.get(0);
-                logger.info("summary is "+highString);
-                news.setSummary(highString);
+            List<String> listTag = highMap2.get("tag");
+            logger.info("listTag is "+listTag);
+            if(null != listTag&& listTag.size()>0) {
+                String highString =  listTag.get(0);
+                logger.info("tag is "+highString);
+                artist.setTag(highString);
             }
         }
 
@@ -303,6 +296,5 @@ public class NewsSearchService {
         }
         return nickName;
     }
-
 
 }

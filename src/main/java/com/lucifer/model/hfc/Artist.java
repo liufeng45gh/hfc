@@ -27,6 +27,8 @@ public class Artist {
 
     private String namePy;
 
+    private String tag;
+
     public Long getId() {
         return id;
     }
@@ -105,5 +107,13 @@ public class Artist {
 
     public void setNamePy(String namePy) {
         this.namePy = namePy;
+    }
+
+    public String getTag() {
+        return tag;
+    }
+
+    public void setTag(String tag) {
+        this.tag = tag;
     }
 }

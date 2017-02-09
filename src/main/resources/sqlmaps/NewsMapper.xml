@@ -85,12 +85,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 
 	<select id="newsListOrderByUpdatedAt" resultMap="newsMap">
-		select news.*
+		select *
 		from news
-		where is_deleted = 0
 		<if test="updatedAt != null">
 			<![CDATA[
-			and updated_at > #{updatedAt}
+			where updated_at > #{updatedAt}
 			]]>
 		</if>
 		order by updated_at limit #{count}
