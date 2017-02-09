@@ -19,6 +19,12 @@
         </td>
     </tr>
     <tr>
+        <th width="20%" style="text-align:right;">标签:</th>
+        <td>
+            <input id="tag_input" class="form-control" name="tag" style="display:inline-block;" value="${artist.tag?default("")}" />
+        </td>
+    </tr>
+    <tr>
         <th width="20%" style="text-align:right;">置顶:</th>
         <td>
             <input id="top_input" class="form-control" name="top" style="display:inline-block;" value="${artist.top?default("0")}" />

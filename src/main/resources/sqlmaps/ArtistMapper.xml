@@ -11,6 +11,7 @@
         <result column="intro" property="intro"/>
         <result column="detail" property="detail"/>
         <result column="top" property="top"/>
+        <result column="tag" property="tag"/>
         <result column="is_deleted" property="isDeleted"/>
         <result column="created_at" property="createdAt"/>
         <result column="updated_at" property="updatedAt"/>
