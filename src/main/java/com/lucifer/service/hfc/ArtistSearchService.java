@@ -155,8 +155,7 @@ public class ArtistSearchService {
 //        query.setQuery("*:*");
 //        query.addFilterQuery("nickName:*"+text+"*");
         query.setHighlight(true);
-        query.setParam("hl.fl", "title");
-        query.setParam("hl.fl", "summary");
+        query.setParam("hl.fl", "name,tag");
 
 
         query.setRows(rows);
@@ -225,7 +224,7 @@ public class ArtistSearchService {
     }
 
     private void setHighlighting(Artist artist , Map<String, Map<String, List<String>>> highMap ){
-        Map<String,List<String>> highMap2 = highMap.get(artist.getId());
+        Map<String,List<String>> highMap2 = highMap.get(artist.getId().toString());
         logger.info("highMap2 is "+highMap2);
         if (null != highMap2) {
             List<String> listString = highMap2.get("name");
