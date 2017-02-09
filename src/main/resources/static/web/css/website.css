@@ -6,6 +6,10 @@ body {
     padding: 0;
 }
 
+em{
+    font-style: normal;
+}
+
 .page-min-width {
     min-width: 1200px;
 }
