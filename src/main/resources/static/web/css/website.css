@@ -222,10 +222,13 @@ em{
     background: url(/img/logo.svg) 0 0 no-repeat;
 }
 
-#header.nologin-index .header-item {
+#header .header-item {
     line-height: 28px;
-    color: #fff;
-    color: rgba(255,255,255,.85);
+    color: #EFEFEF;
+}
+#header .active {
+    color: #EB3D3E;
+    font-weight: bold;
 }
 
 .header-item {
@@ -459,7 +462,7 @@ em{
  }
 
 .artist-recommend{
-    margin:10 auto;
+    margin:10px auto;
     height: 450px;
     width: 1496px;
 }
@@ -515,7 +518,7 @@ em{
      width: 735px;
  }
  .info-fr{
-     margin:10 auto;
+     margin:10px auto;
  }
 
   .finance-item{

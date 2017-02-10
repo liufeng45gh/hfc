@@ -8,16 +8,16 @@
                         <use xlink:href="#szzt-logo"></use>
                     </svg>
                 </a>
-                <a class="header-item " href="#">
+                <a class="header-item" href="#" >
                     <div class="szzt szzt-shouye" ></div>
                     <div class="name">首页</div>
                 </a>
-                <a class="header-item" href="/news/index">
+                <a class="header-item" href="/news/index" id="head-href-news">
                     <div class="szzt szzt-zixun"></div>
                     <div class="name">资讯</div>
                 </a>
 
-                <a class="header-item" href="/artist/index">
+                <a class="header-item" href="/artist/index" id="head-href-artist">
                     <div class="szzt szzt-yishujia"></div>
                     <div class="name">艺术家</div>
                 </a>

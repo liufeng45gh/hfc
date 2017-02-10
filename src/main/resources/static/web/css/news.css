@@ -12,12 +12,12 @@
     font-size: 25px;
     font-weight: bold;
     margin-left: 10px;
-    color: #373737;
+    color: #333333;
     margin-right: 30px;
 }
 
 .news-menu .active{
-    color: red;
+    color: #EB3D3C;
 }
 
 .news-left{

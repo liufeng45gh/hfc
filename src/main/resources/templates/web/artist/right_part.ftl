@@ -49,5 +49,7 @@ $(function() {
 	$("#search-btn").click(function (){
         $("#search-form").submit();
 	});
+
+	$("#head-href-artist").addClass("active");
 });
 </script>
