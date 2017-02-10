@@ -9,7 +9,7 @@
         <result column="title" property="title"/>
         <result column="appendix_url" property="appendixUrl"/>
         <result column="logo" property="logo"/>
-
+        <result column="summary" property="summary"/>
         <result column="content" property="content"/>
         <result column="is_open" property="isOpen"/>
         <result column="publish_at" property="publishAt"/>
@@ -35,9 +35,9 @@
     </select>
 
     <insert id="insertResearchReport">
-        insert into research_report (title,logo,appendix_url,content,publish_at,top,created_at,updated_at,is_open)
+        insert into research_report (title,logo,appendix_url,summary,content,publish_at,top,created_at,updated_at,is_open)
         values
-        (#{title},#{logo},#{appendixUrl},#{content},#{publishAt},#{top},#{createdAt},#{updatedAt},#{isOpen})
+        (#{title},#{logo},#{appendixUrl},#{summary},#{content},#{publishAt},#{top},#{createdAt},#{updatedAt},#{isOpen})
     </insert>
 
     <select id="getResearchReport" resultMap="ResearchReportMap">
@@ -46,7 +46,7 @@
 
     <update id="updateResearchReport">
         update research_report
-        set title = #{title},top = #{top},logo = #{logo},appendix_url = #{appendixUrl},
+        set title = #{title},top = #{top},logo = #{logo},appendix_url = #{appendixUrl},summary = #{summary}
         content = #{content},publish_at = #{publishAt},updated_at=#{updatedAt},
         is_open = #{isOpen}
         where id = #{id}
