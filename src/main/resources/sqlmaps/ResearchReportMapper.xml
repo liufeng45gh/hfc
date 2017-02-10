@@ -46,7 +46,7 @@
 
     <update id="updateResearchReport">
         update research_report
-        set title = #{title},top = #{top},logo = #{logo},appendix_url = #{appendixUrl},summary = #{summary}
+        set title = #{title},top = #{top},logo = #{logo},appendix_url = #{appendixUrl},summary = #{summary},
         content = #{content},publish_at = #{publishAt},updated_at=#{updatedAt},
         is_open = #{isOpen}
         where id = #{id}
