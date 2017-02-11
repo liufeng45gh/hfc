@@ -39,7 +39,6 @@
                     </#list>
 
                 </div>
-                <div class="hr-border"><hr line-info-hr></div>
                 <#if carousel??>
                 <div class="recommend-news">
                     <a href="${carousel.link?default("")}" target="_blank">

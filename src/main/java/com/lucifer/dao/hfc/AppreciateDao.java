@@ -36,9 +36,10 @@ public class AppreciateDao  extends IBatisBaseDao {
         return this.hfcSqlSession.update("updateAppreciateCategory",appreciateCategory);
     }
 
-    public List<Appreciate> appreciateList(String title,Integer offset,Integer count){
+    public List<Appreciate> appreciateList(String title,Long categoryId,Integer offset,Integer count){
         Map<String,Object> param = new HashMap<String,Object>();
         param.put("title",title);
+        param.put("categoryId",categoryId);
         param.put("offset",offset);
         param.put("count",count);
         return this.hfcSqlSession.selectList("appreciateList",param);
@@ -52,9 +53,10 @@ public class AppreciateDao  extends IBatisBaseDao {
         return this.hfcSqlSession.selectList("appreciateTopList",param);
     }
 
-    public Integer matchRecordCount(String title){
+    public Integer matchRecordCount(String title,Long categoryId){
         Map<String,Object> param = new HashMap<String,Object>();
         param.put("title",title);
+        param.put("categoryId",categoryId);
         return this.hfcSqlSession.selectOne("cmsAppreciateMatchRecordCount",param);
     }
 

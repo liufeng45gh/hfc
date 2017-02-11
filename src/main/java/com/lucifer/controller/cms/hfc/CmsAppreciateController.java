@@ -34,13 +34,14 @@ public class CmsAppreciateController {
 
     @RequestMapping(value="/list",method = RequestMethod.GET)
     public String appreciateList(HttpServletRequest request, @RequestParam(value = "title",required=false,defaultValue="") String title,
+                                 @RequestParam(value = "categoryId",required=false,defaultValue="") Long categoryId,
                            @RequestParam(value = "page",required=false,defaultValue="1")Integer page){
         Integer pageSize = Constant.PAGESIZE;
         Integer offset = (page-1) * pageSize;
-        List<Appreciate> appreciateList = appreciateDao.appreciateList(title,offset,pageSize);
+        List<Appreciate> appreciateList = appreciateDao.appreciateList(title,categoryId,offset,pageSize);
         request.setAttribute("appreciateList",appreciateList);
 
-        Integer matchRecordCount=appreciateDao.matchRecordCount(title);
+        Integer matchRecordCount=appreciateDao.matchRecordCount(title,categoryId);
 
         Integer totalPageCount= PageUtil.getTotalPageCount(matchRecordCount, pageSize);
 

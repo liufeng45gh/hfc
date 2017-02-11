@@ -33,7 +33,7 @@
     <div class="third-block">
         <div class="info-fr wrapper-996">
             <div class="finance-block news-left">
-                <div class="news-nav">
+                <div class="news-menu">
 
                     <a href="/"><div class="nav-item" >首页</div></a>   <div class="nav-item" >&gt;</div>
                     <a href="/news/index"><div class="nav-item" >资讯</div></a>   <div class="nav-item" >&gt;</div>
@@ -41,7 +41,7 @@
 
 
                 </div>
-                <div class="hr-border"><hr line-info-hr></div>
+
 
 
                 <div class="finance-list news-list" id="news-list">

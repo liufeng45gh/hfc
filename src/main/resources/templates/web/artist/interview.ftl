@@ -38,7 +38,7 @@
         <div class="info-fr wrapper-996">
             <div class="finance-block news-left">
                 <#include "second_menu.ftl"/>
-                <div class="hr-border"><hr line-info-hr></div>
+
 
 
                 <div class="artist-list news-list" id="entity-list">
