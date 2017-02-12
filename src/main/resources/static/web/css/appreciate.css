@@ -31,7 +31,7 @@
 
  .pin {
      position: absolute;
-     width: 236px;
+     width: 220px;
      font-size: 12px;
      background-color: #fff;
      box-shadow: 0 1px 3px rgba(0,0,0,.3);
@@ -97,6 +97,13 @@
 
 .pin .stats .comment i {
     background-position: -60px 0;
+}
+
+.pin .name {
+    font-size: 14px;
+    color: rgba(50,50,50,1);
+    padding: 0 15px;
+    margin: 10px 0;
 }
 
 .pin .attribution {
