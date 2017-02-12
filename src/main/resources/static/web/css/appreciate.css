@@ -9,6 +9,15 @@
    border-bottom: 1px solid rgb(214, 214, 216);
 }
 
+.a-category{
+   float: left;
+   font-size: 25px;
+   margin-right: 20px;
+   font-weight: bold;
+   line-height: 80px;
+   color: rgb(38,38,38);
+}
+
 .appreciate-list{
     position: relative;
     min-height: 500px;
