@@ -8,3 +8,233 @@
 .b-line{
    border-bottom: 1px solid rgb(214, 214, 216);
 }
+
+.appreciate-list{
+    position: relative;
+    min-height: 500px;
+    margin: 16px auto 20px auto;
+}
+.wft {
+     -webkit-transition: left .3s ease-in-out,top .3s ease-in-out;
+     -moz-transition: left .5s ease-in-out,top .5s ease-in-out;
+     -o-transition: left .3s ease-in-out,top .3s ease-in-out;
+ }
+
+.wfc {
+     position: absolute;
+     left: -200px;
+     top: 1000px;
+     -webkit-transition: opacity .4s ease-in-out;
+     -moz-transition: opacity .4s ease-in-out;
+     -o-transition: opacity .4s ease-in-out;
+ }
+
+ .pin {
+     position: absolute;
+     width: 236px;
+     font-size: 12px;
+     background-color: #fff;
+     box-shadow: 0 1px 3px rgba(0,0,0,.3);
+     -moz-box-shadow: 0 1px 3px rgba(0,0,0,.3);
+     -webkit-box-shadow: 0 1px 3px rgba(0,0,0,.3);
+ }
+
+ .pin a.img.loaded {
+     background: #fff;
+ }
+
+ .pin a.img {
+     background-color: #faf7f7;
+ }
+
+ .pin a.img, .Board a.img {
+     position: relative;
+ }
+
+ .pin a.img .cover {
+     position: absolute;
+     left: 0;
+     top: 0;
+     width: 236px;
+     height: 100%;
+ }
+
+ .pin .stats {
+     padding: 0 15px;
+     margin: 10px 0;
+ }
+
+.less {
+    color: #8c7e7e;
+}
+
+.pin .stats>span {
+    display: inline-block;
+    width: auto;
+    height: 12px;
+    line-height: 12px;
+    font-size: 12px;
+    margin-right: 10px;
+}
+
+.pin .stats .repin i {
+    background-position: -30px 0;
+}
+
+.pin .stats>span i {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin-right: 4px;
+    vertical-align: bottom;
+    background: url(/web/images/bt_action_icons.svg) 0 0 no-repeat;
+}
+
+.pin .stats .like i {
+    background-position: 0 0;
+}
+
+
+.pin .stats .comment i {
+    background-position: -60px 0;
+}
+
+.pin .attribution {
+    padding: 0 15px;
+}
+
+.attribution {
+    color: #999;
+    border-top: 1px solid #F2F2F2;
+    background: #FAFAFA;
+    position: relative;
+}
+
+.convo {
+    background: #FAFAFA;
+}
+.clearfix {
+}
+
+
+.pin .attribution .img {
+    width: 34px;
+    height: 34px;
+    margin: 16px 0;
+    display: block;
+    float: left;
+}
+
+.pin a.img {
+    background-color: #faf7f7;
+}
+
+.pin a.img, .Board a.img {
+    position: relative;
+}
+
+.attribution a {
+    color: #9E7E6B;
+}
+
+.pin .attribution .avt {
+    width: 34px;
+    height: 34px;
+    display: block;
+}
+
+.pin .attribution .text {
+    margin-left: 34px;
+    height: 51px;
+    padding: 15px 0 0 10px;
+    line-height: 1.5;
+}
+
+.pin .attribution .text .inner {
+    height: 37px;
+    overflow: hidden;
+}
+
+.pin .attribution .text .inner .line {
+    display: inline-block;
+    width: 100%;
+}
+
+.pin .attribution .text .inner .line .author {
+    float: left;
+    max-width: 120px;
+    white-space: nowrap;
+    max-height: 80px;
+    overflow: hidden;
+}
+
+.comments {
+    border-top: 1px solid #F5F2F2;
+}
+
+.muted, .muted a {
+    color: #524d4d;
+}
+.pin .comments .comment:last-child {
+    border-bottom-width: 0;
+}
+
+.pin .comments .comment {
+    border-top: 1px solid white;
+    border-bottom: 1px solid #EDEDED;
+    overflow: hidden;
+    position: relative;
+}
+
+.convo {
+    background: #FAFAFA;
+}
+
+.pin .comments .comment a.img {
+    float: left;
+    padding: 15px 0 15px 15px;
+    width: 34px;
+    height: 34px;
+    background: transparent;
+}
+
+.convo a.img img {
+    width: 34px;
+    height: 34px;
+}
+
+.pin .comments .comment a {
+    color: #9E7E6B;
+}
+
+.pin a.img {
+    background-color: #faf7f7;
+}
+
+.pin a.img, .Board a.img {
+    position: relative;
+}
+
+.pin .comment .content {
+    padding: 15px 15px 15px 10px;
+    margin-left: 48px;
+    min-height: 36px;
+    line-height: 1.5;
+    word-wrap: break-word;
+}
+
+.pin .comments .comment a {
+    color: #9E7E6B;
+}
+
+ a.img {
+     display: block;
+     background-color: #fff;
+ }
+
+ a {
+     color: #222;
+     text-decoration: none;
+     outline: 0;
+ }
+
