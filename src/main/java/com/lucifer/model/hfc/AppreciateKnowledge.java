@@ -38,6 +38,10 @@ public class AppreciateKnowledge {
 
     private String categoryName;
 
+    private Integer lWidth;
+
+    private Integer lHeight;
+
     public Long getId() {
         return id;
     }
@@ -148,5 +152,21 @@ public class AppreciateKnowledge {
 
     public void setCategoryName(String categoryName) {
         this.categoryName = categoryName;
+    }
+
+    public Integer getlWidth() {
+        return lWidth;
+    }
+
+    public void setlWidth(Integer lWidth) {
+        this.lWidth = lWidth;
+    }
+
+    public Integer getlHeight() {
+        return lHeight;
+    }
+
+    public void setlHeight(Integer lHeight) {
+        this.lHeight = lHeight;
     }
 }

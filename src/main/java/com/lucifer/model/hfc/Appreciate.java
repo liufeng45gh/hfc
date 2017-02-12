@@ -25,6 +25,10 @@ public class Appreciate {
 
     private Integer clickCount;
 
+    private Integer lWidth;
+
+    private Integer lHeight;
+
     @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date publishAt;
 
@@ -148,5 +152,21 @@ public class Appreciate {
 
     public void setCategoryName(String categoryName) {
         this.categoryName = categoryName;
+    }
+
+    public Integer getlWidth() {
+        return lWidth;
+    }
+
+    public void setlWidth(Integer lWidth) {
+        this.lWidth = lWidth;
+    }
+
+    public Integer getlHeight() {
+        return lHeight;
+    }
+
+    public void setlHeight(Integer lHeight) {
+        this.lHeight = lHeight;
     }
 }

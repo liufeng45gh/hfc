@@ -54,5 +54,6 @@
 	</script>
     <script type="text/javascript" charset="UTF-8" src="/cms/script/hfc/appreciate-knowledge/add.js"></script>
     <script type="text/javascript" charset="UTF-8" src="/cms/script/hfc/news/logo_select.js"></script>
+    <script type="text/javascript" charset="UTF-8" src="/cms/script/hfc/appreciate/reset_logo_px.js"></script>
 
 <div style="display: none; position: fixed; left: 0px; top: 0px; width: 100%; height: 100%; cursor: move; opacity: 0; background: rgb(255, 255, 255);"></div></body></html>

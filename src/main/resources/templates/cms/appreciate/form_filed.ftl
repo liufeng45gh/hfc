@@ -16,6 +16,18 @@
         </td>
     </tr>
     <tr>
+        <th width="20%" style="text-align:right;">logo宽:</th>
+        <td>
+            <input id="l_width_input" class="form-control" name="lWidth" style="display:inline-block;" value="${entity.lWidth?default("")}" readonly="readonly" />
+        </td>
+    </tr>
+    <tr>
+        <th width="20%" style="text-align:right;">logo高:</th>
+        <td>
+            <input id="l_height_input" class="form-control" name="lHeight" style="display:inline-block;" value="${entity.lHeight?default("")}" readonly="readonly"/>
+        </td>
+    </tr>
+    <tr>
         <th width="20%" style="text-align:right;">置顶:</th>
         <td>
             <input id="top_input" class="form-control" name="top" style="display:inline-block;" value="${entity.top?default("0")}" />

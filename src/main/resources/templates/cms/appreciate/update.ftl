@@ -48,5 +48,6 @@
 	</script>
 <script type="text/javascript" charset="UTF-8" src="/cms/script/hfc/appreciate/update.js"></script>
 <script type="text/javascript" charset="UTF-8" src="/cms/script/hfc/news/logo_select.js"></script>
+<script type="text/javascript" charset="UTF-8" src="/cms/script/hfc/appreciate/reset_logo_px.js"></script>
 
 </body></html>

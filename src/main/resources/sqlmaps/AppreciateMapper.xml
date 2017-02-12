@@ -16,6 +16,8 @@
         <result column="click_count" property="clickCount"/>
         <result column="publish_at" property="publishAt"/>
         <result column="top" property="top"/>
+        <result column="l_width" property="lWidth"/>
+        <result column="l_height" property="lHeight"/>
         <result column="is_deleted" property="isDeleted"/>
         <result column="created_at" property="createdAt"/>
         <result column="updated_at" property="updatedAt"/>
@@ -65,15 +67,15 @@
 
     <insert id="insertAppreciate" useGeneratedKeys="true" keyProperty="id">
         insert into appreciate
-        (title,logo,summary,author,category_id,content,publish_at,top,click_count,created_at,updated_at)
+        (title,logo,summary,author,category_id,content,publish_at,top,click_count,l_width,l_height,created_at,updated_at)
         values
-        (#{title},#{logo},#{summary},#{author},#{categoryId},#{content},#{publishAt},#{top},#{clickCount},#{createdAt},#{updatedAt})
+        (#{title},#{logo},#{summary},#{author},#{categoryId},#{content},#{publishAt},#{top},#{clickCount},#{lWidth},#{lHeight},#{createdAt},#{updatedAt})
     </insert>
 
     <update id="updateAppreciate">
         update appreciate
         set
-        title = #{title},  logo= #{logo}, summary=#{summary}, author=#{author},
+        title = #{title},  logo= #{logo}, summary=#{summary}, author=#{author},l_width = #{lWidth}, l_height = #{lHeight},
         category_id = #{categoryId} ,content = #{content},publish_at = #{publishAt} ,top = #{top},updated_at = #{updatedAt}
         where id = #{id}
     </update>
@@ -130,6 +132,8 @@
         <result column="click_count" property="clickCount"/>
         <result column="publish_at" property="publishAt"/>
         <result column="top" property="top"/>
+        <result column="l_width" property="lWidth"/>
+        <result column="l_height" property="lHeight"/>
         <result column="is_deleted" property="isDeleted"/>
         <result column="created_at" property="createdAt"/>
         <result column="updated_at" property="updatedAt"/>
@@ -154,15 +158,15 @@
 
     <insert id="insertAppreciateKnowledge" useGeneratedKeys="true" keyProperty="id">
         insert into appreciate_knowledge
-        (title,logo,summary,author,category_id,content,publish_at,top,click_count,created_at,updated_at)
+        (title,logo,summary,author,category_id,content,publish_at,top,click_count,l_width,l_height,created_at,updated_at)
         values
-        (#{title},#{logo},#{summary},#{author},#{categoryId},#{content},#{publishAt},#{top},#{clickCount},#{createdAt},#{updatedAt})
+        (#{title},#{logo},#{summary},#{author},#{categoryId},#{content},#{publishAt},#{top},#{clickCount},#{lWidth},#{lHeight},#{createdAt},#{updatedAt})
     </insert>
 
     <update id="updateAppreciateKnowledge">
         update appreciate_knowledge
         set
-        title = #{title},  logo= #{logo}, summary=#{summary}, author=#{author},
+        title = #{title},  logo= #{logo}, summary=#{summary}, author=#{author},l_width = #{lWidth}, l_height = #{lHeight},
         category_id = #{categoryId} ,content = #{content},publish_at = #{publishAt} ,top = #{top},updated_at = #{updatedAt}
         where id = #{id}
     </update>

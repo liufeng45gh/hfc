@@ -31,6 +31,10 @@
                                     <tr style="height:30px;">
                                         <th width="140px" class="t_c">id</th>
                                         <th width="80px">logo</th>
+
+                                        <th width="80px">logo宽</th>
+                                        <th width="80px">logo高</th>
+
                                         <th width="440px">标题</th>
 
                                         <th width="80px" class="t_c">分类</th>
@@ -51,6 +55,9 @@
                                         <td>
                                             <img src="${appreciate.logo?default("")}" style="width:37px;height:37px;"/>
                                         </td>
+
+                                        <td>${appreciate.lWidth?default("")}</td>
+                                        <td>${appreciate.lHeight?default("")}</td>
 
                                         <td>${appreciate.title?default("")}</td>
 
