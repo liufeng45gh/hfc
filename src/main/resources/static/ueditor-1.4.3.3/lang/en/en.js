@@ -347,6 +347,7 @@ UE.I18N['en'] = {
             'lang_tab_searchV':"Search",
             'lang_tab_uploadV':"Upload",
             'lang_video_url':" URL ",
+            'lang_poster_url': "POSTER",
             'lang_video_size':"Video Size",
             'lang_videoW':"Width",
             'lang_videoH':"Height",

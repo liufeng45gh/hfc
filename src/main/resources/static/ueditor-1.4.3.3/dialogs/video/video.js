@@ -117,14 +117,16 @@
         var width = $G("videoWidth"),
             height = $G("videoHeight"),
             url=$G('videoUrl').value,
-            align = findFocus("videoFloat","name");
+            align = findFocus("videoFloat","name"),
+            poster = $G('posterUrl').value;
         if(!url) return false;
         if ( !checkNum( [width, height] ) ) return false;
         editor.execCommand('insertvideo', {
             url: convert_url(url),
             width: width.value,
             height: height.value,
-            align: align
+            align: align,
+            poster: poster
         }, isModifyUploadVideo ? 'upload':null);
     }
 
