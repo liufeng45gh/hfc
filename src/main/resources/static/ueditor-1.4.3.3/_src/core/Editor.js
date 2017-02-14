@@ -1489,6 +1489,7 @@
          */
         filterOutputRule: function (root) {
             for (var i = 0, ci; ci = this.outputRules[i++];) {
+                //alert(ci);
                 ci.call(this, root)
             }
         },
