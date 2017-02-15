@@ -22,7 +22,7 @@
                     <div class="name">艺术家</div>
                 </a>
 
-                <a class="header-item" href="#">
+                <a class="header-item" href="/appreciate/index">
                     <div class="szzt szzt-jianshang"></div>
                     <div class="name">鉴赏</div>
                 </a>

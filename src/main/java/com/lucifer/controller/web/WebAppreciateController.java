@@ -31,7 +31,14 @@ public class WebAppreciateController {
         //request.setAttribute("appreciateList",appreciateList);
 
         List<AppreciateCategory> appreciateCategoryList =  appreciateDao.appreciateCategoryList();
+
         request.setAttribute("appreciateCategoryList",appreciateCategoryList);
+
+        if (null != categoryId) {
+            AppreciateCategory appreciateCategory = appreciateDao.getAppreciateCategory(categoryId);
+            request.setAttribute("appreciateCategory",appreciateCategory);
+        }
+
 
         return "/web/appreciate/index";
     }
