@@ -5,10 +5,7 @@ import com.lucifer.model.hfc.Appreciate;
 import com.lucifer.model.hfc.AppreciateCategory;
 import com.lucifer.utils.Constant;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
@@ -30,8 +27,8 @@ public class WebAppreciateController {
                         @RequestParam(value = "page",required=false,defaultValue="1")Integer page){
         Integer pageSize = Constant.PAGESIZE;
         Integer offset = (page-1) * pageSize;
-        List<Appreciate> appreciateList = appreciateDao.appreciateList(null,categoryId,offset,pageSize);
-        request.setAttribute("appreciateList",appreciateList);
+        //List<Appreciate> appreciateList = appreciateDao.appreciateList(null,categoryId,offset,pageSize);
+        //request.setAttribute("appreciateList",appreciateList);
 
         List<AppreciateCategory> appreciateCategoryList =  appreciateDao.appreciateCategoryList();
         request.setAttribute("appreciateCategoryList",appreciateCategoryList);
@@ -48,6 +45,19 @@ public class WebAppreciateController {
         List<Appreciate> appreciateList = appreciateDao.appreciateList(null,categoryId,offset,pageSize);
         request.setAttribute("appreciateList",appreciateList);
         return "/web/appreciate/list";
+
+    }
+
+    @RequestMapping(value="/list.json",method = RequestMethod.GET)
+    @ResponseBody
+    public List<Appreciate> jsonList(HttpServletRequest request,
+                       @RequestParam(value = "categoryId",required=false,defaultValue="") Long categoryId,
+                       @RequestParam(value = "page",required=false,defaultValue="1")Integer page){
+        Integer pageSize = Constant.PAGESIZE;
+        Integer offset = (page-1) * pageSize;
+        List<Appreciate> appreciateList = appreciateDao.appreciateList(null,categoryId,offset,pageSize);
+        //request.setAttribute("appreciateList",appreciateList);
+        return appreciateList;
 
     }
 
