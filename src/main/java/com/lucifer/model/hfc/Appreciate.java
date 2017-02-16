@@ -9,6 +9,8 @@ import java.util.Date;
  */
 public class Appreciate {
 
+
+
     private Long id;
 
     private Long categoryId;
@@ -168,5 +170,50 @@ public class Appreciate {
 
     public void setlHeight(Integer lHeight) {
         this.lHeight = lHeight;
+    }
+
+    public String pinHtml(){
+        String html =
+        "<div id=\"pin_" + this.id +"\"  class=\"pin wfc wft\" style=\"position: absolute; left: 0px; top: 0px; opacity: 1;\">"+
+
+            "<a href=\"/appreciate/" +this.id + "\"target=\"_blank\"  class=\"img x layer-view loaded\">"+
+                "<img src=\""+this.logo +"\" width=\"220\" height=\""+this.pinHeight() +"\"  />"+
+            "</a>"+
+
+            "<div  class=\"name\">"+this.title+"</div>"+
+
+                "<p class=\"stats less\">"+
+                    "<span title=\"喜欢\" class=\"like\"><i></i>153</span>"+
+                    "<span title=\"评论\" class=\"comment\"><i></i>1</span>"+
+                "</p>"+
+
+                "<div  class=\"comments muted\">"+
+                    "<div class=\"comment convo clearfix\">"+
+                        "<a href=\"#\"  class=\"img x\">"+
+                        "<img src=\"//img.hb.aicdn.com/f231281317484f51cd4de0714daa4ff5c6c7947e878-By0uJm_sq75sf\" class=\"avt\">"+
+                        "</a>"+
+                        "<div class=\"content\">"+
+                        "<a href=\"#\" class=\"author\">pRSEpI01</a>:&nbsp;可以把水印去了吗？"+
+                        "</div>"+
+                "</div>"+
+        "</div>"+
+
+        "</div>";
+        return html;
+    }
+
+    private Integer defaultPinHeight = 131;
+
+    private Integer defaultPinWidth = 220;
+
+    public Integer pinHeight(){
+        if (null == this.lWidth||this.lWidth==0) {
+            return defaultPinHeight;
+        }
+        if (null == this.lHeight||this.lHeight==0) {
+            return defaultPinHeight;
+        }
+        return this.lHeight * this.defaultPinWidth/this.lWidth;
+
     }
 }

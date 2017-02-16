@@ -9,7 +9,10 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by liufx on 17/2/11.
@@ -57,14 +60,22 @@ public class WebAppreciateController {
 
     @RequestMapping(value="/list.json",method = RequestMethod.GET)
     @ResponseBody
-    public List<Appreciate> jsonList(HttpServletRequest request,
+    public List<Map> jsonList(HttpServletRequest request,
                        @RequestParam(value = "categoryId",required=false,defaultValue="") Long categoryId,
                        @RequestParam(value = "page",required=false,defaultValue="1")Integer page){
         Integer pageSize = Constant.PAGESIZE;
         Integer offset = (page-1) * pageSize;
         List<Appreciate> appreciateList = appreciateDao.appreciateList(null,categoryId,offset,pageSize);
+        List<Map> resultList = new ArrayList<>();
+        for (Appreciate appreciate: appreciateList) {
+            Map entityMap = new HashMap<>();
+            entityMap.put("id",appreciate.getId());
+            entityMap.put("pinHtml",appreciate.pinHtml());
+            resultList.add(entityMap);
+        }
+
         //request.setAttribute("appreciateList",appreciateList);
-        return appreciateList;
+        return resultList;
 
     }
 
