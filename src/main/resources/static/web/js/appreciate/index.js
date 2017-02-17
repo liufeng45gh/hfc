@@ -13,7 +13,7 @@ function nextPage () {
         var data_send = {};
         page++;
         data_send.page = page;
-        //data_send.categoryId = categoryId;
+        data_send.categoryId = categoryId;
         var more_request =$.ajax({
            type: 'get',
            url: url,
@@ -86,7 +86,7 @@ function getHeight(index) {
 function addNewPin(id,pinHtml){
     var minHeightIndex = getMinHeightIndex();
     var left = colLeftArray[minHeightIndex];
-    var top = getHeight(minHeightIndex) + 10;
+    var top = getHeight(minHeightIndex) + 20;
     colIdPanList[minHeightIndex].push(id);
     $("#entity-list").append(pinHtml);
     $("#pin_"+id).css("left",left);

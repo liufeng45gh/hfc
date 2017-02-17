@@ -18,6 +18,8 @@
    color: rgb(38,38,38);
 }
 
+
+
 .appreciate-list{
     position: relative;
     min-height: 500px;
@@ -252,5 +254,9 @@
      color: #222;
      text-decoration: none;
      outline: 0;
+ }
+
+ .news-title{
+    text-align: center;
  }
 

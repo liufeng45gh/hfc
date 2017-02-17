@@ -176,7 +176,7 @@ public class Appreciate {
         String html =
         "<div id=\"pin_" + this.id +"\"  class=\"pin wfc wft\" style=\"position: absolute; left: 0px; top: 0px; opacity: 1;\">"+
 
-            "<a href=\"/appreciate/" +this.id + "\"target=\"_blank\"  class=\"img x layer-view loaded\">"+
+            "<a href=\"/appreciate/" +this.id + "/detail\"target=\"_blank\"  class=\"img x layer-view loaded\">"+
                 "<img src=\""+this.logo +"\" width=\"220\" height=\""+this.pinHeight() +"\"  />"+
             "</a>"+
 
