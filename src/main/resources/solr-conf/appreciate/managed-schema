@@ -114,7 +114,7 @@
    
    <field name="title" type="text_cn" indexed="true" stored="true"/>
    
-   <field name="categoryId" type="text_cn" indexed="true" stored="true"/>
+   <field name="categoryId" type="long" indexed="true" stored="true"/>
 
     <field name="updatedAt" type="date" indexed="true" stored="true" />
     <field name="logo" type="text_general" indexed="true" stored="true" />

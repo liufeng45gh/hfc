@@ -92,6 +92,17 @@
         where  appreciate.id = #{id}
     </select>
 
+    <select id="appreciateListOrderByUpdatedAt"   resultMap="AppreciateMap">
+        select *
+        from appreciate
+        <if test="updatedAt != null">
+            <![CDATA[
+			where updated_at > #{updatedAt}
+			]]>
+        </if>
+        order by updated_at limit #{count}
+    </select>
+
 
     <resultMap type="com.lucifer.model.hfc.AppreciateCategory" id="AppreciateCategoryMap">
         <id column="id" property="id"/>

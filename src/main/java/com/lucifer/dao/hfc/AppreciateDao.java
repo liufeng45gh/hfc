@@ -6,6 +6,7 @@ import com.lucifer.model.hfc.AppreciateCategory;
 import com.lucifer.utils.DateUtils;
 import org.springframework.stereotype.Component;
 
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -85,5 +86,12 @@ public class AppreciateDao  extends IBatisBaseDao {
 
     public Integer deleteAppreciate(Long id){
         return this.hfcSqlSession.delete("deleteAppreciate",id);
+    }
+
+    public List<Appreciate> appreciateListOrderByUpdatedAt(Date updatedAt, int count){
+        Map param = new HashMap();
+        param.put("updatedAt", updatedAt);
+        param.put("count", count);
+        return this.hfcSqlSession.selectList("appreciateListOrderByUpdatedAt",param);
     }
 }

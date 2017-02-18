@@ -73,7 +73,13 @@ public class ArtistSearchService {
             if (docList.size() > 0) {
                 httpSolrClient.add(docList);
                 httpSolrClient.commit();
-                logger.info("user httpSolrClient.commit()");
+                logger.info("httpSolrClient.commit()");
+            }
+
+            if (deleteIdList.size()>0) {
+                httpSolrClient.deleteById(deleteIdList);
+                httpSolrClient.commit();
+                logger.info("delete httpSolrClient.commit()");
             }
 
             updatedAt = artistList.get(artistList.size() - 1).getUpdatedAt();

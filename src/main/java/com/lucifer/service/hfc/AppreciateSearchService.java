@@ -1,8 +1,10 @@
 package com.lucifer.service.hfc;
 
-import com.lucifer.dao.hfc.NewsDao;
+import com.lucifer.dao.hfc.AppreciateDao;
+import com.lucifer.dao.hfc.ArtistDao;
 import com.lucifer.exception.ArgumentException;
-import com.lucifer.model.hfc.News;
+import com.lucifer.model.hfc.Appreciate;
+import com.lucifer.model.hfc.Artist;
 import com.lucifer.utils.PageInfoWriter;
 import com.lucifer.utils.StringHelper;
 import org.apache.solr.client.solrj.SolrQuery;
@@ -24,18 +26,17 @@ import java.io.IOException;
 import java.util.*;
 
 /**
- * Created by liufx on 17/2/8.
+ * Created by liufx on 17/2/18.
  */
 @Component
-public class NewsSearchService {
-
+public class AppreciateSearchService {
     final Logger logger = LoggerFactory.getLogger(this.getClass());
 
-    @Value("${solr.url.news}")
+    @Value("${solr.url.appreciate}")
     private String solrServerUrl;
 
     @Resource
-    private NewsDao newsDao;
+    private AppreciateDao appreciateDao;
 
     private HttpSolrClient httpSolrClient;
 
@@ -52,35 +53,35 @@ public class NewsSearchService {
         Date updatedAt = this.getSolrMaxUpdatedAt();
 
         while (true){
-            List<News> newsList = newsDao.newsListOrderByUpdatedAt(updatedAt,1000);
-            logger.info("newsList size: "+newsList.size());
-            if (newsList.size() == 0) {
+            List<Appreciate> appreciateList = appreciateDao.appreciateListOrderByUpdatedAt(updatedAt,1000);
+            logger.info("appreciateList size: "+appreciateList.size());
+            if (appreciateList.size() == 0) {
                 break;
             }
 
             Collection<SolrInputDocument> docList = new ArrayList<SolrInputDocument>();
             List<String> deleteIdList =new ArrayList<String>();
-            for (News news : newsList) {
-                if (news.getIsDeleted().equals(0)) {
-                    SolrInputDocument doc1 = this.parse(news);
+            for (Appreciate appreciate : appreciateList) {
+                if (appreciate.getIsDeleted().equals(0)) {
+                    SolrInputDocument doc1 = this.parse(appreciate);
                     docList.add(doc1);
-                }else {
-                    deleteIdList.add(news.getId().toString());
+                } else {
+                    deleteIdList.add(appreciate.getId().toString());
                 }
-
             }
             if (docList.size() > 0) {
                 httpSolrClient.add(docList);
                 httpSolrClient.commit();
-                logger.info("add httpSolrClient.commit()");
+                logger.info(" httpSolrClient.commit()");
             }
+
             if (deleteIdList.size()>0) {
                 httpSolrClient.deleteById(deleteIdList);
                 httpSolrClient.commit();
                 logger.info("delete httpSolrClient.commit()");
             }
 
-            updatedAt = newsList.get(newsList.size() - 1).getUpdatedAt();
+            updatedAt = appreciateList.get(appreciateList.size() - 1).getUpdatedAt();
             logger.info("change updatedAt to: "+ updatedAt.toString());
         }
 
@@ -116,25 +117,24 @@ public class NewsSearchService {
         return null;
     }
 
-    private SolrInputDocument parse(News news){
+    private SolrInputDocument parse(Appreciate appreciate){
         SolrInputDocument doc = new SolrInputDocument();
-        doc.addField("id", news.getId());
-        doc.addField("title", news.getTitle());
-        doc.addField("summary", news.getSummary());
-        doc.addField("updatedAt", news.getUpdatedAt());
-        doc.addField("publishAt", news.getPublishAt());
-        doc.addField("logo", news.getLogo());
+        doc.addField("id", appreciate.getId());
+        doc.addField("title", appreciate.getTitle());
+        doc.addField("categoryId", appreciate.getCategoryId());
+        doc.addField("updatedAt", appreciate.getUpdatedAt());
+        doc.addField("logo", appreciate.getLogo());
         return doc;
     }
 
-    public void updateNews(News news) throws IOException, SolrServerException, ArgumentException {
-        if (null == news.getId()) {
+    public void updateArtist(Appreciate appreciate) throws IOException, SolrServerException, ArgumentException {
+        if (null == appreciate.getId()) {
             throw new ArgumentException("id 不能为空");
         }
-        if (StringHelper.isEmpty(news.getTitle())) {
+        if (StringHelper.isEmpty(appreciate.getTitle())) {
             throw new ArgumentException("title 不能为空");
         }
-        SolrInputDocument doc1 = this.parse(news);
+        SolrInputDocument doc1 = this.parse(appreciate);
         httpSolrClient.add(doc1);
         httpSolrClient.commit();
     }
@@ -162,14 +162,13 @@ public class NewsSearchService {
 //        query.setQuery("*:*");
 //        query.addFilterQuery("nickName:*"+text+"*");
         query.setHighlight(true);
-        query.setParam("hl.fl", "title,summary");
-
+        query.setParam("hl.fl", "title");
 
 
         query.setRows(rows);
         query.setStart(offset);
         QueryResponse rsp = null;
-        List<News> newsList = new ArrayList<News>();
+        List<Appreciate> appreciateList = new ArrayList<Appreciate>();
         try{
             rsp = httpSolrClient.query(query);
 
@@ -184,9 +183,9 @@ public class NewsSearchService {
         SolrDocumentList docs = rsp.getResults();
         Map<String, Map<String, List<String>>> highMap = rsp.getHighlighting();
 
+        String lowerCaseText = text.toLowerCase();
 
-
-
+        //List<String> segments = this.segment(lowerCaseText);
 
         logger.info("docs.size(): "+ docs.size());
         for (int i = 0; i < docs.size(); i++) {
@@ -196,11 +195,11 @@ public class NewsSearchService {
 
             logger.info("resumeDoc.getFieldValue(\"title\"): "+doc.getFieldValue("title"));
 
-            News news = this.docToNews(doc);
+            Appreciate appreciate = this.docToObject(doc);
             //user = userService.getUserInfoById(user.getId());
-
-            newsList.add(news);
-            this.setNewsHighlighting(news,highMap);
+            Appreciate dbObject = appreciateDao.getAppreciate(appreciate.getId());
+            appreciateList.add(dbObject);
+            this.setHighlighting(dbObject,highMap);
 //            if (!this.isCorrectHighlighting(lowerCaseText,user.getNickName())) {
 //                String highlightingNickName = this.highlightingNickName(segments,user.getNickName());
 //                user.setNickName(highlightingNickName);
@@ -211,7 +210,7 @@ public class NewsSearchService {
         }
 
 
-        pageInfo.setDataList(newsList);
+        pageInfo.setDataList(appreciateList);
         pageInfo.setAllRecordCount(numberFound.intValue());
 
         return pageInfo;
@@ -220,19 +219,19 @@ public class NewsSearchService {
 
 
 
-    private News docToNews(SolrDocument doc){
-        News news = new News();
-        news.setId((Long)doc.getFieldValue("id"));
-        news.setTitle((String)doc.getFieldValue("title"));
-        news.setLogo((String)doc.getFieldValue("logo"));
-        news.setUpdatedAt((Date) doc.getFieldValue("updatedAt"));
-        news.setSummary((String)doc.getFieldValue("summary"));
-        news.setPublishAt((Date) doc.getFieldValue("publishAt"));
-        return news;
+    private Appreciate docToObject(SolrDocument doc){
+        Appreciate appreciate = new Appreciate();
+        appreciate.setId((Long)doc.getFieldValue("id"));
+        appreciate.setTitle((String)doc.getFieldValue("title"));
+        appreciate.setLogo((String)doc.getFieldValue("logo"));
+        appreciate.setUpdatedAt((Date) doc.getFieldValue("updatedAt"));
+        appreciate.setCategoryId((Long)doc.getFieldValue("categoryId"));
+        //news.setPublishAt((Date) doc.getFieldValue("publishAt"));
+        return appreciate;
     }
 
-    private void setNewsHighlighting(News news , Map<String, Map<String, List<String>>> highMap ){
-        Map<String,List<String>> highMap2 = highMap.get(news.getId().toString());
+    private void setHighlighting(Appreciate appreciate , Map<String, Map<String, List<String>>> highMap ){
+        Map<String,List<String>> highMap2 = highMap.get(appreciate.getId().toString());
         logger.info("highMap2 is "+highMap2);
         if (null != highMap2) {
             List<String> listString = highMap2.get("title");
@@ -240,15 +239,7 @@ public class NewsSearchService {
             if(null != listString&& listString.size()>0) {
                 String highString =  listString.get(0);
                 logger.info("title is "+highString);
-                news.setTitle(highString);
-            }
-
-            List<String> listSummart = highMap2.get("summary");
-            logger.info("listSummart is "+listSummart);
-            if(null != listSummart&& listSummart.size()>0) {
-                String highString =  listSummart.get(0);
-                logger.info("summary is "+highString);
-                news.setSummary(highString);
+                appreciate.setTitle(highString);
             }
         }
 
@@ -303,6 +294,5 @@ public class NewsSearchService {
         }
         return nickName;
     }
-
 
 }

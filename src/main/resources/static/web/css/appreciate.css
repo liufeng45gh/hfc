@@ -186,6 +186,10 @@
     overflow: hidden;
 }
 
+.pin em{
+    color: #c00;
+}
+
 .comments {
     border-top: 1px solid #F5F2F2;
 }

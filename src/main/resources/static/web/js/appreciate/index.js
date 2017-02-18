@@ -13,7 +13,13 @@ function nextPage () {
         var data_send = {};
         page++;
         data_send.page = page;
-        data_send.categoryId = categoryId;
+        if (typeof(categoryId) != "undefined") {
+           data_send.categoryId = categoryId;
+        }
+        if (typeof(title) != "undefined") {
+            data_send.title = title;
+        }
+
         var more_request =$.ajax({
            type: 'get',
            url: url,

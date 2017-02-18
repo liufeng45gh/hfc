@@ -2,6 +2,7 @@ package com.lucifer.controller.cms.hfc;
 
 import com.lucifer.dao.hfc.NewsDao;
 import com.lucifer.model.hfc.News;
+import com.lucifer.service.hfc.AppreciateSearchService;
 import com.lucifer.service.hfc.ArtistSearchService;
 import com.lucifer.service.hfc.NewsSearchService;
 import com.lucifer.utils.Constant;
@@ -29,7 +30,7 @@ import java.util.List;
 
 @Controller
 @RequestMapping("/cms")
-public class CmsNewsSearchController {
+public class CmsSolrImportController {
 
     private Logger logger = LoggerFactory.getLogger(this.getClass());
 
@@ -38,6 +39,9 @@ public class CmsNewsSearchController {
 
     @Resource
     private ArtistSearchService artistSearchService;
+
+    @Resource
+    private AppreciateSearchService appreciateSearchService;
 
 
 
@@ -54,6 +58,14 @@ public class CmsNewsSearchController {
     public Result artistReImport() throws IOException, SolrServerException {
         logger.info("CmsSearchController artistReImport has been called");
         artistSearchService.reImport();
+        return Result.ok();
+    }
+
+    @RequestMapping(value="/appreciate/search/re-import",method = RequestMethod.POST)
+    @ResponseBody
+    public Result appreciateReImport() throws IOException, SolrServerException {
+        logger.info("CmsSearchController appreciateReImport has been called");
+        appreciateSearchService.reImport();
         return Result.ok();
     }
 
