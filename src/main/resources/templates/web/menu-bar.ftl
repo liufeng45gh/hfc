@@ -32,7 +32,7 @@
                     <div class="name">话题</div>
                 </a>
 
-                <a class="header-item" href="#">
+                <a class="header-item" href="/research-report/index" id="head-href-research-report">
                     <div class="szzt szzt-yanjiubaogao"></div>
                     <div class="name">研究报告</div>
                 </a>

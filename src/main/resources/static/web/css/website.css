@@ -584,6 +584,10 @@ em{
     margin: 10px auto;
  }
 
+ .b-line {
+ border-bottom: 1px solid rgb(214, 214, 216);
+ }
+
 
 
 
