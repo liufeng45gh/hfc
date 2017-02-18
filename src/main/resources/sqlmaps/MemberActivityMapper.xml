@@ -55,6 +55,9 @@
         <if test="title!=null and title!=''">
             and member_activity.title like '%${title}%'
         </if>
+        <if test="categoryId!=null">
+            and member_activity.category_id = #{categoryId}
+        </if>
         order by member_activity.top desc,member_activity.publish_at desc limit #{offset},#{count}
     </select>
 

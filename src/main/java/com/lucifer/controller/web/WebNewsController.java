@@ -43,6 +43,8 @@ public class WebNewsController {
 
     private Logger logger = LoggerFactory.getLogger(this.getClass());
 
+
+
     @RequestMapping(value="/index",method = RequestMethod.GET)
     public String newsIndex(HttpServletRequest request, @RequestParam(value = "categoryId",required=false,defaultValue="") Long categoryId,
                            @RequestParam(value = "page",required=false,defaultValue="1")Integer page){
@@ -60,12 +62,13 @@ public class WebNewsController {
 //        request.setAttribute("pageDiv",pageDiv);
 //        request.setAttribute("title",title);
 
-        List<News> hotList = newsDao.webHotNewsList();
-        request.setAttribute("hotList",hotList);
-
-
-        List<NewsRecommend> newsRecommendList = newsService.newsRecommendList();
-        request.setAttribute("recommendList",newsRecommendList);
+//        List<News> hotList = newsDao.webHotNewsList();
+//        request.setAttribute("hotList",hotList);
+//
+//
+//        List<NewsRecommend> newsRecommendList = newsService.newsRecommendList();
+//        request.setAttribute("recommendList",newsRecommendList);
+        newsService.loadNewsRightData(request);
 
         List<NewsCategory> newsCategoryList = newsDao.cmsNewsCategoryList();
         request.setAttribute("newsCategoryList",newsCategoryList);
@@ -111,12 +114,7 @@ public class WebNewsController {
 //        request.setAttribute("pageDiv",pageDiv);
 //        request.setAttribute("title",title);
 
-        List<News> hotList = newsDao.webHotNewsList();
-        request.setAttribute("hotList",hotList);
-
-
-        List<NewsRecommend> newsRecommendList = newsService.newsRecommendList();
-        request.setAttribute("recommendList",newsRecommendList);
+        newsService.loadNewsRightData(request);
 
         List<NewsCategory> newsCategoryList = newsDao.cmsNewsCategoryList();
         request.setAttribute("newsCategoryList",newsCategoryList);
@@ -143,12 +141,7 @@ public class WebNewsController {
 
     @RequestMapping(value="/{id}/detail",method = RequestMethod.GET)
     public String newsDetail(HttpServletRequest request,@PathVariable Long id){
-        List<News> hotList = newsDao.webHotNewsList();
-        request.setAttribute("hotList",hotList);
-
-
-        List<NewsRecommend> newsRecommendList = newsService.newsRecommendList();
-        request.setAttribute("recommendList",newsRecommendList);
+        newsService.loadNewsRightData(request);
 
         News news = newsDao.getNews(id);
         request.setAttribute("entity",news);

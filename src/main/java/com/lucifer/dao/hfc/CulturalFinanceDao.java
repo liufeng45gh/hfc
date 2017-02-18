@@ -38,9 +38,10 @@ public class CulturalFinanceDao extends IBatisBaseDao {
     }
 
 
-    public List<CulturalFinance> culturalFinanceList(String title,Integer offset,Integer count){
+    public List<CulturalFinance> culturalFinanceList(Long categoryId,String title,Integer offset,Integer count){
 
         Map<String,Object> param = new HashMap<String,Object>();
+        param.put("categoryId",categoryId);
         param.put("title",title);
         param.put("offset",offset);
         param.put("count",count);

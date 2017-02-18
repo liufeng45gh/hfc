@@ -6,6 +6,7 @@ import com.lucifer.model.hfc.NewsRecommend;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 /**
@@ -29,6 +30,16 @@ public class NewsService {
 
     public List<News> searchList(String title,Integer offset,Integer count){
          return null;
+    }
+
+    public void loadNewsRightData(HttpServletRequest request){
+        List<News> hotList = newsDao.webHotNewsList();
+        request.setAttribute("hotList",hotList);
+
+
+        List<NewsRecommend> newsRecommendList = this.newsRecommendList();
+        request.setAttribute("recommendList",newsRecommendList);
+
     }
 
 

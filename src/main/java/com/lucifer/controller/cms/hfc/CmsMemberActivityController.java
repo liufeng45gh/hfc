@@ -81,7 +81,7 @@ public class CmsMemberActivityController {
                                       @RequestParam(value = "page",required=false,defaultValue="1")Integer page){
         Integer pageSize = Constant.PAGESIZE;
         Integer offset = (page-1) * pageSize;
-        List<MemberActivity> memberActivityList = memberActivityDao.memberActivityList(title,offset,pageSize);
+        List<MemberActivity> memberActivityList = memberActivityDao.memberActivityList(null,title,offset,pageSize);
         request.setAttribute("memberActivityList",memberActivityList);
 
         Integer matchRecordCount=memberActivityDao.matchRecordCount(title);

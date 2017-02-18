@@ -1,5 +1,6 @@
 package com.lucifer.model.hfc;
 
+import com.lucifer.utils.StringHelper;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
@@ -138,5 +139,33 @@ public class MemberActivity {
 
     public void setCategoryName(String categoryName) {
         this.categoryName = categoryName;
+    }
+
+    public Boolean isLogoHave(){
+        if (StringHelper.isEmpty(this.logo)) {
+            return false;
+        }
+        if ("/cms/images/logo.png".equals(this.logo)){
+            return false;
+        }
+        return true;
+    }
+
+    public String summaryText(){
+        if (null == this.summary) {
+            return "";
+        }
+        if (this.isLogoHave()){
+            if (this.summary.length()<74) {
+                return this.summary;
+            }
+            return this.summary.substring(0,74)+"...";
+        } else {
+            if (this.summary.length()<110) {
+                return this.summary;
+            }
+            return this.summary.substring(0,110)+"...";
+        }
+
     }
 }

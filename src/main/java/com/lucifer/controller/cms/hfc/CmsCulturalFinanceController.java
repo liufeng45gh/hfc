@@ -81,7 +81,7 @@ public class CmsCulturalFinanceController {
                            @RequestParam(value = "page",required=false,defaultValue="1")Integer page){
         Integer pageSize = Constant.PAGESIZE;
         Integer offset = (page-1) * pageSize;
-        List<CulturalFinance> culturalFinanceList = culturalFinanceDao.culturalFinanceList(title,offset,pageSize);
+        List<CulturalFinance> culturalFinanceList = culturalFinanceDao.culturalFinanceList(null,title,offset,pageSize);
         request.setAttribute("culturalFinanceList",culturalFinanceList);
 
         Integer matchRecordCount=culturalFinanceDao.matchRecordCount(title);

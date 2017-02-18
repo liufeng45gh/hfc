@@ -37,7 +37,7 @@
                     <div class="name">研究报告</div>
                 </a>
 
-                <a class="header-item" href="#">
+                <a class="header-item" href="/cultural-finance/index" id="head-href-cultural-finance">
                     <div class="szzt szzt-wenhuajinrong"></div>
                     <div class="name">文化金融</div>
                 </a>
@@ -58,7 +58,7 @@
                     <div class="name">艺术品定制</div>
                 </a>
 
-                <a class="header-item" href="#">
+                <a class="header-item" href="/member-activity/index" id="head-href-member-activity">
                     <div class="szzt szzt-huiyuanhuodong"></div>
                     <div class="name">会员活动</div>
                 </a>

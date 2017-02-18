@@ -55,6 +55,9 @@
         <if test="title!=null and title!=''">
             and cultural_finance.title like '%${title}%'
         </if>
+        <if test="categoryId!=null">
+            and cultural_finance.category_id = #{categoryId}
+        </if>
         order by cultural_finance.top desc,cultural_finance.publish_at desc limit #{offset},#{count}
     </select>
 

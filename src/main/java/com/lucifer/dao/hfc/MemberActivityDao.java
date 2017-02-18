@@ -40,9 +40,10 @@ public class MemberActivityDao extends IBatisBaseDao {
     }
 
 
-    public List<MemberActivity> memberActivityList(String title, Integer offset, Integer count){
+    public List<MemberActivity> memberActivityList(Long categoryId,String title, Integer offset, Integer count){
 
         Map<String,Object> param = new HashMap<String,Object>();
+        param.put("categoryId",categoryId);
         param.put("title",title);
         param.put("offset",offset);
         param.put("count",count);
