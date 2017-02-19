@@ -189,4 +189,32 @@ public class ResearchReport {
         }
 
     }
+
+    public String downloadHtml(){
+        if (null == this.appendixUrl|| "".equals( this.appendixUrl.trim())) {
+            String html =
+                    "<div class=\"no-download\">"+
+                            "<span><img src=\"/web/images/no-download.png\"/></span>"+
+                            "<span>无附件</span>"+
+                    "</div>";
+            return html;
+        }
+        if (null==this.isOpen||this.isOpen==1) {
+            String html =
+                    "<a href=\"" + this.appendixUrl + "\">"+
+                        "<div class=\"can-download\">"+
+                            "<span><img src=\"/web/images/can-download.png\"/></span>"+
+                            "<span>点击下载</span>"+
+                       "</div>"+
+                     "</a>";
+            return html;
+        } else {
+            String html =
+                    "<div class=\"no-download\">"+
+                            "<span><img src=\"/web/images/no-download.png\"/></span>"+
+                            "<span>保密</span>"+
+                            "</div>";
+            return html;
+        }
+    }
 }

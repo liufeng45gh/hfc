@@ -16,7 +16,10 @@
                 ${news.summaryText()}
             </div>
         </a>
-         <div class="date-info">[${(news.publishAt?string("yyyy-MM-dd HH:mm:ss"))!}]</div>
+        <div>
+            ${news.downloadHtml()}
+            <div class="date-info">[${(news.publishAt?string("yyyy-MM-dd HH:mm:ss"))!}]</div>
+        </div>
     </div>
 
 </div>

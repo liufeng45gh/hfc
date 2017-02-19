@@ -2,6 +2,7 @@
 <head>
     <link rel='stylesheet' href='/web/css/website.css' type='text/css' media='screen' />
     <link rel='stylesheet' href='/web/css/news.css' type='text/css' media='screen' />
+    <link rel='stylesheet' href='/web/css/research-report.css' type='text/css' media='screen' />
     <script  src="/web/icon/iconfont.js"></script>
     <link rel="stylesheet" type="text/css" href="/web/icon/iconfont.css">
     <style type="text/css">
@@ -47,12 +48,10 @@
                 <div class="finance-list news-list" id="news-list">
                     <div class="news-title">${entity.title?default("")}</div>
                     <div class="news-info">
-                        <span>
 
-                        </span>
-                        <span>
-                            ${(entity.publishAt?string("yyyy-MM-dd HH:mm:ss"))!}
-                        </span>
+                             ${entity.downloadHtml()}
+
+                        <div class="detail-date-info">[${(entity.publishAt?string("yyyy-MM-dd HH:mm:ss"))!}]</div>
                     </div>
                     <div class="news-content">${entity.content?default("")}</div>
 
