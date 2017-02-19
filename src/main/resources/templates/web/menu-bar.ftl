@@ -8,7 +8,7 @@
                         <use xlink:href="#szzt-logo"></use>
                     </svg>
                 </a>
-                <a class="header-item" href="#" >
+                <a class="header-item" href="/" id="head-href-index">
                     <div class="szzt szzt-shouye" ></div>
                     <div class="name">首页</div>
                 </a>

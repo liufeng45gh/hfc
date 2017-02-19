@@ -318,14 +318,14 @@ em{
 }
 
 .title-line .line-left{
-    width:600px;
+    width:450px;
     overflow: hidden;
 }
 .title-line .line-middle{
     width:300px;
 }
 .title-line .line-right{
-    width:600px;
+    width:450px;
     overflow: hidden;
 }
 .line{
@@ -353,9 +353,9 @@ em{
 
 
 /* 轮播图 核心代码 */
-.focus{width:600px;height:340px;overflow:hidden;position:relative;}
-.focus ul{height:340px;position:absolute;padding:0;margin:0;}
-.focus ul li{float:left;width:600px;height:340px;overflow:hidden;position:relative;background:#000;}
+.focus{width:590px;height:400px;overflow:hidden;position:relative;}
+.focus ul{height:400px;position:absolute;padding:0;margin:0;}
+.focus ul li{float:left;width:590px;height:400px;overflow:hidden;position:relative;background:#000;}
 .focus ul li div{position:absolute;overflow:hidden;}
 .focus .btn{position:absolute;width:580px;height:10px;padding:5px 10px;right:0;bottom:315px;text-align:right;}
 .focus .btn span{display:inline-block;_display:inline;_zoom:1;width:13px;height:13px;_font-size:0;margin-left:5px;cursor:pointer;background:#fff;border-radius:50%;}
@@ -368,7 +368,7 @@ em{
     height: 105px;
     position: absolute;
     bottom: 0px;
-    width: 600px;
+    width: 590px;
     left: 0;
     z-index: 10;
     overflow: hidden;
@@ -390,8 +390,8 @@ em{
 }
 
 .carousel-border{
-    width: 600px;
-    height: 340px;
+    width: 590px;
+    height: 400px;
     float: left;
     position: absolute;
      margin-top: 0px;
@@ -399,13 +399,14 @@ em{
 }
 
 .carousel-img{
-    width:600px;
-    height:340px;
+    width:590px;
+    height:400px;
 }
 
 .news-recommend{
     margin: auto;
     height: 460px;
+    position: relative;
 }
 .bgf7{
  background-color: #F7F7F7;
@@ -415,27 +416,25 @@ em{
 .news-border{
     float: left;
     position: absolute;
-    left: 850px;
+    left: 600px;
     margin-top: 0;
 }
 
 .rnTopic {
-    width: 800px;
-    padding-left: 20px;
+    width: 606px;
  }
  .rnTopic .news-item {
      float: left;
      width: 190px;
-     height: 180px;
-     margin: 0 0 10px 10px;
+     height: 190px;
+     margin: 0 0 20px 10px;
+     border: 1px solid #e5e5e5;
  }
  .rnTopic .news-item a {
      font-size: 14px;
      color: #373737;
  }
  .rnTopic .news-item p {
-     width: 180px;
-     height: 120px;
      margin: 0;
  }
  .imgScale .news-item p {
@@ -445,48 +444,49 @@ em{
 
  .imgScale .news-item img {
      transition: 0.3s;
-     width: 180px;
-     height: 120px;
+     width: 190px;
+     height: 150px;
      overflow: hidden;
      display: block;
  }
 
  .rnTopic .news-item em {
-     display: block;
-     width: 180px;
-     height: 28px;
-     line-height: 28px;
-     overflow: hidden;
-     text-align: left;
-     margin-top: 10px;
+    display: block;
+    width: 180px;
+    height: 40px;
+    line-height: 40px;
+    overflow: hidden;
+    text-align: center;
  }
 
 .artist-recommend{
     margin:10px auto;
     height: 450px;
-    width: 1496px;
+    width: 1200px;
 }
 
 
  .artist-recommend .artist-item{
      float: left;
-     width: 167px;
-     margin: 0 10px 10px 10px;
+     width: 140px;
+     height: 205px;
+     margin: 0 9px 10px 0px;
+     border: 1px solid #e5e5e5;
  }
 
  .artist-recommend .artist-item img {
       transition: 0.3s;
-      width: 150px;
-      height: 180px;
+        width: 140px;
+        height: 165px;
       overflow: hidden;
       display: block;
   }
 
 .artist-recommend .artist-item .artist-name {
     display: block;
-    width: 180px;
-    height: 28px;
-    line-height: 28px;
+    width: 140px;
+    height: 40px;
+    line-height: 40px;
     overflow: hidden;
     text-align: center;
 }
@@ -506,7 +506,7 @@ em{
 
  .finance-block{
     float: left;
-    width: 735px;
+    width: 590px;
  }
 .separate-block{
     float: left;
@@ -515,7 +515,7 @@ em{
 
  .report-block{
      float: left;
-     width: 735px;
+     width: 590px;
  }
  .info-fr{
      margin: 0px auto;
@@ -523,14 +523,14 @@ em{
 
   .finance-item{
     background-color: white;
-    height:130px;
+    height:132px;
     border: 1px solid #e5e5e5;
     margin-bottom: 20px;
   }
 
  .finance-item .logo {
-     width: 180px;
-     height: 120px;
+     width: 163px;
+     height: 132px;
      position: relative;
      float: left;
      display: inline;
@@ -540,7 +540,7 @@ em{
       position: relative;
       float: left;
       display: inline;
-      width: 525px;
+      width: 405px;
       margin-left: 20px;
   }
 
@@ -553,6 +553,9 @@ em{
     padding-right: 15px;
     overflow: hidden;
     margin-top: 8px;
+}
+.finance-item a{
+    text-decoration: none;
 }
 
 .finance-item .desc{
@@ -574,8 +577,8 @@ em{
     padding-right:15px;
 }
  .finance-item img{
-    width: 180px;
-    height: 130px;
+    width: 163px;
+    height: 132px;
  }
 .member-block{
     height: 500px;
@@ -586,6 +589,15 @@ em{
 
  .b-line {
  border-bottom: 1px solid rgb(214, 214, 216);
+ }
+
+.finance-item  .w588{
+    width: 575px;
+ }
+
+ .active-item{
+    width: 590px;
+    float: left;
  }
 
 

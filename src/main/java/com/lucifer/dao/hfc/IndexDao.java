@@ -18,6 +18,12 @@ public class IndexDao extends IBatisBaseDao {
     public List<IndexRecommend> newsIndexRecommendList(){
         return this.hfcSqlSession.selectList("newsIndexRecommendList");
     }
+
+    public List<IndexRecommend> newsIndexRecommendListLimit6(){
+        return this.hfcSqlSession.selectList("newsIndexRecommendListLimit6");
+    }
+
+
     public IndexRecommend getNewsIndexRecommend(Long id) {
         return this.hfcSqlSession.selectOne("getNewsIndexRecommend",id);
     }
@@ -41,6 +47,12 @@ public class IndexDao extends IBatisBaseDao {
     public List<IndexRecommend> artistIndexRecommendList(){
         return this.hfcSqlSession.selectList("artistIndexRecommendList");
     }
+
+    public List<IndexRecommend> artistIndexRecommendListLimit16(){
+        return this.hfcSqlSession.selectList("artistIndexRecommendListLimit16");
+    }
+
+
     public IndexRecommend getArtistIndexRecommend(Long id) {
         return this.hfcSqlSession.selectOne("getArtistIndexRecommend",id);
     }
@@ -64,6 +76,12 @@ public class IndexDao extends IBatisBaseDao {
     public List<IndexRecommend> financeIndexRecommendList(){
         return this.hfcSqlSession.selectList("financeIndexRecommendList");
     }
+
+    public List<IndexRecommend> financeIndexRecommendListLimit3(){
+        return this.hfcSqlSession.selectList("financeIndexRecommendListLimit3");
+    }
+
+
     public IndexRecommend getFinanceIndexRecommend(Long id) {
         return this.hfcSqlSession.selectOne("getFinanceIndexRecommend",id);
     }
@@ -88,6 +106,12 @@ public class IndexDao extends IBatisBaseDao {
     public List<IndexRecommend> researchIndexRecommendList(){
         return this.hfcSqlSession.selectList("researchIndexRecommendList");
     }
+
+    public List<IndexRecommend> researchIndexRecommendListLimit3(){
+        return this.hfcSqlSession.selectList("researchIndexRecommendListLimit3");
+    }
+
+
     public IndexRecommend getResearchIndexRecommend(Long id) {
         return this.hfcSqlSession.selectOne("getResearchIndexRecommend",id);
     }

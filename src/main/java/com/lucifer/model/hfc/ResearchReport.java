@@ -190,6 +190,24 @@ public class ResearchReport {
 
     }
 
+    public String indexSummaryText(){
+        if (null == this.summary) {
+            return "";
+        }
+        if (this.isLogoHave()){
+            if (this.summary.length()<45) {
+                return this.summary;
+            }
+            return this.summary.substring(0,45)+"...";
+        } else {
+            if (this.summary.length()<75) {
+                return this.summary;
+            }
+            return this.summary.substring(0,75)+"...";
+        }
+
+    }
+
     public String downloadHtml(){
         if (null == this.appendixUrl|| "".equals( this.appendixUrl.trim())) {
             String html =

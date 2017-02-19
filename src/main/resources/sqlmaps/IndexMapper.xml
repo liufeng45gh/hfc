@@ -16,6 +16,10 @@
     <select id="newsIndexRecommendList" resultMap="IndexRecommendMap">
         select * from index_news order by top desc ,id desc
     </select>
+    
+    <select id="newsIndexRecommendListLimit6"  resultMap="IndexRecommendMap">
+        select * from index_news order by top desc ,id desc limit 6
+    </select>
 
     <insert id="addNewsIndexRecommend" useGeneratedKeys="true" keyProperty="id">
         insert into index_news (target_id,top,created_at,updated_at) values (#{targetId},#{top},now(),now())
@@ -36,6 +40,10 @@
 <!--  下面是艺术家 -->
     <select id="artistIndexRecommendList" resultMap="IndexRecommendMap">
         select * from index_artist order by top desc ,id desc
+    </select>
+    
+    <select id="artistIndexRecommendListLimit16" resultMap="IndexRecommendMap">
+        select * from index_artist order by top desc ,id desc limit 16
     </select>
 
     <insert id="addArtistIndexRecommend" useGeneratedKeys="true" keyProperty="id">
@@ -60,6 +68,12 @@
         select * from index_cultural_finance order by top desc ,id desc
     </select>
 
+    <select id="financeIndexRecommendListLimit3" resultMap="IndexRecommendMap">
+        select * from index_cultural_finance order by top desc ,id desc limit 3
+    </select>
+
+
+
     <insert id="addFinanceIndexRecommend" useGeneratedKeys="true" keyProperty="id">
         insert into index_cultural_finance (target_id,top,created_at,updated_at) values (#{targetId},#{top},now(),now())
     </insert>
@@ -80,6 +94,12 @@
     <select id="researchIndexRecommendList" resultMap="IndexRecommendMap">
         select * from index_research order by top desc ,id desc
     </select>
+
+    <select id="researchIndexRecommendListLimit3" resultMap="IndexRecommendMap">
+        select * from index_research order by top desc ,id desc limit 3
+    </select>
+
+
 
     <insert id="addResearchIndexRecommend" useGeneratedKeys="true" keyProperty="id">
         insert into index_research (target_id,top,created_at,updated_at) values (#{targetId},#{top},now(),now())

@@ -40,8 +40,26 @@ public class IndexService {
         return indexRecommendList;
     }
 
+    public List<IndexRecommend> newsIndexRecommendListLimit6(){
+        List<IndexRecommend> indexRecommendList = indexDao.newsIndexRecommendListLimit6();
+        for(IndexRecommend indexRecommend:indexRecommendList){
+            News news = newsDao.getNews(indexRecommend.getTargetId());
+            indexRecommend.setTarget(news);
+        }
+        return indexRecommendList;
+    }
+
     public List<IndexRecommend> artistIndexRecommendList(){
         List<IndexRecommend> indexRecommendList = indexDao.artistIndexRecommendList();
+        for(IndexRecommend indexRecommend:indexRecommendList){
+            Artist artist = artistDao.getArtist(indexRecommend.getTargetId());
+            indexRecommend.setTarget(artist);
+        }
+        return indexRecommendList;
+    }
+
+    public List<IndexRecommend> artistIndexRecommendListLimit16(){
+        List<IndexRecommend> indexRecommendList = indexDao.artistIndexRecommendListLimit16();
         for(IndexRecommend indexRecommend:indexRecommendList){
             Artist artist = artistDao.getArtist(indexRecommend.getTargetId());
             indexRecommend.setTarget(artist);
@@ -58,8 +76,26 @@ public class IndexService {
         return indexRecommendList;
     }
 
+    public List<IndexRecommend> financeIndexRecommendListLimit3(){
+        List<IndexRecommend> indexRecommendList = indexDao.financeIndexRecommendListLimit3();
+        for(IndexRecommend indexRecommend:indexRecommendList){
+            CulturalFinance target = culturalFinanceDao.getCulturalFinance(indexRecommend.getTargetId());
+            indexRecommend.setTarget(target);
+        }
+        return indexRecommendList;
+    }
+
     public List<IndexRecommend> researchIndexRecommendList(){
         List<IndexRecommend> indexRecommendList = indexDao.researchIndexRecommendList();
+        for(IndexRecommend indexRecommend:indexRecommendList){
+            ResearchReport target = researchReportDao.getResearchReport(indexRecommend.getTargetId());
+            indexRecommend.setTarget(target);
+        }
+        return indexRecommendList;
+    }
+
+    public List<IndexRecommend> researchIndexRecommendListLimit3(){
+        List<IndexRecommend> indexRecommendList = indexDao.researchIndexRecommendListLimit3();
         for(IndexRecommend indexRecommend:indexRecommendList){
             ResearchReport target = researchReportDao.getResearchReport(indexRecommend.getTargetId());
             indexRecommend.setTarget(target);
