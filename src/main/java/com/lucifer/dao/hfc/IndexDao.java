@@ -153,4 +153,31 @@ public class IndexDao extends IBatisBaseDao {
         return this.hfcSqlSession.delete("deleteSummitIndexRecommend",id);
     }
 
+    //---------------------------------------------------------------------------------------------------------------------------------//
+    //下面是会员活动
+
+    public List<IndexRecommend> memberActivityIndexRecommendList(){
+        return this.hfcSqlSession.selectList("memberActivityIndexRecommendList");
+    }
+
+    public List<IndexRecommend> memberActivityIndexRecommendListLimit4(){
+        return this.hfcSqlSession.selectList("memberActivityIndexRecommendListLimit4");
+    }
+    public IndexRecommend getMemberActivityIndexRecommend(Long id) {
+        return this.hfcSqlSession.selectOne("getMemberActivityIndexRecommend",id);
+    }
+
+    public Integer updateMemberActivityIndexRecommend(IndexRecommend indexRecommend){
+        //newsRecommend.setTop(0f);
+        return this.hfcSqlSession.update("updateMemberActivityIndexRecommend",indexRecommend);
+    }
+
+    public Integer addMemberActivityIndexRecommend(IndexRecommend indexRecommend){
+        indexRecommend.setTop(0f);
+        return this.hfcSqlSession.insert("addMemberActivityIndexRecommend",indexRecommend);
+    }
+
+    public Integer deleteMemberActivityIndexRecommend(Long id){
+        return this.hfcSqlSession.delete("deleteMemberActivityIndexRecommend",id);
+    }
 }

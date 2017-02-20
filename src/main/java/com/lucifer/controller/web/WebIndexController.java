@@ -43,6 +43,9 @@ public class WebIndexController {
         List<IndexRecommend> researchRecommendList = indexService.researchIndexRecommendListLimit3();
         request.setAttribute("researchRecommendList",researchRecommendList);
 
+        List<IndexRecommend> memberActivityRecommendList = indexService.memberActivityIndexRecommendListLimit4();
+        request.setAttribute("memberActivityRecommendList",memberActivityRecommendList);
+
 
         return "/web/index";
     }

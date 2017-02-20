@@ -77,9 +77,7 @@
 <script type="text/javascript">
 		//DOM加载完毕执行
 		$(document).ready(function(){
-			$("#left_menu_finance_recommend").addClass("selected");
-
-
+			$("#left_menu_cultural_finance").addClass("selected");
 		});
 	</script>
 <script type="text/javascript" charset="UTF-8" src="/cms/script/hfc/index/finance_list.js"></script>

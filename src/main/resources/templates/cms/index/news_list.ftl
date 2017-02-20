@@ -76,7 +76,7 @@
 <script type="text/javascript">
 		//DOM加载完毕执行
 		$(document).ready(function(){
-			$("#left_menu_news_recommend").addClass("selected");
+			$("#left_menu_news").addClass("selected");
 
 
 		});

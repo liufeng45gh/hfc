@@ -212,34 +212,27 @@
 
 
             <div class="finance-list">
-                    <div class="finance-item active-item">
-                        <div class="logo">
-                            <a href="http://lol.replays.net/news/page/20170201/184862.html" target="_blank">
-                                <img src="http://img1.replays.net/www.replays.net/uploads/picname/2017/02/1486003055R3w.png" alt="冷门英雄有春天：辅助卡蜜尔的秘密">
-                            </a>
-                        </div>
-                        <div class="text">
-                            <div class="title">北美LCS联赛冒出的一朵奇葩，上单一姐跑去打辅助</div>
-                            <div class="desc">最近一周守望先锋的热门话题是什么？没错，就是守望先锋后劲不足，被抢风头，玩家已经退烧等等新闻。但是事实却是如此吗？还是有人别有用心呢。</div>
-                            <div class="date-info">[2017/2/2]</div>
-                        </div>
-
+                <#list memberActivityRecommendList as recommend>
+                <div class="finance-item active-item" <#if recommend_index%2!=0>style="margin-left: 20px;"</#if>>
+                    <#if recommend.target.isLogoHave()>
+                    <div class="logo">
+                        <a href="/member-activity/${recommend.target.id}/detail" target="_blank">
+                            <img src="${recommend.target.logo?default("")}">
+                        </a>
+                    </div>
+                    </#if>
+                    <div class="text <#if !recommend.target.isLogoHave()>w588</#if>">
+                        <a href="/member-activity/${recommend.target.id}/detail" target="_blank">
+                            <div class="title">${recommend.target.title?default("")}</div>
+                        </a>
+                        <a href="/member-activity/${recommend.target.id}/detail" target="_blank">
+                        <div class="desc">${recommend.target.indexSummaryText()}</div>
+                        </a>
+                        <div class="date-info">[${(recommend.target.publishAt?string("yyyy-MM-dd HH:mm:ss"))!}]</div>
                     </div>
 
-
-                    <div class="finance-item  active-item">
-                        <div class="logo">
-                            <a href="http://lol.replays.net/news/page/20170201/184862.html" target="_blank">
-                                <img src="http://img1.replays.net/www.replays.net/uploads/picname/2017/02/1486003055R3w.png" alt="冷门英雄有春天：辅助卡蜜尔的秘密">
-                            </a>
-                        </div>
-                        <div class="text">
-                            <div class="title">北美LCS联赛冒出的一朵奇葩，上单一姐跑去打辅助</div>
-                            <div class="desc">最近一周守望先锋的热门话题是什么？没错，就是守望先锋后劲不足，被抢风头，玩家已经退烧等等新闻。但是事实却是如此吗？还是有人别有用心呢。</div>
-                            <div class="date-info">[2017/2/2]</div>
-                        </div>
-
-                    </div>
+                </div>
+                </#list>
                 </div>
 
 

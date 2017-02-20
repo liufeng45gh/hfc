@@ -72,7 +72,7 @@
 <script type="text/javascript">
 		//DOM加载完毕执行
 		$(document).ready(function(){
-			$("#left_menu_artist_recommend").addClass("selected");
+			$("#left_menu_artist").addClass("selected");
 		});
 </script>
 <script type="text/javascript" charset="UTF-8" src="/cms/script/hfc/index/artist_list.js"></script>

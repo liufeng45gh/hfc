@@ -357,7 +357,7 @@ em{
 .focus ul{height:400px;position:absolute;padding:0;margin:0;}
 .focus ul li{float:left;width:590px;height:400px;overflow:hidden;position:relative;background:#000;}
 .focus ul li div{position:absolute;overflow:hidden;}
-.focus .btn{position:absolute;width:580px;height:10px;padding:5px 10px;right:0;bottom:315px;text-align:right;}
+.focus .btn{position:absolute;width:580px;height:10px;padding:5px 10px;right:0;bottom:365px;text-align:right;}
 .focus .btn span{display:inline-block;_display:inline;_zoom:1;width:13px;height:13px;_font-size:0;margin-left:5px;cursor:pointer;background:#fff;border-radius:50%;}
 .focus .btn span.on{background:yellow;}
 .focus .preNext{width:50px;height:100px;position:absolute;top:140px;background:url(/web/images/icon_index_focus_arrow.png) no-repeat 0 0;cursor:pointer;display:none;}
@@ -596,7 +596,7 @@ em{
  }
 
  .active-item{
-    width: 590px;
+    width: 588px;
     float: left;
  }
 

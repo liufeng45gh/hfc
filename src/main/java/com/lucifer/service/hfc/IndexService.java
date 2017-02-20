@@ -31,6 +31,9 @@ public class IndexService {
     @Resource
     private SummitDao summitDao;
 
+    @Resource
+    private MemberActivityDao memberActivityDao;
+
     public List<IndexRecommend> newsIndexRecommendList(){
         List<IndexRecommend> indexRecommendList = indexDao.newsIndexRecommendList();
         for(IndexRecommend indexRecommend:indexRecommendList){
@@ -111,4 +114,24 @@ public class IndexService {
         }
         return indexRecommendList;
     }
+
+    public List<IndexRecommend> memberActivityIndexRecommendList(){
+        List<IndexRecommend> indexRecommendList = indexDao.memberActivityIndexRecommendList();
+        for(IndexRecommend indexRecommend:indexRecommendList){
+            MemberActivity target = memberActivityDao.getMemberActivity(indexRecommend.getTargetId());
+            indexRecommend.setTarget(target);
+        }
+        return indexRecommendList;
+    }
+
+    public List<IndexRecommend> memberActivityIndexRecommendListLimit4(){
+        List<IndexRecommend> indexRecommendList = indexDao.memberActivityIndexRecommendListLimit4();
+        for(IndexRecommend indexRecommend:indexRecommendList){
+            MemberActivity target = memberActivityDao.getMemberActivity(indexRecommend.getTargetId());
+            indexRecommend.setTarget(target);
+        }
+        return indexRecommendList;
+    }
+
+
 }

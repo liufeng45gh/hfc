@@ -268,6 +268,44 @@ public class CmsIndexController {
         return Result.ok();
     }
 
+    //下面是会员活动
+
+    @RequestMapping(value="/recommend/member-activity-list",method = RequestMethod.GET)
+    public String recommendMemberActivityList(HttpServletRequest request){
+        List<IndexRecommend> indexRecommendList = indexService.memberActivityIndexRecommendList();
+        request.setAttribute("indexRecommendList",indexRecommendList);
+        return "/cms/index/member_activity_list";
+    }
+
+    @RequestMapping(value="/recommend/member-activity-add",method = RequestMethod.POST)
+    @ResponseBody
+    public Result addMemberActivityIndexRecommendSubmit(IndexRecommend indexRecommend){
+        indexDao.addMemberActivityIndexRecommend(indexRecommend);
+        return Result.ok();
+    }
+
+    @RequestMapping(value="/recommend/{id}/member-activity-update",method = RequestMethod.GET)
+    public String updateMemberActivityIndexRecommend(@PathVariable Long id,HttpServletRequest request){
+        IndexRecommend indexRecommend = indexDao.getMemberActivityIndexRecommend(id);
+        request.setAttribute("entity",indexRecommend);
+        return "/cms/index/member_activity_update";
+    }
+
+    @RequestMapping(value="/recommend/member-activity-update",method = RequestMethod.POST)
+    @ResponseBody
+    public Result updateMemberActivityIndexRecommendSubmit(IndexRecommend indexRecommend){
+        this.indexDao.updateMemberActivityIndexRecommend(indexRecommend);
+        return Result.ok();
+    }
+
+    @RequestMapping(value="/recommend/{id}/member-activity-delete",method = RequestMethod.POST)
+    @ResponseBody
+    public Result deleteMemberActivityIndexRecommend(@PathVariable Long id){
+        indexDao.deleteMemberActivityIndexRecommend(id);
+        return Result.ok();
+    }
+
+
     //搜索引擎导入
     @RequestMapping(value="/search/re-import",method = RequestMethod.GET)
     public String searchReImport(HttpServletRequest request){

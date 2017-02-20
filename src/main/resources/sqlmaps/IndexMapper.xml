@@ -138,4 +138,29 @@
         update index_summit set top = #{top},updated_at = now() where id = #{id}
     </update>
 
+    <!--下面是会员活动-->
+    <select id="memberActivityIndexRecommendList" resultMap="IndexRecommendMap">
+        select * from index_member_activity order by top desc ,id desc
+    </select>
+
+    <select id="memberActivityIndexRecommendListLimit4" resultMap="IndexRecommendMap">
+        select * from index_member_activity order by top desc ,id desc limit 4
+    </select>
+
+    <insert id="addMemberActivityIndexRecommend" useGeneratedKeys="true" keyProperty="id">
+        insert into index_member_activity (target_id,top,created_at,updated_at) values (#{targetId},#{top},now(),now())
+    </insert>
+
+    <delete id="deleteMemberActivityIndexRecommend">
+        delete from index_member_activity where id = #{id}
+    </delete>
+
+    <select id="getMemberActivityIndexRecommend" resultMap="IndexRecommendMap">
+        select * from index_member_activity where  id = #{id}
+    </select>
+
+    <update id="updateMemberActivityIndexRecommend">
+        update index_member_activity set top = #{top},updated_at = now() where id = #{id}
+    </update>
+
 </mapper>
