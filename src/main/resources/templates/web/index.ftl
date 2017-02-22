@@ -2,6 +2,8 @@
 <head>
     <link rel='stylesheet' href='/web/css/website.css' type='text/css' media='screen' />
     <link rel='stylesheet' href='/web/css/research-report.css' type='text/css' media='screen' />
+    <link rel='stylesheet' href='/web/css/appreciate.css' type='text/css' media='screen' />
+
     <script  src="/web/icon/iconfont.js"></script>
     <link rel="stylesheet" type="text/css" href="/web/icon/iconfont.css">
     <style type="text/css">
@@ -209,8 +211,6 @@
 
         </div>
         <div class="member-list wrapper-996">
-
-
             <div class="finance-list">
                 <#list memberActivityRecommendList as recommend>
                 <div class="finance-item active-item" <#if recommend_index%2!=0>style="margin-left: 20px;"</#if>>
@@ -233,14 +233,34 @@
 
                 </div>
                 </#list>
-                </div>
-
-
-
-
-
+            </div>
         </div>
 
+
+    </div>
+    <div style="clear: both"></div>
+    <div class="third-block bgf7" id="appreciate-block">
+
+            <div class="title-line wrapper-996">
+                <div class="line line-left" style="width:400px;">
+                    <hr  class="line-info-hr"/>
+                </div>
+                <div class="line line-middle" style="width:400px;">
+                    <div class="title-en">ART APPRECIATION</div>
+                    <div class="title-zh">艺术鉴赏</div>
+                </div>
+                <div class="line line-right" style="width:400px;">
+                    <hr  class="line-info-hr"/>
+                </div>
+
+            </div>
+            <div class="info-fr wrapper-996 appreciate-list" id="entity-list">
+
+
+            </div>
+            <div style="clear: both"></div>
+            <div class="load-more" id="load-more">点击加载更多</div>
+            <input type="hidden" id="load-more-url" value="/appreciate/list.json"/>
     </div>
 
 
@@ -259,7 +279,7 @@ $(function() {
     $("#head-href-index").addClass("active");
 });
 </script>
-
+<script  src="/web/js/index.js"></script>
 
 </body>
 </html>
