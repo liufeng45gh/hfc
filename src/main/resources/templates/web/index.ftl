@@ -132,7 +132,7 @@
                             <a href="/cultural-finance/${recommend.target.id?default("")}/detail" target="_blank">
                             <div class="title">${recommend.target.title?default("")}</div>
                              </a>
-                            <div class="desc">${recommend.target.summaryText()}</div>
+                            <div class="desc">${recommend.target.indexSummaryText()}</div>
                             <div class="date-info">[2017/2/2]</div>
                         </div>
 
@@ -240,7 +240,7 @@
     </div>
     <div style="clear: both"></div>
     <div class="third-block bgf7" id="appreciate-block">
-
+            <div>&nbsp;</div>
             <div class="title-line wrapper-996">
                 <div class="line line-left" style="width:400px;">
                     <hr  class="line-info-hr"/>
