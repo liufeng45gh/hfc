@@ -31,15 +31,15 @@
     <div class="news-block bgf7">
         <div style="width:100%;height:1px;"></div>
         <div class="title-line wrapper-996 ">
-            <div class="line line-left">
-                <hr  class="line-info-hr"/>
+            <div class="line line-left b-line">
+               &nbsp;
             </div>
             <div class="line line-middle">
                 <div class="title-en">INFOMATION</div>
                 <div class="title-zh">推荐资讯</div>
             </div>
-            <div class="line line-right">
-                <hr  class="line-info-hr"/>
+            <div class="line line-right b-line">
+               &nbsp;
             </div>
         </div>
 
@@ -81,15 +81,15 @@
 
     <div class="artist-block">
         <div class="title-line wrapper-996">
-            <div class="line line-left">
-                <hr  class="line-info-hr"/>
+            <div class="line line-left b-line">
+               &nbsp;
             </div>
             <div class="line line-middle">
                 <div class="title-en">ARTIST</div>
                 <div class="title-zh">海富艺术家</div>
             </div>
-            <div class="line line-right">
-                <hr  class="line-info-hr"/>
+            <div class="line line-right b-line">
+                &nbsp;
             </div>
         </div>
         <div class="artist-recommend">
@@ -109,15 +109,15 @@
         <div class="info-fr wrapper-996">
             <div class="finance-block">
                 <div class="title-line">
-                    <div class="line line-left"  style="width:100px;">
-                        <hr  class="line-info-hr"/>
+                    <div class="line line-left b-line"  style="width:100px;">
+                       &nbsp;
                     </div>
                     <div class="line line-middle" style="width:390px;">
                         <div class="title-en">CULTURAL FINANCE </div>
                         <div class="title-zh">文化金融</div>
                     </div>
-                    <div class="line line-right"  style="width:100px;">
-                        <hr  class="line-info-hr"/>
+                    <div class="line line-right b-line"  style="width:100px;">
+                        &nbsp;
                     </div>
                 </div>
                 <div class="finance-list">
@@ -150,15 +150,15 @@
             </div>
             <div class="report-block">
                 <div class="title-line">
-                    <div class="line line-left" style="width:100px;">
-                        <hr  class="line-info-hr"/>
+                    <div class="line line-left b-line" style="width:100px;">
+                        &nbsp;
                     </div>
                     <div class="line line-middle" style="width:390px;">
                         <div class="title-en">RESEARCH REPORT </div>
                         <div class="title-zh">研究报告</div>
                     </div>
-                    <div class="line line-right"  style="width:100px;">
-                        <hr  class="line-info-hr"/>
+                    <div class="line line-right b-line"  style="width:100px;">
+                        &nbsp;
                     </div>
                 </div>
                 <div class="finance-list">
@@ -198,15 +198,15 @@
 
     <div class="member-block">
         <div class="title-line wrapper-996">
-            <div class="line line-left" style="width:400px;">
-                <hr  class="line-info-hr"/>
+            <div class="line line-left b-line" style="width:400px;">
+                &nbsp;
             </div>
             <div class="line line-middle" style="width:400px;">
                 <div class="title-en">MEMBER ACTIVITY</div>
                 <div class="title-zh">会员活动</div>
             </div>
-            <div class="line line-right" style="width:400px;">
-                <hr  class="line-info-hr"/>
+            <div class="line line-right b-line" style="width:400px;">
+                &nbsp;
             </div>
 
         </div>
@@ -242,15 +242,15 @@
     <div class="third-block bgf7" id="appreciate-block">
             <div>&nbsp;</div>
             <div class="title-line wrapper-996">
-                <div class="line line-left" style="width:400px;">
-                    <hr  class="line-info-hr"/>
+                <div class="line line-left b-line" style="width:400px;">
+                    &nbsp;
                 </div>
                 <div class="line line-middle" style="width:400px;">
                     <div class="title-en">ART APPRECIATION</div>
                     <div class="title-zh">艺术鉴赏</div>
                 </div>
-                <div class="line line-right" style="width:400px;">
-                    <hr  class="line-info-hr"/>
+                <div class="line line-right b-line" style="width:400px;">
+                    &nbsp;
                 </div>
 
             </div>

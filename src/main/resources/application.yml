@@ -11,27 +11,27 @@ spring:
       max-file-size: 50M
       max-request-size: 100M
 # DATASOURCE
-jdbc:
-    driverClass: com.mysql.jdbc.Driver
-    url: jdbc:mysql://hfc.dbdbd.cn/oauth2-user?useUnicode=true&characterEncoding=utf-8&autoReconnect=true&rewriteBatchedStatements=TRUE&zeroDateTimeBehavior
-    username: hfc
-    password: lucifer-hfc
-jdbc-hfc:
-    driverClass: com.mysql.jdbc.Driver
-    url: jdbc:mysql://hfc.dbdbd.cn/hfc?useUnicode=true&characterEncoding=utf-8&autoReconnect=true&rewriteBatchedStatements=TRUE&zeroDateTimeBehavior
-    username: hfc
-    password: lucifer-hfc
-
 #jdbc:
 #    driverClass: com.mysql.jdbc.Driver
-#    url: jdbc:mysql://localhost/oauth2-user?useUnicode=true&characterEncoding=utf-8&autoReconnect=true&rewriteBatchedStatements=TRUE&zeroDateTimeBehavior
-#    username: root
-#    password:
+#    url: jdbc:mysql://hfc.dbdbd.cn/oauth2-user?useUnicode=true&characterEncoding=utf-8&autoReconnect=true&rewriteBatchedStatements=TRUE&zeroDateTimeBehavior
+#    username: hfc
+#    password: lucifer-hfc
 #jdbc-hfc:
 #    driverClass: com.mysql.jdbc.Driver
-#    url: jdbc:mysql://localhost/hfc?useUnicode=true&characterEncoding=utf-8&autoReconnect=true&rewriteBatchedStatements=TRUE&zeroDateTimeBehavior
-#    username: root
-#    password:
+#    url: jdbc:mysql://hfc.dbdbd.cn/hfc?useUnicode=true&characterEncoding=utf-8&autoReconnect=true&rewriteBatchedStatements=TRUE&zeroDateTimeBehavior
+#    username: hfc
+#    password: lucifer-hfc
+
+jdbc:
+    driverClass: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost/oauth2-user?useUnicode=true&characterEncoding=utf-8&autoReconnect=true&rewriteBatchedStatements=TRUE&zeroDateTimeBehavior
+    username: root
+    password:
+jdbc-hfc:
+    driverClass: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost/hfc?useUnicode=true&characterEncoding=utf-8&autoReconnect=true&rewriteBatchedStatements=TRUE&zeroDateTimeBehavior
+    username: root
+    password:
 
 
 # MyBatis
