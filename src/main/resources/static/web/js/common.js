@@ -63,3 +63,21 @@ function isEmpty(str){
 
 }
 
+function validMobileFormat(mobile){
+    var numberRegStr = /^\d{11}$/;
+    var regNum = new RegExp(numberRegStr);
+    if (regNum.test(mobile)) {
+        var telRegStr = /^(13|14|15|17|18)\d{9}$/;
+        var reg = new RegExp(telRegStr);
+        if (reg.test(mobile)) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+    else {
+        return false;
+    }
+}
+

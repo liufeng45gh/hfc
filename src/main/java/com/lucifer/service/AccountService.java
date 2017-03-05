@@ -32,7 +32,7 @@ public class AccountService {
 	public Result register(User user) throws Exception{
 		
 		Result  result = smsService.checkCode(user.getPhone(), user.getCode());
-		if (!result._isOk()) {
+		if (!result.isOk()) {
 			return Result.fail("验证码错误");
 		}
 		if (!user.getPassword().equals(user.getRePassword())) {
@@ -69,7 +69,7 @@ public class AccountService {
 	@Transactional(propagation= Propagation.REQUIRED)
 	public Result resetPassword(User user) throws Exception{
 		Result  result = smsService.checkCode(user.getPhone(), user.getCode());
-		if (!result._isOk()) {
+		if (!result.isOk()) {
 			return Result.fail("验证码错误");
 		}
 		if (!user.getPassword().equals(user.getRePassword())) {
@@ -93,7 +93,7 @@ public class AccountService {
 	public Result bindPhone(User user,String token) throws Exception{
 		
 		Result  result = smsService.checkCode(user.getPhone(), user.getCode());
-		if (!result._isOk()) {
+		if (!result.isOk()) {
 			return Result.fail("验证码错误");
 		}
 		if (!user.getPassword().equals(user.getRePassword())) {
@@ -146,7 +146,7 @@ public class AccountService {
 	public Result reBindPhone(User user,String token) throws Exception{
 		
 		Result  result = smsService.checkCode(user.getPhone(), user.getCode());
-		if (!result._isOk()) {
+		if (!result.isOk()) {
 			return Result.fail("验证码错误");
 		}
 		

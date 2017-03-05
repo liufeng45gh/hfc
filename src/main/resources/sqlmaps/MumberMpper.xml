@@ -4,4 +4,34 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.lucier.model">
+    <resultMap type="com.lucifer.model.hfc.Member" id="MemberMap">
+        <id column="id" property="id"/>
+        <result column="uuid" property="uuid"/>
+        <result column="weixin_id" property="weixinId"/>
+        <result column="weibo_id" property="weiboId"/>
+        <result column="qq_id" property="qqId"/>
+        <result column="phone" property="phone"/>
+        <result column="mail" property="mail"/>
+        <result column="password" property="password"/>
+        <result column="salt" property="salt"/>
+        <result column="role_id" property="roleId"/>
+        <result column="nick_name" property="nickName"/>
+        <result column="avatar" property="avatar"/>
+        <result column="true_name" property="trueName"/>
+        <result column="sex" property="sex"/>
+        <result column="province" property="province"/>
+        <result column="city" property="city"/>
+        <result column="cardId" property="cardId"/>
+        <result column="birth" property="birth"/>
+
+        <result column="status" property="status"/>
+        <result column="created_at" property="createdAt"/>
+        <result column="updated_at" property="updatedAt"/>
+    </resultMap>
+    <insert id="insertMember">
+        insert into user
+        (phone, password,salt,nick_name,created_at,updated_at)
+        values
+        (#{phone},#{password},#{salt},#{nickName},#{createdAt},#{updatedAt})
+    </insert>
 </mapper>

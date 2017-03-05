@@ -1,6 +1,7 @@
 package com.lucifer.dao.hfc;
 
 import com.lucifer.dao.IBatisBaseDao;
+import com.lucifer.model.hfc.Member;
 import org.springframework.stereotype.Component;
 
 /**
@@ -8,4 +9,8 @@ import org.springframework.stereotype.Component;
  */
 @Component
 public class MemberDao extends IBatisBaseDao {
+
+    public void insertMember(Member member){
+        hfcSqlSession.insert("insertMember",member);
+    }
 }

@@ -96,7 +96,7 @@ public class ApiUserController {
 	public Result updateUserInfo(@CookieValue String token,@RequestBody User user,@PathVariable Long userId) throws IOException{
 		user.setId(userId);
 		Result result =  userService.updateUserInfo(token, user);
-		if (!result._isOk()) {
+		if (!result.isOk()) {
 			return result;
 		}
 		User dbUser = userDao.getUserById(userId);		

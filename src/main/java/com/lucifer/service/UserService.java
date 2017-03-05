@@ -50,7 +50,7 @@ public class UserService {
 		 //Long userId = this.getUserIdByToken(token);
 		 //userInfo.setUserId(userId);
 		Result result = this.updateNick(user);
-		if (!result._isOk()) {
+		if (!result.isOk()) {
 			return result;
 		}
 		 userDao.updateUserInfo(user);

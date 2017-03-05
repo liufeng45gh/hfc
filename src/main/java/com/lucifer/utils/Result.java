@@ -2,7 +2,7 @@ package com.lucifer.utils;
 
 public class Result {
 	
-	private Integer oper_code = 0;
+
 	
 	private boolean ok;
 	
@@ -12,7 +12,7 @@ public class Result {
 	
 	private String desc;
 
-	public boolean _isOk() {
+	public boolean isOk() {
 		return ok;
 	}
 
@@ -68,19 +68,11 @@ public class Result {
 	    return Result.result(false, msg, data);
 	}
 	
-	public Integer getOper_code(){
-		if (oper_code<0) {
-			return oper_code;
-		}
-		if (ok) {
-			return 1;
-		}
-		return 0;
-	}
+
 	
 	public static Result exception(String msg){
 		Result rusult= Result.result(false, msg, null);
-		rusult.oper_code = -1;
+
 		return rusult;
 	}
 

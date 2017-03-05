@@ -35,7 +35,7 @@ public class CmsLoginController {
 			return "/cms/login";
 		}
 		Result result = userLoginService.cmsLoginByAccount(account, password);
-		if(result._isOk()){
+		if(result.isOk()){
 			//request.getSession().setAttribute(CommonConstant.KEY_CMS_USER, adminUser);
 			CmsCheckAuthInterceptor.saveSessionUser(result.getData(), request);
 			return "redirect:/cms/self/welcome";
