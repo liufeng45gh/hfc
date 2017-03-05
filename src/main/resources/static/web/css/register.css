@@ -10,13 +10,13 @@ body {
 }
 
 .middle{
-    width: 330px;
+    width: 288px;
     margin: 0 auto;
 }
 .title-block{
     position: relative;
     height: 40px;
-    margin-top:40px;
+    margin-top:30px;
 }
 .title-line{
     border-bottom: 1px solid rgb(214, 214, 216);
@@ -24,25 +24,25 @@ body {
 }
 .title-name{
     position: absolute;
-    font-size: 23px;
+    font-size: 20px;
     font-weight: bold;
-    width: 130px;
+    width: 108px;
     text-align: center;
-    left: 100px;
+    left: 90px;
     top: 0px;
     background-color: white;
 }
 
 
 .phone-block{
-    margin-top: 35px;
+    margin-top: 27px;
     position: relative;
 }
 
 .phone-block .phone-input{
-    height: 35px;
-    width: 295px;
-    font-size: 18px;
+    height: 30px;
+    width: 253px;
+    font-size: 15px;
     //box-shadow: 0 1px 3px rgba(0,0,0,0.25);
     padding-left: 35px;
 }
@@ -63,12 +63,12 @@ body {
 
 .img-check{
     float: left;
-    width: 126px;
+    width: 90px;
 }
 .img-check-input{
-    height: 35px;
-    width: 120px;
-    font-size: 18px;
+     height: 30px;
+     width: 90px;
+     font-size: 15px;
 }
 #captchaImg{
     float:  left;
@@ -82,7 +82,7 @@ body {
     width: 180px;
     overflow: hidden;
     height: 30px;
-    margin-top: 5px;
+    margin-top: 2px;
 }
 
 .send-code{
@@ -90,15 +90,15 @@ body {
 }
 
 .send-code .btn{
-    background-color: #EB3D3C;
-    height: 40px;
-    width: 116px;
-    line-height: 40px;
-    text-align: center;
-    border-radius: 2px;
-    font-size: 16px;
-    color: white;
-    cursor: pointer;
+   background-color: #EB3D3C;
+   height: 37px;
+   width: 100px;
+   line-height: 37px;
+   text-align: center;
+   border-radius: 2px;
+   font-size: 15px;
+   color: white;
+   cursor: pointer;
 }
 .send-code .btn-message{
     height: 40px;
@@ -118,12 +118,12 @@ body {
 
 .code-check{
     float: left;
-    width: 196px;
+    width: 176px;
 }
 .code-check-input{
-    height: 35px;
-    width: 190px;
-    font-size: 18px;
+    height: 30px;
+    width: 160px;
+    font-size: 15px;
 }
 
 .pass-block{
@@ -132,9 +132,9 @@ body {
 }
 
 .pass-block .pass-input{
-    height: 35px;
-    width: 295px;
-    font-size: 18px;
+    height: 30px;
+    width: 253px;
+    font-size: 15px;
     //box-shadow: 0 1px 3px rgba(0,0,0,0.25);
     padding-left: 35px;
 }
@@ -153,12 +153,12 @@ body {
 .btn-submit{
     margin-top: 20px;
    background-color: #EB3D3C;
-    height: 45px;
+    height: 40px;
     width: 100%;
-    line-height: 45px;
+    line-height: 40px;
     text-align: center;
     border-radius: 2px;
-    font-size: 22px;
+    font-size: 18px;
     color: white;
     letter-spacing: 10px;
     cursor: pointer;
@@ -167,5 +167,45 @@ body {
 .main input{
        padding-left: 12px;
 }
+.more-func{
+    margin-top: 15px;
+    font-size: 13px;
+}
 
-.
+.to-register{
+    float: left;
+}
+
+.to-find{
+    float: right;
+}
+
+.more-func a{
+    color: #EB3D3C;
+    text-decoration: none;
+}
+
+.third-title{
+    margin-top: 10px;
+
+}
+
+.third-name{
+    position: absolute;
+    font-size: 14px;
+    font-weight: bold;
+    width: 108px;
+    text-align: center;
+    left: 90px;
+    top: 0px;
+    background-color: white;
+    color: #D5D5D5;
+}
+.qq{
+    float: left;
+    margin-left: 50px;
+}
+.wx{
+    float: right;
+    margin-right: 50px;
+}
