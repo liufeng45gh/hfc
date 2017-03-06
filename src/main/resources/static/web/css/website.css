@@ -244,11 +244,35 @@ em{
 }
 
 .menu-bar .login-nav {
-    display: inline-block;
+    display: none;
     width: 114px;
     line-height: 48px;
     margin-top: 15px;
 }
+.menu-bar .user-nav{
+    display: none;
+    width: 214px;
+    line-height: 48px;
+    margin-top: 15px;
+}
+.user-nav .avatar{
+    float: left;
+}
+.user-nav .nick{
+    width: 150px;
+    height: 34px;
+    border: 0;
+    color: #fff;
+    //background: rgba(201,0,0,.6);
+    text-shadow: none;
+    box-shadow: none;
+    float: left;
+}
+
+.user-nav .to-click-down{
+    float: left;
+}
+
 
 .nologin-index .login-nav .register {
     width: 52px;

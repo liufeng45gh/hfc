@@ -45,4 +45,12 @@
     <select id="getMemberByQqId" resultMap="MemberMap">
         select * from user where qq_id=#{qqId}
     </select>
+
+    <select id="getMemberIdByToken" resultType="java.lang.Long">
+        select user_id from access_token where access_token = #{token}
+    </select>
+
+    <select id="getMemberById"  resultMap="MemberMap">
+        select * from user where id=#{id}
+    </select>
 </mapper>

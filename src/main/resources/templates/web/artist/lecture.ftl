@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <#include "c-head.ftl"/>
+    <#include "../c-head.ftl"/>
     <link rel='stylesheet' href='/web/css/news.css' type='text/css' media='screen' />
     <link rel='stylesheet' href='/web/css/artist.css' type='text/css' media='screen' />
 

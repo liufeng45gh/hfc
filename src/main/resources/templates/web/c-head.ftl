@@ -20,3 +20,4 @@
 <script  src="/web/js/Tony_Tab.js"></script>
 <script  src="/web/js/menu-bar.js"></script>
 <script  src="/web/js/common.js"></script>
+<script  type="text/javascript" src="/layer/layer.js"></script>

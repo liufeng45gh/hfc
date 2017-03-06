@@ -7,6 +7,7 @@ import com.lucifer.dao.UserDao;
 import com.lucifer.model.AccessToken;
 import com.lucifer.model.User;
 import com.lucifer.model.hfc.Member;
+import com.lucifer.utils.StringHelper;
 import org.apache.commons.lang.RandomStringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -112,28 +113,7 @@ public class MemberDao extends IBatisBaseDao {
 
 
 
-    //@CacheEvict(value="userByIdCache",key="#user.getUserId()")// 清空Cache 缓存
-
-    //	@Caching( put = {
-//			@CachePut(value="userByPhoneCache",key="'userByPhoneCache:'+#user.getPhone()",condition="#user.getPhone() != null"),
-//			@CachePut(value="userByWeiboIdCache",key="'userByWeiboIdCache:'+#user.getWeiboId()", condition="#user.getWeiboId() != null"),
-//			@CachePut(value="userByWeixinIdCache",key="'userByWeixinIdCache:'+#user.getWeixinId()",condition="#user.getWeixinId() != null")})
-    public User insertUser(User user){
-        //this.removeUserCache(user);
-
-        user.setId(this.nextId());
-        //user.setNickName(user.getAccount());
-        hfcSqlSession.insert("insertUser",user);
-        //redisTemplate.opsForList().leftPush(RedisKeyPreConstant.USER_WILL_INSERT_QUEQUE, user);
-        return user;
-
-    }
-
-    //	@Caching( evict = { @CacheEvict(value="userByIdCache",key="'userByIdCache:'+#user.getUserId()"),
-//	         @CacheEvict(value="userByPhoneCache",key="'userByPhoneCache:'+#user.getPhone()",condition="#user.getPhone() != null"),
-//	         @CacheEvict(value="userByWeiboIdCache",key="'userByWeiboIdCache:'+#user.getWeiboId()", condition="#user.getWeiboId() != null"),
-//	         @CacheEvict(value="userByWeixinIdCache",key="'userByWeixinIdCache:'+#user.getWeixinId()",condition="#user.getWeixinId() != null")})
-    public void removeUserCache(User user){
+     public void removeUserCache(Member user){
         logger.info("removeUserCache has been called");
         String key = "getUserByPhone:"+user.getPhone();
         appCache.remove(key);
@@ -173,28 +153,28 @@ public class MemberDao extends IBatisBaseDao {
 //	@Caching( evict = { @CacheEvict(value="userByIdCache",key="#user.getUserId()"),
 //	         @CacheEvict(value="userByPhoneCache",key="#user.getPhone()") })
     public Integer userBindPhone(User user){
-        User dbUser = this.getUserById(user.getId());
+        Member dbUser = this.getMemberById(user.getId());
         //删除huan
         this.removeUserCache(dbUser);
         return hfcSqlSession.update("userBindPhone", user);
     }
 
     public Integer updateUserWeiboId(User user) {
-        User dbUser = this.getUserById(user.getId());
+        Member dbUser = this.getMemberById(user.getId());
         //删除huan
         this.removeUserCache(dbUser);
         return hfcSqlSession.update("updateUserWeiboId", user);
     }
 
     public Integer updateUserWeixinId(User user) {
-        User dbUser = this.getUserById(user.getId());
+        Member dbUser = this.getMemberById(user.getId());
         //删除huan
         this.removeUserCache(dbUser);
         return hfcSqlSession.update("updateUserWeixinId", user);
     }
 
     public Integer updateUserQqId(User user) {
-        User dbUser = this.getUserById(user.getId());
+        Member dbUser = this.getMemberById(user.getId());
         //删除huan
         this.removeUserCache(dbUser);
         return hfcSqlSession.update("updateUserQqId", user);
@@ -203,21 +183,25 @@ public class MemberDao extends IBatisBaseDao {
 
 
     //@Cacheable(value="userByIdCache" ,key="'userByIdCache:'+#userId")//
-    public User getUserById(final Long userId){
-        String key = "getUserById:"+userId;
-        return appCache.find(key, new CacheProvider() {
+    public Member getMemberById(final Long userId){
+        String key = "getMemberById:"+userId;
+        Member member =  appCache.find(key, new CacheProvider() {
             @Override
             public Object getData() {
-                return hfcSqlSession.selectOne("getUserById", userId);
+                return hfcSqlSession.selectOne("getMemberById", userId);
             }
         });
+        if (null != member&& StringHelper.isEmpty(member.getAvatar())) {
+            member.setAvatar("/web/images/default-avatar.jpg");
+        }
+        return member;
         //return sqlSession.selectOne("getUserById", userId);
     }
 
 
     //@CacheEvict(value="userByIdCache",key="#user.getUserId()")// 清空accountCache 缓存
     public Integer updateUserInfo(User user){
-        User dbUser = this.getUserById(user.getId());
+        Member dbUser = this.getMemberById(user.getId());
         this.removeUserCache(dbUser);
         Integer updateCount = hfcSqlSession.update("updateUserInfo",user);
         return updateCount;
@@ -270,8 +254,8 @@ public class MemberDao extends IBatisBaseDao {
     }
 
 
-    public Long getUserIdByToken(String token){
-        return hfcSqlSession.selectOne("getUserIdByToken",token);
+    public Long getMemberIdByToken(String token){
+        return hfcSqlSession.selectOne("getMemberIdByToken",token);
     }
 
     public AccessToken newUserLoginToken(Long userId){
