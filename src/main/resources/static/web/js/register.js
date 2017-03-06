@@ -131,8 +131,10 @@ $(document).ready(function () {
              if(data.ok){
                  //check_result = true;
                  //window.location.href = "/account/chose_type";
-                  layer.msg("注册成功!");
-
+                 setSessionCookie("token",data.data.token);
+                 layer.msg("注册成功!");
+                  //setSessionCookie("token",data.data.token);
+                 window.parent.location.reload();
              }else{
                  //check_result = false;
                 layer.msg(data.message);

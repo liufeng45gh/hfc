@@ -43,7 +43,7 @@ public class WebAccountController {
 
     @RequestMapping(value="/register",method = RequestMethod.POST)
     @ResponseBody
-    public Result register(String phone,String phoneCode,String password) throws IOException {
+    public Result register(String phone,String phoneCode,String password) throws Exception {
         return hfcAccountService.register(phone,phoneCode,password);
     }
 

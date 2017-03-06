@@ -34,4 +34,15 @@
         values
         (#{phone},#{password},#{salt},#{nickName},#{createdAt},#{updatedAt})
     </insert>
+    <select id="getMemberByPhone"  resultMap="MemberMap">
+        select * from user where phone=#{phone}
+    </select>
+
+    <select id="getMemberByWxId" resultMap="MemberMap">
+        select * from user where weixin_id=#{wxId}
+    </select>
+
+    <select id="getMemberByQqId" resultMap="MemberMap">
+        select * from user where qq_id=#{qqId}
+    </select>
 </mapper>

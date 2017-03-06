@@ -49,6 +49,9 @@ public class HfcAccountService {
     @Resource
     private MemberDao memberDao;
 
+    @Resource
+    private MemberLoginService memberLoginService;
+
 
     private ObjectMapper objectMapper = new ObjectMapper();
 
@@ -189,7 +192,7 @@ public class HfcAccountService {
         return Result.fail() ;
     }
 
-    public Result register(String phone,String phoneCode,String password) throws IOException {
+    public Result register(String phone,String phoneCode,String password) throws Exception {
         Result checkResult = this.checkPhoneCode(phone,phoneCode);
         Member user = new Member();
         user.setPhone(phone);
@@ -202,6 +205,8 @@ public class HfcAccountService {
         String account = "mp_"+RandomUtil.getNextAccount();
         user.setNickName(account);
         memberDao.insertMember(user);
-        return checkResult;
+        user.setPassword(password);
+        Result loginResult = memberLoginService.loginByPhone(user);
+        return loginResult;
     }
 }
