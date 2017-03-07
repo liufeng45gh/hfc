@@ -65,3 +65,37 @@ $(function() {
      });
 
 });
+
+var user_mouse_in = false;
+var opt_mouse_in = false;
+
+$(function() {
+
+	$(".user-nav").mouseover(function () {
+        user_mouse_in = true;
+        $(".user-option").show();
+	});
+	$(".user-option").mouseover(function () {
+        opt_mouse_in = true;
+        $(".user-option").show();
+    });
+
+    $(".user-nav").mouseout(function () {
+            user_mouse_in = false;
+            setTimeout(hideUserOption,1000);
+    });
+    $(".user-option").mouseout(function () {
+        opt_mouse_in = false;
+        setTimeout(hideUserOption,1000);
+    });
+});
+
+function hideUserOption(){
+    if (user_mouse_in) {
+        return;
+    }
+    if (opt_mouse_in) {
+        return;
+    }
+     $(".user-option").hide();
+}

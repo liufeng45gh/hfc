@@ -84,6 +84,16 @@
                 </div>
 
             </div>
+            <div class="user-option">
+                <div style="position: relative;" >
+                    <b class="bot">◆</b>
+                    <div class="opt">
+                        <div>修改资料</div>
+                        <div>我的消息</div>
+                        <div>退出</div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>

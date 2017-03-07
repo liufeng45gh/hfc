@@ -628,7 +628,30 @@ em{
  .send-code{
     float: left;
  }
+.user-option{
+    position: absolute;
+    width: 120px;
+    background: #FFFFFF;
 
-
+    left: 937px;
+    top: 70px;
+    display: none;
+}
+.user-option .bot{
+    font-size: 40px;
+    position: absolute;
+    line-height: 40px;
+    top: -20px;
+    color: #FFFFFF;
+}
+.user-option .opt{
+     width: 120px;
+     padding-top: 0px;
+}
+.user-option .opt div{
+    height:40px;
+    line-height: 40px;
+    border-bottom: 1px solid #F0F0F0;
+}
 
 
