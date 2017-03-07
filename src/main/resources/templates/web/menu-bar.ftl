@@ -90,7 +90,7 @@
                     <div class="opt">
                         <div>修改资料</div>
                         <div>我的消息</div>
-                        <div>退出</div>
+                        <div onclick="logout();">退出</div>
                     </div>
                 </div>
             </div>

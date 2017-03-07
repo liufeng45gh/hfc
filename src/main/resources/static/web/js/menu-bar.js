@@ -99,3 +99,8 @@ function hideUserOption(){
     }
      $(".user-option").hide();
 }
+
+function logout() {
+    delCookie("token");
+    window.location.reload();
+}
