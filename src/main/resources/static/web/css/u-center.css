@@ -1,0 +1,24 @@
+.box{
+    box-shadow: 1px 1px 3px rgba(0,0,0,0.25);
+    border-top: 1px solid rgba(0,0,0,0.05);
+}
+
+.info-title{
+  height: 20px;
+  border-left: 3px solid #EA3E3C;
+  margin-top: 20px;
+  margin-left: 15px;
+  padding-left: 10px;
+  margin-bottom: 20px;
+}
+.t-cn{
+    color: rgb(38,38,38);
+    font-size: 18px;
+    font-weight: 600;
+    height: 20px;
+    line-height: 20px;
+}
+.t-en{
+    color: #CCCCCC;
+    font-size: 10px;
+}
