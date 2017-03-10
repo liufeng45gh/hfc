@@ -41,6 +41,8 @@
     text-align: center;
     margin-left: 75px;
     margin-top: 10px;
+    border-radius: 2px;
+    cursor: pointer;
 }
 
 .i-box{
@@ -78,4 +80,73 @@
     padding-left: 10px;
     background-color: #FAFAFA;
     border-radius: 1px;
+}
+
+.f-input .radio{
+    width: 20px;
+    float: left;
+    height: 20px;
+    margin-left: 10px;
+    margin-top: 9px;
+}
+
+.male{
+    float: left;
+    width: 60px;
+    height: 35px;
+    background-color: #FAFAFA;
+}
+
+.female{
+    float: left;
+    width: 60px;
+    height: 35px;
+    background-color: #FAFAFA;
+    margin-left: 20px;
+}
+
+.unknown{
+    float: left;
+    width: 75px;
+    height: 35px;
+    background-color: #FAFAFA;
+    margin-left: 20px;
+}
+
+.f-input .gender-info{
+    height: 35px;
+    font-size: 16px;
+    color: #4D4D4D;
+    line-height: 35px;
+    float: left;
+}
+
+.f-area{
+  float: left;
+  margin-left: 30px;
+}
+
+.f-area textarea {
+    width: 520px;
+    height: 95px;
+    border :1px solid rgba(0,0,0,0.25);
+    font-size: 16px;
+    color: #4D4D4D;
+    padding-left: 10px;
+    background-color: #FAFAFA;
+    border-radius: 1px;
+}
+
+.btn-submit{
+   width: 100px;
+   height: 37px;
+   background-color: #EB3D3E;
+   color: #FFFFFF;
+   line-height: 37px;
+   text-align: center;
+   margin-left: 105px;
+   margin-top: 20px;
+   font-size: 16px;
+   cursor: pointer;
+   border-radius: 3px;
 }
