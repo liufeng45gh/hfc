@@ -67,7 +67,9 @@ public class Member implements Serializable{
 	
 
 	// birth     出生年月日
-	private Date birth;
+
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	private Date birthday;
 
 	private String receiptAddress;
 
@@ -216,20 +218,25 @@ public class Member implements Serializable{
 		this.gender = gender;
 	}
 
-	@DateTimeFormat(pattern = "yyyy-MM-dd")
-	@JsonSerialize(using=DateSerializer.class)
-	public Date getBirth() {
-		return birth;
+//	@DateTimeFormat(pattern = "yyyy-MM-dd")
+//	@JsonSerialize(using=DateSerializer.class)
+//	public Date getBirth() {
+//		return birth;
+//	}
+//
+//	@DateTimeFormat(pattern = "yyyy-MM-dd")
+//	public void setBirth(Date birth) {
+//		this.birth = birth;
+//	}
+
+
+	public Date getBirthday() {
+		return birthday;
 	}
-	
-	@DateTimeFormat(pattern = "yyyy-MM-dd")	
-	public void setBirth(Date birth) {
-		this.birth = birth;
+
+	public void setBirthday(Date birthday) {
+		this.birthday = birthday;
 	}
-
-
-		
-
 
 	@DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
 	@JsonSerialize(using=DateTimeSerializer.class)

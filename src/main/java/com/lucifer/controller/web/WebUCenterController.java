@@ -2,11 +2,9 @@ package com.lucifer.controller.web;
 
 import com.lucifer.model.hfc.Member;
 import com.lucifer.service.hfc.MemberService;
+import com.lucifer.utils.Result;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.CookieValue;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
@@ -26,5 +24,11 @@ public class WebUCenterController {
         Member member = memberService.getMemberByToken(token);
         request.setAttribute("member",member);
         return "/web/u-center/up-info";
+    }
+
+    @RequestMapping(value="/info/update",method = RequestMethod.POST)
+    @ResponseBody
+    public Result upInfoSubmit(HttpServletRequest request,@CookieValue(required = false) String token,Member member){
+        return Result.ok();
     }
 }

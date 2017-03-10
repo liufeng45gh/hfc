@@ -62,7 +62,7 @@
                     <div class="ftr">
                         <div class="f-name">昵称</div>
                         <div class="f-input">
-                            <input placeholder="请输入昵称" value="${(member.nickName)!}"/>
+                            <input placeholder="请输入昵称" id="nickName" name="nickName" value="${(member.nickName)!}"/>
                         </div>
                     </div>
 
@@ -70,7 +70,7 @@
                     <div class="ftr">
                         <div class="f-name">个人签名</div>
                         <div class="f-input">
-                            <input placeholder="请输入签名" value="${(member.signature)!}"/>
+                            <input placeholder="请输入签名" value="${(member.signature)!}" name="signature"/>
                         </div>
                     </div>
 
@@ -86,14 +86,14 @@
                     <div class="ftr">
                         <div class="f-name">生日</div>
                         <div class="f-input">
-                            <input placeholder="请选择" id="birthday" name="birthday" onClick="WdatePicker({el:'birthday'})" value="${(member.birth?string("yyyy-MM-dd"))!}"/>
+                            <input placeholder="请选择" id="birthday" name="birthday" onClick="WdatePicker({el:'birthday'})" value="${(member.birthday?string("yyyy-MM-dd"))!}"/>
                         </div>
                     </div>
 
                     <div class="ftr" style="height: 95px;">
                         <div class="f-name">收货地址</div>
                         <div class="f-area">
-                            <textarea>${(member.receiptAddress)!}</textarea>
+                            <textarea name="receiptAddress">${(member.receiptAddress)!}</textarea>
                         </div>
                     </div>
 

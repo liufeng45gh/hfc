@@ -6,24 +6,20 @@
 <mapper namespace="com.lucier.model">
     <resultMap type="com.lucifer.model.hfc.Member" id="MemberMap">
         <id column="id" property="id"/>
-        <result column="uuid" property="uuid"/>
         <result column="weixin_id" property="weixinId"/>
-        <result column="weibo_id" property="weiboId"/>
         <result column="qq_id" property="qqId"/>
         <result column="phone" property="phone"/>
-        <result column="mail" property="mail"/>
+
         <result column="password" property="password"/>
         <result column="salt" property="salt"/>
-        <result column="role_id" property="roleId"/>
+
         <result column="nick_name" property="nickName"/>
         <result column="avatar" property="avatar"/>
-        <result column="true_name" property="trueName"/>
-        <result column="sex" property="sex"/>
-        <result column="province" property="province"/>
-        <result column="city" property="city"/>
-        <result column="cardId" property="cardId"/>
-        <result column="birth" property="birth"/>
-        <result column="status" property="status"/>
+
+
+
+        <result column="birthday" property="birthday"/>
+        <result column="receipt_address" property="receiptAddress"/>
         <result column="signature" property="signature"/>
         <result column="created_at" property="createdAt"/>
         <result column="updated_at" property="updatedAt"/>
@@ -53,4 +49,16 @@
     <select id="getMemberById"  resultMap="MemberMap">
         select * from user where id=#{id}
     </select>
+    
+    <select id="memberCountByNickName" resultType="java.lang.Integer">
+        select count(*) from user where nick_name = #{nickName}
+    </select>
+    
+    <update id="updateMemberNick">
+        update user set nick_name = #{nickName} where id = #{id}
+    </update>
+
+    <update id="updateMemberInfo">
+        update user set signature = #{signature} ,gender = #{gender},birthday = #{birthday}, receipt_address = #{receiptAddress} where id = #{id}
+    </update>
 </mapper>

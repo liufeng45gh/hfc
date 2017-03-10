@@ -200,25 +200,25 @@ public class MemberDao extends IBatisBaseDao {
 
 
     //@CacheEvict(value="userByIdCache",key="#user.getUserId()")// 清空accountCache 缓存
-    public Integer updateUserInfo(User user){
-        Member dbUser = this.getMemberById(user.getId());
+    public Integer updateMemberInfo(Member member){
+        Member dbUser = this.getMemberById(member.getId());
         this.removeUserCache(dbUser);
-        Integer updateCount = hfcSqlSession.update("updateUserInfo",user);
+        Integer updateCount = hfcSqlSession.update("updateMemberInfo",member);
         return updateCount;
     }
 
 
 
     public Boolean isNickExist(String nickName){
-        Integer resultCount = hfcSqlSession.selectOne("userCountByNickName", nickName);
+        Integer resultCount = hfcSqlSession.selectOne("memberCountByNickName", nickName);
         if (resultCount>0) {
             return true;
         }
         return false;
     }
 
-    public Integer updateUserNick(User user){
-        return hfcSqlSession.update("updateUserNick",user);
+    public Integer updateMemberNick(Member member){
+        return hfcSqlSession.update("updateMemberNick",member);
     }
 
     public Integer initUserNick(User user){
