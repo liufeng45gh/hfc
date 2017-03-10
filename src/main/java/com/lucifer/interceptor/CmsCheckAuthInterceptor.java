@@ -4,10 +4,12 @@ import com.lucifer.model.User;
 import com.lucifer.utils.Constant;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+@Component
 public class CmsCheckAuthInterceptor extends HandlerInterceptorAdapter{
 	
 	private static  Log log = LogFactory.getLog(CmsCheckAuthInterceptor.class);

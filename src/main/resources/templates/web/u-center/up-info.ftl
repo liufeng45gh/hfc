@@ -5,9 +5,10 @@
 <html>
 <head>
     <#include "../c-head.ftl"/>
-    <link rel='stylesheet' href='/web/css/u-center.css' type='text/css' media='screen' />
+
     <link rel='stylesheet' href='/web/css/news.css' type='text/css' media='screen' />
     <link rel='stylesheet' href='/web/css/appreciate.css' type='text/css' media='screen' />
+    <link rel='stylesheet' href='/web/css/u-center.css' type='text/css' media='screen' />
 
     <script  type="text/javascript" src="/My97DatePicker/WdatePicker.js"></script>
 </head>
@@ -34,8 +35,8 @@
             </div>
         </div>
         <div class="info-fr wrapper-996" style="height: 80px;">
-            <a href="#">
-                <div class="a-category">个人中心</div>
+            <a href="/u-center/index">
+                <div class="a-category active">个人中心</div>
             </a>
             <div class="a-category">我的消息</div>
 
@@ -52,15 +53,16 @@
             <div>
                 <div class="h-box">
                     <div class="head-fm">
-                        <img src="/web/images/default-avatar.jpg" style="width: 140px;height:140px;"/>
+                        <img src="${(member.avatar)!}" style="width: 140px;height:140px;"/>
                     </div>
                     <div id="up-head-btn">修改头像</div>
                 </div>
                 <div class="i-box">
+                    <form action="/u-center/info/update" method="post" id="hfc-form">
                     <div class="ftr">
                         <div class="f-name">昵称</div>
                         <div class="f-input">
-                            <input placeholder="请输入昵称"/>
+                            <input placeholder="请输入昵称" value="${(member.nickName)!}"/>
                         </div>
                     </div>
 
@@ -68,37 +70,37 @@
                     <div class="ftr">
                         <div class="f-name">个人签名</div>
                         <div class="f-input">
-                            <input placeholder="请输入签名"/>
+                            <input placeholder="请输入签名" value="${(member.signature)!}"/>
                         </div>
                     </div>
 
                     <div class="ftr">
                         <div class="f-name">性别</div>
                         <div class="f-input">
-                            <div class="male"><input type="radio" name="gender" class="radio"/><div class="gender-info">男</div></div>
-                            <div class="female"><input type="radio" name="gender" class="radio"/><div class="gender-info">女</div></div>
-                            <div class="unknown"><input type="radio" name="gender" class="radio"/><div class="gender-info">保密</div></div>
+                            <div class="male"><input type="radio" name="gender" class="radio" value="male"/><div class="gender-info">男</div></div>
+                            <div class="female"><input type="radio" name="gender" class="radio" value="female"/><div class="gender-info">女</div></div>
+                            <div class="unknown"><input type="radio" name="gender" class="radio" value="secrecy"/><div class="gender-info">保密</div></div>
                         </div>
                     </div>
 
                     <div class="ftr">
                         <div class="f-name">生日</div>
                         <div class="f-input">
-                            <input placeholder="请选择" id="birthday" name="birthday" onClick="WdatePicker({el:'birthday'})"/>
+                            <input placeholder="请选择" id="birthday" name="birthday" onClick="WdatePicker({el:'birthday'})" value="${(member.birth?string("yyyy-MM-dd"))!}"/>
                         </div>
                     </div>
 
                     <div class="ftr" style="height: 95px;">
                         <div class="f-name">收货地址</div>
                         <div class="f-area">
-                            <textarea></textarea>
+                            <textarea>${(member.receiptAddress)!}</textarea>
                         </div>
                     </div>
 
                     <div class="ftr">
                         <div class="btn-submit">保存</div>
                     </div>
-
+                    </form>
 
                 </div>
             </div>
@@ -113,7 +115,15 @@
 
 </div>
 
+<script>
+    var gender = "${(member.gender)!}";
+    $(".radio").each(function () {
+        if ($(this).val()==gender) {
+            $(this).attr('checked','true');
+        }
 
+    });
+</script>
 
 
 </body>

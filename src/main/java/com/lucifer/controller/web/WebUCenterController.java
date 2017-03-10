@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
 
 /**
  * Created by liufx on 17/3/10.
@@ -21,8 +22,9 @@ public class WebUCenterController {
     private MemberService memberService;
 
     @RequestMapping(value="/index",method = RequestMethod.GET)
-    public String upInfoInput(@CookieValue(required = false) String token) {
+    public String upInfoInput(HttpServletRequest request, @CookieValue(required = false) String token) {
         Member member = memberService.getMemberByToken(token);
+        request.setAttribute("member",member);
         return "/web/u-center/up-info";
     }
 }

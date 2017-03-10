@@ -88,7 +88,7 @@
                 <div style="position: relative;" >
                     <b class="bot">◆</b>
                     <div class="opt">
-                        <div>修改资料</div>
+                        <div><a href="/u-center/index">修改资料</a></div>
                         <div>我的消息</div>
                         <div onclick="logout();">退出</div>
                     </div>

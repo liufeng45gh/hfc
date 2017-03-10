@@ -23,8 +23,8 @@
         <result column="city" property="city"/>
         <result column="cardId" property="cardId"/>
         <result column="birth" property="birth"/>
-
         <result column="status" property="status"/>
+        <result column="signature" property="signature"/>
         <result column="created_at" property="createdAt"/>
         <result column="updated_at" property="updatedAt"/>
     </resultMap>

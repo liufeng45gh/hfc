@@ -70,6 +70,10 @@ public class Member implements Serializable{
 	private Date birth;
 
 	private String receiptAddress;
+
+	private String signature;
+
+
 	
 
 
@@ -265,5 +269,13 @@ public class Member implements Serializable{
 
 	public void setReceiptAddress(String receiptAddress) {
 		this.receiptAddress = receiptAddress;
+	}
+
+	public String getSignature() {
+		return signature;
+	}
+
+	public void setSignature(String signature) {
+		this.signature = signature;
 	}
 }

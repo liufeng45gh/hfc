@@ -150,3 +150,7 @@
    cursor: pointer;
    border-radius: 3px;
 }
+
+.active {
+    color: #EB3D3C;
+}

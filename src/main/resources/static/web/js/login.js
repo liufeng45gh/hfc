@@ -50,7 +50,12 @@ $(document).ready(function () {
                  //window.location.href = "/account/chose_type";
                   setSessionCookie("token",data.data.token);
                   layer.msg("登录成功!");
-                  window.parent.location.reload();
+                  if (window.top != window.self) {
+                    window.parent.location.reload();
+                  } else {
+                    window.location.href = "/";
+                  }
+
              }else{
                  //check_result = false;
                 layer.msg(data.message);
