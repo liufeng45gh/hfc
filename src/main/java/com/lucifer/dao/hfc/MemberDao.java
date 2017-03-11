@@ -134,14 +134,14 @@ public class MemberDao extends IBatisBaseDao {
 
     /**
      * 修改密码
-     * @param user
+     * @param member
      * @return
      */
     //@CacheEvict(value="userByIdCache",key="#user.getUserId()")// 清空accountCache 缓存
-    public Integer updatePassword(User user){
-        String key = "getUserById:"+user.getId();
+    public Integer updateMemberPassword(Member member){
+        String key = "getUserById:"+member.getId();
         appCache.remove(key);
-        return hfcSqlSession.update("updatePassword", user);
+        return hfcSqlSession.update("updateMemberPassword", member);
     }
 
     /**

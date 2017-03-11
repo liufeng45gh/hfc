@@ -36,11 +36,7 @@
             </div>
         </div>
         <div class="info-fr wrapper-996" style="height: 80px;">
-            <a href="/u-center/index">
-                <div class="a-category active">个人中心</div>
-            </a>
-            <div class="a-category">我的消息</div>
-
+            <#include "menu.ftl"/>
         </div>
 
 
@@ -124,6 +120,7 @@
         }
 
     });
+    $("#up-info").addClass("active");
 </script>
 <script type="text/javascript" charset="UTF-8" src="/web/js/u-center/info-up.js"></script>
 

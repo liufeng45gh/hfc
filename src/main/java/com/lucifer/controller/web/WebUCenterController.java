@@ -53,4 +53,15 @@ public class WebUCenterController {
         memberService.updateMemberAvatar(token,uploadUrl);
         return Result.ok();
     }
+
+    @RequestMapping(value="/up-pass",method = RequestMethod.GET)
+    public String upPassInput() {
+        return "/web/u-center/up-pass";
+    }
+
+    @RequestMapping(value="/pass/update",method = RequestMethod.POST)
+    @ResponseBody
+    public Result upPassSubmit(@CookieValue(required = false) String token,String oldPass,String newPass,String repeatPass) {
+        return memberService.updatePassWord(token,oldPass,newPass,repeatPass);
+    }
 }

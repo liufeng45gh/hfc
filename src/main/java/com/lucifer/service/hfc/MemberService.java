@@ -3,9 +3,11 @@ package com.lucifer.service.hfc;
 import com.lucifer.dao.hfc.MemberDao;
 import com.lucifer.model.AccessToken;
 import com.lucifer.model.hfc.Member;
+import com.lucifer.utils.Md5Utils;
 import com.lucifer.utils.Result;
 import org.json.JSONObject;
 import org.springframework.stereotype.Component;
+import org.springframework.web.bind.annotation.CookieValue;
 
 import javax.annotation.Resource;
 import java.io.IOException;
@@ -70,5 +72,40 @@ public class MemberService {
         member.setAvatar(avatar);
         member.setId(userId);
         memberDao.updateMemberAvatar(member);
+    }
+
+    public Result updatePassWord(@CookieValue(required = false) String token, String oldPass, String newPass, String repeatPass){
+        Member dbMember = this.getMemberByToken(token);
+        if (null == dbMember) {
+            return Result.fail("您未登陆");
+        }
+
+        String md5Password = Md5Utils.md5(Md5Utils.md5(oldPass)+dbMember.getSalt());
+        if (!md5Password.equals(dbMember.getPassword())) {
+            return Result.fail("原密码错误");
+        }
+        if (null == newPass) {
+            return Result.fail("新密码不能为空");
+        }
+        if (newPass.length() < 6) {
+            return Result.fail("新密码长度必须6位以上");
+        }
+
+        if (null == repeatPass) {
+            return Result.fail("重复密码不能为空");
+        }
+
+        if (repeatPass.length() < 6) {
+            return Result.fail("重复密码长度必须6位以上");
+        }
+
+        if (!newPass.equals(repeatPass)) {
+            return Result.fail("两次密码不一致");
+        }
+
+        String md5NewPassword = Md5Utils.md5(Md5Utils.md5(newPass)+dbMember.getSalt());
+        dbMember.setPassword(md5NewPassword);
+        memberDao.updateMemberPassword(dbMember);
+        return Result.ok();
     }
 }

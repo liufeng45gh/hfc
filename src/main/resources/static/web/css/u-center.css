@@ -154,3 +154,9 @@
 .active {
     color: #EB3D3C;
 }
+.p-name{
+    width: 165px;
+}
+.p-submit{
+    margin-left: 195px;
+}
