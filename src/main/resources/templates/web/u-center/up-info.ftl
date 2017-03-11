@@ -11,6 +11,7 @@
     <link rel='stylesheet' href='/web/css/u-center.css' type='text/css' media='screen' />
 
     <script  type="text/javascript" src="/My97DatePicker/WdatePicker.js"></script>
+    <script type="text/javascript" charset="UTF-8" src="/web/js/jquery.form-3.45.js"></script>
 </head>
 
 <body>
@@ -124,7 +125,7 @@
 
     });
 </script>
-
+<script type="text/javascript" charset="UTF-8" src="/web/js/u-center/info-up.js"></script>
 
 </body>
 </html>

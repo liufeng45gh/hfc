@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+import java.io.IOException;
 
 /**
  * Created by liufx on 17/3/10.
@@ -28,7 +29,7 @@ public class WebUCenterController {
 
     @RequestMapping(value="/info/update",method = RequestMethod.POST)
     @ResponseBody
-    public Result upInfoSubmit(HttpServletRequest request,@CookieValue(required = false) String token,Member member){
-        return Result.ok();
+    public Result upInfoSubmit(HttpServletRequest request,@CookieValue(required = false) String token,Member member) throws IOException {
+        return memberService.updateMember(token,member);
     }
 }
