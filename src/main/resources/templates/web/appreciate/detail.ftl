@@ -38,8 +38,21 @@
             <div class="news-title">${entity.title?default("")}</div>
 
             <div class="news-content">${entity.content?default("")}</div>
+            <div class="comment-box">
+                <div class="nick-box">张浩然</div>
+                <div>
+                    <div class="c-h-box"><img src="/web/images/default-avatar.jpg"/></div>
+                    <div class="comment-area" contenteditable="true">写下您的评论</div>
+                    <div class="comment-btn">
+                        <img src="http://b.hiphotos.baidu.com/baike/w%3D268%3Bg%3D0/sign=ea30c51ba38b87d65042ac193f334f05/bd315c6034a85edfd49d89094b540923dd547582.jpg"/>
+                        <div>提交评论</div>
+
+                    </div>
+                </div>
+            </div>
         </div>
         <div style="clear: both"></div>
+
     <div class="load-more" id="load-more">点击加载更多</div>
     <input type="hidden" id="load-more-url" value="/appreciate/list.json"/>
 
