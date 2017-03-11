@@ -304,4 +304,8 @@ public class MemberDao extends IBatisBaseDao {
     public void insertMember(Member member){
         hfcSqlSession.insert("insertMember",member);
     }
+
+    public Integer updateMemberAvatar(Member member) {
+        return hfcSqlSession.update("updateMemberAvatar",member);
+    }
 }

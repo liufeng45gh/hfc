@@ -44,8 +44,6 @@ public class MemberService {
     public Result updateNick(Member member) throws IOException {
         Member dbMember = memberDao.getMemberById(member.getId());
 
-
-
         if (member.getNickName().equals(dbMember.getNickName())) {
             return Result.ok();
         }
@@ -61,5 +59,16 @@ public class MemberService {
 
         memberDao.updateMemberNick(member);
         return Result.ok();
+    }
+
+    public void updateMemberAvatar(String token,String avatar) {
+        Long userId = memberDao.getMemberIdByToken(token);
+        if (null == userId) {
+            Result.fail("can not find userId by token: "+token);
+        }
+        Member member = new Member();
+        member.setAvatar(avatar);
+        member.setId(userId);
+        memberDao.updateMemberAvatar(member);
     }
 }

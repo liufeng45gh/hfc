@@ -61,4 +61,7 @@
     <update id="updateMemberInfo">
         update user set signature = #{signature} ,gender = #{gender},birthday = #{birthday}, receipt_address = #{receiptAddress} where id = #{id}
     </update>
+    <update id="updateMemberAvatar">
+        update user set avatar = #{avatar} where id = #{id}
+    </update>
 </mapper>

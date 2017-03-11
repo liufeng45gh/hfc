@@ -26,3 +26,16 @@ function checkFiled(){
 
     return true;
 }
+
+$(document).ready(function () {
+    $("#up-head-btn").click(function () {
+        layer.open({
+          type: 2,
+          area: ['770px', '560px'],
+          fixed: false, //不固定
+          maxmin: true,
+          content: "/u-center/head-edit",
+          title: "修改头像"
+        });
+    });
+});

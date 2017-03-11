@@ -2,9 +2,12 @@ package com.lucifer.controller.web;
 
 import com.lucifer.model.hfc.Member;
 import com.lucifer.service.hfc.MemberService;
+import com.lucifer.service.hfc.QiniuCloudService;
 import com.lucifer.utils.Result;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
@@ -20,6 +23,9 @@ public class WebUCenterController {
     @Resource
     private MemberService memberService;
 
+    @Autowired
+    QiniuCloudService qiniuCloudService;
+
     @RequestMapping(value="/index",method = RequestMethod.GET)
     public String upInfoInput(HttpServletRequest request, @CookieValue(required = false) String token) {
         Member member = memberService.getMemberByToken(token);
@@ -31,5 +37,20 @@ public class WebUCenterController {
     @ResponseBody
     public Result upInfoSubmit(HttpServletRequest request,@CookieValue(required = false) String token,Member member) throws IOException {
         return memberService.updateMember(token,member);
+    }
+
+    @RequestMapping(value="/head-edit",method = RequestMethod.GET)
+    public String headEditInput() {
+        return "/web/u-center/head-edit";
+    }
+
+    @RequestMapping(value="/head-edit",method = RequestMethod.POST)
+    @ResponseBody
+    public Result uploadHead(@CookieValue(required = false) String token,@RequestParam("file") MultipartFile file) throws IOException {
+        //Member member = memberService.getMemberByToken(token);
+        String uploadUrl = qiniuCloudService.simpleUploadWithoutKey(file);
+        //member.setAvatar(uploadUrl);
+        memberService.updateMemberAvatar(token,uploadUrl);
+        return Result.ok();
     }
 }
