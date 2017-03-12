@@ -58,6 +58,10 @@ $(function() {
             $(".user-nav").show();
             $("#avatar").attr("src",data.data.avatar);
             $("#nick-div").text(data.data.nickName);
+            if ( $(".comment-box").length > 0 ) {
+                 $("#c-nick-div").text(data.data.nickName);
+                 $("#c-avatar").attr("src",data.data.avatar);
+            }
              return;
          }else {
              $(".login-nav").show();

@@ -1,0 +1,52 @@
+package com.lucifer.service.hfc;
+
+import com.lucifer.dao.hfc.AppreciateCommentDao;
+import com.lucifer.dao.hfc.MemberDao;
+import com.lucifer.model.hfc.AppreciateComment;
+import com.lucifer.model.hfc.Member;
+import com.lucifer.utils.Result;
+import org.springframework.stereotype.Component;
+import org.springframework.web.bind.annotation.CookieValue;
+
+import javax.annotation.Resource;
+import java.util.List;
+
+/**
+ * Created by Administrator on 2017/3/12.
+ */
+@Component
+public class AppreciateCommentService {
+
+    @Resource
+    private MemberService memberService;
+
+    @Resource
+    private MemberDao memberDao;
+
+    @Resource
+    private AppreciateCommentDao appreciateCommentDao;
+
+    public Result saveComment(AppreciateComment appreciateComment,String token){
+//        Long userId = memberDao.getMemberIdByToken(token);
+//        if (null == userId) {
+//            return Result.fail("你还没有登录");
+//        }
+        Member member = memberService.getMemberByToken(token);
+        if (null == member) {
+            return Result.fail("你还没有登录");
+        }
+        appreciateComment.setUserId(member.getId());
+        appreciateComment.setUserNick(member.getNickName());
+        appreciateCommentDao.insertAppreciateComment(appreciateComment);
+        return Result.ok();
+    }
+
+    public List<AppreciateComment> appreciateCommentList(Long appreciateId,Integer offset,Integer count){
+        List<AppreciateComment> appreciateCommentList = appreciateCommentDao.appreciateCommentList(appreciateId, offset, count);
+        for (AppreciateComment appreciateComment: appreciateCommentList) {
+            Member member = memberDao.getMemberById(appreciateComment.getUserId());
+            appreciateComment.setUser(member);
+        }
+        return appreciateCommentList;
+    }
+}

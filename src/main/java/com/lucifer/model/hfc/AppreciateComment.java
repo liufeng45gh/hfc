@@ -1,5 +1,7 @@
 package com.lucifer.model.hfc;
 
+import com.lucifer.utils.RelativeDateFormat;
+
 import java.util.Date;
 
 /**
@@ -34,6 +36,8 @@ public class AppreciateComment {
     private Long answerUserId;
 
     private String answerContent;
+
+    private Member user;
 
     public Long getId() {
         return id;
@@ -145,5 +149,17 @@ public class AppreciateComment {
 
     public void setAnswerContent(String answerContent) {
         this.answerContent = answerContent;
+    }
+
+    public Member getUser() {
+        return user;
+    }
+
+    public void setUser(Member user) {
+        this.user = user;
+    }
+
+    public String showRelativeCreatedAt(){
+        return RelativeDateFormat.format(this.createdAt);
     }
 }

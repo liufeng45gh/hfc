@@ -39,34 +39,56 @@
 
             <div class="news-content">${entity.content?default("")}</div>
             <div class="comment-box">
-                <div class="nick-box">张浩然</div>
+                <input type="hidden" id="appreciateId" value="${entity.id?default("")}"/>
+                <div class="nick-box" id="c-nick-div">&nbsp;</div>
                 <div>
-                    <div class="c-h-box"><img src="/web/images/default-avatar.jpg"/></div>
-                    <div class="comment-area" contenteditable="true">写下您的评论</div>
-                    <div class="comment-btn">
+                    <div class="c-h-box"><img id="c-avatar" src="/web/images/default-avatar.jpg"/></div>
+                    <div class="comment-area" id="comment-area" contenteditable="true">写下您的评论</div>
+                    <div class="comment-btn" id="c-submit">
                         <img src="http://b.hiphotos.baidu.com/baike/w%3D268%3Bg%3D0/sign=ea30c51ba38b87d65042ac193f334f05/bd315c6034a85edfd49d89094b540923dd547582.jpg"/>
                         <div>提交评论</div>
-
                     </div>
                 </div>
+            </div>
+            <div class="new-comment">
+                <div class="c-title">
+                    最新评论
+                </div>
+                <div class="comment-list" id="comment-list">
+                    <!--
+                    <div class="comment-item">
+                        <div class="a-img">
+                            <img src="/web/images/default-avatar.jpg"></img>
+                        </div>
+                        <div class="c-right">
+                            <div class="c-top"><div class="nick-red">张浩然</div><div class="c-date">21小时前</div></div>
+                            <div class="c-text">的方式来打开房间都是拉飞机 发送到路口附近的考虑是否绝对是附加费娄底市解放路独守空房附近的书房里</div>
+                            <div class="c-parent">
+                                <div class="nick-red" style="padding-left: 20px;">张浩然</div>
+                                <div class="colon">:</div>
+                                <div class="patent-text">路口附近的考虑是否绝对是路口附近的考虑是否绝对是</div>
+                                <div style="clear: both;"></div>
+                            </div>
+                            <div style="clear: both;"></div>
+                            <div class="reply-btn">回复</div>
+                        </div>
+                        <div style="clear: both;"></div>
+                    </div>
+                    -->
+                </div>
+
             </div>
         </div>
         <div style="clear: both"></div>
 
     <div class="load-more" id="load-more">点击加载更多</div>
-    <input type="hidden" id="load-more-url" value="/appreciate/list.json"/>
+    <input type="hidden" id="load-more-url" value="/appreciate/${entity.id?default("")}/comment-list"/>
 
     </div>
-
-
-
-
 </div>
 
-<script type="text/javascript">
-
-</script>
-
+<script  src="/web/js/appreciate/detail.js"></script>
+<script  src="/web/js/appreciate/comment-list.js"></script>
 
 </body>
 </html>
