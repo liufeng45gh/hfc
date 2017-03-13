@@ -45,8 +45,8 @@
                     <div class="c-h-box"><img id="c-avatar" src="/web/images/default-avatar.jpg"/></div>
                     <div class="comment-area" id="comment-area" contenteditable="true">写下您的评论</div>
                     <div class="comment-btn" id="c-submit">
-                        <img src="http://b.hiphotos.baidu.com/baike/w%3D268%3Bg%3D0/sign=ea30c51ba38b87d65042ac193f334f05/bd315c6034a85edfd49d89094b540923dd547582.jpg"/>
-                        <div>提交评论</div>
+                        <img src="/web/images/tjpl_icon.png"/>
+                        <div class="btn-text">提交评论</div>
                     </div>
                 </div>
             </div>

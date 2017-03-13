@@ -312,9 +312,13 @@
     cursor: pointer;
 }
 .comment-btn img{
-    width: 31px;
-    height: 31px;
+    width: 28px;
+    height: 30px;
     margin-top:20px;
+}
+
+.btn-text{
+   margin-top: 5px;
 }
 .c-title{
     border-bottom: 1px solid rgb(214, 214, 216);
