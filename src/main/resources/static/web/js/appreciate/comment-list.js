@@ -56,7 +56,7 @@ $(function() {
 
 });
 
-function toReply(btn) {
+function toReplyBak(btn) {
     var offset = $(btn).offset();
 
     var url = $("#reply-url").val();
@@ -73,4 +73,18 @@ function toReply(btn) {
        //为了演示，取按钮坐标
        //, offset: [ offset.top,offset.left ]
      });
+}
+function toReply(btn){
+    var d = dialog({
+        title: '回复评论',
+        content: '<textarea id="reply-content"></textarea>',
+        okValue: '确定',
+        ok: function () {
+            this.title('提交中…');
+            return false;
+        },
+        cancelValue: '取消',
+        cancel: function () {}
+    });
+    d.show(btn);
 }

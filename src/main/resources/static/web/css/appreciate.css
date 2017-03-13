@@ -405,3 +405,8 @@
     margin-top: 20px;
     cursor: pointer;
 }
+
+#reply-content{
+    width: 400px;
+    height: 100px;
+}

@@ -4,7 +4,8 @@
     <#include "../c-head.ftl"/>
     <link rel='stylesheet' href='/web/css/news.css' type='text/css' media='screen' />
     <link rel='stylesheet' href='/web/css/appreciate.css' type='text/css' media='screen' />
-
+    <link rel="stylesheet" href="/artDialog/css/ui-dialog.css">
+    <script src="/artDialog/dist/dialog-min.js"></script>
 </head>
 
 <body>
@@ -85,7 +86,7 @@
     <input type="hidden" id="load-more-url" value="/appreciate/${entity.id?default("")}/comment-list"/>
     <input type="hidden" id="reply-url" value="/appreciate/reply"/>
 
-    </div>
+
 </div>
 
 <script  src="/web/js/appreciate/detail.js"></script>
