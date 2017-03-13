@@ -29,11 +29,18 @@ public class WebAppreciateCommentController {
     }
 
     @RequestMapping(value="/{appreciateId}/comment-list",method = RequestMethod.GET)
-    public String commentList(HttpServletRequest request,@PathVariable Long appreciateId, @RequestParam(value = "page",required=false,defaultValue="1") Integer page){
+    public String commentList(HttpServletRequest request,
+                              @PathVariable Long appreciateId,
+                              @RequestParam(value = "page",required=false,defaultValue="1") Integer page){
         Integer pageSize = Constant.PAGESIZE;
         Integer offset = (page-1) * pageSize;
         List<AppreciateComment> commentList = appreciateCommentService.appreciateCommentList(appreciateId,offset,pageSize);
         request.setAttribute("dataList",commentList);
         return "/web/appreciate/comment-list";
+    }
+
+    @RequestMapping(value="/reply",method = RequestMethod.GET)
+    public String replyInput(){
+        return "/web/appreciate/reply";
     }
 }

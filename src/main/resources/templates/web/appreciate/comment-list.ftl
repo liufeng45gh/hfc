@@ -16,7 +16,7 @@
         </div>
         </#if>
         <div style="clear: both;"></div>
-        <div class="reply-btn">回复</div>
+        <div class="reply-btn" onclick="toReply(this);">回复</div>
     </div>
     <div style="clear: both;"></div>
 </div>

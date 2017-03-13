@@ -53,4 +53,24 @@ $(function() {
     $("#load-more").click(function () {
        nextPage();
     });
+
 });
+
+function toReply(btn) {
+    var offset = $(btn).offset();
+
+    var url = $("#reply-url").val();
+     layer.open({
+       type: 2,
+       area: ['400px', '230px'],
+       title: '回复评论' ,
+       fixed: false, //不固定
+       maxmin: true,
+       content: url,
+       tips: [1, '#c00'],
+       shade: 0
+       //scrollbar: false
+       //为了演示，取按钮坐标
+       //, offset: [ offset.top,offset.left ]
+     });
+}
