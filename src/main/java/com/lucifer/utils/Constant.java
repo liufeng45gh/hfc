@@ -43,6 +43,8 @@ public class Constant {
 		}
 	}
 
+	public static final String defaultAvatar = "/web/images/default-avatar.jpg";
+
 
 			
 			

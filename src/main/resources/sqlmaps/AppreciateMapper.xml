@@ -14,6 +14,8 @@
         <result column="category_name" property="categoryName"/>
         <result column="content" property="content"/>
         <result column="click_count" property="clickCount"/>
+        <result column="like_count" property="likeCount"/>
+        <result column="comment_count" property="commentCount"/>
         <result column="publish_at" property="publishAt"/>
         <result column="top" property="top"/>
         <result column="l_width" property="lWidth"/>

@@ -7,6 +7,7 @@ import com.lucifer.dao.UserDao;
 import com.lucifer.model.AccessToken;
 import com.lucifer.model.User;
 import com.lucifer.model.hfc.Member;
+import com.lucifer.utils.Constant;
 import com.lucifer.utils.StringHelper;
 import org.apache.commons.lang.RandomStringUtils;
 import org.slf4j.Logger;
@@ -192,7 +193,7 @@ public class MemberDao extends IBatisBaseDao {
             }
         });
         if (null != member&& StringHelper.isEmpty(member.getAvatar())) {
-            member.setAvatar("/web/images/default-avatar.jpg");
+            member.setAvatar(Constant.defaultAvatar);
         }
         return member;
         //return sqlSession.selectOne("getUserById", userId);

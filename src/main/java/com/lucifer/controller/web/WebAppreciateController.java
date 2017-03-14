@@ -4,6 +4,7 @@ import com.lucifer.dao.hfc.AppreciateDao;
 import com.lucifer.model.hfc.Appreciate;
 import com.lucifer.model.hfc.AppreciateCategory;
 import com.lucifer.service.hfc.AppreciateSearchService;
+import com.lucifer.service.hfc.AppreciateService;
 import com.lucifer.utils.Constant;
 import com.lucifer.utils.PageInfoWriter;
 import org.json.JSONException;
@@ -32,6 +33,9 @@ public class WebAppreciateController {
 
     @Resource
     private AppreciateSearchService appreciateSearchService;
+
+    @Resource
+    private AppreciateService appreciateService;
 
     private Logger logger = LoggerFactory.getLogger(this.getClass());
 
@@ -76,15 +80,8 @@ public class WebAppreciateController {
                        @RequestParam(value = "page",required=false,defaultValue="1")Integer page){
         Integer pageSize = Constant.PAGESIZE;
         Integer offset = (page-1) * pageSize;
-        List<Appreciate> appreciateList = appreciateDao.appreciateList(null,categoryId,offset,pageSize);
-        List<Map> resultList = new ArrayList<>();
-        for (Appreciate appreciate: appreciateList) {
-            Map entityMap = new HashMap<>();
-            entityMap.put("id",appreciate.getId());
-            entityMap.put("pinHtml",appreciate.pinHtml());
-            resultList.add(entityMap);
-        }
 
+        List<Map> resultList = appreciateService.jsonList(categoryId,offset,pageSize);
         //request.setAttribute("appreciateList",appreciateList);
         return resultList;
 
