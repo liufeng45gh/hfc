@@ -37,6 +37,13 @@ public class AppreciateCommentService {
         }
         appreciateComment.setUserId(member.getId());
         appreciateComment.setUserNick(member.getNickName());
+        if (appreciateComment.getParentId() != null) {
+            AppreciateComment parentComment = appreciateCommentDao.getAppreciateComment(appreciateComment.getParentId());
+            Member parentMember = memberDao.getMemberById(parentComment.getUserId());
+            appreciateComment.setAnswerUserId(parentComment.getUserId());
+            appreciateComment.setAnswerUserNick(parentMember.getNickName());
+            appreciateComment.setAnswerContent(parentComment.getContent());
+        }
         appreciateCommentDao.insertAppreciateComment(appreciateComment);
         return Result.ok();
     }

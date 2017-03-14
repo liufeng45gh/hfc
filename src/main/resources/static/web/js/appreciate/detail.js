@@ -20,10 +20,11 @@ $(document).ready(function () {
          var data_send = {};
          data_send.appreciateId = appreciateId;
          data_send.content = content;
+         var url = $("#post-comment-url").val();
 
-          var comment_request =$.ajax({
+         var comment_request =$.ajax({
             type: 'post',
-            url: '/appreciate/post-comment',
+            url: url,
             data: data_send,
             dataType: 'json'
          });
@@ -38,6 +39,7 @@ $(document).ready(function () {
          comment_request.done(function(data) {
              if (data.ok) {
                 layer.msg("评论已提交");
+                window.location.reload();
                 return;
              }else {
                  toLogin();

@@ -29,4 +29,8 @@ public class AppreciateCommentDao extends IBatisBaseDao {
         param.put("count",count);
         return this.hfcSqlSession.selectList("appreciateCommentList",param);
     }
+
+    public  AppreciateComment getAppreciateComment(Long id) {
+        return this.hfcSqlSession.selectOne("getAppreciateComment",id);
+    }
 }

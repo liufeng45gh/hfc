@@ -74,17 +74,55 @@ function toReplyBak(btn) {
        //, offset: [ offset.top,offset.left ]
      });
 }
+var parentId = null;
+
 function toReply(btn){
+    parentId = $(btn).attr("parentId");
     var d = dialog({
         title: '回复评论',
         content: '<textarea id="reply-content"></textarea>',
         okValue: '确定',
         ok: function () {
             this.title('提交中…');
+            replySubmit();
             return false;
         },
         cancelValue: '取消',
         cancel: function () {}
     });
     d.show(btn);
+}
+
+function replySubmit() {
+    var appreciateId = $("#appreciateId").val();
+    var content = $("#reply-content").val();
+    var data_send = {};
+    data_send.appreciateId = appreciateId;
+    data_send.parentId = parentId;
+    data_send.content = content;
+    var url = $("#post-comment-url").val();
+    var post_request =$.ajax({
+     type: 'post',
+     url: url,
+     data: data_send,
+     dataType: 'json'
+    });
+
+    post_request.fail(function( jqXHR, textStatus ) {
+    if(jqXHR.status==401){
+       //openWeiboLogin();
+
+    }
+    });
+
+    post_request.done(function(data) {
+         if (data.ok) {
+             layer.msg("评论已提交");
+             window.location.reload();
+             return;
+          }else {
+              toLogin();
+          }
+    });
+
 }

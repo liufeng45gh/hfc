@@ -85,7 +85,7 @@
     <div class="load-more" id="load-more">点击加载更多</div>
     <input type="hidden" id="load-more-url" value="/appreciate/${entity.id?default("")}/comment-list"/>
     <input type="hidden" id="reply-url" value="/appreciate/reply"/>
-
+    <input type="hidden" id="post-comment-url" value="/appreciate/post-comment"/>
 
 </div>
 

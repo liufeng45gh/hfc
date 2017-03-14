@@ -31,6 +31,9 @@
     <select id="appreciateCommentList" resultMap="AppreciateCommentMap">
         select * from appreciate_comment where appreciate_id = #{appreciateId} order by id desc limit #{offset}, #{count}
     </select>
+    <select id="getAppreciateComment" resultMap="AppreciateCommentMap">
+        select * from appreciate_comment where id = #{id}
+    </select>
 
 
 

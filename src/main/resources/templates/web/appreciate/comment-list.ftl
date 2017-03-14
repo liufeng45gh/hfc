@@ -16,7 +16,7 @@
         </div>
         </#if>
         <div style="clear: both;"></div>
-        <div class="reply-btn" onclick="toReply(this);"  data-toggle="popover-x" data-target="#myPopover20d" data-placement="right right-bottom">回复</div>
+        <div class="reply-btn" onclick="toReply(this);" parentId="${(comment.id)!}">回复</div>
 
     </div>
     <div style="clear: both;"></div>
