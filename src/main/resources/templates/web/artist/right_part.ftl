@@ -19,7 +19,7 @@
         <#list artistRecommendList as recommend>
         <div class="recommend-item">
             <div class="logo">
-                <a href="http://lol.replays.net/news/page/20170201/184862.html" target="_blank">
+                <a href="/artist/${(recommend.artist.id)!}/detail" target="_blank">
                     <img src="${(recommend.artist.avatar)!}" >
                 </a>
             </div>
