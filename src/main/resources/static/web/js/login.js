@@ -48,6 +48,7 @@ $(document).ready(function () {
              if(data.ok){
                  //check_result = true;
                  //window.location.href = "/account/chose_type";
+                 delCookie("token");
                   setSessionCookie("token",data.data.token);
                   layer.msg("登录成功!");
                   if (window.top != window.self) {

@@ -83,8 +83,7 @@ public class AccountService {
 		String encrypt_password = Md5Utils.md5(Md5Utils.md5(user.getPassword())+dbUser.getSalt());
 		dbUser.setPassword(encrypt_password);
 		
-		//删除缓存
-		userDao.removeUserCache(dbUser);
+
 		userDao.updatePassword(dbUser);
 		return Result.ok();
 	}

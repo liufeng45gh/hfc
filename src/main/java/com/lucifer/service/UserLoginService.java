@@ -53,15 +53,7 @@ public class UserLoginService {
 		if (!StringHelper.isEmpty(user.getPhone())) {//手机号登录
 			return this.loginByPhone(user);
 		}
-		if (!StringHelper.isEmpty(user.getWeiboId())) {//微博登录
-			return this.loginByWeiBo(user);
-		}
-		if (!StringHelper.isEmpty(user.getWeixinId())) {//微信登陆
-			return this.loginByWeiXin(user);
-		}
-		if (!StringHelper.isEmpty(user.getQqId())) {
-			return this.loginByQQ(user);
-		}
+
 		return Result.fail();
 	}
 	
@@ -124,40 +116,7 @@ public class UserLoginService {
 	}
 
 
-	/**
-	 * 微博登录
-	 * @param user
-	 * @return
-	 * @throws Exception
-	 */
-	public Result loginByWeiBo(User user) throws Exception{
-		String uid = this.getWeiboUidByAccessToken(user.getAccessToken());
-		if (!uid.equals(user.getWeiboId())) {
-			throw new NoAuthException("微博认证失败,uid 与 传入weiboId 不一致");
-		}
 
-		User dbUser = userDao.getUserByWeiboId(user.getWeiboId());
-
-		if (null==dbUser) {	
-			String account = "wb_"+RandomUtil.getNextAccount();
-			user.setAccount(account);
-			UUID uuid = UUID.randomUUID();
-			user.setUuid(uuid.toString());
-			user.setCreatedAt(DateUtils.now());
-			user.setUpdatedAt(DateUtils.now());
-			JSONObject weiBoUserInfo = this.getWeiboUserInfo(user.getAccessToken(), user.getWeiboId());
-			user.setAvatar(weiBoUserInfo.getString("profile_image_url"));
-			userDao.insertUser(user);
-			//user.setUserId(Long.valueOf(id));
-			dbUser =  userDao.getUserByWeiboId(user.getWeiboId());
-			
-			//初始化
-			userService.userInit(dbUser.getId());
-		}
-		AccessToken accessToken  = userDao.newUserLoginToken(dbUser.getId());
-		return  this.loginSuccess(dbUser,accessToken.getToken());
-		
-	}
 	/**
 	 * 返回token
 	 * @param user
@@ -190,49 +149,7 @@ public class UserLoginService {
 		return jsonObject.getString("uid");
 	}
 	
-	/**
-	 * 微信登陆
-	 * @param user
-	 * @return
-	 * @throws IOException 
-	 * @throws HttpException 
-	 */
-	public Result loginByWeiXin(User user) throws Exception{
-		Boolean isAvailable = this.checkWeixinToken(user.getAccessToken(), user.getWeixinId());
-		if (!isAvailable) {
-			return Result.fail("auth  is fail");
-		}
-//		Result result =   userCenterService.thirdLogin(user);
-//		if (!result._isOk()) {
-//			return result;
-//		}
-		//String token = (String)result.getData();
-		User dbUser = userDao.getUserByWeixinId(user.getWeixinId());
-		
 
-		if (null==dbUser) {		
-			String account = "wx_"+RandomUtil.getNextAccount();
-			user.setAccount(account);
-			UUID uuid = UUID.randomUUID();
-			user.setUuid(uuid.toString());
-			user.setCreatedAt(DateUtils.now());
-			user.setUpdatedAt(DateUtils.now());
-			this.syncWeixinUserInfo(user);
-			userDao.insertUser(user);
-			//user.setUserId(Long.valueOf(id));
-			
-			//user.setNickName("用户"+user.getUserId());
-			//userDao.initUserNick(user);
-			//userDao.updateUserInfo(user);
-			//user.setUserId(userId);
-			//初始化
-			userService.userInit(user.getId());
-			dbUser =  userDao.getUserByWeixinId(user.getWeixinId());
-		}
-		AccessToken accessToken =  userDao.newUserLoginToken(dbUser.getId());
-		return this.loginSuccess(dbUser,accessToken.getToken());
-	}
-	
 	public Boolean checkWeixinToken(String accessToken,String openId) throws HttpException, IOException, JSONException {
 		HttpClient httpClient = new HttpClient();
 		GetMethod get = new GetMethod("https://api.weixin.qq.com/sns/auth?access_token="+accessToken+"&openid="+openId);
@@ -276,46 +193,7 @@ public class UserLoginService {
 		return resultJ;
 	}
 	
-	public Result loginByQQ(User user) throws Exception{
-		QQInfo qqInfo = QQInfo.getQQInfo(user.getAccessToken(),user.getQqId());
-//		if (qqInfo == null) {
-//			throw new NoAuthException("qq认证失败,openId 与 传入qqId 不一致");
-//		}
-		
-		
-		if (null == qqInfo) {
-			return Result.fail("auth  is fail");
-		}
 
-		//String token = (String)result.getData();
-		
-		User dbUser = userDao.getUserByQqId(user.getQqId());
-		
-
-		
-		if (null==dbUser) {		
-			String account = "qq_"+RandomUtil.getNextAccount();
-			user.setAccount(account);
-			UUID uuid = UUID.randomUUID();
-			user.setUuid(uuid.toString());
-			user.setCreatedAt(DateUtils.now());
-			user.setUpdatedAt(DateUtils.now());
-			//QQInfo qqInfo = new QQInfo(user.getAccessToken(),openIDObj.getUserOpenID());
-			user.setAvatar(qqInfo.getAvatar());
-			userDao.insertUser(user);
-			//user.setUserId(Long.valueOf(id));
-			
-			//user.setNickName("用户"+user.getUserId());
-			//userDao.initUserNick(user);
-			//userDao.updateUserInfo(user);
-			//user.setUserId(userId);
-			//初始化
-			userService.userInit(user.getId());
-			dbUser =  userDao.getUserByQqId(user.getQqId());
-		}
-		AccessToken accessToken =   userDao.newUserLoginToken(dbUser.getId());
-		return this.loginSuccess(dbUser,accessToken.getToken());
-	}
 
 	
 	public void logout(String token){

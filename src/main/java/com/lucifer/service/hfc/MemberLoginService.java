@@ -85,82 +85,15 @@ public class MemberLoginService {
 			return Result.fail("密码错误");
 		}
 
-		AccessToken accessToken = memberDao.newUserLoginToken(dbUser.getId());
-		return this.loginSuccess(dbUser,accessToken.getToken());
-//		dbUser.setPassword(user.getPassword());
-		//user.setPassword(Md5Utils.md5(user.getPassword()));
-		
-//		String md5Password = Md5Utils.md5(Md5Utils.md5(user.getPassword())+dbUser.getSalt());
-//		if (md5Password.equals(dbUser.getPassword())) {
-//			
-//		}		
-//		return Result.fail("密码错误");
-	}
+		String token = memberDao.newUserLoginToken(dbUser.getId());
+		return this.loginSuccess(dbUser,token);
 
-	/**
-	 * 手机号登录
-	 * @param user
-	 * @return
-	 * @throws Exception
-	 */
-	public AccessToken oauth2LoginByAccount(User user) throws Exception{
-
-		User dbUser = memberDao.getUserByAccount(user.getAccount());
-		if  (null == dbUser)  {
-			throw new Oauth2LoginException("用户未找到");
-		}
-		String md5Password = Md5Utils.md5(Md5Utils.md5(user.getPassword())+dbUser.getSalt());
-		if (!md5Password.equals(dbUser.getPassword())) {
-			throw new Oauth2LoginException("密码错误");
-		}
-
-		AccessToken accessToken = memberDao.newUserLoginToken(dbUser.getId());
-		return accessToken;
-//		dbUser.setPassword(user.getPassword());
-		//user.setPassword(Md5Utils.md5(user.getPassword()));
-
-//		String md5Password = Md5Utils.md5(Md5Utils.md5(user.getPassword())+dbUser.getSalt());
-//		if (md5Password.equals(dbUser.getPassword())) {
-//
-//		}
-//		return Result.fail("密码错误");
 	}
 
 
-	/**
-	 * 微博登录
-	 * @param user
-	 * @return
-	 * @throws Exception
-	 */
-//	public Result loginByWeiBo(User user) throws Exception{
-//		String uid = this.getWeiboUidByAccessToken(user.getAccessToken());
-//		if (!uid.equals(user.getWeiboId())) {
-//			throw new NoAuthException("微博认证失败,uid 与 传入weiboId 不一致");
-//		}
-//
-//		User dbUser = memberDao.getUserByWeiboId(user.getWeiboId());
-//
-//		if (null==dbUser) {
-//			String account = "wb_"+RandomUtil.getNextAccount();
-//			user.setAccount(account);
-//			UUID uuid = UUID.randomUUID();
-//			user.setUuid(uuid.toString());
-//			user.setCreatedAt(DateUtils.now());
-//			user.setUpdatedAt(DateUtils.now());
-//			JSONObject weiBoUserInfo = this.getWeiboUserInfo(user.getAccessToken(), user.getWeiboId());
-//			user.setAvatar(weiBoUserInfo.getString("profile_image_url"));
-//			memberDao.insertUser(user);
-//			//user.setUserId(Long.valueOf(id));
-//			dbUser =  memberDao.getUserByWeiboId(user.getWeiboId());
-//
-//			//初始化
-//			userService.userInit(dbUser.getId());
-//		}
-//		AccessToken accessToken  = memberDao.newUserLoginToken(dbUser.getId());
-//		return  this.loginSuccess(dbUser,accessToken.getToken());
-//
-//	}
+
+
+
 	/**
 	 * 返回token
 	 * @param user
@@ -230,8 +163,8 @@ public class MemberLoginService {
 			userService.userInit(member.getId());
 			dbUser =  memberDao.getMemberByWxId(member.getWeixinId());
 		}
-		AccessToken accessToken =  memberDao.newUserLoginToken(dbUser.getId());
-		return this.loginSuccess(dbUser,accessToken.getToken());
+		String token =  memberDao.newUserLoginToken(dbUser.getId());
+		return this.loginSuccess(dbUser,token);
 	}
 	
 	public Boolean checkWeixinToken(String accessToken,String openId) throws HttpException, IOException, JSONException {
@@ -314,8 +247,8 @@ public class MemberLoginService {
 			userService.userInit(member.getId());
 			dbUser =  memberDao.getMemberByQqId(member.getQqId());
 		}
-		AccessToken accessToken =   memberDao.newUserLoginToken(dbUser.getId());
-		return this.loginSuccess(dbUser,accessToken.getToken());
+		String token =   memberDao.newUserLoginToken(dbUser.getId());
+		return this.loginSuccess(dbUser,token);
 	}
 
 	
@@ -342,17 +275,6 @@ public class MemberLoginService {
 		return memberDao.getAccessTokenByToken(accessToken);
 	}
 
-	public Result cmsLoginByAccount(String account,String password) throws Exception{
-		User dbUser = memberDao.getUserByAccount(account);
-		if  (null == dbUser)  {
-			return Result.fail("用户未找到");
-		}
-		String md5Password = Md5Utils.md5(Md5Utils.md5(password)+dbUser.getSalt());
-		logger.info("md5Password: "+md5Password);
-		if (!md5Password.equals(dbUser.getPassword())) {
-			return Result.fail("密码错误");
-		}
-		return Result.ok(dbUser);
-	}
+
 
 }

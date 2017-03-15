@@ -48,6 +48,10 @@ public class Constant {
 
 	public static final String CACHE_KEY_PRAISE_APPRECIATE_PRE = "HFC:PERSISTENCE:PRAISE:APPRECIATE:";
 
+	public static final String CACHE_KEY_TOKEN_PRE = "HFC:CACHE:USER:TOKEN:";
+
+	public static final Integer LOGIN_TIME_OUT= 3600 * 24 *10;
+
 
 			
 			

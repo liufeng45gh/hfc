@@ -19,6 +19,7 @@ import org.springframework.stereotype.Component;
 
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.TimeUnit;
 
 /**
  * Created by liufx on 17/1/16.
@@ -30,6 +31,9 @@ public class MemberDao extends IBatisBaseDao {
 
     @Autowired
     private AppCache appCache;
+
+    @Autowired
+    private RedisTemplate redisTemplate;
 
 
     public void removeAllCacheing(){
@@ -182,23 +186,26 @@ public class MemberDao extends IBatisBaseDao {
 
 
     public Long getMemberIdByToken(String token){
-        return hfcSqlSession.selectOne("getMemberIdByToken",token);
+        return (Long)redisTemplate.opsForValue().get(Constant.CACHE_KEY_TOKEN_PRE+token);
+        //return hfcSqlSession.selectOne("getMemberIdByToken",token);
     }
 
-    public AccessToken newUserLoginToken(Long userId){
-        AccessToken accessToken = new AccessToken();
+    public String newUserLoginToken(Long userId){
+        //AccessToken accessToken = new AccessToken();
         String token = RandomStringUtils.randomAlphanumeric(20);
-        String code = RandomStringUtils.randomAlphanumeric(20);
-        accessToken.setToken(token);
-        accessToken.setUserId(userId);
-        accessToken.setCode(code);
+        //String code = RandomStringUtils.randomAlphanumeric(20);
+        //accessToken.setToken(token);
+        //accessToken.setUserId(userId);
+        //accessToken.setCode(code);
 
-        this.hfcSqlSession.insert("insertUserLoginToken",accessToken);
-        return accessToken;
+        //this.hfcSqlSession.insert("insertUserLoginToken",accessToken);
+        redisTemplate.opsForValue().set(Constant.CACHE_KEY_TOKEN_PRE+token,userId);
+        redisTemplate.expire(Constant.CACHE_KEY_TOKEN_PRE+token,Constant.LOGIN_TIME_OUT, TimeUnit.SECONDS);
+        return token;
     }
 
     public void removeToken(String token){
-        this.hfcSqlSession.update("removeToken",token);
+        redisTemplate.delete(Constant.CACHE_KEY_TOKEN_PRE+token);
     }
 
     public AccessToken getAccessTokenByCode(String code){
