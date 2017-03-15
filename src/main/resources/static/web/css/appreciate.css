@@ -410,3 +410,15 @@
     width: 400px;
     height: 100px;
 }
+
+.a-icon{
+    width: 18px;
+    height: 18px;
+}
+.news-info .span{
+    float: left;
+    color: #777;
+    margin-right: 5px;
+    font-size: 13px;
+    margin-top: 10px;
+}

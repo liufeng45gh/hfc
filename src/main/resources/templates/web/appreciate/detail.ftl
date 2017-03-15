@@ -28,12 +28,18 @@
 
         <div class="info-fr wrapper-996 " id="entity-list">
             <div class="news-info">
-                        <span>
-                              ${(entity.publishAt?string("yyyy-MM-dd HH:mm:ss"))!}
-                        </span>
-                        <span>
+                <div class="span"><img src="/web/images/time_icon.png" class="a-icon"/></div>
+                <div class="span"> ${(entity.publishAt?string("yyyy-MM-dd HH:mm:ss"))!}</div>
 
-                        </span>
+                <div class="span" style="margin-left:20px;"><img src="/web/images/ll_icon.png" class="a-icon"/></div>
+                <div class="span"> ${(entity.clickCount)!}</div>
+
+                <div class="span" style="margin-left:20px;"><img src="/web/images/zan_icon2.png" class="a-icon"/></div>
+                <div class="span"> ${(entity.likeCount)!}</div>
+
+                <div class="span" style="margin-left:20px;"><img src="/web/images/pl_icon.png" class="a-icon"/></div>
+                <div class="span"> ${(entity.commentCount)!}</div>
+
             </div>
 
             <div class="news-title">${entity.title?default("")}</div>
