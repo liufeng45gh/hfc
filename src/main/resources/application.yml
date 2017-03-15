@@ -3,9 +3,9 @@ server:
    contextPath: /
 spring:
   redis:
-    host: 123.59.84.71
+    host: hfc.dbdbd.cn
     port: 6379
-    password: 9hcom.com
+    password: lucifer-hfc
   http:
     multipart:
       max-file-size: 50M

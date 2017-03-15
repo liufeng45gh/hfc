@@ -17,15 +17,15 @@ public class AppCache {
     private RedisTemplate<String,Object> redisTemplate;
 
     public  <T> T find(String key, CacheProvider provider){
-//        Object object = redisTemplate.opsForValue().get(key);
-//        if (null != object) {
-//            return (T) object;
-//        }
-        Object object = provider.getData();
+        Object object = redisTemplate.opsForValue().get(key);
+        if (null != object) {
+            return (T) object;
+        }
+        object = provider.getData();
         if (object == null) {
            return null;
         }
-        //redisTemplate.opsForValue().set(key,object);
+        redisTemplate.opsForValue().set(key,object);
         return (T) object;
     }
     
@@ -34,7 +34,7 @@ public class AppCache {
     }
 
     public void remove(String key){
-        //redisTemplate.delete(key);
+        redisTemplate.delete(key);
     }
 
     /**
@@ -43,9 +43,9 @@ public class AppCache {
      */
     @SuppressWarnings("unchecked")
     public void removeAll(String key){       
-//	Set<String> keys = redisTemplate.keys(key);
-//        for(String aKey : keys) {
-//            redisTemplate.delete(aKey);
-//        }
+	Set<String> keys = redisTemplate.keys(key);
+        for(String aKey : keys) {
+            redisTemplate.delete(aKey);
+        }
     }
 }

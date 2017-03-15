@@ -28,12 +28,6 @@ public class MemberDao extends IBatisBaseDao {
     static final Logger logger = LoggerFactory.getLogger(UserDao.class);
 
     @Autowired
-    private RedisTemplate<String, Object> redisTemplate;
-
-    @Autowired
-    private StringRedisTemplate stringRedisTemplate;
-
-    @Autowired
     private AppCache appCache;
 
     //	@Caching( evict = {
@@ -45,33 +39,23 @@ public class MemberDao extends IBatisBaseDao {
 //     @CacheEvict(value="userPointCache",allEntries=true)})
     public void removeAllCacheing(){
         logger.info("removeAllCacheing  has been called!!----");
-        String keyPattern = "getUserByPhone:*";
+        String keyPattern = "HFC:CACHE:MEMBER:getUserByPhone:*";
         appCache.removeAll(keyPattern);
-        keyPattern = "getUserByWeiboId:*";
+        keyPattern = "HFC:CACHE:MEMBER:getUserByWeiboId:*";
         appCache.removeAll(keyPattern);
-        keyPattern = "getUserByWeixinId:*";
+        keyPattern = "HFC:CACHE:MEMBER:getUserByWeixinId:*";
         appCache.removeAll(keyPattern);
-        keyPattern = "getUserById:*";
-        appCache.removeAll(keyPattern);
-        keyPattern = "getUserPoint:*";
-        appCache.removeAll(keyPattern);
-        keyPattern = "getUserLevel:*";
+        keyPattern = "HFC:CACHE:MEMBER:getUserById:*";
         appCache.removeAll(keyPattern);
     }
 
-    //@Cacheable(value="userByPhoneCache", key="'userByPhoneCache:'+#phone")//
-    public User getUserByAccount(String account){
-        logger.info("----getUserByAccount has been called!--");
-        //return (User)sqlSession.selectOne("getUserByPhone", phone);
-        return hfcSqlSession.selectOne("getUserByAccount", account);
 
-    }
 
     //@Cacheable(value="userByPhoneCache", key="'userByPhoneCache:'+#phone")//
     public Member getMemberByPhone(final String phone){
         logger.info("----getUserByPhone has been called!--");
         //return (User)sqlSession.selectOne("getUserByPhone", phone);
-        String key = "getMemberByPhone:"+phone;
+        String key = "HFC:CACHE:MEMBER:getMemberByPhone:"+phone;
         return appCache.find(key, new CacheProvider() {
             @Override
             public Object getData() {
@@ -81,22 +65,11 @@ public class MemberDao extends IBatisBaseDao {
     }
 
 
-    //@Cacheable(value="userByWeiboIdCache",key="'userByWeiboIdCache:'+#weiboId" )//
-    public User getUserByWeiboId(final String weiboId){
 
-        String key = "getUserByWeiboId:"+weiboId;
-        return appCache.find(key, new CacheProvider() {
-            @Override
-            public Object getData() {
-                return hfcSqlSession.selectOne("getUserByWeiboId", weiboId);
-            }
-        });
-        //return (User)sqlSession.selectOne("getUserByWeiboId", weiboId);
-    }
 
     //@Cacheable(value="userByWeixinIdCache", key="'userByWeixinIdCache:'+#weixinId" )//
     public Member getMemberByWxId(final String wxId){
-        String key = "getMemberByWxId:"+wxId;
+        String key = "HFC:CACHE:MEMBER:getMemberByWxId:"+wxId;
         return appCache.find(key, new CacheProvider() {
             @Override
             public Object getData() {
@@ -113,7 +86,7 @@ public class MemberDao extends IBatisBaseDao {
 
 
 
-     public void removeUserCache(Member user){
+     public void removeMemberCache(Member user){
         logger.info("removeUserCache has been called");
         String key = "getUserByPhone:"+user.getPhone();
         appCache.remove(key);
@@ -139,7 +112,7 @@ public class MemberDao extends IBatisBaseDao {
      */
     //@CacheEvict(value="userByIdCache",key="#user.getUserId()")// 清空accountCache 缓存
     public Integer updateMemberPassword(Member member){
-        String key = "getUserById:"+member.getId();
+        String key = "HFC:CACHE:MEMBER:getMemberById:"+member.getId();
         appCache.remove(key);
         return hfcSqlSession.update("updateMemberPassword", member);
     }
@@ -155,36 +128,36 @@ public class MemberDao extends IBatisBaseDao {
     public Integer userBindPhone(User user){
         Member dbUser = this.getMemberById(user.getId());
         //删除huan
-        this.removeUserCache(dbUser);
-        return hfcSqlSession.update("userBindPhone", user);
+        this.removeMemberCache(dbUser);
+        return hfcSqlSession.update("memberBindPhone", user);
     }
 
     public Integer updateUserWeiboId(User user) {
         Member dbUser = this.getMemberById(user.getId());
         //删除huan
-        this.removeUserCache(dbUser);
-        return hfcSqlSession.update("updateUserWeiboId", user);
+        this.removeMemberCache(dbUser);
+        return hfcSqlSession.update("updateMemberWeiboId", user);
     }
 
     public Integer updateUserWeixinId(User user) {
         Member dbUser = this.getMemberById(user.getId());
         //删除huan
-        this.removeUserCache(dbUser);
-        return hfcSqlSession.update("updateUserWeixinId", user);
+        this.removeMemberCache(dbUser);
+        return hfcSqlSession.update("updateMemberWeixinId", user);
     }
 
     public Integer updateUserQqId(User user) {
         Member dbUser = this.getMemberById(user.getId());
         //删除huan
-        this.removeUserCache(dbUser);
-        return hfcSqlSession.update("updateUserQqId", user);
+        this.removeMemberCache(dbUser);
+        return hfcSqlSession.update("updateMemberQqId", user);
     }
 
 
 
     //@Cacheable(value="userByIdCache" ,key="'userByIdCache:'+#userId")//
     public Member getMemberById(final Long userId){
-        String key = "getMemberById:"+userId;
+        String key = "HFC:CACHE:MEMBER:getMemberById:"+userId;
         Member member =  appCache.find(key, new CacheProvider() {
             @Override
             public Object getData() {
@@ -202,7 +175,7 @@ public class MemberDao extends IBatisBaseDao {
     //@CacheEvict(value="userByIdCache",key="#user.getUserId()")// 清空accountCache 缓存
     public Integer updateMemberInfo(Member member){
         Member dbUser = this.getMemberById(member.getId());
-        this.removeUserCache(dbUser);
+        this.removeMemberCache(dbUser);
         Integer updateCount = hfcSqlSession.update("updateMemberInfo",member);
         return updateCount;
     }

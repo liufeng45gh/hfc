@@ -44,6 +44,9 @@ public class Constant {
 	}
 
 
+	public static final String CACHE_KEY_PRAISE_APPRECIATE_PRE = "HFC:PERSISTENCE:PRAISE:APPRECIATE:";
+
+
 			
 			
 	

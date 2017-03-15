@@ -23,37 +23,9 @@ public class UserDao extends IBatisBaseDao {
 	
 	static final Logger logger = LoggerFactory.getLogger(UserDao.class);
 	
-	@Autowired
-	private RedisTemplate<String, Object> redisTemplate;
+
 	
-	@Autowired
-	private StringRedisTemplate stringRedisTemplate;
-	
-	@Autowired
-	private AppCache appCache;
-	
-//	@Caching( evict = { 
-//	@CacheEvict(value="userByIdCache",allEntries=true),
-//     @CacheEvict(value="userByPhoneCache",allEntries=true),
-//     @CacheEvict(value="userByWeiboIdCache",allEntries=true),
-//     @CacheEvict(value="userByWeixinIdCache",allEntries=true),
-//     @CacheEvict(value="userLevelByIdCache",allEntries=true),
-//     @CacheEvict(value="userPointCache",allEntries=true)})
-	public void removeAllCacheing(){
-		logger.info("removeAllCacheing  has been called!!----");
-		String keyPattern = "getUserByPhone:*";
-		appCache.removeAll(keyPattern);
-		keyPattern = "getUserByWeiboId:*";
-		appCache.removeAll(keyPattern);
-		keyPattern = "getUserByWeixinId:*";
-		appCache.removeAll(keyPattern);
-		keyPattern = "getUserById:*";
-		appCache.removeAll(keyPattern);
-		keyPattern = "getUserPoint:*";
-		appCache.removeAll(keyPattern);
-		keyPattern = "getUserLevel:*";
-		appCache.removeAll(keyPattern);
-	}
+
 
 	//@Cacheable(value="userByPhoneCache", key="'userByPhoneCache:'+#phone")//
 	public User getUserByAccount(String account){
@@ -65,42 +37,13 @@ public class UserDao extends IBatisBaseDao {
 	
 	//@Cacheable(value="userByPhoneCache", key="'userByPhoneCache:'+#phone")// 
 	public User getUserByPhone(final String phone){
-		logger.info("----getUserByPhone has been called!--");
-		//return (User)sqlSession.selectOne("getUserByPhone", phone);
-		String key = "getUserByPhone:"+phone;
-		return appCache.find(key, new CacheProvider() {
-			@Override
-			public Object getData() {
-				return sqlSession.selectOne("getUserByPhone", phone);
-			}
-		});
+		return sqlSession.selectOne("getUserByPhone", phone);
 	}
 	
 		
-	//@Cacheable(value="userByWeiboIdCache",key="'userByWeiboIdCache:'+#weiboId" )//
-	public User getUserByWeiboId(final String weiboId){
-		
-		String key = "getUserByWeiboId:"+weiboId;
-		return appCache.find(key, new CacheProvider() {
-			@Override
-			public Object getData() {
-				return sqlSession.selectOne("getUserByWeiboId", weiboId);
-			}
-		});
-		//return (User)sqlSession.selectOne("getUserByWeiboId", weiboId);
-	}
+
 	
-	//@Cacheable(value="userByWeixinIdCache", key="'userByWeixinIdCache:'+#weixinId" )//
-	public User getUserByWeixinId(final String weixinId){
-		String key = "getUserByWeixinId:"+weixinId;
-		return appCache.find(key, new CacheProvider() {
-			@Override
-			public Object getData() {
-				return sqlSession.selectOne("getUserByWeixinId", weixinId);
-			}
-		});
-		//return (User)sqlSession.selectOne("getUserByWeixinId", weixinId);
-	}
+
 	
 	//@Cacheable(value="userByQqIdCache" ,key="'userByQqIdCache:'+#qqId")
 	public User getUserByQqId(String qqId){
@@ -130,22 +73,7 @@ public class UserDao extends IBatisBaseDao {
 //	         @CacheEvict(value="userByPhoneCache",key="'userByPhoneCache:'+#user.getPhone()",condition="#user.getPhone() != null"),
 //	         @CacheEvict(value="userByWeiboIdCache",key="'userByWeiboIdCache:'+#user.getWeiboId()", condition="#user.getWeiboId() != null"),
 //	         @CacheEvict(value="userByWeixinIdCache",key="'userByWeixinIdCache:'+#user.getWeixinId()",condition="#user.getWeixinId() != null")})
-	public void removeUserCache(User user){
-		logger.info("removeUserCache has been called");
-		String key = "getUserByPhone:"+user.getPhone();
-		appCache.remove(key);
-		key = "getUserByWeiboId:"+user.getWeiboId();
-		appCache.remove(key);
-		key = "getUserByWeixinId:"+user.getWeixinId();
-		appCache.remove(key);
-		key = "getUserById:"+user.getId();
-		appCache.remove(key);
-		key = "getUserPoint:"+user.getId();
-		appCache.remove(key);
-		key = "getUserLevel:"+user.getId();
-		appCache.remove(key);
-		
-	}
+
 	
 
 	
@@ -156,8 +84,6 @@ public class UserDao extends IBatisBaseDao {
 	 */
 	//@CacheEvict(value="userByIdCache",key="#user.getUserId()")// 清空accountCache 缓存  
 	public Integer updatePassword(User user){
-		String key = "getUserById:"+user.getId();
-		appCache.remove(key);
 		return sqlSession.update("updatePassword", user);
 	}
 	
@@ -169,53 +95,29 @@ public class UserDao extends IBatisBaseDao {
 	//@CacheEvict(value="userByIdCache",key="#user.getUserId()")// 清空accountCache 缓存 
 //	@Caching( evict = { @CacheEvict(value="userByIdCache",key="#user.getUserId()"),
 //	         @CacheEvict(value="userByPhoneCache",key="#user.getPhone()") })
-	public Integer userBindPhone(User user){	
-		User dbUser = this.getUserById(user.getId());
-		//删除huan
-		this.removeUserCache(dbUser);
+	public Integer userBindPhone(User user){
 		return sqlSession.update("userBindPhone", user);
 	}
 	
-	public Integer updateUserWeiboId(User user) {
-		User dbUser = this.getUserById(user.getId());
-		//删除huan
-		this.removeUserCache(dbUser);
-		return sqlSession.update("updateUserWeiboId", user);
-	}
+
 	
-	public Integer updateUserWeixinId(User user) {
-		User dbUser = this.getUserById(user.getId());
-		//删除huan
-		this.removeUserCache(dbUser);
-		return sqlSession.update("updateUserWeixinId", user);
-	}
+
 	
-	public Integer updateUserQqId(User user) {
-		User dbUser = this.getUserById(user.getId());
-		//删除huan
-		this.removeUserCache(dbUser);
-		return sqlSession.update("updateUserQqId", user);
-	}
+
 	
 	
 
 	//@Cacheable(value="userByIdCache" ,key="'userByIdCache:'+#userId")// 
 	public User getUserById(final Long userId){
-		String key = "getUserById:"+userId;
-		return appCache.find(key, new CacheProvider() {
-			@Override
-			public Object getData() {
-				return sqlSession.selectOne("getUserById", userId);
-			}
-		});
-		//return sqlSession.selectOne("getUserById", userId);
+
+		return sqlSession.selectOne("getUserById", userId);
+
+
 	}
 	
 
 	//@CacheEvict(value="userByIdCache",key="#user.getUserId()")// 清空accountCache 缓存  
 	public Integer updateUserInfo(User user){
-		User dbUser = this.getUserById(user.getId());
-		this.removeUserCache(dbUser);
 		Integer updateCount = sqlSession.update("updateUserInfo",user);		
 		return updateCount;
 	}
