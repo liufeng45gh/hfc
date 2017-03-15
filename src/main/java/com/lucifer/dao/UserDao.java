@@ -22,10 +22,6 @@ import java.util.Map;
 public class UserDao extends IBatisBaseDao {
 	
 	static final Logger logger = LoggerFactory.getLogger(UserDao.class);
-	
-
-	
-
 
 	//@Cacheable(value="userByPhoneCache", key="'userByPhoneCache:'+#phone")//
 	public User getUserByAccount(String account){

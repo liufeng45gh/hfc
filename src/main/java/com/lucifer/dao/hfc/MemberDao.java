@@ -31,22 +31,10 @@ public class MemberDao extends IBatisBaseDao {
     @Autowired
     private AppCache appCache;
 
-    //	@Caching( evict = {
-//	@CacheEvict(value="userByIdCache",allEntries=true),
-//     @CacheEvict(value="userByPhoneCache",allEntries=true),
-//     @CacheEvict(value="userByWeiboIdCache",allEntries=true),
-//     @CacheEvict(value="userByWeixinIdCache",allEntries=true),
-//     @CacheEvict(value="userLevelByIdCache",allEntries=true),
-//     @CacheEvict(value="userPointCache",allEntries=true)})
+
     public void removeAllCacheing(){
         logger.info("removeAllCacheing  has been called!!----");
-        String keyPattern = "HFC:CACHE:MEMBER:getUserByPhone:*";
-        appCache.removeAll(keyPattern);
-        keyPattern = "HFC:CACHE:MEMBER:getUserByWeiboId:*";
-        appCache.removeAll(keyPattern);
-        keyPattern = "HFC:CACHE:MEMBER:getUserByWeixinId:*";
-        appCache.removeAll(keyPattern);
-        keyPattern = "HFC:CACHE:MEMBER:getUserById:*";
+        String keyPattern = "HFC:CACHE:MEMBER:getMemberById:*";
         appCache.removeAll(keyPattern);
     }
 
@@ -54,15 +42,7 @@ public class MemberDao extends IBatisBaseDao {
 
     //@Cacheable(value="userByPhoneCache", key="'userByPhoneCache:'+#phone")//
     public Member getMemberByPhone(final String phone){
-        logger.info("----getUserByPhone has been called!--");
-        //return (User)sqlSession.selectOne("getUserByPhone", phone);
-        String key = "HFC:CACHE:MEMBER:getMemberByPhone:"+phone;
-        return appCache.find(key, new CacheProvider() {
-            @Override
-            public Object getData() {
-                return hfcSqlSession.selectOne("getMemberByPhone", phone);
-            }
-        });
+         return hfcSqlSession.selectOne("getMemberByPhone", phone);
     }
 
 
@@ -70,13 +50,7 @@ public class MemberDao extends IBatisBaseDao {
 
     //@Cacheable(value="userByWeixinIdCache", key="'userByWeixinIdCache:'+#weixinId" )//
     public Member getMemberByWxId(final String wxId){
-        String key = "HFC:CACHE:MEMBER:getMemberByWxId:"+wxId;
-        return appCache.find(key, new CacheProvider() {
-            @Override
-            public Object getData() {
-                return hfcSqlSession.selectOne("getMemberByWxId", wxId);
-            }
-        });
+         return hfcSqlSession.selectOne("getMemberByWxId", wxId);
         //return (User)sqlSession.selectOne("getUserByWeixinId", weixinId);
     }
 
@@ -88,18 +62,8 @@ public class MemberDao extends IBatisBaseDao {
 
 
      public void removeMemberCache(Member user){
-        logger.info("removeUserCache has been called");
-        String key = "getUserByPhone:"+user.getPhone();
-        appCache.remove(key);
-        key = "getUserByWeiboId:"+user.getWeiboId();
-        appCache.remove(key);
-        key = "getUserByWeixinId:"+user.getWeixinId();
-        appCache.remove(key);
-        key = "getUserById:"+user.getId();
-        appCache.remove(key);
-        key = "getUserPoint:"+user.getId();
-        appCache.remove(key);
-        key = "getUserLevel:"+user.getId();
+        logger.info("removeMemberCache has been called");
+        String key = "HFC:CACHE:MEMBER:getMemberById:"+user.getId();
         appCache.remove(key);
 
     }
@@ -120,38 +84,27 @@ public class MemberDao extends IBatisBaseDao {
 
     /**
      * 绑定手机
-     * @param user
+     * @param member
      * @return
      */
     //@CacheEvict(value="userByIdCache",key="#user.getUserId()")// 清空accountCache 缓存
 //	@Caching( evict = { @CacheEvict(value="userByIdCache",key="#user.getUserId()"),
 //	         @CacheEvict(value="userByPhoneCache",key="#user.getPhone()") })
-    public Integer userBindPhone(User user){
-        Member dbUser = this.getMemberById(user.getId());
-        //删除huan
-        this.removeMemberCache(dbUser);
-        return hfcSqlSession.update("memberBindPhone", user);
+    public Integer memberBindPhone(Member member){
+        this.removeMemberCache(member);
+        return hfcSqlSession.update("memberBindPhone", member);
     }
 
-    public Integer updateUserWeiboId(User user) {
-        Member dbUser = this.getMemberById(user.getId());
-        //删除huan
-        this.removeMemberCache(dbUser);
-        return hfcSqlSession.update("updateMemberWeiboId", user);
+
+
+    public Integer updateMemberWeixinId(Member member) {
+        this.removeMemberCache(member);
+        return hfcSqlSession.update("updateMemberWeixinId", member);
     }
 
-    public Integer updateUserWeixinId(User user) {
-        Member dbUser = this.getMemberById(user.getId());
-        //删除huan
-        this.removeMemberCache(dbUser);
-        return hfcSqlSession.update("updateMemberWeixinId", user);
-    }
-
-    public Integer updateUserQqId(User user) {
-        Member dbUser = this.getMemberById(user.getId());
-        //删除huan
-        this.removeMemberCache(dbUser);
-        return hfcSqlSession.update("updateMemberQqId", user);
+    public Integer updateUserQqId(Member member) {
+        this.removeMemberCache(member);
+        return hfcSqlSession.update("updateMemberQqId", member);
     }
 
 
