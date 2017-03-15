@@ -1,15 +1,15 @@
 package com.lucifer.model.hfc;
 
+import com.lucifer.utils.Constant;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created by liufx on 17/1/16.
  */
 public class Appreciate {
-
-
 
     private Long id;
 
@@ -43,6 +43,12 @@ public class Appreciate {
     private Integer isDeleted;
 
     private String categoryName;
+
+    private Integer likeCount;
+
+    private Integer commentCount;
+
+    private List<AppreciateComment> commentList;
 
     public Long getId() {
         return id;
@@ -184,21 +190,39 @@ public class Appreciate {
 
                 "<p class=\"stats less\">"+
                     "<span title=\"喜欢\" class=\"like\"><i></i>153</span>"+
-                    "<span title=\"评论\" class=\"comment\"><i></i>1</span>"+
+                    "<span title=\"评论\" class=\"comment\"><i></i>"+this.commentCount+"</span>"+
                 "</p>"+
 
                 "<div  class=\"comments muted\">"+
                     "<div class=\"comment convo clearfix\">"+
-                        "<a href=\"#\"  class=\"img x\">"+
-                        "<img src=\"//img.hb.aicdn.com/f231281317484f51cd4de0714daa4ff5c6c7947e878-By0uJm_sq75sf\" class=\"avt\">"+
-                        "</a>"+
-                        "<div class=\"content\">"+
-                        "<a href=\"#\" class=\"author\">pRSEpI01</a>:&nbsp;可以把水印去了吗？"+
-                        "</div>"+
-                "</div>"+
-        "</div>"+
+                        this.commentHtml()+
+                    "</div>"+
+            "</div>"+
 
         "</div>";
+        return html;
+    }
+
+    private String commentHtml(){
+        String html = "";
+        for (AppreciateComment appreciateComment: this.commentList) {
+            String avatar = Constant.defaultAvatar;
+            String nick = "**";
+            if (null != appreciateComment.getUser() ) {
+                avatar = appreciateComment.getUser().getAvatar();
+                nick = appreciateComment.getUser().getNickName();
+            }
+
+            html = html +
+                    "<div class=\"comment convo clearfix\">"+
+                        "<a href=\"#\"  class=\"img x\">"+
+                        "<img src=\""+avatar+"\" class=\"avt\">"+
+                        "</a>"+
+                        "<div class=\"content\">"+
+                            "<a href=\"#\" class=\"author\">"+nick+"</a>:&nbsp;"+appreciateComment.getContent()+
+                        "</div>"+
+                    "</div>";
+        }
         return html;
     }
 
@@ -215,5 +239,29 @@ public class Appreciate {
         }
         return this.lHeight * this.defaultPinWidth/this.lWidth;
 
+    }
+
+    public List<AppreciateComment> _getCommentList() {
+        return commentList;
+    }
+
+    public void setCommentList(List<AppreciateComment> commentList) {
+        this.commentList = commentList;
+    }
+
+    public Integer getLikeCount() {
+        return likeCount;
+    }
+
+    public void setLikeCount(Integer likeCount) {
+        this.likeCount = likeCount;
+    }
+
+    public Integer getCommentCount() {
+        return commentCount;
+    }
+
+    public void setCommentCount(Integer commentCount) {
+        this.commentCount = commentCount;
     }
 }

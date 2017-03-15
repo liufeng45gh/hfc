@@ -49,7 +49,7 @@
         <div class="wonderful-recommend-item <#if recommend?is_even_item>left-36</#if>" >
             <#if recommend.news.isLogoHave()>
             <div class="logo">
-                <a href="/news/${(recommend.news.id)!}}/detail" target="_blank">
+                <a href="/news/${(recommend.news.id)!}/detail" target="_blank">
                     <img src="${recommend.news.logo?default("")}" >
                 </a>
             </div>

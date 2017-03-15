@@ -34,6 +34,12 @@
     <select id="getAppreciateComment" resultMap="AppreciateCommentMap">
         select * from appreciate_comment where id = #{id}
     </select>
+    <select id="getAppreciateCommentCount" resultType="java.lang.Integer" >
+        select count(*) from appreciate_comment where appreciate_id = #{appreciateId}
+    </select>
+    <update id="updateAppreciateCommentCount">
+        update appreciate set comment_count = #{commentCount} where id = #{id}
+    </update>
 
 
 

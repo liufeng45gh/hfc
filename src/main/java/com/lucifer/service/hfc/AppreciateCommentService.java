@@ -45,6 +45,7 @@ public class AppreciateCommentService {
             appreciateComment.setAnswerContent(parentComment.getContent());
         }
         appreciateCommentDao.insertAppreciateComment(appreciateComment);
+        this.resetCommentCount(appreciateComment.getAppreciateId());
         return Result.ok();
     }
 
@@ -55,5 +56,10 @@ public class AppreciateCommentService {
             appreciateComment.setUser(member);
         }
         return appreciateCommentList;
+    }
+
+    private void resetCommentCount(Long appreciateId){
+        Integer count = appreciateCommentDao.getAppreciateCommentCount(appreciateId);
+        appreciateCommentDao.updateAppreciateCommentCount(appreciateId,count);
     }
 }

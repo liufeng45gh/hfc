@@ -195,7 +195,7 @@
 }
 
 .muted, .muted a {
-    color: #524d4d;
+    color: #AAAAAA;
 }
 .pin .comments .comment:last-child {
     border-bottom-width: 0;
@@ -246,7 +246,7 @@
 }
 
 .pin .comments .comment a {
-    color: #9E7E6B;
+    color: #EA3E3E;
 }
 
  a.img {
