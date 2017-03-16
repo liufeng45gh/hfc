@@ -45,6 +45,7 @@ public class IndexCacheInterceptor extends HandlerInterceptorAdapter {
             }
         });
         if (StringHelper.isEmpty(html)) {
+            logger.info("IndexCacheInterceptor preHandle return true");
             return true;
         }
         response.getWriter().write(html);
@@ -81,7 +82,7 @@ public class IndexCacheInterceptor extends HandlerInterceptorAdapter {
         logger.debug("start reset");
         try {
             String html = HttpClientUtils.get(url);
-            if (StringHelper.isEmpty(html)) {
+            if (!StringHelper.isEmpty(html)) {
               appCache.set(Constant.CACHE_KEY_INDEX_HTML,html);
             }
         } catch (Exception e) {
