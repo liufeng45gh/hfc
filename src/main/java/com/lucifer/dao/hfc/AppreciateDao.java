@@ -7,7 +7,7 @@ import com.lucifer.model.hfc.Appreciate;
 import com.lucifer.model.hfc.AppreciateCategory;
 import com.lucifer.utils.Constant;
 import com.lucifer.utils.DateUtils;
-import com.sun.tools.internal.jxc.ap.Const;
+
 import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
