@@ -138,4 +138,11 @@ public class WebAppreciateController {
         return resultList;
 
     }
+
+    @RequestMapping(value="/{id}/counts",method = RequestMethod.GET)
+    @ResponseBody
+    public Appreciate counts(@PathVariable Long id){
+        Appreciate appreciate = appreciateDao.getAppreciateCounts(id);
+        return appreciate;
+    }
 }

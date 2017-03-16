@@ -32,13 +32,13 @@
                 <div class="span"> ${(entity.publishAt?string("yyyy-MM-dd HH:mm:ss"))!}</div>
 
                 <div class="span" style="margin-left:20px;"><img src="/web/images/ll_icon.png" class="a-icon"/></div>
-                <div class="span"> ${(entity.clickCount)!}</div>
+                <div class="span" id="click-count"> ${(entity.clickCount)!}</div>
 
-                <div class="span" style="margin-left:20px;"><img src="/web/images/zan_icon2.png" class="a-icon"/></div>
-                <div class="span"> ${(entity.likeCount)!}</div>
+                <div class="span" style="margin-left:20px;"><img id="like-img-btn" src="/web/images/zan_icon2.png" class="a-icon pointer"/></div>
+                <div class="span" id="like-count"> ${(entity.likeCount)!}</div>
 
                 <div class="span" style="margin-left:20px;"><img src="/web/images/pl_icon.png" class="a-icon"/></div>
-                <div class="span"> ${(entity.commentCount)!}</div>
+                <div class="span" id="comment-count"> ${(entity.commentCount)!}</div>
 
             </div>
 
@@ -89,14 +89,15 @@
         <div style="clear: both"></div>
 
     <div class="load-more" id="load-more">点击加载更多</div>
-    <input type="hidden" id="load-more-url" value="/appreciate/${entity.id?default("")}/comment-list"/>
+    <input type="hidden" id="load-more-url" value="/appreciate/${(entity.id)!}/comment-list"/>
     <input type="hidden" id="reply-url" value="/appreciate/reply"/>
     <input type="hidden" id="post-comment-url" value="/appreciate/post-comment"/>
-
+    <input type="hidden" id="counts-url" value="/appreciate/${(entity.id)!}/counts"/>
+    <input type="hidden" id="like-url" value="/appreciate/${(entity.id)!}/like"/>
 </div>
 
 <script  src="/web/js/appreciate/detail.js"></script>
 <script  src="/web/js/appreciate/comment-list.js"></script>
-
+<script  src="/web/js/appreciate/like.js"></script>
 </body>
 </html>

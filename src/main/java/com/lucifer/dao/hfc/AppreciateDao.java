@@ -79,6 +79,10 @@ public class AppreciateDao  extends IBatisBaseDao {
         return this.hfcSqlSession.selectOne("getAppreciate",id);
     }
 
+    public Appreciate getAppreciateCounts(Long id){
+        return this.hfcSqlSession.selectOne("getAppreciateCounts",id);
+    }
+
     public Integer updateAppreciate(Appreciate appreciate){
         appreciate.setUpdatedAt(DateUtils.now());
         return this.hfcSqlSession.update("updateAppreciate",appreciate);
@@ -93,5 +97,12 @@ public class AppreciateDao  extends IBatisBaseDao {
         param.put("updatedAt", updatedAt);
         param.put("count", count);
         return this.hfcSqlSession.selectList("appreciateListOrderByUpdatedAt",param);
+    }
+
+    public Integer updateAppreciateLikeCount(Long id,Integer likeCount) {
+        Map param = new HashMap();
+        param.put("id", id);
+        param.put("likeCount", likeCount);
+        return this.hfcSqlSession.update("updateAppreciateLikeCount",param);
     }
 }

@@ -1,5 +1,6 @@
 package com.lucifer.config;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -25,6 +26,7 @@ public class JacksonConfiguration {
         // 字段和值都加引号
         objectMapper.configure(JsonParser.Feature.ALLOW_UNQUOTED_FIELD_NAMES, true);
         objectMapper.setDateFormat(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss")) ;
+        objectMapper.setSerializationInclusion(JsonInclude.Include.NON_NULL);
         jsonConverter.setObjectMapper(objectMapper);
         return jsonConverter;
     }

@@ -1,6 +1,8 @@
 package com.lucifer.service.hfc;
 
+import com.lucifer.dao.hfc.AppreciateDao;
 import com.lucifer.dao.hfc.MemberDao;
+import com.lucifer.model.hfc.Appreciate;
 import com.lucifer.model.hfc.AppreciateLike;
 import com.lucifer.utils.Constant;
 import com.lucifer.utils.DateUtils;
@@ -25,6 +27,9 @@ public class AppreciateLikeService {
     @Resource
     private MemberDao memberDao;
 
+    @Resource
+    private AppreciateDao appreciateDao;
+
     public Result saveLike(Long appreciateId, String token) {
         Long userId = memberDao.getMemberIdByToken(token);
         if (null == userId) {
@@ -35,6 +40,7 @@ public class AppreciateLikeService {
            return Result.ok("您已赞过");
         }
         redisTemplate.opsForZSet().add(Constant.CACHE_KEY_PRAISE_APPRECIATE_PRE+appreciateId,userId, DateUtils.now().getTime());
+        this.resetDbLikeCount(appreciateId);
         return Result.ok();
 
     }
@@ -57,5 +63,19 @@ public class AppreciateLikeService {
             return Result.ok();
         }
         return Result.fail();
+    }
+
+    public Integer likeCount(Long appreciateId){
+        Long count =  redisTemplate.opsForZSet().zCard(Constant.CACHE_KEY_PRAISE_APPRECIATE_PRE+appreciateId);
+        if (null == count) {
+            return 0;
+        }
+        return count.intValue();
+//      return sqlSession.selectOne("selectActivePraiseCount",activeId);
+    }
+
+    public void resetDbLikeCount(Long appreciateId){
+        Integer count = this.likeCount(appreciateId);
+        appreciateDao.updateAppreciateLikeCount(appreciateId,count);
     }
 }

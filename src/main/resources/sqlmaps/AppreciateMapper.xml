@@ -88,10 +88,17 @@
         where id = #{id}
     </delete>
 
+    <update id="updateAppreciateLikeCount">
+        update  appreciate set like_count = #{likeCount} where id = #{id}
+    </update>
+
     <select id="getAppreciate" resultMap="AppreciateMap">
         select appreciate.*,appreciate_category.name category_name from appreciate
         left outer join appreciate_category on appreciate.category_id = appreciate_category.id
         where  appreciate.id = #{id}
+    </select>
+    <select id="getAppreciateCounts" resultMap="AppreciateMap">
+        select id,click_count,like_count,comment_count from appreciate where id = #{id}
     </select>
 
     <select id="appreciateListOrderByUpdatedAt"   resultMap="AppreciateMap">
@@ -195,6 +202,8 @@
         left outer join appreciate_category on appreciate_knowledge.category_id = appreciate_category.id
         where  appreciate_knowledge.id = #{id}
     </select>
+
+
 
 
 </mapper>
