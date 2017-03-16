@@ -50,7 +50,7 @@ public class AppreciateReadService extends  Thread{
         try {
             Long id = (Long)redisTemplate.opsForList().rightPop(Constant.CACHE_KEY_PERSISTENCE_READ_APPRECIATE);
             if (null == id) {
-                logger.info(Constant.CACHE_KEY_PERSISTENCE_READ_APPRECIATE + "right pop id is null and turn to sleep");
+                logger.debug(Constant.CACHE_KEY_PERSISTENCE_READ_APPRECIATE + "right pop id is null and turn to sleep");
                 Thread.sleep(5000);
                 return;
             }

@@ -52,6 +52,8 @@ public class Constant {
 
 	public static final String CACHE_KEY_PERSISTENCE_READ_APPRECIATE = "HFC:PERSISTENCE:READ:APPRECIATE:";
 
+	public static final String CACHE_KEY_GET_APPRECIATE = "HFC:CACHE:GET:APPRECIATE:";
+
 	public static final Integer LOGIN_TIME_OUT= 3600 * 24 *10;
 
 

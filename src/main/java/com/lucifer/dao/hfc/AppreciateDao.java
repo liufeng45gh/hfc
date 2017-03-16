@@ -1,11 +1,16 @@
 package com.lucifer.dao.hfc;
 
+import com.lucifer.cache.AppCache;
+import com.lucifer.cache.CacheProvider;
 import com.lucifer.dao.IBatisBaseDao;
 import com.lucifer.model.hfc.Appreciate;
 import com.lucifer.model.hfc.AppreciateCategory;
+import com.lucifer.utils.Constant;
 import com.lucifer.utils.DateUtils;
+import com.sun.tools.internal.jxc.ap.Const;
 import org.springframework.stereotype.Component;
 
+import javax.annotation.Resource;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -16,6 +21,9 @@ import java.util.Map;
  */
 @Component
 public class AppreciateDao  extends IBatisBaseDao {
+
+    @Resource
+    private AppCache appCache;
 
     public List<AppreciateCategory> appreciateCategoryList(){
         return this.hfcSqlSession.selectList("appreciateCategoryList");
@@ -76,7 +84,14 @@ public class AppreciateDao  extends IBatisBaseDao {
     }
 
     public Appreciate getAppreciate(Long id){
-        return this.hfcSqlSession.selectOne("getAppreciate",id);
+        String key = Constant.CACHE_KEY_GET_APPRECIATE + id;
+        return appCache.find(key, new CacheProvider() {
+            @Override
+            public Object getData() {
+                return hfcSqlSession.selectOne("getAppreciate",id);
+            }
+        });
+
     }
 
     public Appreciate getAppreciateCounts(Long id){
