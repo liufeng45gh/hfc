@@ -21,8 +21,6 @@ public class CmsWebAppConfigure  extends WebMvcConfigurerAdapter {
     @Resource
     private CmsCheckAuthInterceptor cmsCheckAuthInterceptor;
 
-
-
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
         // 多个拦截器组成一个拦截器链

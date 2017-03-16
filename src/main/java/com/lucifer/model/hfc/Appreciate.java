@@ -192,7 +192,7 @@ public class Appreciate implements Serializable {
             "<div  class=\"name\">"+this.title+"</div>"+
 
                 "<p class=\"stats less\">"+
-                    "<span title=\"喜欢\" class=\"like\"><i></i>153</span>"+
+                    "<span title=\"喜欢\" class=\"like\"><i></i>"+this.likeCount+"</span>"+
                     "<span title=\"评论\" class=\"comment\"><i></i>"+this.commentCount+"</span>"+
                 "</p>"+
 
