@@ -3,13 +3,16 @@ package com.lucifer.model.hfc;
 import com.lucifer.utils.Constant;
 import org.springframework.format.annotation.DateTimeFormat;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
 /**
  * Created by liufx on 17/1/16.
  */
-public class Appreciate {
+public class Appreciate implements Serializable {
+
+    private static final long serialVersionUID = 1L;
 
     private Long id;
 
