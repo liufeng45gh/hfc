@@ -4,6 +4,7 @@ import com.lucifer.cache.AppCache;
 import com.lucifer.cache.CacheProvider;
 import com.lucifer.config.ServerConfig;
 import com.lucifer.utils.Constant;
+import com.lucifer.utils.DateUtils;
 import com.lucifer.utils.HttpClientUtils;
 import com.lucifer.utils.StringHelper;
 import org.json.JSONException;
@@ -51,6 +52,7 @@ public class IndexCacheInterceptor extends HandlerInterceptorAdapter {
         response.getWriter().write(html);
         response.setContentType("text/html;charset=UTF-8");
         response.setHeader("Content-Language","zh-CN");
+        response.setHeader("Date", DateUtils.now().toString());
         return false;
     }
 
