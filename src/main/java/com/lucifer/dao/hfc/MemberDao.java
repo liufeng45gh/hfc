@@ -186,7 +186,7 @@ public class MemberDao extends IBatisBaseDao {
 
 
     public Long getMemberIdByToken(String token){
-        return (Long)redisTemplate.opsForValue().get(Constant.CACHE_KEY_TOKEN_PRE+token);
+        return (Long)redisTemplate.opsForValue().get(Constant.CACHE_KEY_PERSISTENCE_TOKEN_PRE+token);
         //return hfcSqlSession.selectOne("getMemberIdByToken",token);
     }
 
@@ -199,13 +199,13 @@ public class MemberDao extends IBatisBaseDao {
         //accessToken.setCode(code);
 
         //this.hfcSqlSession.insert("insertUserLoginToken",accessToken);
-        redisTemplate.opsForValue().set(Constant.CACHE_KEY_TOKEN_PRE+token,userId);
-        redisTemplate.expire(Constant.CACHE_KEY_TOKEN_PRE+token,Constant.LOGIN_TIME_OUT, TimeUnit.SECONDS);
+        redisTemplate.opsForValue().set(Constant.CACHE_KEY_PERSISTENCE_TOKEN_PRE+token,userId);
+        redisTemplate.expire(Constant.CACHE_KEY_PERSISTENCE_TOKEN_PRE+token,Constant.LOGIN_TIME_OUT, TimeUnit.SECONDS);
         return token;
     }
 
     public void removeToken(String token){
-        redisTemplate.delete(Constant.CACHE_KEY_TOKEN_PRE+token);
+        redisTemplate.delete(Constant.CACHE_KEY_PERSISTENCE_TOKEN_PRE+token);
     }
 
     public AccessToken getAccessTokenByCode(String code){

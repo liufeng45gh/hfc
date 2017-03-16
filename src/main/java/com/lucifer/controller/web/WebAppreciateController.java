@@ -3,10 +3,12 @@ package com.lucifer.controller.web;
 import com.lucifer.dao.hfc.AppreciateDao;
 import com.lucifer.model.hfc.Appreciate;
 import com.lucifer.model.hfc.AppreciateCategory;
+import com.lucifer.service.hfc.AppreciateReadService;
 import com.lucifer.service.hfc.AppreciateSearchService;
 import com.lucifer.service.hfc.AppreciateService;
 import com.lucifer.utils.Constant;
 import com.lucifer.utils.PageInfoWriter;
+import com.lucifer.utils.Result;
 import org.json.JSONException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -36,6 +38,10 @@ public class WebAppreciateController {
 
     @Resource
     private AppreciateService appreciateService;
+
+    @Resource
+    private AppreciateReadService appreciateReadService;
+
 
     private Logger logger = LoggerFactory.getLogger(this.getClass());
 
@@ -144,5 +150,12 @@ public class WebAppreciateController {
     public Appreciate counts(@PathVariable Long id){
         Appreciate appreciate = appreciateDao.getAppreciateCounts(id);
         return appreciate;
+    }
+
+    @RequestMapping(value="/{id}/read",method = RequestMethod.POST)
+    @ResponseBody
+    public Result read(@PathVariable Long id){
+        appreciateReadService.readAppreciate(id);
+        return Result.ok();
     }
 }

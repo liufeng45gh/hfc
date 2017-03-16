@@ -92,6 +92,10 @@
         update  appreciate set like_count = #{likeCount} where id = #{id}
     </update>
 
+    <update id="appreciateAddOneRead">
+        update appreciate set click_count = click_count +1 where id = #{id}
+    </update>
+
     <select id="getAppreciate" resultMap="AppreciateMap">
         select appreciate.*,appreciate_category.name category_name from appreciate
         left outer join appreciate_category on appreciate.category_id = appreciate_category.id

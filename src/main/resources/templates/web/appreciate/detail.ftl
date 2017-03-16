@@ -94,6 +94,7 @@
     <input type="hidden" id="post-comment-url" value="/appreciate/post-comment"/>
     <input type="hidden" id="counts-url" value="/appreciate/${(entity.id)!}/counts"/>
     <input type="hidden" id="like-url" value="/appreciate/${(entity.id)!}/like"/>
+    <input type="hidden" id="read-url" value="/appreciate/${(entity.id)!}/read"/>
 </div>
 
 <script  src="/web/js/appreciate/detail.js"></script>

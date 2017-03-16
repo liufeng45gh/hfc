@@ -105,4 +105,8 @@ public class AppreciateDao  extends IBatisBaseDao {
         param.put("likeCount", likeCount);
         return this.hfcSqlSession.update("updateAppreciateLikeCount",param);
     }
+
+    public Integer appreciateAddOneRead(Long id){
+        return this.hfcSqlSession.update("appreciateAddOneRead",id);
+    }
 }

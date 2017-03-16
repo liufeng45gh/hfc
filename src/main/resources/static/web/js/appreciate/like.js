@@ -1,6 +1,7 @@
 $(document).ready(function () {
      reloadCounts();
      isLiked();
+     submitRead();
 });
 
 function reloadCounts(){
@@ -88,4 +89,26 @@ function submitLike(){
 
        }
      });
+}
+
+function submitRead(){
+    var url = $("#read-url").val();
+    var data_send = {};
+    var read_request =$.ajax({
+        type: 'post',
+        url: url,
+        data: data_send,
+        dataType: 'json'
+    });
+
+    read_request.fail(function( jqXHR, textStatus ) {
+        if(jqXHR.status==401){
+        //openWeiboLogin();
+
+        }
+    });
+
+    read_request.done(function(data) {
+        //do nothing
+    });
 }
