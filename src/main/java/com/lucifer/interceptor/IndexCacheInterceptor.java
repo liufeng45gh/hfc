@@ -49,7 +49,8 @@ public class IndexCacheInterceptor extends HandlerInterceptorAdapter {
             return true;
         }
         response.getWriter().write(html);
-        response.setContentType("text/html");
+        response.setContentType("text/html;charset=UTF-8");
+        response.setHeader("Content-Language","zh-CN");
         return false;
     }
 

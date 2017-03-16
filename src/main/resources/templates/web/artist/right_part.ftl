@@ -20,7 +20,7 @@
         <div class="recommend-item">
             <div class="logo">
                 <a href="/artist/${(recommend.artist.id)!}/detail" target="_blank">
-                    <img src="${(recommend.artist.avatar)!}" >
+                    <img src="${(recommend.artist.avatar)!}" />
                 </a>
             </div>
             <div class="text">
