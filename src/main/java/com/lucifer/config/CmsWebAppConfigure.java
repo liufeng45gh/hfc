@@ -21,8 +21,7 @@ public class CmsWebAppConfigure  extends WebMvcConfigurerAdapter {
     @Resource
     private CmsCheckAuthInterceptor cmsCheckAuthInterceptor;
 
-    @Resource
-    private IndexCacheInterceptor indexCacheInterceptor;
+
 
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
@@ -32,7 +31,7 @@ public class CmsWebAppConfigure  extends WebMvcConfigurerAdapter {
         registry.addInterceptor(cmsCheckAuthInterceptor).addPathPatterns("/cms/**");
         //registry.addInterceptor(new MyInterceptor2()).addPathPatterns("/**");
         registry.addInterceptor(uCenterCheckAuthInterceptor).addPathPatterns("/u-center/**");
-        registry.addInterceptor(indexCacheInterceptor).addPathPatterns("/");
+        //registry.addInterceptor(indexCacheInterceptor).addPathPatterns("/");
         super.addInterceptors(registry);
     }
 

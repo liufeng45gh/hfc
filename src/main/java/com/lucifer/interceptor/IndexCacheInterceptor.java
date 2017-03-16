@@ -27,32 +27,18 @@ import java.util.List;
 @Component
 public class IndexCacheInterceptor extends HandlerInterceptorAdapter {
 
-    @Resource
-    private AppCache appCache;
+
 
     private Logger logger = LoggerFactory.getLogger(this.getClass());
 
-    @Resource
-    private ServerConfig serverConfig;
+
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
             throws Exception {
         logger.info("IndexCacheInterceptor preHandle has been called");
-        String html =  appCache.find(Constant.CACHE_KEY_INDEX_HTML, new CacheProvider() {
-            @Override
-            public Object getData() {
-                return null;
-            }
-        });
-        if (StringHelper.isEmpty(html)) {
-            logger.info("IndexCacheInterceptor preHandle return true");
-            return true;
-        }
-        response.getWriter().write(html);
-        response.setContentType("text/html;charset=UTF-8");
-        response.setHeader("Content-Language","zh-CN");
-        response.setHeader("Date", DateUtils.now().toString());
+
+
         return false;
     }
 
@@ -75,22 +61,6 @@ public class IndexCacheInterceptor extends HandlerInterceptorAdapter {
 
     }
 
-    @Scheduled(cron = "0/10 * * * * ?")
-    private void resetIndexCache() {
-        logger.debug("resetIndexCache is {}",serverConfig.resetCache);
-        String url = "http://localhost:"+ serverConfig.port+"/index-no-cache";
-        if (!serverConfig.resetCache) {
-            return;
-        }
-        logger.debug("start reset");
-        try {
-            String html = HttpClientUtils.get(url);
-            if (!StringHelper.isEmpty(html)) {
-              appCache.set(Constant.CACHE_KEY_INDEX_HTML,html);
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
+
 
 }

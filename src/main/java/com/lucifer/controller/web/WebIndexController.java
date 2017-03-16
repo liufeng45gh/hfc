@@ -1,5 +1,8 @@
 package com.lucifer.controller.web;
 
+import com.lucifer.cache.AppCache;
+import com.lucifer.cache.CacheProvider;
+import com.lucifer.config.ServerConfig;
 import com.lucifer.dao.hfc.CarouseDao;
 import com.lucifer.model.hfc.Carousel;
 import com.lucifer.model.hfc.IndexRecommend;
@@ -7,18 +10,20 @@ import com.lucifer.service.hfc.AppreciateSearchService;
 import com.lucifer.service.hfc.ArtistSearchService;
 import com.lucifer.service.hfc.IndexService;
 import com.lucifer.service.hfc.NewsSearchService;
-import com.lucifer.utils.Constant;
-import com.lucifer.utils.PageInfoWriter;
+import com.lucifer.utils.*;
 import org.json.JSONException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
@@ -44,12 +49,30 @@ public class WebIndexController {
     @Resource
     private AppreciateSearchService appreciateSearchService;
 
+    @Resource
+    private ServerConfig serverConfig;
+
+    @Resource
+    private AppCache appCache;
+
 
     private Logger logger = LoggerFactory.getLogger(this.getClass());
 
     @RequestMapping(value="/",method = RequestMethod.GET)
-    public String newsIndex(HttpServletRequest request){
-          return this.indexWithNoCache(request);
+    @ResponseBody
+    public String newsIndex(HttpServletRequest request,HttpServletResponse response){
+
+        response.setContentType("text/html;charset=UTF-8");
+        response.setHeader("Content-Language","zh-CN");
+        response.setHeader("Date", DateUtils.now().toString());
+        //response.setHeader("Content-Type","text/html;charset=UTF-8");
+        String html =  appCache.find(Constant.CACHE_KEY_INDEX_HTML, new CacheProvider() {
+            @Override
+            public Object getData() {
+                return null;
+            }
+        });
+        return html;
     }
 
 
@@ -74,6 +97,24 @@ public class WebIndexController {
         request.setAttribute("memberActivityRecommendList",memberActivityRecommendList);
 
         return "/web/index";
+    }
+
+    @Scheduled(cron = "0/10 * * * * ?")
+    private void resetIndexCache() {
+        logger.debug("resetIndexCache is {}",serverConfig.resetCache);
+        String url = "http://localhost:"+ serverConfig.port+"/index-no-cache";
+        if (!serverConfig.resetCache) {
+            return;
+        }
+        logger.debug("start reset");
+        try {
+            String html = HttpClientUtils.get(url);
+            if (!StringHelper.isEmpty(html)) {
+                appCache.set(Constant.CACHE_KEY_INDEX_HTML,html);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @RequestMapping(value="/search",method = RequestMethod.GET)
