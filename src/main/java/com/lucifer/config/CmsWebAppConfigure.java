@@ -1,6 +1,7 @@
 package com.lucifer.config;
 
 import com.lucifer.interceptor.CmsCheckAuthInterceptor;
+import com.lucifer.interceptor.IndexCacheInterceptor;
 import com.lucifer.interceptor.UCenterCheckAuthInterceptor;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
@@ -20,6 +21,9 @@ public class CmsWebAppConfigure  extends WebMvcConfigurerAdapter {
     @Resource
     private CmsCheckAuthInterceptor cmsCheckAuthInterceptor;
 
+    @Resource
+    private IndexCacheInterceptor indexCacheInterceptor;
+
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
         // 多个拦截器组成一个拦截器链
@@ -28,6 +32,7 @@ public class CmsWebAppConfigure  extends WebMvcConfigurerAdapter {
         registry.addInterceptor(cmsCheckAuthInterceptor).addPathPatterns("/cms/**");
         //registry.addInterceptor(new MyInterceptor2()).addPathPatterns("/**");
         registry.addInterceptor(uCenterCheckAuthInterceptor).addPathPatterns("/u-center/**");
+        registry.addInterceptor(indexCacheInterceptor).addPathPatterns("/");
         super.addInterceptors(registry);
     }
 

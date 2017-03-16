@@ -1,6 +1,7 @@
 server:
    port: 8080
    contextPath: /
+   resetCache: true
 spring:
   redis:
     host: hfc.dbdbd.cn

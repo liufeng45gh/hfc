@@ -49,7 +49,12 @@ public class WebIndexController {
 
     @RequestMapping(value="/",method = RequestMethod.GET)
     public String newsIndex(HttpServletRequest request){
+          return this.indexWithNoCache(request);
+    }
 
+
+    @RequestMapping(value="/index-no-cache",method = RequestMethod.GET)
+    public String indexWithNoCache(HttpServletRequest request){
         List<Carousel> carouselList = carouseDao.carouselList();
         request.setAttribute("carouselList",carouselList);
 
@@ -67,7 +72,6 @@ public class WebIndexController {
 
         List<IndexRecommend> memberActivityRecommendList = indexService.memberActivityIndexRecommendListLimit4();
         request.setAttribute("memberActivityRecommendList",memberActivityRecommendList);
-
 
         return "/web/index";
     }

@@ -20,11 +20,11 @@ public class CacheController {
     @Resource
     private MemberDao memberDao;
 
-    @ApiOperation(value = "删除spring user系统缓存")
+    @ApiOperation(value = "删除缓存")
     @RequestMapping(value="/cache/remove-all-cache",method= RequestMethod.GET)
     @ResponseBody
     public Result removeAllCache(){
-        memberDao.removeAllCacheing();
+        //memberDao.removeAllCacheing();
         return Result.ok();
     }
 }

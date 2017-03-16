@@ -36,7 +36,7 @@ public class MemberDao extends IBatisBaseDao {
     private RedisTemplate redisTemplate;
 
 
-    public void removeAllCacheing(){
+    public void removeAllUserCacheing(){
         logger.info("removeAllCacheing  has been called!!----");
         String keyPattern = "HFC:CACHE:MEMBER:getMemberById:*";
         appCache.removeAll(keyPattern);
@@ -115,7 +115,7 @@ public class MemberDao extends IBatisBaseDao {
 
     //@Cacheable(value="userByIdCache" ,key="'userByIdCache:'+#userId")//
     public Member getMemberById(final Long userId){
-        String key = "HFC:CACHE:MEMBER:getMemberById:"+userId;
+        String key = Constant.CACHE_KEY_GET_MEMBET_BY_ID+userId;
         Member member =  appCache.find(key, new CacheProvider() {
             @Override
             public Object getData() {
