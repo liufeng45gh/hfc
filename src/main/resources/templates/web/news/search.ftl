@@ -58,7 +58,7 @@
                             </a>
                             <a href="/news/${news.id}/detail" target="_blank">
                                 <div class="desc">
-                                    ${news.summaryText()}
+                                    ${(news.summary)!}
                                 </div>
                             </a>
                             <div class="date-info">[${(news.publishAt?string("yyyy-MM-dd HH:mm:ss"))!}]</div>

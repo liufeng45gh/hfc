@@ -51,10 +51,17 @@
 
 .artist-recommend {
     margin: 0px auto;
-    //height: 500px;
+    height: auto;
 }
 
 .w1200{
     width: 1200px;
     margin: 0px auto;
+}
+em {
+    color: #c00;
+}
+
+.right-btn a{
+    color:  #FFFFFF;
 }

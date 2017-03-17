@@ -106,6 +106,7 @@ em{
 
 .new-banner .hot-words {
     color: #ddd;
+    margin-top: 15px;
 }
 
 .new-banner .search-box {
@@ -475,7 +476,7 @@ em{
      display: block;
  }
 
- .rnTopic .news-item em {
+ .rnTopic .news-item .n-title {
     display: block;
     width: 180px;
     height: 40px;

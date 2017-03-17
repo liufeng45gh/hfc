@@ -128,12 +128,14 @@ public class WebIndexController {
         logger.info("pageInfoNews.getDataList().size(): {}",pageInfoNews.getDataList().size());
         //List<News> newsList = newsDao.cmsNewsList(title,offset,pageSize);
         request.setAttribute("newsList",pageInfoNews.getDataList());
+        request.setAttribute("newsNumberFound",pageInfoNews.getAllRecordCount());
 
 
         PageInfoWriter pageInfoArtist = artistSearchService.searchList(title,page,pageSize);
         logger.info("pageInfoArtist.getDataList().size(): {}",pageInfoArtist.getDataList().size());
         //List<Artist> artistList = artistDao.artistList(name,offset,pageSize);
         request.setAttribute("artistList",pageInfoArtist.getDataList());
+        request.setAttribute("artistNumberFound",pageInfoArtist.getAllRecordCount());
 
 
 //        PageInfoWriter pageInfoAppreciate = appreciateSearchService.searchList(title,page,pageSize);

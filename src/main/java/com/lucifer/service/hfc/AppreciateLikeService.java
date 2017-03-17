@@ -1,5 +1,6 @@
 package com.lucifer.service.hfc;
 
+import com.lucifer.cache.AppCache;
 import com.lucifer.dao.hfc.AppreciateDao;
 import com.lucifer.dao.hfc.MemberDao;
 import com.lucifer.model.hfc.Appreciate;
@@ -29,6 +30,8 @@ public class AppreciateLikeService {
 
     @Resource
     private AppreciateDao appreciateDao;
+
+
 
     public Result saveLike(Long appreciateId, String token) {
         Long userId = memberDao.getMemberIdByToken(token);
@@ -77,5 +80,6 @@ public class AppreciateLikeService {
     public void resetDbLikeCount(Long appreciateId){
         Integer count = this.likeCount(appreciateId);
         appreciateDao.updateAppreciateLikeCount(appreciateId,count);
+        appreciateDao.removeAppreciateCache(appreciateId);
     }
 }

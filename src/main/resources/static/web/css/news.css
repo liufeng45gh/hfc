@@ -153,7 +153,7 @@
     line-height: 26px;
     font-size: 14px;
     color: #999;
-    height: 62px;
+    height: 60px;
     overflow: hidden;
     text-align: justify;
     padding-top: 3px;
@@ -168,7 +168,7 @@
     overflow: hidden;
     color: #999;
     text-align: right;
-    margin-top: 0px;
+    margin-top: 13px;
     font-size: 12px;
     padding-right: 15px;
 }

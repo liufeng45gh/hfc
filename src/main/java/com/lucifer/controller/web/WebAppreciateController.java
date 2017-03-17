@@ -118,9 +118,10 @@ public class WebAppreciateController {
 
     @RequestMapping(value="/search-list.json",method = RequestMethod.GET)
     @ResponseBody
-    public List<Map> searchJsonList(HttpServletRequest request,
+    public Map searchJsonList(HttpServletRequest request,
                               @RequestParam(value = "title",required=false,defaultValue="") String title,
                               @RequestParam(value = "page",required=false,defaultValue="1")Integer page) throws IOException, JSONException {
+        Map<String,Object> resultMap = new HashMap<>();
         Integer pageSize = Constant.PAGESIZE;
         Integer offset = (page-1) * pageSize;
 
@@ -129,7 +130,7 @@ public class WebAppreciateController {
         //List<News> newsList = newsDao.cmsNewsList(title,offset,pageSize);
         //request.setAttribute("newsList",pageInfo.getDataList());
 
-        Integer matchRecordCount = pageInfo.getAllRecordCount();
+        Integer numberFound = pageInfo.getAllRecordCount();
 
         List<Appreciate> appreciateList = pageInfo.getDataList();
         List<Map> resultList = new ArrayList<>();
@@ -141,7 +142,9 @@ public class WebAppreciateController {
         }
 
         //request.setAttribute("appreciateList",appreciateList);
-        return resultList;
+        resultMap.put("numberFound",numberFound);
+        resultMap.put("matchList",resultList);
+        return resultMap;
 
     }
 

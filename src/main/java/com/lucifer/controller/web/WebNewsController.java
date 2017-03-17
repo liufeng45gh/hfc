@@ -136,7 +136,7 @@ public class WebNewsController {
 //        List<News> newsList = newsService.searchList(title,offset,pageSize);
 //        request.setAttribute("newsList",newsList);
         Integer matchRecordCount = pageInfo.getAllRecordCount();
-        return "/web/news/list";
+        return "/web/news/search-list";
     }
 
     @RequestMapping(value="/{id}/detail",method = RequestMethod.GET)

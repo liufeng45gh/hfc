@@ -183,8 +183,8 @@ public class AppreciateSearchService {
         SolrDocumentList docs = rsp.getResults();
         Map<String, Map<String, List<String>>> highMap = rsp.getHighlighting();
 
-        String lowerCaseText = text.toLowerCase();
-
+//        String lowerCaseText = text.toLowerCase();
+//
         //List<String> segments = this.segment(lowerCaseText);
 
         logger.info("docs.size(): "+ docs.size());
@@ -220,13 +220,14 @@ public class AppreciateSearchService {
 
 
     private Appreciate docToObject(SolrDocument doc){
-        Appreciate appreciate = new Appreciate();
-        appreciate.setId((Long)doc.getFieldValue("id"));
-        appreciate.setTitle((String)doc.getFieldValue("title"));
-        appreciate.setLogo((String)doc.getFieldValue("logo"));
-        appreciate.setUpdatedAt((Date) doc.getFieldValue("updatedAt"));
-        appreciate.setCategoryId((Long)doc.getFieldValue("categoryId"));
+//        Appreciate appreciate = new Appreciate();
+//        appreciate.setId((Long)doc.getFieldValue("id"));
+//        appreciate.setTitle((String)doc.getFieldValue("title"));
+//        appreciate.setLogo((String)doc.getFieldValue("logo"));
+//        appreciate.setUpdatedAt((Date) doc.getFieldValue("updatedAt"));
+//        appreciate.setCategoryId((Long)doc.getFieldValue("categoryId"));
         //news.setPublishAt((Date) doc.getFieldValue("publishAt"));
+        Appreciate appreciate = appreciateDao.getAppreciate((Long)doc.getFieldValue("id"));
         return appreciate;
     }
 

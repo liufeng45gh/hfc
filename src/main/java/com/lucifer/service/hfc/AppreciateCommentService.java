@@ -1,6 +1,7 @@
 package com.lucifer.service.hfc;
 
 import com.lucifer.dao.hfc.AppreciateCommentDao;
+import com.lucifer.dao.hfc.AppreciateDao;
 import com.lucifer.dao.hfc.MemberDao;
 import com.lucifer.model.hfc.AppreciateComment;
 import com.lucifer.model.hfc.Member;
@@ -25,6 +26,9 @@ public class AppreciateCommentService {
 
     @Resource
     private AppreciateCommentDao appreciateCommentDao;
+
+    @Resource
+    private AppreciateDao appreciateDao;
 
     public Result saveComment(AppreciateComment appreciateComment,String token){
 //        Long userId = memberDao.getMemberIdByToken(token);
@@ -61,5 +65,6 @@ public class AppreciateCommentService {
     private void resetCommentCount(Long appreciateId){
         Integer count = appreciateCommentDao.getAppreciateCommentCount(appreciateId);
         appreciateCommentDao.updateAppreciateCommentCount(appreciateId,count);
+        appreciateDao.removeAppreciateCache(appreciateId);
     }
 }

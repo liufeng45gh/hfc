@@ -46,6 +46,6 @@
 var title = "${RequestParameters["title"]?default("")}";
 </script>
 
-<script  src="/web/js/appreciate/index.js"></script>
+<script  src="/web/js/appreciate/search.js"></script>
 </body>
 </html>

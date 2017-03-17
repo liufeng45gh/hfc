@@ -49,7 +49,7 @@
                     <div class="news-item">
                         <a href="/news/${recommend.target.id?default("")}/detail" target="_blank">
                             <p><img src="${recommend.target.logo?default("")}" ></p>
-                            <em>${recommend.target.title?default("")}</em>
+                            <div class="n-title">${recommend.target.title?default("")}</div>
                         </a>
                     </div>
                     </#list>
@@ -252,14 +252,7 @@ $(function() {
 	$('#focus').slideFocus();
 });
 </script>
-<script type="text/javascript">
-$(function() {
-    $("#search-btn").click(function (){
-    $("#search-form").submit();
-    });
-    $("#head-href-index").addClass("active");
-});
-</script>
+
 <script  src="/web/js/index.js"></script>
 
 </body>

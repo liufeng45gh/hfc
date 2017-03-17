@@ -20,14 +20,14 @@
             </div>
         </div>
         <div class="search-box">
-            <form method="get" action="/search/" class="new-searching-unit" data-regestered="regestered">
-                <input id="query" type="text" size="27" name="q" autocomplete="off" placeholder="搜索你喜欢的" />
-                <a href="#" onclick="return false;" class="go"></a>
+            <form method="get" action="/search" class="new-searching-unit" id="search-form">
+                <input id="query" type="text" size="27" name="title" autocomplete="off" placeholder="搜索你喜欢的" value="${(RequestParameters["title"])!}"/>
+                <a href="#" onclick="return false;" class="go"  id="search-btn"></a>
             </form>
             <div class="search-hint">
 
             </div>
-            <div class="hot-words"><span>热门搜索：</span><a href="http://huaban.com/boards/31031480/">匠人匠心</a></div>
+            <div class="hot-words"><span>热门搜索：</span><a href="/search?title=艺术">艺术</a></div>
         </div>
         <div class="author">
             <div class="wrapper wrapper-996"><span>制作：</span><a href="/uzmwrnffhi/" rel="nofollow">海富文化网</a></div>
@@ -36,6 +36,14 @@
 
     <#include "menu-bar.ftl"/>
 
+<script>
 
+$(function() {
+	$("#search-btn").click(function (){
+        $("#search-form").submit();
+	});
+	$("#head-href-index").addClass("active");
+});
+</script>
 
 </div>

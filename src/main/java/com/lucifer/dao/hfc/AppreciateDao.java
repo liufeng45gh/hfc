@@ -94,6 +94,11 @@ public class AppreciateDao  extends IBatisBaseDao {
 
     }
 
+    public void removeAppreciateCache(Long id){
+        String key = Constant.CACHE_KEY_GET_APPRECIATE + id;
+        appCache.remove(key);
+    }
+
     public Appreciate getAppreciateCounts(Long id){
         return this.hfcSqlSession.selectOne("getAppreciateCounts",id);
     }

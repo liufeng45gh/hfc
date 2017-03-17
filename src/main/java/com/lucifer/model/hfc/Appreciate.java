@@ -4,6 +4,7 @@ import com.lucifer.utils.Constant;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -51,7 +52,7 @@ public class Appreciate implements Serializable {
 
     private Integer commentCount;
 
-    private List<AppreciateComment> commentList;
+    private List<AppreciateComment> commentList = new ArrayList<AppreciateComment>();
 
     public Long getId() {
         return id;
@@ -208,6 +209,9 @@ public class Appreciate implements Serializable {
 
     private String commentHtml(){
         String html = "";
+        if (null == this.commentList || this.commentList.size()==0) {
+            return html;
+        }
         for (AppreciateComment appreciateComment: this.commentList) {
             String avatar = Constant.defaultAvatar;
             String nick = "**";
