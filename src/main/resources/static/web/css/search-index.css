@@ -5,6 +5,9 @@
 .rnTopic{
    width:1200px;
 }
+.rnTopic .news-item {
+   width: 189px;
+}
 .search-title .left-title{
     float: left;
     height: 26px;
