@@ -450,7 +450,7 @@ em{
  }
  .rnTopic .news-item {
      float: left;
-     width: 190px;
+     width: 189px;
      height: 190px;
      margin: 0 0 20px 10px;
      border: 1px solid #e5e5e5;
@@ -655,5 +655,6 @@ em{
     border-bottom: 1px solid #F0F0F0;
     cursor: pointer;
 }
+
 
 
