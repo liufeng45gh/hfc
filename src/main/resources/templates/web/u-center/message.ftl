@@ -125,6 +125,6 @@
 <script>
     $("#message").addClass("active");
 </script>
-
+<script type="text/javascript" charset="UTF-8" src="/web/js/u-center/message.js"></script>
 </body>
 </html>

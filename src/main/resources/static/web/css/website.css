@@ -259,6 +259,7 @@ em{
 }
 .user-nav .avatar{
     float: left;
+    position: relative;
 }
 .user-nav .nick{
     width: 150px;
@@ -655,6 +656,24 @@ em{
     line-height: 40px;
     border-bottom: 1px solid #F0F0F0;
     cursor: pointer;
+}
+
+#message-status{
+   position: absolute;
+   left: 32px;
+   top: 0;
+   background-color: #DB3434;
+   color: #fff;
+   border-radius: 16px;
+   min-width: 10px;
+   height: 16px;
+   padding: 0 3px;
+   line-height: 16px;
+   font-size: 12px;
+   text-align: center;
+   vertical-align: top;
+   font-family: arial!important;
+   display: none;
 }
 
 

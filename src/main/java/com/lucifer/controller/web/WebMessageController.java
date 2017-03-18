@@ -5,10 +5,7 @@ import com.lucifer.service.hfc.MessageService;
 import com.lucifer.utils.Constant;
 import com.lucifer.utils.Result;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.CookieValue;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
@@ -35,8 +32,16 @@ public class WebMessageController {
     }
 
     @RequestMapping(value="/message-count",method = RequestMethod.GET)
+    @ResponseBody
     public Result newMessageCount(@CookieValue(required = false) String token){
         Integer count =  messageService.newMessageCount(token);
         return Result.ok(count);
+    }
+
+    @RequestMapping(value="/clear-message-count",method = RequestMethod.POST)
+    @ResponseBody
+    public Result clearMessageCount(@CookieValue(required = false) String token){
+        messageService.clearMessageCount(token);
+        return Result.ok();
     }
 }

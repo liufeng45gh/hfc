@@ -69,7 +69,7 @@
                 </a>
                 <a class="header-item" href="#" style="margin-left: 40px;">
                     <div class="user-nav">
-                        <div class="avatar" id="avatar-div"><img src="" id="avatar" style="width:36px;height:36px;"/></div>
+                        <div class="avatar" id="avatar-div"><img src="" id="avatar" style="width:36px;height:36px;"/><span id="message-status">6</span></div>
                         <div class="nick" id="nick-div">已登录</div>
                         <div class="to-click-down"><img src="/web/images/arrow_icon.png" id="to-click-down" style="width:10px;height:6px;"/></div>
                     </div>

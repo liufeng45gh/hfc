@@ -62,6 +62,7 @@ $(function() {
                  $("#c-nick-div").text(data.data.nickName);
                  $("#c-avatar").attr("src",data.data.avatar);
             }
+            resetMessageUnreadCount();
              return;
          }else {
              $(".login-nav").show();
@@ -107,4 +108,35 @@ function hideUserOption(){
 function logout() {
     delCookie("token");
     window.location.reload();
+}
+
+function resetMessageUnreadCount(){
+    var data_send = {};
+
+    var mc_request =$.ajax({
+        type: 'get',
+        url: '/u-center/message-count',
+        data: data_send,
+        dataType: 'json'
+    });
+
+    mc_request.fail(function( jqXHR, textStatus ) {
+        if(jqXHR.status==401){
+          //openWeiboLogin();
+
+        }
+    });
+
+    mc_request.done(function(data) {
+     if (data.ok) {
+        if (data.data>0) {
+            $("#message-status").show();
+            $("#message-status").text(data.data);
+        } else {
+            $("#message-status").hide();
+        }
+        return;
+     }
+    });
+
 }

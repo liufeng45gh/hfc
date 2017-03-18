@@ -61,9 +61,19 @@ public class MessageService {
         }
         String key = Constant.CACHE_KEY_PERSISTENCE_MESSAGE_NEW_COUNT + userId;
         String count =  stringRedisTemplate.opsForValue().get(key);
-        if (StringHelper.isEmpty(count)) {
+        if (!StringHelper.isEmpty(count)) {
              return Integer.valueOf(count);
         }
         return 0;
+    }
+
+    public void clearMessageCount(String token){
+        Long userId = memberDao.getMemberIdByToken(token);
+        if (null == userId) {
+            return ;
+        }
+        String key = Constant.CACHE_KEY_PERSISTENCE_MESSAGE_NEW_COUNT + userId;
+        stringRedisTemplate.delete(key);
+
     }
 }
