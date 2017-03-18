@@ -7,7 +7,6 @@
     <#include "../c-head.ftl"/>
 
     <link rel='stylesheet' href='/web/css/news.css' type='text/css' media='screen' />
-    <link rel='stylesheet' href='/web/css/appreciate.css' type='text/css' media='screen' />
     <link rel='stylesheet' href='/web/css/u-center.css' type='text/css' media='screen' />
 
     <script  type="text/javascript" src="/My97DatePicker/WdatePicker.js"></script>

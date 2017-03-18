@@ -21,7 +21,7 @@
         <result column="updated_at" property="updatedAt"/>
 
     </resultMap>
-    <insert id="insertAppreciateComment">
+    <insert id="insertAppreciateComment" useGeneratedKeys="true" keyProperty="id">
         insert into appreciate_comment
         (appreciate_id,parent_id,user_id,content,created_at,updated_at,timestamp,user_nick,answer_user_nick,answer_user_id,answer_content)
         values

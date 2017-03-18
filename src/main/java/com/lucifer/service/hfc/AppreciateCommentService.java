@@ -7,6 +7,8 @@ import com.lucifer.model.hfc.AppreciateComment;
 import com.lucifer.model.hfc.Member;
 import com.lucifer.utils.Result;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.CookieValue;
 
 import javax.annotation.Resource;
@@ -30,6 +32,10 @@ public class AppreciateCommentService {
     @Resource
     private AppreciateDao appreciateDao;
 
+    @Resource
+    private MessageService messageService;
+
+    @Transactional(propagation= Propagation.REQUIRED)
     public Result saveComment(AppreciateComment appreciateComment,String token){
 //        Long userId = memberDao.getMemberIdByToken(token);
 //        if (null == userId) {
@@ -47,9 +53,16 @@ public class AppreciateCommentService {
             appreciateComment.setAnswerUserId(parentComment.getUserId());
             appreciateComment.setAnswerUserNick(parentMember.getNickName());
             appreciateComment.setAnswerContent(parentComment.getContent());
+
+            appreciateCommentDao.insertAppreciateComment(appreciateComment);
+            messageService.saveReplyAppreciateCommentMessage(parentComment.getUserId(),member.getId(),appreciateComment.getContent(),parentComment.getContent(),appreciateComment.getId().toString());
+
+        } else {
+            appreciateCommentDao.insertAppreciateComment(appreciateComment);
         }
-        appreciateCommentDao.insertAppreciateComment(appreciateComment);
+
         this.resetCommentCount(appreciateComment.getAppreciateId());
+
         return Result.ok();
     }
 

@@ -89,7 +89,8 @@
                     <b class="bot">◆</b>
                     <div class="opt">
                         <div><a href="/u-center/index">修改资料</a></div>
-                        <div>我的消息</div>
+                        <div><a href="/u-center/up-pass">修改密码</a></div>
+                        <div><a href="/u-center/message">我的消息</a></div>
                         <div onclick="logout();">退出</div>
                     </div>
                 </div>

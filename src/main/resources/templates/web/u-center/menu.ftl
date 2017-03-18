@@ -5,4 +5,6 @@
 <a href="/u-center/up-pass">
 <div class="a-category " id="up-pass">修改密码</div>
 </a>
-<div class="a-category">我的消息</div>
+<a href="/u-center/message">
+<div class="a-category" id="message">我的消息</div>
+</a>

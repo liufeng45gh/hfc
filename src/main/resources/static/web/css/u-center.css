@@ -1,3 +1,13 @@
+.a-category {
+    float: left;
+    font-size: 25px;
+    margin-right: 20px;
+    font-weight: bold;
+    line-height: 80px;
+    color: rgb(38,38,38);
+}
+
+
 .box{
     box-shadow: 1px 1px 3px rgba(0,0,0,0.25);
     border-top: 1px solid rgba(0,0,0,0.05);
@@ -159,4 +169,88 @@
 }
 .p-submit{
     margin-left: 195px;
+}
+
+
+
+.msg-item{
+    border-bottom: 1px solid rgb(214, 214, 216);
+    margin-top: 20px;
+    padding-bottom: 20px;
+}
+
+.a-img {
+    width: 75px;
+    float: left;
+}
+
+.a-img img {
+    width: 33px;
+    height: 33px;
+    margin-left: 20px;
+}
+
+.c-right {
+    float: left;
+    width: 1125px;
+}
+
+.c-top {
+    height: 40px;
+}
+
+.nick-red {
+    color: rgb(204,47,54) ;
+    height: 40px;
+    line-height: 40px;
+    font-size: 13px;
+    float: left;
+}
+.t-text{
+    color: #AAAAAA;
+    padding-left: 20px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 14px;
+
+}
+
+.c-date {
+    color: #AAAAAA;
+    height: 40px;
+    line-height: 40px;
+    font-size: 11px;
+}
+.c-text {
+    color: rgb(83,83,83);
+}
+
+.c-parent {
+    background-color: #F7F7F7;
+    margin-top: 15px;
+    border: 1px solid #e5e5e5;
+    padding-left: 15px;
+    margin-right: 30px;
+    position: relative;
+}
+
+.c-parent .bot {
+    font-size: 40px;
+    position: absolute;
+    line-height: 40px;
+    top: -20px;
+    color: #F7F7F7;
+}
+
+.patent-text {
+    color: #AAAAAA;
+    float: left;
+    height: 40px;
+    line-height: 40px;
+    margin-left: 5px;
+    font-size: 11px;
+}
+
+em {
+     color: rgb(204,47,54) ;
 }
