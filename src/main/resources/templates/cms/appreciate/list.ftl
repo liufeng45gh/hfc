@@ -65,9 +65,11 @@
                                         <td objectId="${appreciate.id?default("")}">
                                             <a href="#" onclick="return false;" class="to_update">修改</a>
                                             <span>|</span>
-                                            <a href="#" onclick="return false;" class="to_delete">删除</a>
+                                            <a href="/appreciate/${(appreciate.id)!}/detail " onclick="return false;" class="to_delete">删除</a>
                                             <span>|</span>
-                                            <a href="#" onclick="">查看</a>
+                                            <a href="/" target="_blank">查看</a>
+                                            <span>|</span>
+                                            <a href="#" onclick="return false;" class="manage_comment">评论管理</a>
 
 
 
