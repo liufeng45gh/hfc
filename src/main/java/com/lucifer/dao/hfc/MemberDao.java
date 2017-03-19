@@ -164,12 +164,12 @@ public class MemberDao extends IBatisBaseDao {
 
 
 
-    public List<User> userCmsSearch(String sql){
-        return this.hfcSqlSession.selectList("userCmsSearch", sql);
+    public List<Member> memberCmsSearch(String sql){
+        return this.hfcSqlSession.selectList("memberCmsSearch", sql);
     }
 
-    public Integer userCmsSearchCount(String sql){
-        return this.hfcSqlSession.selectOne("userCmsSearchCount",sql);
+    public Integer memberCmsSearchCount(String sql){
+        return this.hfcSqlSession.selectOne("memberCmsSearchCount",sql);
     }
 
     public List<User> getAllThirdPartUserList(){

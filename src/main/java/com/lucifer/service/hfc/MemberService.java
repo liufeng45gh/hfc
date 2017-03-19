@@ -2,15 +2,21 @@ package com.lucifer.service.hfc;
 
 import com.lucifer.dao.hfc.MemberDao;
 import com.lucifer.model.AccessToken;
+import com.lucifer.model.SearchParam;
+import com.lucifer.model.User;
 import com.lucifer.model.hfc.Member;
 import com.lucifer.utils.Md5Utils;
 import com.lucifer.utils.Result;
+import com.lucifer.utils.StringHelper;
 import org.json.JSONObject;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.CookieValue;
 
 import javax.annotation.Resource;
 import java.io.IOException;
+import java.util.List;
 
 /**
  * Created by liufx on 17/1/16.
@@ -20,6 +26,8 @@ public class MemberService {
 
     @Resource
     private MemberDao memberDao;
+
+    final Logger logger = LoggerFactory.getLogger(this.getClass());
 
     public Member getMemberByToken(String token){
         Long userId = memberDao.getMemberIdByToken(token);
@@ -107,5 +115,57 @@ public class MemberService {
         dbMember.setPassword(md5NewPassword);
         memberDao.updateMemberPassword(dbMember);
         return Result.ok();
+    }
+
+    public List<Member> memberCmsSearch(SearchParam param){
+        String sql = "select * from user   where 1=1 ";
+        if (!StringHelper.isEmpty(param.getAccount())) {
+            sql = sql + "and user.account like '"+param.getAccount()+"%' ";
+        }
+        if (!StringHelper.isEmpty(param.getNickName())) {
+            sql = sql + "and user.nick_name like '"+param.getNickName()+"%' ";
+        }
+
+        if (!StringHelper.isEmpty(param.getStatus())) {
+            sql = sql + "and user.status = '"+param.getStatus()+"' ";
+        }
+        if (!StringHelper.isEmpty(param.getRoleId())) {
+            sql = sql + "and user.role_id = '"+param.getRoleId()+"' ";
+        }
+        sql = sql + "order by user.id desc limit "+param.getOffset()+","+param.getCount();
+
+
+
+        logger.info("sql is : "+sql);
+
+        List<Member> memberList = memberDao.memberCmsSearch(sql);
+
+
+
+        return memberList;
+    }
+
+    public Integer memberCmsSearchCount(SearchParam param){
+        String sql = "select count(*) from user  where 1=1 ";
+        if (!StringHelper.isEmpty(param.getAccount())) {
+            sql = sql + "and user.account like '"+param.getAccount()+"%' ";
+        }
+        if (!StringHelper.isEmpty(param.getNickName())) {
+            sql = sql + "and user.nick_name like '"+param.getNickName()+"%' ";
+        }
+
+        if (!StringHelper.isEmpty(param.getStatus())) {
+            sql = sql + "and user.status = '"+param.getStatus()+"' ";
+        }
+        if (!StringHelper.isEmpty(param.getRoleId())) {
+            sql = sql + "and user.role_id = '"+param.getRoleId()+"' ";
+        }
+
+        logger.info("sql is : "+sql);
+
+        Integer recordCount  = memberDao.memberCmsSearchCount(sql);
+
+
+        return recordCount;
     }
 }

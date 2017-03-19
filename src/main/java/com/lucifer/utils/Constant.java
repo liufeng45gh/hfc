@@ -60,6 +60,8 @@ public class Constant {
 
 	public static final String CACHE_KEY_INDEX_HTML = "HFC:CACHE:INDEX:HTML:";
 
+	public static final String CACHE_KEY_REMOVE_ALL = "HFC:CACHE:*";
+
 	public static final Integer LOGIN_TIME_OUT= 3600 * 24 *10;
 
 

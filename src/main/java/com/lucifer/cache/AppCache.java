@@ -48,4 +48,6 @@ public class AppCache {
             redisTemplate.delete(aKey);
         }
     }
+
+
 }

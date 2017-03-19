@@ -12,9 +12,9 @@
            <ul class="nav">
            <li data-id="list"><a id="currentItem" href="#">快速导航 <span class="icon-caret-right"></span></a></li>
 
-           <li  data-id="task"><a href="/cms/user/list">用户</a>
+           <li  data-id="task"><a href="/cms/user/list">管理员</a>
            </li>
-           <li  data-id="story"><a href="/cms/user/add">新建用户</a>
+           <li  data-id="story"><a href="/cms/user/add">新建管理员</a>
            </li>
 
            </ul>
@@ -24,7 +24,7 @@
                     <#include "left_menu.ftl"/>
 
                     <div id="admin_right">
-                    			<div class="position"><span>用户</span><span>|</span><span>用户级列表</span><span>|</span><span>新建用户</span></div>
+                    			<div class="position"><span>管理员</span><span>|</span><span>新建管理员</span></div>
                     			<div class="content form_content" >
 
 
@@ -33,7 +33,7 @@
                                             <tbody>
                                                 <tr><th width="20%"></th><td><span style="color:${KEY_RESULT_MESSAGE_COLOR?default("")};">${KEY_RESULT_MESSAGE?default("")}</span></td></tr>
                                                 <tr>
-                                                    <th width="20%" style="text-align:right;">用户账号:</th>
+                                                    <th width="20%" style="text-align:right;">管理员账号:</th>
                                                     <td><input id="account_input"  class="form-control" name="account" style="display:inline-block;" /><label id="account_input_info" style="display:inline-block;">* 用户账号</label></td>
                                                 </tr>
                                                 <tr>

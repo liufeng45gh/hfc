@@ -37,7 +37,7 @@ public class CmsUserController {
     @Resource
     private UserDao userDao;
 
-    final Logger logger = LoggerFactory.getLogger(CmsUserController.class);
+    final Logger logger = LoggerFactory.getLogger(this.getClass());
 
     @SuppressWarnings("unchecked")
     @RequestMapping(value="/cms/user/list",method = RequestMethod.GET)

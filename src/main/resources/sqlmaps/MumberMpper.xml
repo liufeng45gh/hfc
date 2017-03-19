@@ -67,4 +67,11 @@
     <update id="updateMemberPassword">
         update user set password = #{password} where id = #{id}
     </update>
+
+    <select id="memberCmsSearch"  resultMap="MemberMap">
+        ${_parameter}
+    </select>
+    <select id="memberCmsSearchCount" resultType="java.lang.Integer">
+        ${_parameter}
+    </select>
 </mapper>
