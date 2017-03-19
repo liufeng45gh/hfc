@@ -29,18 +29,20 @@
     </insert>
     
     <select id="appreciateCommentList" resultMap="AppreciateCommentMap">
-        select * from appreciate_comment where appreciate_id = #{appreciateId} order by id desc limit #{offset}, #{count}
+        select * from appreciate_comment where is_deleted = 0 and  appreciate_id = #{appreciateId} order by id desc limit #{offset}, #{count}
     </select>
     <select id="getAppreciateComment" resultMap="AppreciateCommentMap">
         select * from appreciate_comment where id = #{id}
     </select>
     <select id="getAppreciateCommentCount" resultType="java.lang.Integer" >
-        select count(*) from appreciate_comment where appreciate_id = #{appreciateId}
+        select count(*) from appreciate_comment where is_deleted = 0 and appreciate_id = #{appreciateId}
     </select>
     <update id="updateAppreciateCommentCount">
         update appreciate set comment_count = #{commentCount} where id = #{id}
     </update>
-
+    <delete id="deleteAppreciateComment">
+        update appreciate_comment set is_deleted = 1 where id = #{id}
+    </delete>
 
 
 </mapper>

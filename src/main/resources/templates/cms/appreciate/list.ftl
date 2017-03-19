@@ -65,9 +65,9 @@
                                         <td objectId="${appreciate.id?default("")}">
                                             <a href="#" onclick="return false;" class="to_update">修改</a>
                                             <span>|</span>
-                                            <a href="/appreciate/${(appreciate.id)!}/detail " onclick="return false;" class="to_delete">删除</a>
+                                            <a href="#" onclick="return false;" class="to_delete">删除</a>
                                             <span>|</span>
-                                            <a href="/" target="_blank">查看</a>
+                                            <a href="/appreciate/${(appreciate.id)!}/detail " target="_blank">查看</a>
                                             <span>|</span>
                                             <a href="#" onclick="return false;" class="manage_comment">评论管理</a>
 
@@ -82,7 +82,7 @@
                         </div>
                         <input type="hidden" id="update-url" value="/cms/appreciate/{id}/update"/>
                         <input type="hidden" id="delete-url" value="/cms/appreciate/{id}/delete"/>
-
+                        <input type="hidden" id="comments-url" value="/cms/appreciate/{id}/comments"/>
 
                 	${pageDiv}
                 </div>

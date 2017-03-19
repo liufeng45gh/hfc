@@ -126,3 +126,38 @@ function replySubmit() {
     });
 
 }
+
+function toDelete(btn){
+    parentId = $(btn).attr("parentId");
+    layer.confirm('确定推荐？', {
+     btn: ['取消','确定'] //按钮
+   }, function(){
+     layer.closeAll();
+   }, function(){
+     deleteComment(parentId);
+   });
+}
+
+function deleteComment(id){
+    var url = $("#delete-url").val();
+    url = url.replace("{id}",id);
+    var data_send = {};
+
+    var delete_request =$.ajax({
+       type: 'post',
+       url: url,
+       data: data_send,
+       dataType: 'json'
+    });
+
+    delete_request.fail(function( jqXHR, textStatus ) {
+      if(jqXHR.status==401){
+         //openWeiboLogin();
+
+      }
+    });
+
+    delete_request.done(function(data) {
+            window.location.reload();
+    });
+}

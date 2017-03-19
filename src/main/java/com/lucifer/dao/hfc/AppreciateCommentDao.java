@@ -44,4 +44,8 @@ public class AppreciateCommentDao extends IBatisBaseDao {
         param.put("commentCount",commentCount);
         return this.hfcSqlSession.update("updateAppreciateCommentCount",param);
     }
+
+    public  Integer deleteAppreciateComment(Long id) {
+        return this.hfcSqlSession.delete("deleteAppreciateComment",id);
+    }
 }

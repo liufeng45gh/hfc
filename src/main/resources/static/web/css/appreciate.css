@@ -378,6 +378,7 @@
 
 .c-text{
     color: #2a2a2a;
+    text-align: left;
 }
 
 .c-parent{
@@ -404,6 +405,7 @@
 .reply-btn{
     margin-top: 20px;
     cursor: pointer;
+    width: 50px;
 }
 
 #reply-content{

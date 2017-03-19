@@ -80,4 +80,11 @@ public class AppreciateCommentService {
         appreciateCommentDao.updateAppreciateCommentCount(appreciateId,count);
         appreciateDao.removeAppreciateCache(appreciateId);
     }
+
+    @Transactional(propagation= Propagation.REQUIRED)
+    public void deleteComment(Long id){
+        AppreciateComment comment = appreciateCommentDao.getAppreciateComment(id);
+        appreciateCommentDao.deleteAppreciateComment(id);
+        this.resetCommentCount(comment.getAppreciateId());
+    }
 }

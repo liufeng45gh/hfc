@@ -1,10 +1,8 @@
 package com.lucifer.controller.cms.hfc;
 
 import com.lucifer.dao.hfc.AppreciateDao;
-import com.lucifer.model.hfc.Appreciate;
-import com.lucifer.model.hfc.AppreciateCategory;
-import com.lucifer.model.hfc.News;
-import com.lucifer.model.hfc.NewsCategory;
+import com.lucifer.model.hfc.*;
+import com.lucifer.service.hfc.AppreciateCommentService;
 import com.lucifer.utils.Constant;
 import com.lucifer.utils.DateUtils;
 import com.lucifer.utils.PageUtil;
@@ -31,6 +29,9 @@ public class CmsAppreciateController {
 
     @Resource
     private AppreciateDao appreciateDao;
+
+    @Resource
+    private AppreciateCommentService appreciateCommentService;
 
     @RequestMapping(value="/list",method = RequestMethod.GET)
     public String appreciateList(HttpServletRequest request, @RequestParam(value = "title",required=false,defaultValue="") String title,
@@ -113,6 +114,33 @@ public class CmsAppreciateController {
     @ResponseBody
     public Result deleteAppreciate(@PathVariable Long id) {
         appreciateDao.deleteAppreciate(id);
+        return Result.ok();
+    }
+
+    @RequestMapping(value="/{appreciateId}/comments",method = RequestMethod.GET)
+    public String comments(HttpServletRequest request,
+                              @PathVariable Long appreciateId
+                              ){
+        Appreciate appreciate = appreciateDao.getAppreciate(appreciateId);
+        request.setAttribute("entity",appreciate);
+        return "/cms/appreciate/comments";
+    }
+
+    @RequestMapping(value="/{appreciateId}/comment-list",method = RequestMethod.GET)
+    public String commentList(HttpServletRequest request,
+                              @PathVariable Long appreciateId,
+                              @RequestParam(value = "page",required=false,defaultValue="1") Integer page){
+        Integer pageSize = Constant.PAGESIZE;
+        Integer offset = (page-1) * pageSize;
+        List<AppreciateComment> commentList = appreciateCommentService.appreciateCommentList(appreciateId,offset,pageSize);
+        request.setAttribute("dataList",commentList);
+        return "/cms/appreciate/comment-list";
+    }
+
+    @RequestMapping(value="/comment/{id}/delete",method = RequestMethod.POST)
+    @ResponseBody
+    public Result deleteComment(@PathVariable Long id){
+        appreciateCommentService.deleteComment(id);
         return Result.ok();
     }
 

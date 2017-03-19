@@ -35,6 +35,18 @@ $(document).ready(function() {
           recommendNewsSubmit(newsId);
         });
     });
+    $(".manage_comment").click(function() {
+        var objectId = $(this).parent().attr("objectId");
+        var url = $("#comments-url").val();
+        url = url.replace("{id}",objectId);
+        layer.open({
+          type: 2,
+          area: ['80%', '80%'],
+          fixed: false, //不固定
+          maxmin: true,
+          content: url
+        });
+    });
 });
 
 function deleteObjectSubmit(objectId){
