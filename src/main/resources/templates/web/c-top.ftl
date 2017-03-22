@@ -7,3 +7,5 @@
     </div>
     <#include "menu-bar.ftl"/>
 </div>
+
+<#include "tab-bar.ftl"/>

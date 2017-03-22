@@ -9,6 +9,8 @@
 <body>
 <div class="web-main page-min-width">
     <#include "index-top.ftl"/>
+
+
     <div class="news-block bgf7">
         <div style="width:100%;height:1px;"></div>
         <div class="title-line wrapper-996 ">

@@ -8,38 +8,40 @@
                         <use xlink:href="#szzt-logo"></use>
                     </svg>
                 </a>
-                <a class="header-item" href="/" id="head-href-index">
+                <!--
+                <a class="header-item" href="/" >
                     <div class="szzt szzt-shouye" ></div>
                     <div class="name">首页</div>
                 </a>
-                <a class="header-item" href="/news/index" id="head-href-news">
+                -->
+                <a class="header-item" href="http://hfc.dbdbd.cn:8080/news/124/detail" >
                     <div class="szzt szzt-zixun"></div>
-                    <div class="name">资讯</div>
+                    <div class="name">资源整合</div>
                 </a>
 
-                <a class="header-item" href="/artist/index" id="head-href-artist">
+                <a class="header-item" href="http://hfc.dbdbd.cn:8080/news/125/detail" style="width: 90px;" >
                     <div class="szzt szzt-yishujia"></div>
-                    <div class="name">艺术家</div>
+                    <div class="name">艺术家孵化</div>
                 </a>
 
-                <a class="header-item" href="/appreciate/index" id="head-href-appreciate">
+                <a class="header-item" href="http://hfc.dbdbd.cn:8080/news/126/detail" >
                     <div class="szzt szzt-jianshang"></div>
-                    <div class="name">鉴赏</div>
+                    <div class="name">鉴定估值</div>
                 </a>
 
-                <a class="header-item" href="#">
+                <a class="header-item" href="http://hfc.dbdbd.cn:8080/news/127/detail" style="width: 90px;">
                     <div class="szzt szzt-huati"></div>
-                    <div class="name">话题</div>
+                    <div class="name">大数据认证</div>
                 </a>
 
-                <a class="header-item" href="/research-report/index" id="head-href-research-report">
+                <a class="header-item" href="http://hfc.dbdbd.cn:8080/news/128/detail" >
                     <div class="szzt szzt-yanjiubaogao"></div>
-                    <div class="name">研究报告</div>
+                    <div class="name">媒体推广</div>
                 </a>
 
-                <a class="header-item" href="/cultural-finance/index" id="head-href-cultural-finance">
+                <a class="header-item" href="http://hfc.dbdbd.cn:8080/news/129/detail" >
                     <div class="szzt szzt-wenhuajinrong"></div>
-                    <div class="name">文化金融</div>
+                    <div class="name">展览展示</div>
                 </a>
                 <!--
                 <a class="header-item" href="#">
@@ -48,17 +50,17 @@
                 </a>
                 -->
 
-                <a class="header-item" href="#">
+                <a class="header-item" href="http://hfc.dbdbd.cn:8080/news/130/detail">
                     <div class="szzt szzt-paimai"></div>
-                    <div class="name">海富拍卖</div>
+                    <div class="name">拍卖交易</div>
                 </a>
 
-                <a class="header-item" href="#" style="width:80px;">
+                <a class="header-item" href="http://hfc.dbdbd.cn:8080/news/131/detail" style="width:80px;">
                     <div class="szzt szzt-yishupindingzhi"></div>
-                    <div class="name">艺术品定制</div>
+                    <div class="name">金融服务</div>
                 </a>
-
-                <a class="header-item" href="/member-activity/index" id="head-href-member-activity">
+                <!--
+                <a class="header-item" href="/member-activity/index" >
                     <div class="szzt szzt-huiyuanhuodong"></div>
                     <div class="name">会员活动</div>
                 </a>
@@ -67,6 +69,7 @@
                     <div class="szzt  szzt-kehufuwu"></div>
                     <div class="name">客户服务</div>
                 </a>
+                -->
                 <a class="header-item" href="#" style="margin-left: 40px;">
                     <div class="user-nav">
                         <div class="avatar" id="avatar-div"><img src="" id="avatar" style="width:36px;height:36px;"/><span id="message-status">6</span></div>

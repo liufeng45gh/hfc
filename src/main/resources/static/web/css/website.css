@@ -227,6 +227,7 @@ em{
 #header .header-item {
     line-height: 28px;
     color: #EFEFEF;
+    font-weight: bold;
 }
 #header .active {
     color: #EB3D3E;
@@ -237,7 +238,7 @@ em{
     position: relative;
     float: left;
     cursor: pointer;
-    width:70px;
+    width:100px;
 }
 
 .menu-bar .right-part {
@@ -334,7 +335,7 @@ em{
 }
 
 .header-item .name{
-    font-size: 15px;
+    font-size: 16px;
 }
 .szzt{
     margin-top:8px;
@@ -676,5 +677,56 @@ em{
    display: none;
 }
 
+
+.nav {
+     background: #2a303f;
+     height: 49px;
+     width: 1200px;
+     margin: 0px auto;
+ }
+
+ .nav ul {
+     border-bottom: 3px solid #1d222c;
+     width: 1200px;
+     margin-top: 0px;
+     padding-left: 0px;
+ }
+
+ .fl {
+     float: left;
+     display: inline;
+ }
+
+ .nav li.hover, .nav li:hover {
+     background: #00a887;
+     cursor: pointer;
+ }
+
+ .nav li {
+     float: left;
+     line-height: 46px;
+     height: 46px;
+     font-size: 16px;
+     border-right: 1px solid #1e222f;
+     transition: 0.4s;
+     margin: 0;
+     padding: 0;
+     list-style: none;
+ }
+
+ .nav li a {
+     color: #ddd;
+     padding: 0 26px;
+     display: block;
+     text-decoration: none;
+ }
+.menu-bg{
+    background: #2a303f;
+}
+
+.nav li.active {
+    background: #00a887;
+    cursor: pointer;
+}
 
 
