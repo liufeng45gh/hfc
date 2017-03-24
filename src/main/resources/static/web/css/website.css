@@ -676,5 +676,36 @@ em{
    display: none;
 }
 
+.p-block{
+   margin-top: 30px;
+   margin-bottom: 100px;
+}
+
+.w1200{
+     width: 1200px;
+     margin: 0 auto;
+}
+
+
+.p-item{
+   width: 174px;
+   margin-left:168px;
+   float: left;
+   margin-top: 70px;
+}
+
+.p-t-zh{
+    text-align: center;
+    font-size:20px;
+    font-width: bold;
+    color: #333;
+}
+
+.p-t-en{
+    text-align: center;
+    font-size:14px;
+    color: #D5D5D5;
+}
+
 
 
