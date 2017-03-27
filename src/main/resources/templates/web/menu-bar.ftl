@@ -12,35 +12,49 @@
                     <div class="szzt szzt-shouye" ></div>
                     <div class="name">首页</div>
                 </a>
+
+
+
                 <a class="header-item" href="/news/index" id="head-href-news">
                     <div class="szzt szzt-zixun"></div>
-                    <div class="name">资讯</div>
+                    <div class="name">关于海富</div>
                 </a>
 
+                <!--
                 <a class="header-item" href="/artist/index" id="head-href-artist">
                     <div class="szzt szzt-yishujia"></div>
                     <div class="name">艺术家</div>
                 </a>
+                -->
 
                 <a class="header-item" href="/appreciate/index" id="head-href-appreciate">
                     <div class="szzt szzt-jianshang"></div>
-                    <div class="name">鉴赏</div>
+                    <div class="name">海富艺术品</div>
                 </a>
 
-                <a class="header-item" href="#">
-                    <div class="szzt szzt-huati"></div>
-                    <div class="name">话题</div>
-                </a>
-
-                <a class="header-item" href="/research-report/index" id="head-href-research-report">
-                    <div class="szzt szzt-yanjiubaogao"></div>
-                    <div class="name">研究报告</div>
+                <a class="header-item" href="/appreciate/index" >
+                    <div class="szzt szzt-jianshang"></div>
+                    <div class="name">海富映像</div>
                 </a>
 
                 <a class="header-item" href="/cultural-finance/index" id="head-href-cultural-finance">
                     <div class="szzt szzt-wenhuajinrong"></div>
-                    <div class="name">文化金融</div>
+                    <div class="name">海富学习</div>
                 </a>
+
+                <!--
+                <a class="header-item" href="#">
+                    <div class="szzt szzt-huati"></div>
+                    <div class="name">话题</div>
+                </a>
+                -->
+
+                <a class="header-item" href="/research-report/index" id="head-href-research-report">
+                    <div class="szzt szzt-yanjiubaogao"></div>
+                    <div class="name">环球文化</div>
+                </a>
+
+
                 <!--
                 <a class="header-item" href="#">
                     <div class="szzt szzt-fenghui"></div>
@@ -53,10 +67,12 @@
                     <div class="name">海富拍卖</div>
                 </a>
 
+                <!--
                 <a class="header-item" href="#" style="width:80px;">
                     <div class="szzt szzt-yishupindingzhi"></div>
                     <div class="name">艺术品定制</div>
                 </a>
+                -->
 
                 <a class="header-item" href="/member-activity/index" id="head-href-member-activity">
                     <div class="szzt szzt-huiyuanhuodong"></div>
