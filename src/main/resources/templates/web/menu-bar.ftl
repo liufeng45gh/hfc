@@ -33,7 +33,7 @@
                 </a>
 
                 <a class="header-item" href="/appreciate/index" >
-                    <div class="szzt szzt-jianshang"></div>
+                    <div class="szzt szzt-huati"></div>
                     <div class="name">海富映像</div>
                 </a>
 
