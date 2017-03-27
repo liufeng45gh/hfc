@@ -17,7 +17,7 @@
                &nbsp;
             </div>
             <div class="line line-middle">
-                <div class="title-en">Important Recommend</div>
+                <div class="title-en">IMPORTANT RECOMMEND</div>
                 <div class="title-zh">重点推荐</div>
             </div>
             <div class="line line-right b-line">
@@ -95,8 +95,8 @@
                        &nbsp;
                     </div>
                     <div class="line line-middle" style="width:390px;">
-                        <div class="title-en">CULTURAL FINANCE </div>
-                        <div class="title-zh">文化金融</div>
+                        <div class="title-en">HFC STUDY </div>
+                        <div class="title-zh">海富学习</div>
                     </div>
                     <div class="line line-right b-line"  style="width:100px;">
                         &nbsp;
@@ -136,8 +136,8 @@
                         &nbsp;
                     </div>
                     <div class="line line-middle" style="width:390px;">
-                        <div class="title-en">RESEARCH REPORT </div>
-                        <div class="title-zh">研究报告</div>
+                        <div class="title-en">GLOBAL CULTURE </div>
+                        <div class="title-zh">环球文化</div>
                     </div>
                     <div class="line line-right b-line"  style="width:100px;">
                         &nbsp;
