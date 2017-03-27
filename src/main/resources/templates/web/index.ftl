@@ -17,7 +17,7 @@
                &nbsp;
             </div>
             <div class="line line-middle">
-                <div class="title-en">Important ecommend</div>
+                <div class="title-en">Important Recommend</div>
                 <div class="title-zh">重点推荐</div>
             </div>
             <div class="line line-right b-line">
