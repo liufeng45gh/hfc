@@ -9,7 +9,7 @@
 <body>
 <div class="web-main page-min-width">
     <#include "index-top.ftl"/>
-    <#include "eight-platform.ftl"/>
+
     <div class="news-block bgf7">
         <div style="width:100%;height:1px;"></div>
         <div class="title-line wrapper-996 ">
@@ -17,8 +17,8 @@
                &nbsp;
             </div>
             <div class="line line-middle">
-                <div class="title-en">INFORMATION</div>
-                <div class="title-zh">推荐资讯</div>
+                <div class="title-en">Important ecommend</div>
+                <div class="title-zh">重点推荐</div>
             </div>
             <div class="line line-right b-line">
                &nbsp;
