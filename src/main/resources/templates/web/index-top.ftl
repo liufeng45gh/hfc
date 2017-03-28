@@ -3,20 +3,20 @@
     <div class="mask"></div>
     <div class="new-banner h400">
 
-        <div class="search-box">
-            <form method="get" action="/search" class="new-searching-unit" id="search-form">
-                <input id="query" type="text" size="27" name="title" autocomplete="off" placeholder="搜索你喜欢的" value="${(RequestParameters["title"])!}"/>
-                <a href="#" onclick="return false;" class="go"  id="search-btn"></a>
-            </form>
-            <div class="search-hint">
+    </div>
 
-            </div>
+    <#include "menu-bar.ftl"/>
+
+    <div class="search-box">
+        <form method="get" action="/search" class="new-searching-unit" id="search-form">
+            <input id="query" type="text" size="27" name="title" autocomplete="off" placeholder="搜索你喜欢的" value="${(RequestParameters["title"])!}"/>
+            <a href="#" onclick="return false;" class="go"  id="search-btn"></a>
+        </form>
+        <div class="search-hint">
 
         </div>
 
     </div>
-
-    <#include "menu-bar.ftl"/>
 
 <script>
 
