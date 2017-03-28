@@ -8,7 +8,7 @@
 
 <body>
 <div class="web-main page-min-width">
-    <#include "c-top.ftl"/>
+    <#include "index-top.ftl"/>
 
     <div class="news-block bgf7">
         <div style="width:100%;height:1px;"></div>
