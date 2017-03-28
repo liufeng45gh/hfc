@@ -54,6 +54,8 @@ em{
 
 .search-box {
     text-align: center;
+    width: 360px;
+    float: right;
 }
 
 .new-searching-unit {
