@@ -7,16 +7,22 @@
 
     <#include "menu-bar.ftl"/>
 
-    <div class="search-box">
-        <form method="get" action="/search" class="new-searching-unit" id="search-form">
-            <input id="query" type="text" size="27" name="title" autocomplete="off" placeholder="搜索你喜欢的" value="${(RequestParameters["title"])!}"/>
-            <a href="#" onclick="return false;" class="go"  id="search-btn"></a>
-        </form>
-        <div class="search-hint">
 
-        </div>
+
+
+
+</div>
+
+<div class="search-box">
+    <form method="get" action="/search" class="new-searching-unit" id="search-form">
+        <input id="query" type="text" size="27" name="title" autocomplete="off" placeholder="搜索你喜欢的" value="${(RequestParameters["title"])!}"/>
+        <a href="#" onclick="return false;" class="go"  id="search-btn"></a>
+    </form>
+    <div class="search-hint">
 
     </div>
+
+</div>
 
 <script>
 
@@ -27,5 +33,3 @@ $(function() {
 	$("#head-href-index").addClass("active");
 });
 </script>
-
-</div>
