@@ -56,12 +56,12 @@ em{
     text-align: center;
 }
 
-.new-banner .new-searching-unit {
+.new-searching-unit {
     display: inline-block;
     position: relative;
 }
 
-.new-banner .new-searching-unit input {
+.new-searching-unit input {
     margin: 0 auto;
     padding: 0 10px;
     width: 536px;
