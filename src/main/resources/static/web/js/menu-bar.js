@@ -71,35 +71,35 @@ $(function() {
 
 });
 
-var user_mouse_in = false;
-var opt_mouse_in = false;
+var user_nick_mouse_in = false;
+var user_opt_mouse_in = false;
 
 $(function() {
 
 	$(".user-nav").mouseover(function () {
-        user_mouse_in = true;
+        user_nick_mouse_in = true;
         $(".user-option").show();
 	});
 	$(".user-option").mouseover(function () {
-        opt_mouse_in = true;
+        user_opt_mouse_in = true;
         $(".user-option").show();
     });
 
     $(".user-nav").mouseout(function () {
-            user_mouse_in = false;
+            user_nick_mouse_in = false;
             setTimeout(hideUserOption,1000);
     });
     $(".user-option").mouseout(function () {
-        opt_mouse_in = false;
+        user_opt_mouse_in = false;
         setTimeout(hideUserOption,1000);
     });
 });
 
 function hideUserOption(){
-    if (user_mouse_in) {
+    if (user_nick_mouse_in) {
         return;
     }
-    if (opt_mouse_in) {
+    if (user_opt_mouse_in) {
         return;
     }
      $(".user-option").hide();
@@ -139,4 +139,41 @@ function resetMessageUnreadCount(){
      }
     });
 
+}
+
+
+
+
+var about_mouse_in = false;
+var about_opt_mouse_in = false;
+
+$(function() {
+
+	$("#head-href-about").mouseover(function () {
+        about_mouse_in = true;
+        $(".about-option").show();
+	});
+	$(".about-option").mouseover(function () {
+        about_opt_mouse_in = true;
+        $(".about-option").show();
+    });
+
+    $("#head-href-about").mouseout(function () {
+            about_mouse_in = false;
+            setTimeout(hideAboutOption,1000);
+    });
+    $(".about-option").mouseout(function () {
+        about_opt_mouse_in = false;
+        setTimeout(hideAboutOption,1000);
+    });
+});
+
+function hideAboutOption(){
+    if (about_mouse_in) {
+        return;
+    }
+    if (about_opt_mouse_in) {
+        return;
+    }
+     $(".about-option").hide();
 }

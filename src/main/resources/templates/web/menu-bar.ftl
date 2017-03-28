@@ -15,7 +15,7 @@
 
 
 
-                <a class="header-item" href="/news/index" id="head-href-news">
+                <a class="header-item" href="/news/index" id="head-href-about">
                     <div class="szzt szzt-zixun"></div>
                     <div class="name">关于海富</div>
                 </a>
@@ -91,6 +91,18 @@
                     </div>
                 </a>
 
+            </div>
+            <div class="about-option">
+                <div style="position: relative;" >
+                    <b class="bot">◆</b>
+                    <div class="opt">
+                        <div><a href="/u-center/index">公司简介</a></div>
+                        <div><a href="/u-center/up-pass">经营理念</a></div>
+                        <div><a href="/u-center/message">公司架构</a></div>
+                        <div><a href="/u-center/message">动态要闻</a></div>
+                        <div><a href="/u-center/message">招聘信息</a></div>
+                    </div>
+                </div>
             </div>
             <div class="right-part">
 

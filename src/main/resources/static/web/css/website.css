@@ -220,13 +220,6 @@ em{
     margin-top: 0px;
 }
 
-#huaban {
-    float: left;
-    margin-right: 20px;
-    width: 80px;
-    height: 28px;
-    background: url(/img/logo.svg) 0 0 no-repeat;
-}
 
 #header .header-item {
     line-height: 28px;
@@ -343,6 +336,40 @@ em{
 .szzt{
     margin-top:8px;
 }
+.about-option{
+    position: absolute;
+    width: 160px;
+    background: #FFFFFF;
+
+    left: 210px;
+    top: 70px;
+    display: none;
+}
+.about-option .bot{
+    font-size: 40px;
+    position: absolute;
+    line-height: 40px;
+    top: -20px;
+    color: #FFFFFF;
+    left: 20px;
+}
+.about-option .opt{
+     width: 160px;
+     padding-top: 0px;
+}
+.about-option .opt div{
+   height: 50px;
+   line-height: 50px;
+   border-bottom: 1px solid #F0F0F0;
+   cursor: pointer;
+   font-size: 16px;
+}
+
+
+
+
+
+
 .title-line{
     margin: 50px auto 50px auto;
     height: 80px;
