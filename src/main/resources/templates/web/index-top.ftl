@@ -102,7 +102,7 @@ function init() {
 	}
 
 	renderer = new THREE.CanvasRenderer();
-	renderer.setSize( window.innerWidth, window.innerHeight );
+	renderer.setSize( document.getElementById("wave-effect").innerWidth, document.getElementById("wave-effect").innerHeight );
 	container.appendChild( renderer.domElement );
 
 	document.addEventListener( 'mousemove', onDocumentMouseMove, false );
@@ -117,13 +117,13 @@ function init() {
 
 function onWindowResize() {
 
-	windowHalfX = window.innerWidth / 2;
-	windowHalfY = window.innerHeight / 2;
+	windowHalfX = document.getElementById("wave-effect").innerWidth / 2;
+	windowHalfY = document.getElementById("wave-effect").innerHeight / 2;
 
-	camera.aspect = window.innerWidth / window.innerHeight;
+	camera.aspect = document.getElementById("wave-effect").innerWidth / document.getElementById("wave-effect").innerHeight;
 	camera.updateProjectionMatrix();
 
-	renderer.setSize( window.innerWidth, window.innerHeight );
+	renderer.setSize( document.getElementById("wave-effect").innerWidth, document.getElementById("wave-effect").innerHeight );
 
 }
 
