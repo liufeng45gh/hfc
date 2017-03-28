@@ -12,6 +12,7 @@
 
 
 </div>
+<!--
 <div class="w1200">
     <div class="search-box">
         <form method="get" action="/search" class="new-searching-unit" id="search-form">
@@ -24,7 +25,7 @@
 
     </div>
 </div>
-
+-->
 
 <script>
 
