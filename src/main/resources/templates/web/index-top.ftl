@@ -51,8 +51,8 @@ var mouseX = 0, mouseY = 0;
 var windowHalfX = 0;
 var windowHalfY = 0;
 $(document).ready(function () {
-    windowHalfX = document.getElementById("wave-effect").innerWidth / 2;
-    windowHalfY = document.getElementById("wave-effect").innerHeight / 2;
+    windowHalfX = $("#wave-effect").width() / 2;
+    windowHalfY = $("#wave-effect").height() / 2;
     init();
     animate();
 
@@ -65,7 +65,7 @@ function init() {
 	container = document.createElement( 'div' );
 	document.getElementById("wave-effect").appendChild( container );
 
-	camera = new THREE.PerspectiveCamera( 75, document.getElementById("wave-effect").innerWidth / document.getElementById("wave-effect").innerHeight, 1, 10000 );
+	camera = new THREE.PerspectiveCamera( 75, $("#wave-effect").width() / $("#wave-effect").height(), 1, 10000 );
 	camera.position.z = 1000;
 
 	scene = new THREE.Scene();
@@ -102,7 +102,7 @@ function init() {
 	}
 
 	renderer = new THREE.CanvasRenderer();
-	renderer.setSize( document.getElementById("wave-effect").innerWidth, document.getElementById("wave-effect").innerHeight );
+	renderer.setSize( $("#wave-effect").width(), $("#wave-effect").height());
 	container.appendChild( renderer.domElement );
 
 	document.addEventListener( 'mousemove', onDocumentMouseMove, false );
@@ -117,13 +117,13 @@ function init() {
 
 function onWindowResize() {
 
-	windowHalfX = document.getElementById("wave-effect").innerWidth / 2;
-	windowHalfY = document.getElementById("wave-effect").innerHeight / 2;
+	windowHalfX = $("#wave-effect").width() / 2;
+	windowHalfY = $("#wave-effect").height() / 2;
 
-	camera.aspect = document.getElementById("wave-effect").innerWidth / document.getElementById("wave-effect").innerHeight;
+	camera.aspect = $("#wave-effect").width() / $("#wave-effect").height();
 	camera.updateProjectionMatrix();
 
-	renderer.setSize( document.getElementById("wave-effect").innerWidth, document.getElementById("wave-effect").innerHeight );
+	renderer.setSize( $("#wave-effect").width(), $("#wave-effect").height() );
 
 }
 
