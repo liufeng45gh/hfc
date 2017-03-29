@@ -15,7 +15,7 @@
 
 
 
-                <a class="header-item" href="/news/index" id="head-href-about">
+                <a class="header-item" href="/about/company-intro" id="head-href-about">
                     <div class="szzt szzt-zixun"></div>
                     <div class="name">关于海富</div>
                 </a>
