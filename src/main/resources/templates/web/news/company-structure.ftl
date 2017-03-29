@@ -24,7 +24,7 @@
 
 
                 <div class="finance-list news-list" id="news-list">
-                    <div class="news-title">公司简介</div>
+                    <div class="news-title">公司架构</div>
                     <div class="news-content">
                         <img src="/web/images/structure.png"/>
 
