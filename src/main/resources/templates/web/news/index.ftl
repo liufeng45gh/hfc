@@ -18,9 +18,7 @@
         <div class="info-fr wrapper-996">
             <div class="finance-block news-left">
                 <div class="news-menu">
-                    <#list newsCategoryList as category>
-                    <a href="/news/index?categoryId=${category.id?default("")}"><div class="menu-item" id="menu-item-${category.id?default("")}">${category.name}</div></a>
-                    </#list>
+                    <#include "menu.ftl"/>
 
                 </div>
 
