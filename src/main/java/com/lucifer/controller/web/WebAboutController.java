@@ -25,4 +25,18 @@ public class WebAboutController {
 
         return "/web/news/company-intro";
     }
+
+    @RequestMapping(value="management-idea",method = RequestMethod.GET)
+    public String managementIdea(HttpServletRequest request){
+        newsService.loadNewsRightData(request);
+
+        return "/web/news/management-idea";
+    }
+
+    @RequestMapping(value="company-structure",method = RequestMethod.GET)
+    public String companyStructure(HttpServletRequest request){
+        newsService.loadNewsRightData(request);
+
+        return "/web/news/company-structure";
+    }
 }
