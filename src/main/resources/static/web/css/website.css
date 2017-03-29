@@ -365,6 +365,10 @@ em{
    font-size: 16px;
 }
 
+.about-option .opt a:hover{
+    color: #DB4646;
+}
+
 
 
 
