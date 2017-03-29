@@ -96,11 +96,11 @@
                 <div style="position: relative;" >
                     <b class="bot">◆</b>
                     <div class="opt">
-                        <div><a href="/u-center/index">公司简介</a></div>
-                        <div><a href="/u-center/up-pass">经营理念</a></div>
-                        <div><a href="/u-center/message">公司架构</a></div>
-                        <div><a href="/u-center/message">动态要闻</a></div>
-                        <div><a href="/u-center/message">招聘信息</a></div>
+                        <div><a href="/about/company-intro">公司简介</a></div>
+                        <div><a href="/about/management-idea">经营理念</a></div>
+                        <div><a href="/about/company-structure">公司架构</a></div>
+                        <div><a href="/about/important-news">动态要闻</a></div>
+                        <div><a href="/about/recruitment">招聘信息</a></div>
                     </div>
                 </div>
             </div>
