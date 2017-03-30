@@ -459,7 +459,7 @@ em{
     left: 0;
     z-index: 10;
     overflow: hidden;
-    background: rgba(102,153,0,0.1);
+    background: rgba(0,0,0,0.4);
 }
 .focus #focusTitle .tit {
     height: 44px;
