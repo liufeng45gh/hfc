@@ -4,6 +4,8 @@
     <div class="new-banner h400" id="wave-effect">
 
     </div>
+    <div class="slogan">以艺术品流通为使命</div>
+    <div class="hfc-address">北京市东城区史家胡同68号[海富文化艺术金融中心大厦]</div>
     <div class="mask"></div>
 
     <#include "menu-bar.ftl"/>
