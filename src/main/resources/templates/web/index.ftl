@@ -78,74 +78,74 @@
             <div class="Clear rnTopic imgScale mt14" style="width: 1200px;">
                 <div class="news-item img-item" style="margin-left:0px;">
                     <a href="http://www.replays.net/pic/201610/19141.html#p=1" target="_blank">
-                        <p><img src="http://img1.replays.net/lol.replays.net/uploads/picname/2017/01/1484816579Ag9.jpg" alt="英雄联盟2017LPL春季赛"></p>
-                        <em>英雄联盟2017LPL春季赛</em>
+                        <p><img src="/web/t-images/hfyx/1.jpg" /></p>
+                        <em>中国企业家峰会</em>
                     </a>
                 </div>
                 <div class="news-item img-item">
                     <a href="http://www.replays.net/pic/201610/18976.html#p=1" target="_blank">
-                        <p><img src="http://img1.replays.net/lol.replays.net/uploads/picname/2016/12/1482914312FJP.jpg" alt="2017LPL新赛季转会一览"></p>
-                        <em>2017LPL新赛季转会一览</em>
+                        <p><img src="/web/t-images/hfyx/2.jpg" /></p>
+                        <em>2017中澳企业家峰会</em>
                     </a>
                 </div>
                 <div  class="news-item img-item">
                     <a href="http://www.replays.net/pic/201610/18821.html#p=1" target="_blank">
-                        <p><img src="http://img1.replays.net/lol.replays.net/uploads/picname/2016/12/1482553776sN9.jpg" alt="瓦洛兰故事会：卡蜜尔 人形兵器水晶心"></p>
-                        <em>瓦洛兰故事会：卡蜜尔 人形兵器水晶心</em>
+                        <p><img src="/web/t-images/hfyx/3.jpg" /></p>
+                        <em>中澳企业家峰会</em>
                     </a>
                 </div>
                 <div  class="news-item img-item">
                     <a href="http://www.replays.net/pic/201607/17225.html#p=1" target="_blank">
-                        <p><img src="http://img1.replays.net/lol.replays.net/uploads/picname/2016/12/1481271207rDR.jpg" alt="S7季前赛 七重新体验"></p>
-                        <em>S7季前赛 七重新体验</em>
+                        <p><img src="/web/t-images/hfyx/4.jpg" /></p>
+                        <em>中澳企业家峰会</em>
                     </a>
                 </div>
                 <div  class="news-item img-item">
                     <a href="http://www.replays.net/pic/201511/13522.html#p=1" target="_blank">
-                        <p><img src="http://img1.replays.net/lol.replays.net/uploads/picname/2016/12/14805859980hb.jpg" alt="2016巴塞罗那全明星赛"></p>
-                        <em>2016巴塞罗那全明星赛</em>
+                        <p><img src="/web/t-images/hfyx/5.jpg" /></p>
+                        <em>战略合作签约仪式</em>
                     </a>
                 </div>
                 <div  class="news-item img-item">
                     <a href="http://www.replays.net/pic/201511/13524.html#p=1" target="_blank">
-                        <p><img src="http://img1.replays.net/lol.replays.net/uploads/picname/2016/11/1478763837o9i.jpg" alt="2016国际高校冠军赛"></p>
-                        <em>2016国际高校冠军赛</em>
+                        <p><img src="/web/t-images/hfyx/6.jpg"/></p>
+                        <em>战略合作签约仪式</em>
                     </a>
                 </div>
 
                 <div  class="news-item img-item" style="margin-left:0px;">
                     <a href="http://www.replays.net/pic/201510/13517.html#p=1" target="_blank">
-                        <p><img src="http://img1.replays.net/lol.replays.net/uploads/picname/2016/12/14805859980hb.jpg" alt="2016巴塞罗那全明星赛"></p>
-                        <em>2016巴塞罗那全明星赛</em>
+                        <p><img src="/web/t-images/hfyx/7.jpg" /></p>
+                        <em>红木产业基金合作协议</em>
                     </a>
                 </div>
                 <div  class="news-item img-item">
                     <a href="http://www.replays.net/pic/201610/19084.html#p=1" target="_blank">
-                        <p><img src="http://img1.replays.net/lol.replays.net/uploads/picname/2016/11/1478763837o9i.jpg" alt="2016国际高校冠军赛"></p>
-                        <em>2016国际高校冠军赛</em>
+                        <p><img src="/web/t-images/hfyx/8.jpg"/></p>
+                        <em>中油世纪合作签约仪式</em>
                     </a>
                 </div>
                 <div  class="news-item img-item">
                     <a href="http://www.replays.net/pic/list_12.html" target="_blank">
-                        <p><img src="http://img1.replays.net/lol.replays.net/uploads/picname/2016/12/14805859980hb.jpg" alt="2016巴塞罗那全明星赛"></p>
-                        <em>2016巴塞罗那全明星赛</em>
+                        <p><img src="/web/t-images/hfyx/9.jpg" /></p>
+                        <em>李克强总理</em>
                     </a>
                 </div>
                 <div  class="news-item img-item">
                     <a href="http://www.replays.net/pic/list_12.html" target="_blank">
-                        <p><img src="http://img1.replays.net/lol.replays.net/uploads/picname/2016/11/1478763837o9i.jpg" alt="2016国际高校冠军赛"></p>
+                        <p><img src="http://img1.replays.net/lol.replays.net/uploads/picname/2016/11/1478763837o9i.jpg" /></p>
                         <em>2016国际高校冠军赛</em>
                     </a>
                 </div>
                 <div  class="news-item img-item">
                     <a href="http://lol.replays.net/zt/2016qmx/" target="_blank">
-                        <p><img src="http://img1.replays.net/lol.replays.net/uploads/picname/2016/12/14805859980hb.jpg" alt="2016巴塞罗那全明星赛"></p>
+                        <p><img src="http://img1.replays.net/lol.replays.net/uploads/picname/2016/12/14805859980hb.jpg" /></p>
                         <em>2016巴塞罗那全明星赛</em>
                     </a>
                 </div>
                 <div  class="news-item img-item">
                     <a href="http://lol.replays.net/zt/2016gjgxls/" target="_blank">
-                        <p><img src="http://img1.replays.net/lol.replays.net/uploads/picname/2016/11/1478763837o9i.jpg" alt="2016国际高校冠军赛"></p>
+                        <p><img src="http://img1.replays.net/lol.replays.net/uploads/picname/2016/11/1478763837o9i.jpg" /></p>
                         <em>2016国际高校冠军赛</em>
                     </a>
                 </div>
