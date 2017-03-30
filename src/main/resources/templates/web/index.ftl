@@ -297,8 +297,8 @@
                     &nbsp;
                 </div>
                 <div class="line line-middle" style="width:400px;">
-                    <div class="title-en">ART APPRECIATION</div>
-                    <div class="title-zh">艺术鉴赏</div>
+                    <div class="title-en">HFC ARTWORK</div>
+                    <div class="title-zh">海富艺术品</div>
                 </div>
                 <div class="line line-right b-line" style="width:400px;">
                     &nbsp;
