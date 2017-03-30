@@ -3,10 +3,10 @@
         <div class="menu-bar">
             <div class="left-part">
 
-                <a class="header-item " href="#" style="width:118px;">
-                    <svg class="icon" aria-hidden="true" style="font-size: 128px;margin-top: -28px;">
-                        <use xlink:href="#szzt-logo"></use>
-                    </svg>
+                <a class="header-item " href="#" style="width:418px;">
+                    <div class="szzt logo" style="margin-top: 13px;">
+                        <img src="/web/images/logo.png">
+                    </div>
                 </a>
                 <a class="header-item" href="/" id="head-href-index">
                     <div class="szzt szzt-shouye" ></div>
