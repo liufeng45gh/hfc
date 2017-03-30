@@ -67,25 +67,94 @@
                &nbsp;
             </div>
             <div class="line line-middle">
-                <div class="title-en">ARTIST</div>
-                <div class="title-zh">海富艺术家</div>
+                <div class="title-en">HFC IMAGE</div>
+                <div class="title-zh">海富映像</div>
             </div>
             <div class="line line-right b-line">
                 &nbsp;
             </div>
         </div>
-        <div class="artist-recommend">
-            <#list artistRecommendList as recommend>
-            <div  class="artist-item" <#if recommend_index%8==0>style="margin-right: 0px;"</#if>>
-                <a href="/artist/${recommend.target.id?default("")}/detail" target="_blank">
-                    <div class="artist-img-border"><img src="${recommend.target.avatar?default("")}" ></div>
-                    <div class="artist-name">${recommend.target.name?default("")}</div>
-                </a>
+        <div class="news-search b-line w1200">
+            <div class="Clear rnTopic imgScale mt14" style="width: 1200px;">
+                <div class="news-item img-item" style="margin-left:0px;">
+                    <a href="http://lol.replays.net/zt/2017lpl/" target="_blank">
+                        <p><img src="http://img1.replays.net/lol.replays.net/uploads/picname/2017/01/1484816579Ag9.jpg" alt="英雄联盟2017LPL春季赛"></p>
+                        <em>英雄联盟2017LPL春季赛</em>
+                    </a>
+                </div>
+                <div class="news-item img-item">
+                    <a href="http://lol.replays.net/zt/2016zh/" target="_blank">
+                        <p><img src="http://img1.replays.net/lol.replays.net/uploads/picname/2016/12/1482914312FJP.jpg" alt="2017LPL新赛季转会一览"></p>
+                        <em>2017LPL新赛季转会一览</em>
+                    </a>
+                </div>
+                <div  class="news-item img-item">
+                    <a href="http://lol.replays.net/zt/valoran13/" target="_blank">
+                        <p><img src="http://img1.replays.net/lol.replays.net/uploads/picname/2016/12/1482553776sN9.jpg" alt="瓦洛兰故事会：卡蜜尔 人形兵器水晶心"></p>
+                        <em>瓦洛兰故事会：卡蜜尔 人形兵器水晶心</em>
+                    </a>
+                </div>
+                <div  class="news-item img-item">
+                    <a href="http://lol.replays.net/zt/2017lols7/index.html" target="_blank">
+                        <p><img src="http://img1.replays.net/lol.replays.net/uploads/picname/2016/12/1481271207rDR.jpg" alt="S7季前赛 七重新体验"></p>
+                        <em>S7季前赛 七重新体验</em>
+                    </a>
+                </div>
+                <div  class="news-item img-item">
+                    <a href="http://lol.replays.net/zt/2016qmx/" target="_blank">
+                        <p><img src="http://img1.replays.net/lol.replays.net/uploads/picname/2016/12/14805859980hb.jpg" alt="2016巴塞罗那全明星赛"></p>
+                        <em>2016巴塞罗那全明星赛</em>
+                    </a>
+                </div>
+                <div  class="news-item img-item">
+                    <a href="http://lol.replays.net/zt/2016gjgxls/" target="_blank">
+                        <p><img src="http://img1.replays.net/lol.replays.net/uploads/picname/2016/11/1478763837o9i.jpg" alt="2016国际高校冠军赛"></p>
+                        <em>2016国际高校冠军赛</em>
+                    </a>
+                </div>
+
+                <div  class="news-item img-item" style="margin-left:0px;">
+                    <a href="http://lol.replays.net/zt/2016qmx/" target="_blank">
+                        <p><img src="http://img1.replays.net/lol.replays.net/uploads/picname/2016/12/14805859980hb.jpg" alt="2016巴塞罗那全明星赛"></p>
+                        <em>2016巴塞罗那全明星赛</em>
+                    </a>
+                </div>
+                <div  class="news-item img-item">
+                    <a href="http://lol.replays.net/zt/2016gjgxls/" target="_blank">
+                        <p><img src="http://img1.replays.net/lol.replays.net/uploads/picname/2016/11/1478763837o9i.jpg" alt="2016国际高校冠军赛"></p>
+                        <em>2016国际高校冠军赛</em>
+                    </a>
+                </div>
+                <div  class="news-item img-item">
+                    <a href="http://lol.replays.net/zt/2016qmx/" target="_blank">
+                        <p><img src="http://img1.replays.net/lol.replays.net/uploads/picname/2016/12/14805859980hb.jpg" alt="2016巴塞罗那全明星赛"></p>
+                        <em>2016巴塞罗那全明星赛</em>
+                    </a>
+                </div>
+                <div  class="news-item img-item">
+                    <a href="http://lol.replays.net/zt/2016gjgxls/" target="_blank">
+                        <p><img src="http://img1.replays.net/lol.replays.net/uploads/picname/2016/11/1478763837o9i.jpg" alt="2016国际高校冠军赛"></p>
+                        <em>2016国际高校冠军赛</em>
+                    </a>
+                </div>
+                <div  class="news-item img-item">
+                    <a href="http://lol.replays.net/zt/2016qmx/" target="_blank">
+                        <p><img src="http://img1.replays.net/lol.replays.net/uploads/picname/2016/12/14805859980hb.jpg" alt="2016巴塞罗那全明星赛"></p>
+                        <em>2016巴塞罗那全明星赛</em>
+                    </a>
+                </div>
+                <div  class="news-item img-item">
+                    <a href="http://lol.replays.net/zt/2016gjgxls/" target="_blank">
+                        <p><img src="http://img1.replays.net/lol.replays.net/uploads/picname/2016/11/1478763837o9i.jpg" alt="2016国际高校冠军赛"></p>
+                        <em>2016国际高校冠军赛</em>
+                    </a>
+                </div>
+                <div style="clear:both;"></div>
             </div>
-            </#list>
-
-
         </div>
+
+
+
     </div>
     <div class="third-block bgf7">
         <div class="info-fr wrapper-996">
