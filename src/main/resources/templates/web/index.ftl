@@ -181,7 +181,7 @@
                         </div>
                         <div class="text">
                             <a href="/cultural-finance/${recommend.target.id?default("")}/detail" target="_blank">
-                            <div class="title">${recommend.target.title?default("")}</div>
+                            <div class="title">【${(recommend.target.categoryName)!}】${recommend.target.title?default("")}</div>
                              </a>
                             <div class="desc">${recommend.target.indexSummaryText()}</div>
                             <div class="date-info">[2017/2/2]</div>

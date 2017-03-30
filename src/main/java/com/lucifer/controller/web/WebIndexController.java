@@ -84,8 +84,8 @@ public class WebIndexController {
         List<IndexRecommend> newsRecommendList = indexService.newsIndexRecommendListLimit6();
         request.setAttribute("newsRecommendList",newsRecommendList);
 
-        List<IndexRecommend> artistRecommendList = indexService.artistIndexRecommendListLimit16();
-        request.setAttribute("artistRecommendList",artistRecommendList);
+//        List<IndexRecommend> artistRecommendList = indexService.artistIndexRecommendListLimit16();
+//        request.setAttribute("artistRecommendList",artistRecommendList);
 
         List<IndexRecommend> financeRecommendList = indexService.financeIndexRecommendListLimit3();
         request.setAttribute("financeRecommendList",financeRecommendList);
