@@ -7,10 +7,14 @@
 
     <div class="slides-container banner-background">
         <div id="slides">
-            <img src="/web/images/platform-1.jpg" alt="Photo by: Missy S Link: http://www.flickr.com/photos/listenmissy/5087404401/">
-            <img src="/web/images/platform-2.jpg" alt="Photo by: Daniel Parks Link: http://www.flickr.com/photos/parksdh/5227623068/">
-            <img src="/web/images/platform-3.jpg" alt="Photo by: Mike Ranweiler Link: http://www.flickr.com/photos/27874907@N04/4833059991/">
-            <img src="/web/images/platform-4.jpg" alt="Photo by: Stuart SeegerLink: http://www.flickr.com/photos/stuseeger/97577796/">
+            <img src="/web/images/platform-1.jpg"/>
+            <img src="/web/images/platform-2.jpg" />
+            <img src="/web/images/platform-3.jpg" />
+            <img src="/web/images/platform-4.jpg" />
+            <img src="/web/images/platform-5.jpg" />
+            <img src="/web/images/platform-6.jpg" />
+            <img src="/web/images/platform-7.jpg" />
+            <img src="/web/images/platform-8.jpg" />
         </div>
     </div>
 
