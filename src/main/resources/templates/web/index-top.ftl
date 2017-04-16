@@ -1,12 +1,25 @@
 <div class="head-box">
+    <!--
     <div class="banner-background" style="background-image: url(/web/images/banner.jpg); opacity: 1; "></div>
+    -->
 
-    <div class="new-banner h400" id="wave-effect">
+
+
+    <div class="slides-container banner-background">
+        <div id="slides">
+            <img src="/web/images/platform-1.jpg" alt="Photo by: Missy S Link: http://www.flickr.com/photos/listenmissy/5087404401/">
+            <img src="/web/images/platform-2.jpg" alt="Photo by: Daniel Parks Link: http://www.flickr.com/photos/parksdh/5227623068/">
+            <img src="/web/images/platform-3.jpg" alt="Photo by: Mike Ranweiler Link: http://www.flickr.com/photos/27874907@N04/4833059991/">
+            <img src="/web/images/platform-4.jpg" alt="Photo by: Stuart SeegerLink: http://www.flickr.com/photos/stuseeger/97577796/">
+        </div>
+    </div>
+
+    <div class="new-banner h500" id="wave-effect" style="z-index: 100">
 
     </div>
-    <div class="slogan">以艺术品流通为使命</div>
-    <div class="hfc-address">北京市东城区史家胡同68号[海富文化艺术金融中心大厦]</div>
-    <div class="mask"></div>
+    <div class="slogan" style="z-index: 100;">以艺术品流通为使命</div>
+    <div class="hfc-address" style="z-index: 100;">北京市东城区史家胡同68号[海富文化艺术金融中心大厦]</div>
+    <div class="mask" style="z-index: 100;"></div>
 
     <#include "menu-bar.ftl"/>
 
@@ -41,166 +54,7 @@ $(function() {
 </script>
 <script type="text/javascript" src="/web/js/effect/three.min.js"></script>
 
-<script type="text/javascript">
-var SEPARATION = 100, AMOUNTX = 50, AMOUNTY = 50;
+<script type="text/javascript"  src="/web/js/effect/wave-effect.js"></script>
+<script type="text/javascript"  src="/web/js/effect/jquery.slides.min.js"></script>
 
-var container;
-var camera, scene, renderer;
-
-var particles, particle, count = 0;
-
-var mouseX = 0, mouseY = 0;
-
-var windowHalfX = 0;
-var windowHalfY = 0;
-$(document).ready(function () {
-    windowHalfX = $("#wave-effect").width() / 2;
-    windowHalfY = $("#wave-effect").height() / 2;
-    init();
-    animate();
-
-});
-
-
-
-function init() {
-
-	container = document.createElement( 'div' );
-	document.getElementById("wave-effect").appendChild( container );
-
-	camera = new THREE.PerspectiveCamera( 75, $("#wave-effect").width() / $("#wave-effect").height(), 1, 10000 );
-	camera.position.z = 1000;
-
-	scene = new THREE.Scene();
-
-	particles = new Array();
-
-	var PI2 = Math.PI * 2;
-	var material = new THREE.ParticleCanvasMaterial( {
-
-		color: 0xffffff,
-		program: function ( context ) {
-
-			context.beginPath();
-			context.arc( 0, 0, 1, 0, PI2, true );
-			context.fill();
-
-		}
-
-	} );
-
-	var i = 0;
-
-	for ( var ix = 0; ix < AMOUNTX; ix ++ ) {
-
-		for ( var iy = 0; iy < AMOUNTY; iy ++ ) {
-
-			particle = particles[ i ++ ] = new THREE.Particle( material );
-			particle.position.x = ix * SEPARATION - ( ( AMOUNTX * SEPARATION ) / 2 );
-			particle.position.z = iy * SEPARATION - ( ( AMOUNTY * SEPARATION ) / 2 );
-			scene.add( particle );
-
-		}
-
-	}
-
-	renderer = new THREE.CanvasRenderer();
-	renderer.setSize( $("#wave-effect").width(), $("#wave-effect").height());
-	container.appendChild( renderer.domElement );
-
-	document.addEventListener( 'mousemove', onDocumentMouseMove, false );
-	document.addEventListener( 'touchstart', onDocumentTouchStart, false );
-	document.addEventListener( 'touchmove', onDocumentTouchMove, false );
-
-	//
-
-	window.addEventListener( 'resize', onWindowResize, false );
-
-}
-
-function onWindowResize() {
-
-	windowHalfX = $("#wave-effect").width() / 2;
-	windowHalfY = $("#wave-effect").height() / 2;
-
-	camera.aspect = $("#wave-effect").width() / $("#wave-effect").height();
-	camera.updateProjectionMatrix();
-
-	renderer.setSize( $("#wave-effect").width(), $("#wave-effect").height() );
-
-}
-
-//
-
-function onDocumentMouseMove( event ) {
-
-	mouseX = event.clientX - windowHalfX;
-	mouseY = event.clientY - windowHalfY;
-
-}
-
-function onDocumentTouchStart( event ) {
-
-	if ( event.touches.length === 1 ) {
-
-		event.preventDefault();
-
-		mouseX = event.touches[ 0 ].pageX - windowHalfX;
-		mouseY = event.touches[ 0 ].pageY - windowHalfY;
-
-	}
-
-}
-
-function onDocumentTouchMove( event ) {
-
-	if ( event.touches.length === 1 ) {
-
-		event.preventDefault();
-
-		mouseX = event.touches[ 0 ].pageX - windowHalfX;
-		mouseY = event.touches[ 0 ].pageY - windowHalfY;
-
-	}
-
-}
-
-//
-
-function animate() {
-
-	requestAnimationFrame( animate );
-
-	render();
-
-
-}
-
-function render() {
-
-	camera.position.x += ( mouseX - camera.position.x ) * .05;
-	camera.position.y += ( - mouseY - camera.position.y ) * .05;
-	camera.lookAt( scene.position );
-
-	var i = 0;
-
-	for ( var ix = 0; ix < AMOUNTX; ix ++ ) {
-
-		for ( var iy = 0; iy < AMOUNTY; iy ++ ) {
-
-			particle = particles[ i++ ];
-			particle.position.y = ( Math.sin( ( ix + count ) * 0.3 ) * 50 ) + ( Math.sin( ( iy + count ) * 0.5 ) * 50 );
-			particle.scale.x = particle.scale.y = ( Math.sin( ( ix + count ) * 0.3 ) + 1 ) * 2 + ( Math.sin( ( iy + count ) * 0.5 ) + 1 ) * 2;
-
-		}
-
-	}
-
-	renderer.render( scene, camera );
-
-	count += 0.1;
-
-}
-
-
-</script>
+<script type="text/javascript"  src="/web/js/effect/banner.js"></script>

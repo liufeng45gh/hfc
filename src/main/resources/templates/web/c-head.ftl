@@ -1,5 +1,6 @@
 <link rel='stylesheet' href='/web/css/common.css' type='text/css' media='screen' />
 <link rel='stylesheet' href='/web/css/website.css' type='text/css' media='screen' />
+<link rel='stylesheet' href='/web/css/banner.css' type='text/css' media='screen' />
 <script  src="/web/icon/iconfont.js"></script>
 <link rel="stylesheet" type="text/css" href="/web/icon/iconfont.css">
 <style type="text/css">
@@ -17,6 +18,7 @@
 
     </style>
 <script  src="/web/js/jquery-3.1.1.js"></script>
+
 <script  src="/web/js/Tony_Tab.js"></script>
 <script  src="/web/js/menu-bar.js"></script>
 <script  src="/web/js/common.js"></script>
