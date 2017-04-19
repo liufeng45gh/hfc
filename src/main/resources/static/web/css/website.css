@@ -27,6 +27,7 @@ em{
     background-repeat: no-repeat;
     background-size: cover;
     transition: opacity 200ms ease-in-out;
+    top: 65px;
 }
 
 .head-box  .slogan{
@@ -216,8 +217,8 @@ em{
 
 
 #header.nologin-index {
-    background: 0;
-    box-shadow: none;
+    //background: 0;
+    //box-shadow: none;
     border: 0;
 }
 
@@ -228,6 +229,7 @@ em{
     height: 65px;
     z-index: 99997;
     box-shadow: 0 0 4px rgba(0,0,0,.2);
+    background-color: #333;
 
 }
 
