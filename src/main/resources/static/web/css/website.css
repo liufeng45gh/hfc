@@ -27,7 +27,7 @@ em{
     background-repeat: no-repeat;
     background-size: cover;
     transition: opacity 200ms ease-in-out;
-    top: 65px;
+    margin-top: 65px;
 }
 
 .head-box  .slogan{
