@@ -20,8 +20,8 @@ em{
     background: #333;
 }
 .head-box .banner-background {
-    position: absolute;
-    height: 100%;
+    //position: absolute;
+    height: 400px;
     width: 100%;
     background-position: center 0;
     background-repeat: no-repeat;
@@ -68,7 +68,7 @@ em{
 .head-box .new-banner {
     height: 400px;
     position: relative;
-    margin: 0 auto;
+    margin: 0px auto;
     overflow: hidden;
 }
 
