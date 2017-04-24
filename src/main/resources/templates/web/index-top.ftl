@@ -26,8 +26,9 @@
     -->
 
 
-    <!--
+
     <div class="slogan" style="z-index: 100;">以艺术品流通为使命</div>
+    <!--
     <div class="hfc-address" style="z-index: 100;">北京市东城区史家胡同68号[海富文化艺术金融中心大厦]</div>
     <div class="mask" style="z-index: 100;"></div>
     -->
