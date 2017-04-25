@@ -11,7 +11,7 @@ function nextSlogan(){
     $("#slogan").css("display","none");
     $("#slogan").text(sloganArray[sloganCurrentIndex]);
     //$("#slogan").animate({display: "block"},"slow");
-    $("#slogan").fadeIn("slow");
+    $("#slogan").fadeIn(1500);
     sloganCurrentIndex = sloganCurrentIndex + 1;
     if (sloganCurrentIndex==sloganArray.length) {
         sloganCurrentIndex = 0;
