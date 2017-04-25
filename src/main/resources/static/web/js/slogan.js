@@ -8,9 +8,9 @@ $(document).ready(function(){
 });
 
 function nextSlogan(){
-    $("#slogan").css("left","-100%");
+    $("#slogan").css("display","none");
     $("#slogan").text(sloganArray[sloganCurrentIndex]);
-    $("#slogan").animate({left: "15%"},"slow");
+    $("#slogan").animate({display: "block"},"slow");
     sloganCurrentIndex = sloganCurrentIndex + 1;
     if (sloganCurrentIndex==sloganArray.length) {
         sloganCurrentIndex = 0;
