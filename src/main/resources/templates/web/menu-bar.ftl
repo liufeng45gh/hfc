@@ -28,7 +28,7 @@
                 <div class="left-part">
 
 
-                    <a class="header-item" href="/" id="head-href-index">
+                    <a class="header-item" href="/" id="head-href-index" style="margin-left: 0px;">
                         <!--
                         <div class="szzt szzt-shouye" ></div>
                         -->
