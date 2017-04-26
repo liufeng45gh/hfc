@@ -1,5 +1,5 @@
 <div class="head-box">
-    <div class="banner-background" style="background-image: url(/web/images/banner.jpg); opacity: 1; ">
+    <div class="banner-background" style="background-image: url(/web/images/banner.png); opacity: 1; ">
 
     </div>
 
