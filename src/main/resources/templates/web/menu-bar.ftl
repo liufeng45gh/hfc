@@ -15,6 +15,13 @@
                         <a href="#" onclick="toRegister();return false;" rel="nofollow" class="register btn rbtn"><span class="text"> 注册</span></a>
                         <a onclick="toLogin();return false;" rel="nofollow" href="#" class="login btn wbtn"><span class="text"> 登录</span></a>
                     </div>
+                    <a class="header-item" href="#" >
+                        <div class="user-nav">
+                            <div class="avatar" id="avatar-div"><img src="" id="avatar" style="width:36px;height:36px;"/><span id="message-status">6</span></div>
+                            <div class="nick" id="nick-div">已登录</div>
+                            <div class="to-click-down"><img src="/web/images/arrow_icon.png" id="to-click-down" style="width:10px;height:6px;"/></div>
+                        </div>
+                    </a>
 
                 </div>
 
@@ -114,13 +121,7 @@
                         -->
                         <div class="name">客户服务</div>
                     </a>
-                    <a class="header-item" href="#" style="margin-left: 40px;">
-                        <div class="user-nav">
-                            <div class="avatar" id="avatar-div"><img src="" id="avatar" style="width:36px;height:36px;"/><span id="message-status">6</span></div>
-                            <div class="nick" id="nick-div">已登录</div>
-                            <div class="to-click-down"><img src="/web/images/arrow_icon.png" id="to-click-down" style="width:10px;height:6px;"/></div>
-                        </div>
-                    </a>
+                    
 
                 </div>
 
