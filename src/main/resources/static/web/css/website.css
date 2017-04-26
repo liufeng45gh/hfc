@@ -298,8 +298,8 @@ em{
 .menu-bar .user-nav{
     display: none;
     width: 214px;
-    line-height: 48px;
-    margin-top: 15px;
+    line-height: 28px;
+    margin-top: 5px;
 }
 .user-nav .avatar{
     float: left;
@@ -718,7 +718,7 @@ em{
     width: 120px;
     background: #FFFFFF;
 
-    left: 937px;
+    left: 1030px;
     top: 70px;
     display: none;
 }
