@@ -271,13 +271,16 @@ em{
 #header .active {
     color: #EB3D3E;
     font-weight: bold;
+    padding-bottom: 0px;
+    border-bottom: 2px solid #EB3D3E;
 }
 
 .header-item {
     position: relative;
     float: left;
     cursor: pointer;
-    width:80px;
+    //width:80px;
+    margin-left: 20px;
 }
 
 .menu-bar .right-part {
@@ -375,7 +378,7 @@ em{
 }
 
 .header-item .name{
-    font-size: 15px;
+    font-size: 17px;
 }
 .szzt{
     margin-top:8px;
