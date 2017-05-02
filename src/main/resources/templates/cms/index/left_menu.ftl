@@ -5,6 +5,7 @@
 
      <div class="panel-body">
        <ul class="tree tree-lines" data-idx="0">
+           <li data-idx="1" data-id="1" id="left_menu_three_block"><a href="/cms/index/three-block/list" >三列区块</a> </li>
             <li data-idx="1" data-id="1" id="left_menu_carousel"><a href="/cms/index/carousel/list" >轮播图</a> </li>
             <li data-idx="2" data-id="2" id="left_menu_news"><a href="/cms/index/recommend/news-list" >推荐资讯</a> </li>
             <li data-idx="3" data-id="3" id="left_menu_artist"><a href="/cms/index/recommend/artist-list" >推荐艺术家</a> </li>
