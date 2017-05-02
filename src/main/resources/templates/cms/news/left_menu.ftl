@@ -22,25 +22,25 @@
             <li  id="left_menu_artist_lecture_list"><a href="/cms/artist/lecture/list" >讲座</a> </li>
             <li  id="left_menu_artist_lecture_add"><a href="/cms/artist/lecture/add" >新增讲座</a> </li>
         </ul>
-        <div class="menu-title">鉴赏</div>
+        <div class="menu-title">艺术品</div>
         <ul class="tree tree-lines" >
-            <li  id="left_menu_appreciate_list"><a href="/cms/appreciate/list" >鉴赏列表</a> </li>
-            <li  id="left_menu_appreciate_add"><a href="/cms/appreciate/add" >新增鉴赏</a> </li>
+            <li  id="left_menu_appreciate_list"><a href="/cms/appreciate/list" >艺术品列表</a> </li>
+            <li  id="left_menu_appreciate_add"><a href="/cms/appreciate/add" >新增艺术品</a> </li>
             <li  id="left_menu_appreciate_knowledge_list"><a href="/cms/appreciate-knowledge/list" >鉴赏知识</a> </li>
             <li  id="left_menu_appreciate_knowledge_add"><a href="/cms/appreciate-knowledge/add" >新增鉴赏知识</a> </li>
-            <li  id="left_menu_appreciate_category"><a href="/cms/appreciate/category/list" >鉴赏分类</a> </li>
+            <li  id="left_menu_appreciate_category"><a href="/cms/appreciate/category/list" >艺术品分类</a> </li>
             <li  id="left_menu_appreciate_top"><a href="/cms/appreciate/top-list" >已置顶鉴赏</a> </li>
         </ul>
-        <div class="menu-title">文化金融</div>
+        <div class="menu-title">海富学习</div>
         <ul class="tree tree-lines" >
-            <li  id="left_menu_cultural_finance_list"><a href="/cms/cultural-finance/list" >文化金融列表</a> </li>
-            <li  id="left_menu_cultural_finance_add"><a href="/cms/cultural-finance/add" >新增文化金融</a> </li>
+            <li  id="left_menu_cultural_finance_list"><a href="/cms/cultural-finance/list" >列表</a> </li>
+            <li  id="left_menu_cultural_finance_add"><a href="/cms/cultural-finance/add" >新增</a> </li>
             <li  id="left_menu_cultural_finance_category"><a href="/cms/cultural-finance/category/list" >分类</a> </li>
         </ul>
-        <div class="menu-title">研究报告</div>
+        <div class="menu-title">环球文化</div>
         <ul class="tree tree-lines" >
-            <li  id="left_menu_research_report_list"><a href="/cms/research-report/list" >研究报告列表</a> </li>
-            <li  id="left_menu_research_report_add"><a href="/cms/research-report/add" >新增研究报告</a> </li>
+            <li  id="left_menu_research_report_list"><a href="/cms/research-report/list" >列表</a> </li>
+            <li  id="left_menu_research_report_add"><a href="/cms/research-report/add" >新增</a> </li>
         </ul>
         <!--
         <div class="menu-title">峰会</div>

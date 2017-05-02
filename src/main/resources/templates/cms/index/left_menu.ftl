@@ -8,8 +8,8 @@
             <li data-idx="1" data-id="1" id="left_menu_carousel"><a href="/cms/index/carousel/list" >轮播图</a> </li>
             <li data-idx="2" data-id="2" id="left_menu_news"><a href="/cms/index/recommend/news-list" >推荐资讯</a> </li>
             <li data-idx="3" data-id="3" id="left_menu_artist"><a href="/cms/index/recommend/artist-list" >推荐艺术家</a> </li>
-            <li data-idx="3" data-id="3" id="left_menu_cultural_finance"><a href="/cms/index/recommend/finance-list" >推荐文化金融</a> </li>
-           <li data-idx="3" data-id="3" id="left_menu_research"><a href="/cms/index/recommend/research-list" >推荐研究报告</a> </li>
+            <li data-idx="3" data-id="3" id="left_menu_cultural_finance"><a href="/cms/index/recommend/finance-list" >推荐海富学习</a> </li>
+           <li data-idx="3" data-id="3" id="left_menu_research"><a href="/cms/index/recommend/research-list" >推荐环球文化</a> </li>
            <li data-idx="3" data-id="3" id="left_menu_summit"><a href="/cms/index/recommend/summit-list" >推荐峰会</a> </li>
            <li data-idx="3" data-id="3" id="left_menu_member_activity"><a href="/cms/index/recommend/member-activity-list" >推荐会员活动</a> </li>
            <li data-idx="3" data-id="3" id="left_menu_search_import"><a href="/cms/index/search/re-import" >搜素引擎导入</a> </li>
