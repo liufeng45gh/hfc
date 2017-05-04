@@ -1,5 +1,7 @@
 package com.lucifer.model.hfc;
 
+import java.util.Date;
+
 /**
  * Created by fx on 2017/5/2.
  */
@@ -16,6 +18,10 @@ public class Picture {
     private Float top;
 
     private Integer isDeleted;
+
+    private Date createdAt;
+
+    private Date updatedAt;
 
     public Long getId() {
         return id;
@@ -63,5 +69,21 @@ public class Picture {
 
     public void setIsDeleted(Integer isDeleted) {
         this.isDeleted = isDeleted;
+    }
+
+    public Date getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(Date createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public Date getUpdatedAt() {
+        return updatedAt;
+    }
+
+    public void setUpdatedAt(Date updatedAt) {
+        this.updatedAt = updatedAt;
     }
 }

@@ -3,23 +3,21 @@ package com.lucifer.model.hfc;
 import java.util.Date;
 
 /**
- * Created by fx on 2017/5/2.
+ * Created by liufx on 17/1/16.
  */
-public class Atlas {
+public class AtlasRecommend {
 
     private Long id;
 
-    private String logo;
-
-    private String title;
+    private Long atlasId;
 
     private Float top;
-
-    private Integer isDeleted;
 
     private Date createdAt;
 
     private Date updatedAt;
+
+    private Atlas atlas;
 
     public Long getId() {
         return id;
@@ -29,21 +27,7 @@ public class Atlas {
         this.id = id;
     }
 
-    public String getLogo() {
-        return logo;
-    }
 
-    public void setLogo(String logo) {
-        this.logo = logo;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
 
     public Float getTop() {
         return top;
@@ -51,14 +35,6 @@ public class Atlas {
 
     public void setTop(Float top) {
         this.top = top;
-    }
-
-    public Integer getIsDeleted() {
-        return isDeleted;
-    }
-
-    public void setIsDeleted(Integer isDeleted) {
-        this.isDeleted = isDeleted;
     }
 
     public Date getCreatedAt() {
@@ -75,5 +51,21 @@ public class Atlas {
 
     public void setUpdatedAt(Date updatedAt) {
         this.updatedAt = updatedAt;
+    }
+
+    public Long getAtlasId() {
+        return atlasId;
+    }
+
+    public void setAtlasId(Long atlasId) {
+        this.atlasId = atlasId;
+    }
+
+    public Atlas getAtlas() {
+        return atlas;
+    }
+
+    public void setAtlas(Atlas atlas) {
+        this.atlas = atlas;
     }
 }
