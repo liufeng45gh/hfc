@@ -17,7 +17,7 @@
                 <div class="news-item img-item" <#if recommend_index%6==0>style="margin-left: 0px;"</#if>>
                     <a href="http://www.replays.net/pic/201610/18976.html#p=1" target="_blank">
                         <p><img src="${(recommend.target.logo)}" /></p>
-                        <em>${(recommend.target.title)}</em>
+                        <div class="text">${(recommend.target.title)}</div>
                     </a>
                 </div>
             </#list>
