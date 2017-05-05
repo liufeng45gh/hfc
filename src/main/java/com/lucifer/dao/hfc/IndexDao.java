@@ -186,6 +186,10 @@ public class IndexDao extends IBatisBaseDao {
         return this.hfcSqlSession.selectList("atlasIndexRecommendList");
     }
 
+    public List<IndexRecommend> atlasIndexRecommendListLimit12(){
+        return this.hfcSqlSession.selectList("atlasIndexRecommendListLimit12");
+    }
+
     public Integer addAtlasIndexRecommend(IndexRecommend indexRecommend){
         indexRecommend.setTop(0f);
         return this.hfcSqlSession.insert("addAtlasIndexRecommend",indexRecommend);

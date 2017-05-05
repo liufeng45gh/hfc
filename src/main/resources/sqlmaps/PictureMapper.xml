@@ -16,7 +16,7 @@
     </resultMap>
 
     <select id="pictureList" resultMap="PictureMap">
-        select * from  picture where is_deleted = 0
+        select * from  picture where is_deleted = 0 and atlas_id = #{atlasId}
 
         order by top desc,id asc
     </select>

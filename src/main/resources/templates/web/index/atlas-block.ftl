@@ -1,0 +1,29 @@
+<div class="artist-block">
+    <div class="title-line wrapper-996">
+        <div class="line line-left b-line">
+            &nbsp;
+        </div>
+        <div class="line line-middle">
+            <div class="title-en">HFC IMAGE</div>
+            <div class="title-zh">海富映像</div>
+        </div>
+        <div class="line line-right b-line">
+            &nbsp;
+        </div>
+    </div>
+    <div class="news-search b-line w1200">
+        <div class="Clear rnTopic imgScale mt14" style="width: 1200px;">
+            <#list atlasRecommendList as recommend>
+                <div class="news-item img-item" <#if recommend_index%6==0>style="margin-left: 0px;"</#if>>
+                    <a href="http://www.replays.net/pic/201610/18976.html#p=1" target="_blank">
+                        <p><img src="${(recommend.target.logo)}" /></p>
+                        <em>${(recommend.target.title)}</em>
+                    </a>
+                </div>
+            </#list>
+
+            <div style="clear:both;"></div>
+        </div>
+    </div>
+
+</div>

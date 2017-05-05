@@ -8,6 +8,8 @@ public class Constant {
 
 	public static final int PAFENO = 1;
 	public static final int PAGESIZE = 20;
+
+	public static final Integer maxPage = 100;
 	
 	public static Integer minute_10 =  60*10;
 	

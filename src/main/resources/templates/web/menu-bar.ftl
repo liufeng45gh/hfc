@@ -58,7 +58,7 @@
                         <div class="name">海富艺术品</div>
                     </a>
 
-                    <a class="header-item" href="/appreciate/index" >
+                    <a class="header-item" href="/atlas/index" >
                         <!--
                         <div class="szzt szzt-huati"></div>
                         -->
