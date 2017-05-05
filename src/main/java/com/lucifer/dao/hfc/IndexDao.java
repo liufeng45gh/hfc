@@ -180,4 +180,28 @@ public class IndexDao extends IBatisBaseDao {
     public Integer deleteMemberActivityIndexRecommend(Long id){
         return this.hfcSqlSession.delete("deleteMemberActivityIndexRecommend",id);
     }
+
+    //--------海富映像部分--------
+    public List<IndexRecommend> atlasIndexRecommendList(){
+        return this.hfcSqlSession.selectList("atlasIndexRecommendList");
+    }
+
+    public Integer addAtlasIndexRecommend(IndexRecommend indexRecommend){
+        indexRecommend.setTop(0f);
+        return this.hfcSqlSession.insert("addAtlasIndexRecommend",indexRecommend);
+    }
+
+    public IndexRecommend getAtlasIndexRecommend(Long id) {
+        return this.hfcSqlSession.selectOne("getAtlasIndexRecommend",id);
+    }
+
+    public Integer updateAtlasIndexRecommend(IndexRecommend indexRecommend){
+        //newsRecommend.setTop(0f);
+        return this.hfcSqlSession.update("updateAtlasIndexRecommend",indexRecommend);
+    }
+
+    public Integer deleteAtlasIndexRecommend(Long id){
+        return this.hfcSqlSession.delete("deleteAtlasIndexRecommend",id);
+    }
+
 }

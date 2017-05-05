@@ -34,6 +34,9 @@ public class IndexService {
     @Resource
     private MemberActivityDao memberActivityDao;
 
+    @Resource
+    private AtlasDao atlasDao;
+
     public List<IndexRecommend> newsIndexRecommendList(){
         List<IndexRecommend> indexRecommendList = indexDao.newsIndexRecommendList();
         for(IndexRecommend indexRecommend:indexRecommendList){
@@ -129,6 +132,15 @@ public class IndexService {
         for(IndexRecommend indexRecommend:indexRecommendList){
             MemberActivity target = memberActivityDao.getMemberActivity(indexRecommend.getTargetId());
             indexRecommend.setTarget(target);
+        }
+        return indexRecommendList;
+    }
+
+    public List<IndexRecommend> atlasIndexRecommendList(){
+        List<IndexRecommend> indexRecommendList = indexDao.atlasIndexRecommendList();
+        for(IndexRecommend indexRecommend:indexRecommendList){
+            Atlas atlas = atlasDao.getAtlas(indexRecommend.getTargetId());
+            indexRecommend.setTarget(atlas);
         }
         return indexRecommendList;
     }

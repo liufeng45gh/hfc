@@ -306,6 +306,45 @@ public class CmsIndexController {
     }
 
 
+    //------------------------------------------------------------------------------------------------------------------//
+    //下面是海富映像
+
+    @RequestMapping(value="/recommend/atlas-list",method = RequestMethod.GET)
+    public String recommendAtlasList(HttpServletRequest request){
+        List<IndexRecommend> indexRecommendList = indexService.atlasIndexRecommendList();
+        request.setAttribute("indexRecommendList",indexRecommendList);
+        return "/cms/index/atlas_list";
+    }
+
+    @RequestMapping(value="/recommend/atlas-add",method = RequestMethod.POST)
+    @ResponseBody
+    public Result addAtlasIndexRecommendSubmit(IndexRecommend indexRecommend){
+        indexDao.addAtlasIndexRecommend(indexRecommend);
+        return Result.ok();
+    }
+
+    @RequestMapping(value="/recommend/{id}/atlas-update",method = RequestMethod.GET)
+    public String updateAtlasIndexRecommend(@PathVariable Long id,HttpServletRequest request){
+        IndexRecommend indexRecommend = indexDao.getAtlasIndexRecommend(id);
+        request.setAttribute("entity",indexRecommend);
+        return "/cms/index/atlas_update";
+    }
+
+    @RequestMapping(value="/recommend/atlas-update",method = RequestMethod.POST)
+    @ResponseBody
+    public Result updateAtlasIndexRecommendSubmit(IndexRecommend indexRecommend){
+        this.indexDao.updateAtlasIndexRecommend(indexRecommend);
+        return Result.ok();
+    }
+
+    @RequestMapping(value="/recommend/{id}/atlas-delete",method = RequestMethod.POST)
+    @ResponseBody
+    public Result deleteAtlasIndexRecommend(@PathVariable Long id){
+        indexDao.deleteAtlasIndexRecommend(id);
+        return Result.ok();
+    }
+
+
     //搜索引擎导入
     @RequestMapping(value="/search/re-import",method = RequestMethod.GET)
     public String searchReImport(HttpServletRequest request){

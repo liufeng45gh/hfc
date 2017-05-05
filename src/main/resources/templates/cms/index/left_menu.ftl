@@ -9,6 +9,7 @@
             <li data-idx="1" data-id="1" id="left_menu_carousel"><a href="/cms/index/carousel/list" >轮播图</a> </li>
             <li data-idx="2" data-id="2" id="left_menu_news"><a href="/cms/index/recommend/news-list" >推荐资讯</a> </li>
             <li data-idx="3" data-id="3" id="left_menu_artist"><a href="/cms/index/recommend/artist-list" >推荐艺术家</a> </li>
+           <li data-idx="3" data-id="3" id="left_menu_atlas"><a href="/cms/index/recommend/atlas-list" >推荐海富映像</a> </li>
             <li data-idx="3" data-id="3" id="left_menu_cultural_finance"><a href="/cms/index/recommend/finance-list" >推荐海富学习</a> </li>
            <li data-idx="3" data-id="3" id="left_menu_research"><a href="/cms/index/recommend/research-list" >推荐环球文化</a> </li>
            <li data-idx="3" data-id="3" id="left_menu_summit"><a href="/cms/index/recommend/summit-list" >推荐峰会</a> </li>

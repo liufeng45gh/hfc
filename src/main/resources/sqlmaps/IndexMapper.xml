@@ -163,4 +163,30 @@
         update index_member_activity set top = #{top},updated_at = now() where id = #{id}
     </update>
 
+    <!--  下面是海富映像 -->
+    <select id="atlasIndexRecommendList" resultMap="IndexRecommendMap">
+        select * from index_atlas order by top desc ,id desc
+    </select>
+
+    <select id="atlasIndexRecommendListLimit16" resultMap="IndexRecommendMap">
+        select * from index_atlas order by top desc ,id desc limit 16
+    </select>
+
+    <insert id="addAtlasIndexRecommend" useGeneratedKeys="true" keyProperty="id">
+        insert into index_atlas (target_id,top,created_at,updated_at) values (#{targetId},#{top},now(),now())
+    </insert>
+
+    <delete id="deleteAtlasIndexRecommend">
+        delete from index_atlas where id = #{id}
+    </delete>
+
+    <select id="getAtlasIndexRecommend" resultMap="IndexRecommendMap">
+        select * from index_atlas where  id = #{id}
+    </select>
+
+    <update id="updateAtlasIndexRecommend">
+        update index_atlas set top = #{top},updated_at = now() where id = #{id}
+    </update>
+
+
 </mapper>
