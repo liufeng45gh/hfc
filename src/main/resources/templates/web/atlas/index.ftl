@@ -27,7 +27,7 @@
             <div class="Clear rnTopic imgScale mt14" style="width: 1200px;margin-top: 30px;margin-left: auto;margin-right: auto;">
                 <#list atlasList as atlas>
                     <div class="news-item img-item" <#if atlas_index%6==0>style="margin-left: 0px;"</#if>>
-                        <a href="http://www.replays.net/pic/201610/18976.html#p=1" target="_blank">
+                        <a href="/atlas/${(atlas.id)}/detail" target="_blank">
                             <p><img src="${(atlas.logo)}" /></p>
                             <div class="img-text">${(atlas.title)}</div>
                         </a>

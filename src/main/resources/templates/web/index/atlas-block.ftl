@@ -15,7 +15,7 @@
         <div class="Clear rnTopic imgScale mt14" style="width: 1200px;">
             <#list atlasRecommendList as recommend>
                 <div class="news-item img-item" <#if recommend_index%6==0>style="margin-left: 0px;"</#if>>
-                    <a href="/atlas/${(recommend.target.id)}/detail#p=1" target="_blank">
+                    <a href="/atlas/${(recommend.target.id)}/detail" target="_blank">
                         <p><img src="${(recommend.target.logo)}" /></p>
                         <div class="img-text">${(recommend.target.title)}</div>
                     </a>
