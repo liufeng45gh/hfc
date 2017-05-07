@@ -9,6 +9,7 @@ import com.lucifer.utils.PageUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -42,5 +43,10 @@ public class WebAtlasController {
 
 
         return "/web/atlas/index";
+    }
+
+    @RequestMapping(value="/{id}/detail",method = RequestMethod.GET)
+    public String show(HttpServletRequest request,@PathVariable Long id){
+        return "/web/atlas/detail";
     }
 }
