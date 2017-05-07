@@ -19,12 +19,13 @@
     <div class="third-block">
             <div class="w1200">
                 <div class="news-menu">
-                    <a href="/atlas/index"><div class="menu-item" id="menu-item-yhj">2016WESG美洲区总决赛颁奖典礼</div></a>
+                    <a href="/atlas/index"><div class="menu-item" id="menu-item-yhj">${(atlas.title)!}</div></a>
                 </div>
 
 
 
             </div>
+        <#include "picture-wrap.ftl"/>
 
 
 
@@ -42,6 +43,6 @@ $(function() {
 });
 </script>
 
-<script  src="/web/js/artist/index.js"></script>
+<script  src="/web/js/atlas/detail.js"></script>
 </body>
 </html>

@@ -1,9 +1,11 @@
 package com.lucifer.controller.web;
 
 import com.lucifer.dao.hfc.AtlasDao;
+import com.lucifer.dao.hfc.PictureDao;
 import com.lucifer.model.hfc.Artist;
 import com.lucifer.model.hfc.ArtistRecommend;
 import com.lucifer.model.hfc.Atlas;
+import com.lucifer.model.hfc.Picture;
 import com.lucifer.utils.Constant;
 import com.lucifer.utils.PageUtil;
 import org.slf4j.Logger;
@@ -29,6 +31,9 @@ public class WebAtlasController {
     @Resource
     private AtlasDao atlasDao;
 
+    @Resource
+    private PictureDao pictureDao;
+
     @RequestMapping(value="/index",method = RequestMethod.GET)
     public String index(HttpServletRequest request, @RequestParam(value = "page",required=false,defaultValue="1")Integer page){
         Integer pageSize = Constant.PAGESIZE;
@@ -47,6 +52,10 @@ public class WebAtlasController {
 
     @RequestMapping(value="/{id}/detail",method = RequestMethod.GET)
     public String show(HttpServletRequest request,@PathVariable Long id){
+        Atlas atlas = atlasDao.getAtlas(id);
+        request.setAttribute("atlas",atlas);
+        List<Picture> pictureList = pictureDao.pictureList(id);
+        request.setAttribute("pictureList",pictureList);
         return "/web/atlas/detail";
     }
 }
