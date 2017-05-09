@@ -152,7 +152,7 @@
 
         </div>
     </div>
-
+    <!--
     <div class="member-block">
         <div class="title-line wrapper-996">
             <div class="line line-left b-line" style="width:400px;">
@@ -192,7 +192,7 @@
                 </#list>
             </div>
         </div>
-
+    -->
 
     </div>
     <div style="clear: both"></div>
