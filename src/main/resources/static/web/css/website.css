@@ -33,10 +33,11 @@ em{
 .head-box  .slogan{
      position: absolute;
      top: 120px;
-     left: 25%;
+     left: 35%;
      font-size: 38px;
      //font-weight: bold;
      //color: #DB4646;
+     letter-spacing:8px;
      color: #000000;
 
      text-align: left;
