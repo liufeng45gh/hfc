@@ -81,8 +81,11 @@ public class WebIndexController {
         List<Carousel> carouselList = carouseDao.carouselList();
         request.setAttribute("carouselList",carouselList);
 
-        List<IndexRecommend> newsRecommendList = indexService.newsIndexRecommendListLimit6();
-        request.setAttribute("newsRecommendList",newsRecommendList);
+        List<Carousel> newsCarouselList = carouseDao.newsCarouselListLimit6();
+        request.setAttribute("newsCarouselList",newsCarouselList);
+
+//        List<IndexRecommend> newsRecommendList = indexService.newsIndexRecommendListLimit6();
+//        request.setAttribute("newsRecommendList",newsRecommendList);
 
 //        List<IndexRecommend> artistRecommendList = indexService.artistIndexRecommendListLimit16();
 //        request.setAttribute("artistRecommendList",artistRecommendList);

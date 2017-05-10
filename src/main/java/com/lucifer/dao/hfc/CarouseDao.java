@@ -58,5 +58,9 @@ public class CarouseDao extends IBatisBaseDao{
     }
 
 
+    public List<Carousel> newsCarouselListLimit6(){
+        return this.hfcSqlSession.selectList("newsCarouselListLimit6");
+    }
+
 
 }

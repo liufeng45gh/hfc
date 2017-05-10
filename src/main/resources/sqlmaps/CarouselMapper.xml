@@ -39,6 +39,10 @@
         select * from news_carousel order by top desc,id desc
     </select>
 
+    <select id="newsCarouselListLimit6" resultMap="CarouselMap">
+        select * from news_carousel order by top desc,id desc  limit 6
+    </select>
+
     <insert id="addNewsCarousel">
         insert into news_carousel (title,summary,logo,top,link) values (#{title},#{summary},#{logo},#{top},#{link})
     </insert>

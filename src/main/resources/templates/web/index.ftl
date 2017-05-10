@@ -46,11 +46,11 @@
             </div>
             <div class="news-border">
                 <div class="Clear rnTopic imgScale mt14">
-                    <#list newsRecommendList as recommend>
+                    <#list newsCarouselList as carousel>
                     <div class="news-item">
-                        <a href="/news/${recommend.target.id?default("")}/detail" target="_blank">
-                            <p><img src="${recommend.target.logo?default("")}" ></p>
-                            <div class="n-title">${recommend.target.title?default("")}</div>
+                        <a href="${carousel.link?default("")}" target="_blank">
+                            <p><img src="${carousel.logo?default("")}" ></p>
+                            <div class="n-title">${carousel.title?default("")}</div>
                         </a>
                     </div>
                     </#list>
