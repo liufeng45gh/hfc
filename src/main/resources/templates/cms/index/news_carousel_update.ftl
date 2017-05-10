@@ -13,7 +13,7 @@
 
 
 
-<div class="position"><span>首页管理</span><span>|</span><span>轮播图</span><span>|</span><span>修改</span></div>
+<div class="position"><span>首页管理</span><span>|</span><span>重点推荐</span><span>|</span><span>修改</span></div>
 <div class="content form_content" >
     <form action="/cms/news/carousel/update" method="post" id="hfc-form">
         <table class="table_new" >

@@ -15,7 +15,7 @@
 
             <div id="admin_right">
                 <div class="content_box" style="border:none">
-                    <div class="position"><span>首页管理</span><span>&gt;</span><span>轮播图</span><span>&gt;</span><span>列表</span></div>
+                    <div class="position"><span>首页管理</span><span>&gt;</span><span>重点推荐</span><span>&gt;</span><span>列表</span></div>
 
                     <div class="content" style="min-height: 200px;">
                         <table class="list_table" style="font-size:13px;">
