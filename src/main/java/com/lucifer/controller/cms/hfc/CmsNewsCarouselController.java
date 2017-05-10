@@ -37,7 +37,7 @@ public class CmsNewsCarouselController {
         Carousel carousel = new Carousel();
         carousel.setLogo("/cms/images/logo.png");
         request.setAttribute("entity",carousel);
-        return "/cms/news/carousel_list";
+        return "/cms/index/news_carousel_list";
     }
 
     @RequestMapping(value = "/carousel/add", method = RequestMethod.POST)
@@ -58,7 +58,7 @@ public class CmsNewsCarouselController {
         logger.info(" updateCarousel has been called");
         Carousel carousel = carouseDao.getNewsCarousel(id);
         request.setAttribute("entity",carousel);
-        return "/cms/news/carousel_update";
+        return "/cms/index/news_carousel_update";
     }
 
     @RequestMapping(value = "/carousel/update", method = RequestMethod.POST)
