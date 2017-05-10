@@ -30,7 +30,7 @@ public class CmsPostController {
     @Resource
     private PostDao postDao;
 
-    @RequestMapping(value = "/post/list", method = RequestMethod.GET)
+    @RequestMapping(value = "/list", method = RequestMethod.GET)
     public String postList(HttpServletRequest request){
         List<Post> postList = postDao.postList();
         request.setAttribute("postList",postList);
@@ -40,20 +40,20 @@ public class CmsPostController {
         return "/cms/post/list";
     }
 
-    @RequestMapping(value = "/post/add", method = RequestMethod.POST)
+    @RequestMapping(value = "/add", method = RequestMethod.POST)
     public String postAdd(Post post){
         postDao.insertPost(post);
         return "redirect:/cms/post/list";
     }
 
-    @RequestMapping(value = "/post/delete", method = RequestMethod.POST)
+    @RequestMapping(value = "/delete", method = RequestMethod.POST)
     @ResponseBody
     public Result deletePost(Long id){
         postDao.deletePost(id);
         return Result.ok();
     }
 
-    @RequestMapping(value = "/post/{id}/update", method = RequestMethod.GET)
+    @RequestMapping(value = "/{id}/update", method = RequestMethod.GET)
     public String updatePost(@PathVariable Long id, HttpServletRequest request){
         logger.info(" updatePost has been called");
         Post post = postDao.getPost(id);
@@ -61,7 +61,7 @@ public class CmsPostController {
         return "/cms/post/update";
     }
 
-    @RequestMapping(value = "/post/update", method = RequestMethod.POST)
+    @RequestMapping(value = "/update", method = RequestMethod.POST)
     @ResponseBody
     public Result updatePostSubmit(Post post){
         postDao.updatePost(post);

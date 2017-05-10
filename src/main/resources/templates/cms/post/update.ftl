@@ -58,7 +58,7 @@
 
 
 
-<script type="text/javascript" charset="UTF-8" src="/cms/script/hfc/post/update.js"></script>
+<script type="text/javascript" charset="UTF-8" src="/cms/script/hfc/post/list.js"></script>
 
 
 </body></html>

@@ -11,7 +11,7 @@
     <#include "../quick_menu.ftl"/>
     <div id="wrap">
         <div class="outer with-side with-transition" style="min-height: 600px;">
-            <#include "left_menu.ftl"/>
+            <#include "../news/left_menu.ftl"/>
 
             <div id="admin_right">
                 <div class="content_box" style="border:none">
