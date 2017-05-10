@@ -10,6 +10,8 @@
         <result column="description" property="description"/>
         <result column="contacts" property="contacts"/>
         <result column="top" property="top"/>
+        <result column="summary" property="summary"/>
+        <result column="logo" property="logo"/>
         <result column="created_at" property="createdAt"/>
         <result column="updated_at" property="updatedAt"/>
     </resultMap>
@@ -19,7 +21,7 @@
     </select>
 
     <insert id="addPost">
-        insert into post (title,description,contacts,top,created_at,updated_at) values (#{title},#{description},#{contacts},#{top},#{createdAt},#{updatedAt})
+        insert into post (title,logo,summary,description,contacts,top,created_at,updated_at) values (#{title},#{logo},#{summary},#{description},#{contacts},#{top},#{createdAt},#{updatedAt})
     </insert>
 
     <delete id="deletePost">
@@ -31,7 +33,7 @@
     </select>
 
     <update id="updatePost">
-        update post set title = #{title},description = #{description}, contacts = #{contacts}, top = #{top}, updated_at = #{updatedAt}
+        update post set title = #{title},logo= #{logo}, summary=#{summary},description = #{description}, contacts = #{contacts}, top = #{top}, updated_at = #{updatedAt}
         where id = #{id}
     </update>
 

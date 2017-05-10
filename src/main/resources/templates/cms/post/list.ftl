@@ -22,7 +22,7 @@
                             <thead>
                             <tr style="height:30px;">
                                 <th width="140px">id</th>
-
+                                <th width="400px">图片</th>
                                 <th width="150px">排序</th>
                                 <th width="150px">标题</th>
                                 
@@ -34,7 +34,9 @@
                                 <tr>
                                     <td>${post.id?default("")}</td>
 
-                                   
+                                    <td>
+                                        <img src="${carousel.logo?default("")}" style="width:400px;height:189px;"/>
+                                    </td>
 
                                     <td>${post.top?default("")}</td>
                                     <td>${post.title?default("")}</td>
@@ -59,7 +61,16 @@
                                 <tbody>
                                 <tr><th width="20%"></th><td><span style="color:${KEY_RESULT_MESSAGE_COLOR?default("")};">${KEY_RESULT_MESSAGE?default("")}</span></td></tr>
 
-                                
+                                <tr>
+                                    <th width="20%" style="text-align:right;">logo:</th>
+                                    <td>
+                                        <div class="logo_outer" style="width:400px;height:189px;">
+                                            <input type="file" class="addLogoInput" id="up_file" style="width:400px;"/>
+                                            <img width="100%" height="100%" src="${entity.logo?default("")}" id="logo_cover"/>
+                                            <input type="hidden" id="logo_hidden" name="logo" value="${entity.logo?default("")}"/>
+                                        </div>
+                                    </td>
+                                </tr>
 
                                 <tr>
                                     <th width="20%" style="text-align:right;">标题:</th>
@@ -73,6 +84,13 @@
                                     <th width="20%" style="text-align:right;">排序:</th>
                                     <td><input id="top_input"  class="form-control" name="top" style="display:inline-block;" value="0"/><label id="top_input_info" style="display:inline-block;">* 排序</label></td>
                                 </tr>
+                                <tr>
+                                    <th width="20%" style="text-align:right;">摘要:</th>
+                                    <td>
+                                        <textarea id="summary_area" cols="80" rows="8" name="summary" >${entity.summary?default("")?html}</textarea>
+                                    </td>
+                                </tr>
+
                                 <tr>
                                     <th width="20%" style="text-align:right;">详情:</th>
                                     <td>

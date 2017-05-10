@@ -1,5 +1,7 @@
 package com.lucifer.model.hfc;
 
+import com.lucifer.utils.StringHelper;
+
 import java.util.Date;
 
 /**
@@ -20,6 +22,10 @@ public class Post {
     private Date updatedAt;
 
     private Float top;
+
+    private String summary;
+
+    private String logo;
 
     public Long getId() {
         return id;
@@ -76,4 +82,49 @@ public class Post {
     public void setTop(Float top) {
         this.top = top;
     }
+
+    public String getSummary() {
+        return summary;
+    }
+
+    public void setSummary(String summary) {
+        this.summary = summary;
+    }
+
+    public String getLogo() {
+        return logo;
+    }
+
+    public void setLogo(String logo) {
+        this.logo = logo;
+    }
+
+    public Boolean isLogoHave(){
+        if (StringHelper.isEmpty(this.logo)) {
+            return false;
+        }
+        if ("/cms/images/logo.png".equals(this.logo)){
+            return false;
+        }
+        return true;
+    }
+
+    public String summaryText(){
+        if (null == this.summary) {
+            return "";
+        }
+        if (this.isLogoHave()){
+            if (this.summary.length()<74) {
+                return this.summary;
+            }
+            return this.summary.substring(0,74)+"...";
+        } else {
+            if (this.summary.length()<110) {
+                return this.summary;
+            }
+            return this.summary.substring(0,110)+"...";
+        }
+
+    }
+
 }
