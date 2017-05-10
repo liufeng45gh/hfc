@@ -56,6 +56,12 @@
             <li  id="left_menu_member_activity_add"><a href="/cms/member-activity/add" >新增活动</a> </li>
             <li  id="left_menu_member_activity_category"><a href="/cms/member-activity/category/list" >分类</a> </li>
         </ul>
+
+        <div class="menu-title">招聘信息</div>
+        <ul class="tree tree-lines" >
+            <li  id="left_menu_post"><a href="/cms/post/list" >列表/新增</a> </li>
+            
+        </ul>
     </div>
 
 

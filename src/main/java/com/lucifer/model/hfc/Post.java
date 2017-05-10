@@ -19,6 +19,8 @@ public class Post {
 
     private Date updatedAt;
 
+    private Float top;
+
     public Long getId() {
         return id;
     }
@@ -65,5 +67,13 @@ public class Post {
 
     public void setUpdatedAt(Date updatedAt) {
         this.updatedAt = updatedAt;
+    }
+
+    public Float getTop() {
+        return top;
+    }
+
+    public void setTop(Float top) {
+        this.top = top;
     }
 }
