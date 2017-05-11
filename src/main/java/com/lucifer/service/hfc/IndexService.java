@@ -145,8 +145,8 @@ public class IndexService {
         return indexRecommendList;
     }
 
-    public List<IndexRecommend> atlasIndexRecommendListLimit12(){
-        List<IndexRecommend> indexRecommendList = indexDao.atlasIndexRecommendListLimit12();
+    public List<IndexRecommend> atlasIndexRecommendListLimit10(){
+        List<IndexRecommend> indexRecommendList = indexDao.atlasIndexRecommendListLimit10();
         for(IndexRecommend indexRecommend:indexRecommendList){
             Atlas atlas = atlasDao.getAtlas(indexRecommend.getTargetId());
             indexRecommend.setTarget(atlas);

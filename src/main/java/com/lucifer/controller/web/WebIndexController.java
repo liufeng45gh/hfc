@@ -99,7 +99,7 @@ public class WebIndexController {
         List<IndexRecommend> memberActivityRecommendList = indexService.memberActivityIndexRecommendListLimit4();
         request.setAttribute("memberActivityRecommendList",memberActivityRecommendList);
 
-        List<IndexRecommend> atlasRecommendList = indexService.atlasIndexRecommendListLimit12();
+        List<IndexRecommend> atlasRecommendList = indexService.atlasIndexRecommendListLimit10();
         request.setAttribute("atlasRecommendList",atlasRecommendList);
 
         return "/web/index";
