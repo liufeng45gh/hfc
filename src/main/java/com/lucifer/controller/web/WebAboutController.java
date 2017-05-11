@@ -52,6 +52,8 @@ public class WebAboutController {
 
         List<Post> postList = postDao.postList();
         request.setAttribute("postList",postList);
+
+        newsService.loadNewsRightData(request);
         return "/web/news/recruitment-list";
     }
 
@@ -60,6 +62,8 @@ public class WebAboutController {
 
         Post post = postDao.getPost(id);
         request.setAttribute("entity",post);
+
+        newsService.loadNewsRightData(request);
         return "/web/news/recruitment-detail";
     }
 }

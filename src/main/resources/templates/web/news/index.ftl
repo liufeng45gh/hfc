@@ -22,26 +22,7 @@
 
                 </div>
 
-                <#if carousel??>
-                <div class="recommend-news">
-                    <a href="${carousel.link?default("")}" target="_blank">
-                        <img src="${carousel.logo?default("")}" />
-                    </a>
-                    <div id="focusTitle">
-                        <a href="${carousel.link?default("")}" target="_blank">
-                            <div class="tit" id="focus-tit">
-                                ${carousel.title?default("")}
-                            </div>
-                        </a>
-                        <div style="margin-top: -6px;">
-                            <hr class="t-d-hr"/>
-                        </div>
-                        <a href="${carousel.link?default("")}" target="_blank">
-                            <div class="des" id="focus-des">${carousel.summary?default("")}</div>
-                        </a>
-                    </div>
-                </div>
-                </#if>
+                
 
                 <div class="finance-list news-list" id="news-list">
                     <#list newsList as news>
@@ -88,11 +69,13 @@
 
 </div>
 
+
+
 <script type="text/javascript">
 $(function() {
-	$('#menu-item-${RequestParameters["categoryId"]?default("")}').addClass("active");
+	$('#menu-item-important-news').addClass("active");
 });
-var categoryId = "${RequestParameters["categoryId"]?default("")}";
+
 </script>
 
 <script  src="/web/js/news/index.js"></script>

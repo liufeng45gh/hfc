@@ -61,7 +61,7 @@ $(function() {
 	$("#search-btn").click(function (){
         $("#search-form").submit();
 	});
-	$("#head-href-index").addClass("active");
+	//$("#head-href-index").addClass("active");
 });
 </script>
 

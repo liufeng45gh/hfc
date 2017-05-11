@@ -16,11 +16,7 @@
         <div class="info-fr wrapper-996">
             <div class="finance-block news-left">
                 <div class="news-menu">
-
-                    <a href="/"><div class="nav-item" >首页</div></a>   <div class="nav-item" >&gt;</div>
-                    <a href="/news/index"><div class="nav-item" >资讯</div></a>   <div class="nav-item" >&gt;</div>
-                    <a href="/news/index?categoryId=${entity.categoryId}"><div class="nav-item" >${entity.categoryName}</div></a>
-
+                    <#include "menu.ftl"/>
 
                 </div>
 
@@ -55,7 +51,12 @@
 
 </div>
 
+<script type="text/javascript">
+$(function() {
+	$('#menu-item-important-news').addClass("active");
+});
 
+</script>
 
 <script  src="/web/js/news/index.js"></script>
 </body>

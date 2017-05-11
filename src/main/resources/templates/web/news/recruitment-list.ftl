@@ -57,9 +57,9 @@
                 <div class="fill-bottom">&nbsp;</div>
 
             </div>
-            <#-- 
+
             <#include "right_part.ftl"/>
-            -->
+
 
 
         </div>

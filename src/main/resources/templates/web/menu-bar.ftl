@@ -136,7 +136,7 @@
                         <div><a href="/about/company-intro">公司简介</a></div>
                         <div><a href="/about/management-idea">经营理念</a></div>
                         <div><a href="/about/company-structure">公司架构</a></div>
-                        <div><a href="/about/important-news">动态要闻</a></div>
+                        <div><a href="/news/index">动态要闻</a></div>
                         <div><a href="/about/recruitment">招聘信息</a></div>
                     </div>
                 </div>
