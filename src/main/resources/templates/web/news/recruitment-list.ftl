@@ -29,16 +29,16 @@
                     <div class="news-item">
                         <#if post.isLogoHave()>
                         <div class="logo">
-                            <a href="/post/${post.id}/detail" target="_blank">
+                            <a href="/about/recruitment/${post.id}/detail" target="_blank">
                                 <img src="${post.logo?default("")}">
                             </a>
                         </div>
                         </#if>
                         <div class="text <#if !post.isLogoHave()>w800</#if>">
-                            <a href="/post/${post.id}/detail" target="_blank">
+                            <a href="/about/recruitment/${post.id}/detail" target="_blank">
                                 <div class="title">${post.title?default("")}</div>
                             </a>
-                            <a href="/post/${post.id}/detail" target="_blank">
+                            <a href="/about/recruitment/${post.id}/detail" target="_blank">
                                 <div class="desc">
                                     ${post.summaryText()}
                                 </div>
@@ -72,9 +72,9 @@
 
 <script type="text/javascript">
 $(function() {
-	$('#menu-item-${RequestParameters["categoryId"]?default("")}').addClass("active");
+	$('#menu-item-recruitment').addClass("active");
 });
-var categoryId = "${RequestParameters["categoryId"]?default("")}";
+
 </script>
 
 <script  src="/web/js/news/index.js"></script>

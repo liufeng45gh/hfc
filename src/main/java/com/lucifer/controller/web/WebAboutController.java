@@ -4,6 +4,7 @@ import com.lucifer.dao.hfc.PostDao;
 import com.lucifer.model.hfc.Post;
 import com.lucifer.service.hfc.NewsService;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -52,5 +53,13 @@ public class WebAboutController {
         List<Post> postList = postDao.postList();
         request.setAttribute("postList",postList);
         return "/web/news/recruitment-list";
+    }
+
+    @RequestMapping(value="/recruitment/{id}/detail",method = RequestMethod.GET)
+    public String recruitmentDetail(HttpServletRequest request,@PathVariable Long id){
+
+        Post post = postDao.getPost(id);
+        request.setAttribute("entity",post);
+        return "/web/news/recruitment-detail";
     }
 }
