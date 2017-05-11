@@ -3,6 +3,7 @@ package com.lucifer.dao.hfc;
 import com.lucifer.dao.IBatisBaseDao;
 import com.lucifer.model.hfc.Carousel;
 import com.lucifer.model.hfc.Post;
+import com.lucifer.utils.DateUtils;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -18,6 +19,8 @@ public class PostDao extends IBatisBaseDao {
     }
 
     public Integer insertPost(Post post){
+        post.setCreatedAt(DateUtils.now());
+        post.setUpdatedAt(DateUtils.now());
         return this.hfcSqlSession.insert("addPost",post);
     }
 
@@ -30,6 +33,7 @@ public class PostDao extends IBatisBaseDao {
     }
 
     public Integer updatePost(Post post){
+        post.setUpdatedAt(DateUtils.now());
         return this.hfcSqlSession.update("updatePost",post);
     }
 }

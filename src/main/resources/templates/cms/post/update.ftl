@@ -75,6 +75,7 @@
 
 
 <script type="text/javascript" charset="UTF-8" src="/cms/script/hfc/post/list.js"></script>
+<script type="text/javascript" charset="UTF-8" src="/cms/script/hfc/news/logo_select.js"></script>
 
 
 </body></html>

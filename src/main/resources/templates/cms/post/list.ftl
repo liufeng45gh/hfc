@@ -35,7 +35,7 @@
                                     <td>${post.id?default("")}</td>
 
                                     <td>
-                                        <img src="${carousel.logo?default("")}" style="width:400px;height:189px;"/>
+                                        <img src="${post.logo?default("")}" style="width:400px;height:189px;"/>
                                     </td>
 
                                     <td>${post.top?default("")}</td>
@@ -126,6 +126,7 @@
 		});
 	</script>
 <script type="text/javascript" charset="UTF-8" src="/cms/script/hfc/post/list.js"></script>
+<script type="text/javascript" charset="UTF-8" src="/cms/script/hfc/news/logo_select.js"></script>
 
 
 
