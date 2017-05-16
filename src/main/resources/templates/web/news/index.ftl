@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <title>海富文化艺术网-动态要闻</title>
+    <meta name="keywords" content="北京海富国际文化艺术集团有限责任公司，海富国际文化艺术金融中心大厦，国赫宫，北京锦泓轩文化艺术传媒，北京观檀家具，一二四八，以艺术品流通为使命"/>
     <#include "../c-head.ftl"/>
     <link rel='stylesheet' href='/web/css/news.css' type='text/css' media='screen' />
 
