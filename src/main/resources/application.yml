@@ -4,7 +4,7 @@ server:
    resetCache: true
 spring:
   redis:
-    host: hfc.dbdbd.cn
+    host: test.haifuc.cn
     port: 6379
     password: lucifer-hfc
   http:
@@ -15,13 +15,13 @@ spring:
 jdbc:
     driverClass: com.mysql.jdbc.Driver
     url: jdbc:mysql://hfc.dbdbd.cn/oauth2-user?useUnicode=true&characterEncoding=utf-8&autoReconnect=true&rewriteBatchedStatements=TRUE&zeroDateTimeBehavior
-    username: hfc
-    password: lucifer-hfc
+    username: root
+    password: lucifer-HFC-20170501
 jdbc-hfc:
     driverClass: com.mysql.jdbc.Driver
     url: jdbc:mysql://hfc.dbdbd.cn/hfc?useUnicode=true&characterEncoding=utf-8&autoReconnect=true&rewriteBatchedStatements=TRUE&zeroDateTimeBehavior
-    username: hfc
-    password: lucifer-hfc
+    username: root
+    password: lucifer-HFC-20170501
 
 #jdbc:
 #    driverClass: com.mysql.jdbc.Driver
@@ -52,9 +52,9 @@ multipart:
   maxRequestSize: 30Mb
 solr:
   url:
-    news: http://hfc.dbdbd.cn:8983/solr/news
-    artist: http://hfc.dbdbd.cn:8983/solr/artist
-    appreciate: http://hfc.dbdbd.cn:8983/solr/appreciate
+    news: http://test.haifuc.cn:8983/solr/news
+    artist: http://test.haifuc.cn:8983/solr/artist
+    appreciate: http://test.haifuc.cn:8983/solr/appreciate
 sms:
   sendCodeUrl: https://api.netease.im/sms/sendcode.action
   appKey: 80f0cbe03428deb5f520005694aeffdd
