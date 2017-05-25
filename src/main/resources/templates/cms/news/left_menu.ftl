@@ -62,6 +62,13 @@
             <li  id="left_menu_post"><a href="/cms/post/list" >列表/新增</a> </li>
             
         </ul>
+
+        <div class="menu-title">海富合作</div>
+        <ul class="tree tree-lines" >
+            <li  id="left_menu_company_list"><a href="/cms/company/list" >合作公司列表</a> </li>
+            <li  id="left_menu_company_add"><a href="/cms/company/add" >新增合作公司</a> </li>
+            
+        </ul>
     </div>
 
 
