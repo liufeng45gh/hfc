@@ -188,5 +188,29 @@
         update index_atlas set top = #{top},updated_at = now() where id = #{id}
     </update>
 
+    <!--  下面是海富合作 -->
+    <select id="companyIndexRecommendList" resultMap="IndexRecommendMap">
+        select * from index_company order by top desc ,id desc
+    </select>
+
+    <select id="companyIndexRecommendListLimit16" resultMap="IndexRecommendMap">
+        select * from index_company order by top desc ,id desc limit 16
+    </select>
+
+    <insert id="addCompanyIndexRecommend" useGeneratedKeys="true" keyProperty="id">
+        insert into index_company (target_id,top,created_at,updated_at) values (#{targetId},#{top},now(),now())
+    </insert>
+
+    <delete id="deleteCompanyIndexRecommend">
+        delete from index_company where id = #{id}
+    </delete>
+
+    <select id="getCompanyIndexRecommend" resultMap="IndexRecommendMap">
+        select * from index_company where  id = #{id}
+    </select>
+
+    <update id="updateCompanyIndexRecommend">
+        update index_company set top = #{top},updated_at = now() where id = #{id}
+    </update>
 
 </mapper>

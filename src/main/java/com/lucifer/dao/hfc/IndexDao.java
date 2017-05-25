@@ -208,4 +208,35 @@ public class IndexDao extends IBatisBaseDao {
         return this.hfcSqlSession.delete("deleteAtlasIndexRecommend",id);
     }
 
+
+    //-------------------------------------------------------------------------------------------------------------------------------------//
+    //下面是推荐海富合作
+    public List<IndexRecommend> companyIndexRecommendList(){
+        return this.hfcSqlSession.selectList("companyIndexRecommendList");
+    }
+
+    public List<IndexRecommend> companyIndexRecommendListLimit16(){
+        return this.hfcSqlSession.selectList("companyIndexRecommendListLimit16");
+    }
+
+
+    public IndexRecommend getCompanyIndexRecommend(Long id) {
+        return this.hfcSqlSession.selectOne("getCompanyIndexRecommend",id);
+    }
+
+    public Integer updateCompanyIndexRecommend(IndexRecommend indexRecommend){
+        //newsRecommend.setTop(0f);
+        return this.hfcSqlSession.update("updateCompanyIndexRecommend",indexRecommend);
+    }
+
+    public Integer addCompanyIndexRecommend(IndexRecommend indexRecommend){
+        indexRecommend.setTop(0f);
+        return this.hfcSqlSession.insert("addCompanyIndexRecommend",indexRecommend);
+    }
+
+    public Integer deleteCompanyIndexRecommend(Long id){
+        return this.hfcSqlSession.delete("deleteCompanyIndexRecommend",id);
+    }
+
+
 }

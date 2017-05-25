@@ -37,6 +37,9 @@ public class IndexService {
     @Resource
     private AtlasDao atlasDao;
 
+    @Resource
+    private CompanyDao companyDao;
+
     public List<IndexRecommend> newsIndexRecommendList(){
         List<IndexRecommend> indexRecommendList = indexDao.newsIndexRecommendList();
         for(IndexRecommend indexRecommend:indexRecommendList){
@@ -150,6 +153,15 @@ public class IndexService {
         for(IndexRecommend indexRecommend:indexRecommendList){
             Atlas atlas = atlasDao.getAtlas(indexRecommend.getTargetId());
             indexRecommend.setTarget(atlas);
+        }
+        return indexRecommendList;
+    }
+
+    public List<IndexRecommend> companyIndexRecommendList(){
+        List<IndexRecommend> indexRecommendList = indexDao.companyIndexRecommendList();
+        for(IndexRecommend indexRecommend:indexRecommendList){
+            Company company = companyDao.getCompany(indexRecommend.getTargetId());
+            indexRecommend.setTarget(company);
         }
         return indexRecommendList;
     }

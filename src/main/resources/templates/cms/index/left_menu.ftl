@@ -17,6 +17,7 @@
            <li data-idx="3" data-id="3" id="left_menu_research"><a href="/cms/index/recommend/research-list" >推荐环球文化</a> </li>
            <li data-idx="3" data-id="3" id="left_menu_summit"><a href="/cms/index/recommend/summit-list" >推荐峰会</a> </li>
            <li data-idx="3" data-id="3" id="left_menu_member_activity"><a href="/cms/index/recommend/member-activity-list" >推荐会员活动</a> </li>
+           <li data-idx="3" data-id="3" id="left_menu_company"><a href="/cms/index/recommend/company-list" >推荐海富合作</a> </li>
            <li data-idx="3" data-id="3" id="left_menu_search_import"><a href="/cms/index/search/re-import" >搜素引擎导入</a> </li>
 
        </ul>
