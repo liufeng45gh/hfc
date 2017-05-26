@@ -14,7 +14,7 @@
             <div class="logo_outer">
                 <input type="file" class="addLogoInput" id="up_file" style="width:158px;"/>
                 <img width="100%" height="100%" src="${company.logo?default("")}" id="logo_cover"/>
-                <input type="hidden" id="logo_hidden" name="avatar" value="${company.logo?default("")}"/>
+                <input type="hidden" id="logo_hidden" name="logo" value="${company.logo?default("")}"/>
             </div>
         </td>
     </tr>
