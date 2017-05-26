@@ -3,6 +3,9 @@
 <head>
     <title>海富文化艺术网-首页</title>
     <meta name="keywords" content="海富文化艺术网，海富文化艺术，海富文化，海富集团，北京海富集团，北京海富，海富"/>
+    <meta name="keywords" content="瓷器，玉器，木雕，书画，红木，紫砂，民间藏品，珠宝首饰，刺绣，艺术家培养，艺术品创作，展览，拍卖，销售，金融服务"/>
+    <meta name="description" content="北京海富国际文化艺术集团有限责任公司，是一家从源头上进行艺术家培育、从根本上改变艺术品流通方式和提高艺术品流通效率的多功能综合性投资管理服务集团。集团下辖北京中海国金农业咨询有限公司、北京锦泓轩文化艺术传媒有限责任公司、北京观檀家具有限责任公司。业务范围囊括书画、红木、紫砂、陶瓷、玉器、木雕、民间藏品、珠宝首饰、刺绣九大艺术门类的艺术家培养，艺术品创作、展览、拍卖、销售、金融服务。"/>
+
     <#include "c-head.ftl"/>
     <link rel='stylesheet' href='/web/css/research-report.css' type='text/css' media='screen' />
     <link rel='stylesheet' href='/web/css/appreciate.css' type='text/css' media='screen' />
