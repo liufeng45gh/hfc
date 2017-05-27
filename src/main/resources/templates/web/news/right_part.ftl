@@ -10,7 +10,7 @@
         </form>
     </div>
 
-
+    <div style="clear:both;"></div>
     <div class="title" >
         <div class="t-zh">最热新闻</div>
         <div class="t-en">HOT NEWS</div>
