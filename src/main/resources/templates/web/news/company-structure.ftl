@@ -55,6 +55,8 @@ $(function() {
 	$('#menu-item-company-structure').addClass("active");
 });
 
+$("#head-href-about").addClass("active");
+
 </script>
 
 

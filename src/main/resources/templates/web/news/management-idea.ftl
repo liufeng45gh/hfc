@@ -61,7 +61,7 @@
 $(function() {
 	$('#menu-item-management-idea').addClass("active");
 });
-
+$("#head-href-about").addClass("active");
 </script>
 
 

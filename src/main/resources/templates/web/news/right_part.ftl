@@ -71,6 +71,6 @@ $(function() {
 	$("#search-btn").click(function (){
         $("#search-form").submit();
 	});
-	$("#head-href-about").addClass("active");
+
 });
 </script>

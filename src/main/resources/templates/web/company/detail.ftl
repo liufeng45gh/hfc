@@ -61,6 +61,7 @@
 $(function() {
 	$('#menu-item-yhj').addClass("active");
 });
+$("#head-href-company").addClass("active");
 </script>
 
 

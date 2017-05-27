@@ -41,6 +41,10 @@
 $(function() {
 	$('#menu-item-yhj').addClass("active");
 });
+
+$(function() {
+	$('#head-href-atlas').addClass("active");
+});
 </script>
 
 <script  src="/web/js/atlas/detail.js"></script>

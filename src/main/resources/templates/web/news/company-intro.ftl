@@ -69,6 +69,8 @@ $(function() {
 	$('#menu-item-company-intro').addClass("active");
 });
 
+$("#head-href-about").addClass("active");
+
 </script>
 
 

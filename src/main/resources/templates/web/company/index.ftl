@@ -60,6 +60,7 @@
 $(function() {
 	$('#menu-item-yhj').addClass("active");
 });
+$("#head-href-company").addClass("active");
 </script>
 
 <script  src="/web/js/artist/index.js"></script>

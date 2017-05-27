@@ -58,11 +58,18 @@
                         <div class="name">海富艺术品</div>
                     </a>
 
-                    <a class="header-item" href="/atlas/index" >
+                    <a class="header-item" href="/atlas/index" id="head-href-atlas">
                         <!--
                         <div class="szzt szzt-huati"></div>
                         -->
                         <div class="name">海富映像</div>
+                    </a>
+
+                    <a class="header-item" href="/company/index" id="head-href-company">
+                        <!--
+                        <div class="szzt szzt-huati"></div>
+                        -->
+                        <div class="name">海富合作</div>
                     </a>
 
                     <a class="header-item" href="/cultural-finance/index" id="head-href-cultural-finance">
@@ -114,13 +121,12 @@
                         -->
                         <div class="name">会员活动</div>
                     </a>
-
+                    <!--
                     <a class="header-item" href="#">
-                        <!--
-                        <div class="szzt  szzt-kehufuwu"></div>
-                        -->
+                        
                         <div class="name">客户服务</div>
                     </a>
+                    -->
                     
 
                 </div>

@@ -58,6 +58,7 @@
 $(function() {
 	$('#menu-item-recruitment').addClass("active");
 });
+$("#head-href-about").addClass("active");
 
 </script>
 

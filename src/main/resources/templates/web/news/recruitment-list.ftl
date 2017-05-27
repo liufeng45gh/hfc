@@ -77,6 +77,7 @@ $(function() {
 	$('#menu-item-recruitment').addClass("active");
 });
 
+$("#head-href-about").addClass("active");
 </script>
 
 <script  src="/web/js/news/index.js"></script>
