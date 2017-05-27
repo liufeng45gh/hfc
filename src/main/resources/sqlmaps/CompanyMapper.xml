@@ -10,6 +10,7 @@
         <result column="logo" property="logo"/>
         <result column="detail" property="detail"/>
         <result column="top" property="top"/>
+        <result column="link" property="link"/>
         <result column="is_deleted" property="isDeleted"/>
         <result column="created_at" property="createdAt"/>
         <result column="updated_at" property="updatedAt"/>
@@ -31,7 +32,7 @@
     </select>
 
     <insert id="insertCompany">
-        insert into company (name,logo,top,detail,created_at,updated_at,is_deleted) values (#{name},#{logo},#{top},#{detail},#{createdAt},#{updatedAt},0)
+        insert into company (name,logo,top,link,detail,created_at,updated_at,is_deleted) values (#{name},#{logo},#{top},#{link},#{detail},#{createdAt},#{updatedAt},0)
     </insert>
 
     <select id="getCompany" resultMap="companyMap">
@@ -40,7 +41,7 @@
 
     <update id="updateCompany">
         update company
-        set name = #{name},top = #{top},logo = #{logo},detail = #{detail},updated_at=#{updatedAt}
+        set name = #{name},top = #{top},logo = #{logo},link=#{link},detail = #{detail},updated_at=#{updatedAt}
         where id = #{id}
     </update>
 

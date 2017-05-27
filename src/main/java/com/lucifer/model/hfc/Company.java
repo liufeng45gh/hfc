@@ -16,6 +16,8 @@ public class Company {
 
     private Float top;
 
+    private String link;
+
     private String detail;
 
     private Date createdAt;
@@ -86,5 +88,13 @@ public class Company {
 
     public void setIsDeleted(Integer isDeleted) {
         this.isDeleted = isDeleted;
+    }
+
+    public String getLink() {
+        return link;
+    }
+
+    public void setLink(String link) {
+        this.link = link;
     }
 }

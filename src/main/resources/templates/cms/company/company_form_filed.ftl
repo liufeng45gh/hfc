@@ -9,7 +9,7 @@
         </td>
     </tr>
     <tr>
-        <th width="20%" style="text-align:right;">头像:</th>
+        <th width="20%" style="text-align:right;">logo:</th>
         <td>
             <div class="logo_outer">
                 <input type="file" class="addLogoInput" id="up_file" style="width:158px;"/>
@@ -27,7 +27,13 @@
     </tr>
 
 
-
+    <tr>
+        <th width="20%" style="text-align:right;">网址:</th>
+        <td>
+            <input id="link_input" class="form-control" name="link" style="display:inline-block;" value="${company.link?default("")}" />
+            <label id="link_input_info" style="display:inline-block;">* 网址</label>
+        </td>
+    </tr>
    
 
     <tr>
