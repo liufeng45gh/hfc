@@ -18,8 +18,10 @@
     <div class="third-block">
         <div class="info-fr wrapper-996">
             <div class="finance-block news-left">
-               
 
+                <div class="news-menu">
+                    <a href="/company/index"><div class="menu-item" id="menu-item-hfhz">海富合作</div></a>
+                </div>
 
                 <div class="artist-list" id="artist-list">
                     <#list companyList as company>
@@ -58,7 +60,7 @@
 
 <script type="text/javascript">
 $(function() {
-	$('#menu-item-yhj').addClass("active");
+	$('#menu-item-hfhz').addClass("active");
 });
 $("#head-href-company").addClass("active");
 </script>
