@@ -9,13 +9,14 @@
         </td>
     </tr>
     <tr>
-        <th width="20%" style="text-align:right;">logo:</th>
+        <th width="20%" style="text-align:right;">logo :</th>
         <td>
-            <div class="logo_outer">
+            <div class="logo_outer" style="display:inline-block;">
                 <input type="file" class="addLogoInput" id="up_file" style="width:158px;"/>
                 <img width="100%" height="100%" src="${company.logo?default("")}" id="logo_cover"/>
                 <input type="hidden" id="logo_hidden" name="logo" value="${company.logo?default("")}"/>
             </div>
+            <label id="logo_input_info" style="display:inline-block;">(140 * 100)</label>
         </td>
     </tr>
    
