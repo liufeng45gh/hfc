@@ -105,6 +105,7 @@ public class AppreciateDao  extends IBatisBaseDao {
 
     public Integer updateAppreciate(Appreciate appreciate){
         appreciate.setUpdatedAt(DateUtils.now());
+        removeAppreciateCache(appreciate.getId());
         return this.hfcSqlSession.update("updateAppreciate",appreciate);
     }
 
