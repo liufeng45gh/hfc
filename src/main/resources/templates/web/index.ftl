@@ -95,7 +95,7 @@
                             <div class="title">【${(recommend.target.categoryName)!}】${recommend.target.title?default("")}</div>
                              </a>
                             <div class="desc">${recommend.target.indexSummaryText()}</div>
-                            <div class="date-info">[2017/2/2]</div>
+                            <div class="date-info">[${(recommend.target.publishAt?string("yyyy-MM-dd HH:mm:ss"))!}]</div>
                         </div>
 
                     </div>
