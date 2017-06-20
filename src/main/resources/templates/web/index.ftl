@@ -227,7 +227,7 @@
 
 
 </div>
-
+<#include "c-foot.ftl"/>
 <script type="text/javascript">
 $(function() {
 	$('#focus').slideFocus();
