@@ -114,13 +114,12 @@
                         <div class="name">艺术品定制</div>
                     </a>
                     -->
-
+                    <!--
                     <a class="header-item" href="/member-activity/index" id="head-href-member-activity">
-                        <!--
-                        <div class="szzt szzt-huiyuanhuodong"></div>
-                        -->
+                       
                         <div class="name">会员活动</div>
                     </a>
+                    -->
                     <!--
                     <a class="header-item" href="#">
                         
