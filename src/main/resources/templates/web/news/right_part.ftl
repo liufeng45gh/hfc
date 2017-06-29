@@ -11,6 +11,7 @@
     </div>
 
     <div style="clear:both;"></div>
+    <!--
     <div class="title" >
         <div class="t-zh">最热新闻</div>
         <div class="t-en">HOT NEWS</div>
@@ -38,7 +39,7 @@
     <div class="hr-border" style="width:360px;">
         <hr  class="line-info-hr"/>
     </div>
-
+    -->
     <div class="title" >
         <div class="t-zh">精彩推荐</div>
         <div class="t-en">WONDERFUL RECOMMEND</div>
