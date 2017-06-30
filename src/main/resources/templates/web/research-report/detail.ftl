@@ -19,7 +19,7 @@
                 <div class="news-menu">
 
                     <a href="/"><div class="nav-item" >首页</div></a>   <div class="nav-item" >&gt;</div>
-                    <a href="/research-report/index"><div class="nav-item" >研究报告</div></a>   <div class="nav-item" >&gt;</div>
+                    <a href="/research-report/index"><div class="nav-item" >环球文化</div></a>   <div class="nav-item" >&gt;</div>
 
 
 
@@ -31,7 +31,7 @@
                     <div class="news-title">${entity.title?default("")}</div>
                     <div class="news-info">
 
-                             ${entity.downloadHtml()}
+                             
 
                         <div class="detail-date-info">[${(entity.publishAt?string("yyyy-MM-dd HH:mm:ss"))!}]</div>
                     </div>

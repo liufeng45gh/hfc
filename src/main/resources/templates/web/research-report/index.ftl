@@ -22,7 +22,7 @@
 
                 <div class="news-nav b-line">
                     <a href="/"><div class="nav-item" >首页</div></a>   <div class="nav-item" >&gt;</div>
-                    <a href="/research-report/index"><div class="nav-item" >研究报告</div></a>
+                    <a href="/research-report/index"><div class="nav-item" >环球文化</div></a>
                 </div>
 
 

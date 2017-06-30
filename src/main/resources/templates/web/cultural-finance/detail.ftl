@@ -18,7 +18,7 @@
                 <div class="news-menu">
 
                     <a href="/"><div class="nav-item" >首页</div></a>   <div class="nav-item" >&gt;</div>
-                    <a href="/cultural-finance/index"><div class="nav-item" >文化金融</div></a>   <div class="nav-item" >&gt;</div>
+                    <a href="/cultural-finance/index"><div class="nav-item" >海富学习</div></a>   <div class="nav-item" >&gt;</div>
                     <a href="/cultural-finance/index?categoryId=${entity.categoryId}"><div class="nav-item" >${entity.categoryName}</div></a>
 
 
