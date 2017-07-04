@@ -247,7 +247,7 @@
     height: 80px;
     text-align: center;
     top: 0px;
-    position: absolute;
+    position: relative;
 }
 
 #ablumList li.active img, #ablumList li:hover img {

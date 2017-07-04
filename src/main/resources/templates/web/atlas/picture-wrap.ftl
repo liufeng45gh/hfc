@@ -25,7 +25,7 @@
                 <ul id="ablumList" class="Clear" style="width: 1430px; left: 0px;">
 
                     <#list pictureList as picture>
-                    <li class="thumb-li  <#if picture_index==0>active</#if>" style="left: ${(130*picture_index)}px; " index="${(picture_index + 1)}" id="thumb-${(picture_index + 1)}">
+                    <li class="thumb-li  <#if picture_index==0>active</#if>"  index="${(picture_index + 1)}" id="thumb-${(picture_index + 1)}">
                         <img src="${picture.url}">
                         <span>${(picture_index + 1)}/${pictureList?size}</span>
                         <p>
