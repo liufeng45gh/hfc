@@ -141,7 +141,7 @@
                                 <div class="desc"> ${recommend.target.indexSummaryText()}</div>
                             </a>
                             <div>
-                                ${recommend.target.downloadHtml()}
+                                
                                 <div class="date-info">[${(recommend.target.publishAt?string("yyyy-MM-dd HH:mm:ss"))!}]</div>
                             </div>
                         </div>
