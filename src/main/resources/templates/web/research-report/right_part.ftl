@@ -9,7 +9,7 @@
             <a href="#" onclick="return false;" class="go" id="search-btn"></a>
         </form>
     </div>
-
+    <div style="clear: both;"></div>
     <!--
     <div class="title" >
         <div class="t-zh">最热新闻</div>
