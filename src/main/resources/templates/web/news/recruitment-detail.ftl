@@ -27,9 +27,11 @@
                 <div class="finance-list news-list" id="news-list">
                     <div class="news-title">${entity.title?default("")}</div>
                     <div class="news-info">
+                        <!--
                         <span>
                               ${entity.contacts?default("")}
                         </span>
+                        -->
                         <span>
                             ${(entity.createdAt?string("yyyy-MM-dd HH:mm:ss"))!}
                         </span>
