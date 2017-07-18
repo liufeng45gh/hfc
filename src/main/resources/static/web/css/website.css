@@ -493,12 +493,15 @@ em{
     color: #fff;
     font-size: 18px;
     font-weight: bold;
+    margin-left: 15px;
 }
 .focus #focusTitle .des {
     line-height: 22px;
     height: 44px;
     overflow: hidden;
-    color:  #ffddb8;
+    //color:  #ffddb8;
+    color: #fff;
+    margin-left: 15px;
 }
 
 .carousel-border{
