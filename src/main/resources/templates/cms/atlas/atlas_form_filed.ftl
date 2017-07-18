@@ -9,7 +9,7 @@
         </td>
     </tr>
     <tr>
-        <th width="20%" style="text-align:right;">logo:</th>
+        <th width="20%" style="text-align:right;">logo:(220*150)</th>
         <td>
             <div class="logo_outer">
                 <input type="file" class="addLogoInput" id="up_file" style="width:158px;"/>

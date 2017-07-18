@@ -6,7 +6,7 @@
         <td><input id="title_input" class="form-control" name="title" style="display:inline-block;" value="${entity.title?default("")}" /><label id="title_input_info" style="display:inline-block;">* 标题</label></td>
     </tr>
     <tr>
-        <th width="20%" style="text-align:right;  ">logo:</th>
+        <th width="20%" style="text-align:right;  ">logo:(260*150)</th>
         <td>
             <div class="logo_outer">
                 <input type="file" class="addLogoInput" id="up_file" style="width:158px;"/>

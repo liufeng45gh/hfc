@@ -27,7 +27,7 @@
             <tr><th width="20%"></th><td><span style="color:${KEY_RESULT_MESSAGE_COLOR?default("")};">${KEY_RESULT_MESSAGE?default("")}</span></td></tr>
 
             <tr>
-                <th width="20%" style="text-align:right;">logo:</th>
+                <th width="20%" style="text-align:right;">logo:(260*150)</th>
                 <td>
                     <div class="logo_outer" style="width:400px;height:189px;">
                         <input type="file" class="addLogoInput" id="up_file" style="width:400px;"/>
