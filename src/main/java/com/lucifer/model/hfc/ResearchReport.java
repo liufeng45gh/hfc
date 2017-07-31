@@ -177,7 +177,7 @@ public class ResearchReport {
             return "";
         }
         if (this.isLogoHave()){
-            if (this.summary.length()<74) {
+            if (this.summary.length() <= 74) {
                 return this.summary;
             }
             return this.summary.substring(0,74)+"...";
@@ -195,7 +195,7 @@ public class ResearchReport {
             return "";
         }
         if (this.isLogoHave()){
-            if (this.summary.length()<45) {
+            if (this.summary.length() <= 45) {
                 return this.summary;
             }
             return this.summary.substring(0,45)+"...";
