@@ -16,6 +16,10 @@ public class CarouseDao extends IBatisBaseDao{
         return this.hfcSqlSession.selectList("carouselList");
     }
 
+    public List<Carousel> carouselListLimit5(){
+        return this.hfcSqlSession.selectList("carouselListLimit5");
+    }
+
     public Integer insertCarousel(Carousel carousel){
         return this.hfcSqlSession.insert("addCarousel",carousel);
     }

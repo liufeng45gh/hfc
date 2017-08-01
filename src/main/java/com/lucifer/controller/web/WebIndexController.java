@@ -78,7 +78,7 @@ public class WebIndexController {
 
     @RequestMapping(value="/index-no-cache",method = RequestMethod.GET)
     public String indexWithNoCache(HttpServletRequest request){
-        List<Carousel> carouselList = carouseDao.carouselList();
+        List<Carousel> carouselList = carouseDao.carouselListLimit5();
         request.setAttribute("carouselList",carouselList);
 
         List<Carousel> newsCarouselList = carouseDao.newsCarouselListLimit6();

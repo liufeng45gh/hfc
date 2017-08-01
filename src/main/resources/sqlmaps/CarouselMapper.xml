@@ -12,7 +12,10 @@
         <result column="top" property="top"/>
         <result column="link" property="link"/>
     </resultMap>
-    
+
+    <select id="carouselListLimit5" resultMap="CarouselMap">
+        select * from carousel order by top desc,id desc  limit 5
+    </select>
     <select id="carouselList" resultMap="CarouselMap">
         select * from carousel order by top desc,id desc
     </select>
