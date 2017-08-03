@@ -55,7 +55,7 @@
                     <div class="news-item">
                         <a href="${carousel.link?default("")}" target="_blank">
                             <p><img src="${carousel.logo?default("")}" ></p>
-                            <div class="n-title">${(carousel.indexRecommendTitle())!}</div>
+                            <div class="n-title">${carousel.title?default("")}</div>
                         </a>
                     </div>
                     </#list>

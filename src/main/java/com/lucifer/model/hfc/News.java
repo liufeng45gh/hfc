@@ -193,19 +193,11 @@ public class News {
         if (StringHelper.isEmpty(this.title)) {
             return "";
         }
-        if (this.title.length() > 11) {
-            return this.title.substring(0,10) + "...";
+        if (this.title.length() > 17) {
+            return this.title.substring(0,16) + "...";
         }
         return this.title;
     }
 
-    public String indexRecommendTitle(){
-        if (StringHelper.isEmpty(this.title)) {
-            return "";
-        }
-        if (this.title.length() > 17) {
-            return this.title.substring(0,17) + "...";
-        }
-        return this.title;
-    }
+ 
 }
