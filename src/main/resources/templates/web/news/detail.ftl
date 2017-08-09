@@ -31,6 +31,10 @@
                         <div>
                             ${(entity.publishAt?string("yyyy-MM-dd HH:mm:ss"))!}
                         </div>
+                        
+                    </div>
+                    <div style="clear: both"></div>
+                    <div class="news-info ">
                         <div class="share-button">
                             <img  src="/web/images/share/wechat-share.jpg"/>
                         </div>
