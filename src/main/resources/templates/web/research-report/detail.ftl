@@ -30,11 +30,9 @@
                 <div class="finance-list news-list" id="news-list">
                     <div class="news-title">${entity.title?default("")}</div>
                     <div class="news-info">
-
-                             
-
                         <div class="detail-date-info">[${(entity.publishAt?string("yyyy-MM-dd HH:mm:ss"))!}]</div>
                     </div>
+                    <#include "../news/share.ftl"/>
                     <div class="news-content">${entity.content?default("")}</div>
 
                 </div>
