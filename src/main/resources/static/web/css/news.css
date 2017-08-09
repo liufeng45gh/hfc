@@ -363,13 +363,29 @@
     margin-bottom: 20px;
     font-size: 13px;
     //text-align:right;
-    height: 20px;
+    //height: 20px;
+    height: 50px;
+    line-height: 50px;
 }
 
-.news-info span{
+.news-info div{
     color: #777;
     margin-right: 2px;
     //float: right;
+     height: 50px;
+    line-height: 50px;
+    //display: inline-block;
+    float: left;
+    margin-right: 5px;
+}
+
+.news-info .share-button{
+   cursor: pointer;
+}
+
+.news-info img{
+     height: 50px;
+     width: 50px;
 }
 
 .news-content{
@@ -392,4 +408,8 @@
     margin-top: 20px;
     margin-bottom: 10px;
     line-height: 40px;
+}
+
+.popup-share{
+    display: none;
 }

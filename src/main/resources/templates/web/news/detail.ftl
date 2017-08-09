@@ -25,13 +25,23 @@
                 <div class="finance-list news-list" id="news-list">
                     <div class="news-title">${entity.title?default("")}</div>
                     <div class="news-info">
-                        <span>
+                        <div>
                               ${entity.source?default("")}
-                        </span>
-                        <span>
+                        </div>
+                        <div>
                             ${(entity.publishAt?string("yyyy-MM-dd HH:mm:ss"))!}
-                        </span>
+                        </div>
+                        <div class="share-button">
+                            <img  src="/web/images/share/wechat-share.jpg"/>
+                        </div>
+                        <div class="share-button">
+                            <img  src="/web/images/share/qq-share.jpg"/>
+                        </div>
+                        <div class="share-button">
+                            <img  src="/web/images/share/weibo-share.jpg"/>
+                        </div>
                     </div>
+                    <div style="clear: both"></div>
                     <div class="news-content">${entity.content?default("")}</div>
 
                 </div>
@@ -49,6 +59,10 @@
 
 
 
+</div>
+
+<div class="popup-share">
+      <img src="/web/images/share/popup-share.jpg" style="width:400px;height:429px;">
 </div>
 
 <script type="text/javascript">
