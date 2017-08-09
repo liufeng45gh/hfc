@@ -2,7 +2,7 @@
 <html>
 <head>
     <#include "../c-head.ftl"/>
-    <link rel='stylesheet' href='/web/css/news.css' type='text/css' media='screen' />
+    <link rel='stylesheet' href='/web/css/news.css?version=1.0' type='text/css' media='screen' />
 
 </head>
 
@@ -72,6 +72,6 @@ $(function() {
 $("#head-href-about").addClass("active");
 </script>
 
-<script  src="/web/js/news/index.js"></script>
+<script  src="/web/js/news/index.js?version=1.0"></script>
 </body>
 </html>
