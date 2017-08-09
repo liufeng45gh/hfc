@@ -25,12 +25,15 @@
                 <div class="finance-list news-list" id="news-list">
                     <div class="news-title">${entity.title?default("")}</div>
                     <div class="news-info">
-                        <div>
-                              ${entity.source?default("")}
-                        </div>
+
                         <div>
                             ${(entity.publishAt?string("yyyy-MM-dd HH:mm:ss"))!}
                         </div>
+
+                        <div>
+                              来源: ${entity.source?default("")}
+                        </div>
+
                         
                     </div>
                     <div style="clear: both"></div>
