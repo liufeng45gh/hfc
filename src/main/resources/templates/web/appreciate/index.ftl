@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>海富文化艺术网-海富艺术品</title>
+    <title>海富艺术品-海富文化艺术网</title>
     <meta name="keywords" content="艺术品，书画，红木，陶瓷，紫砂，玉器，家具艺术"/>
     <#include "../c-head.ftl"/>
     <link rel='stylesheet' href='/web/css/news.css' type='text/css' media='screen' />

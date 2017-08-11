@@ -6,7 +6,7 @@
     <link rel='stylesheet' href='/web/css/appreciate.css' type='text/css' media='screen' />
     <link rel="stylesheet" href="/artDialog/css/ui-dialog.css">
     <script src="/artDialog/dist/dialog-min.js"></script>
-    <title>${entity.title?default("")}-海富学习-海富文化艺术网</title>
+    <title>${entity.title?default("")}-海富艺术品-海富文化艺术网</title>
     <meta name="keywords" content="艺术品，书画，红木，陶瓷，紫砂，玉器，家具艺术"/>
 </head>
 
