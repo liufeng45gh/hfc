@@ -44,12 +44,14 @@
                         <div class="name">关于海富</div>
                     </a>
 
-                    <!--
+
                     <a class="header-item" href="/artist/index" id="head-href-artist">
+                        <!--
                         <div class="szzt szzt-yishujia"></div>
+                        -->
                         <div class="name">艺术家</div>
                     </a>
-                    -->
+
 
                     <a class="header-item" href="/appreciate/index" id="head-href-appreciate">
                         <!--
