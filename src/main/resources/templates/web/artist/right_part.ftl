@@ -10,7 +10,7 @@
         </form>
     </div>
 
-
+    <div style="clear:both;"></div>
     <div class="title" >
         <div class="t-zh">推荐艺术家</div>
         <div class="t-en">RECOMMEND ARTIST</div>
