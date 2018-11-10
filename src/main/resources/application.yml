@@ -46,7 +46,7 @@ qiniu:
   accessKey: eeYtcWvGPXqjEiTIxDljeVu8qxFpwdXOvGo4PURq
   secretKey: LHkSG-HRLccuUYSgb-TX0ZcDrsyUMEzSg6Z3GG6G
   publicBucket: hfc-lucifer
-  url: http://ojvbqldpg.bkt.clouddn.com/
+  url: http://image.haifuc.com/
 multipart:
   maxFileSize: 10Mb
   maxRequestSize: 30Mb
